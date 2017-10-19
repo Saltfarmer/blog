@@ -5,17 +5,17 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-minimal_mistakes_skin    : "default" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
+minimal_mistakes_skin    : "mint" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
-title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+title                    : "Candra's blog"
+title_separator          : ""
+name                     : "Candra Gctk"
+description              : "Fans of code"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "github.com/saltfarmer"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -83,35 +83,35 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
+  name             : "Candra Gctk"
+  avatar           : "/assets/images/foto.jpg"
+  bio              : "Just fans of code"
   location         : "Somewhere"
-  email            :
+  email            : "candragctk17@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "candragctk17"
   foursquare       :
-  github           :
+  github           : "saltfarmer" 
   gitlab           :
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "gama-candra-tri-kartika-18b735106" 
   pinterest        :
   soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
-  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
+  stackoverflow    : 
+  steam            : "candragctk17" 
   tumblr           :
   twitter          :
   vine             :
   weibo            :
   xing             :
-  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+  youtube          : "https://youtube.com/c/MichaelRoseDesign"
 
 
 # Reading Files

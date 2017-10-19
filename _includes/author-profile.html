@@ -243,6 +243,14 @@
         </li>
       {% endif %}
 
+      {% if author.medium %}
+        <li>
+          <a href="https://www.medium.com/{{ author.xing }}" itemprop="sameAs">
+            <i class="fa fa-fw fa-medium" aria-hidden="true"></i> XING
+          </a>
+        </li>
+      {% endif %}
+
       {% include author-profile-custom-links.html %}
     </ul>
   </div>

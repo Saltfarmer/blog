@@ -3,7 +3,7 @@ main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Curriculum Vitae"
-    url: https://cdn.rawgit.com/saltfarmer/Curriculum-Vitae/master/index.html
+    url: https://saltfarmer.github.io/Curriculum-Vitae/
   - title: "Archive"
     url: /year-archive/
   # - title: "Sample Collections"

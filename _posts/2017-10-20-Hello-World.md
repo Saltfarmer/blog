@@ -1,5 +1,6 @@
 ---
 title: "Hello World"
+comments : true
 categories:
   - Random
 tags:

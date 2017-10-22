@@ -1,7 +1,7 @@
 ---
 title: "0000 Belajar Machine Learning : Hello Machine Learning"
 header:
-  overlay_image: "/assets/images/machinelearning_header.jpg"
+  image: /assets/images/machinelearning_header.jpg
 comments : true
 share : true
 categories:
@@ -50,6 +50,6 @@ Lah kenapa kaggle mz ?? kenapa nggak mining aja di web atau nyari di publik ?? W
 
 Niat adalah suatu hal yang penting untuk segala aspek. Minat akan suatu bidang yang anda sukai akan otomatis membuat anda menjadi lebih giat dalam mempelajari bidang tersebut. Contoh alasan saya kenapa mempelajari Machine Learning karena semakin majunya zaman yang memunculkan banyak data-data yang belum diolah di internet. Data-data tersebut berpotensi dapat menyelesaikan masalah yang masih terjadi di bumi pertiwi ini (sok fafifu can :v). Kalian bisa mencoba latihan yang bisa dicari di Google.com ataupun mengikuti http://blog.omahti.web.id/ dan Blog saya ini (ampas promosi ternyata :v).
 
-Nah, cukup sekian postingan pertama saya. Untuk postingan pertama ini mohon maaf belum bisa menunjukan contoh kodingan atau mencoba problem solving yang nantinya akan saya bahas di post selanjutnya. Gunakan **pocket** untuk menyimpan postingan saya atau bookmark saja blig saya. Sampai jumpa di postinga berikutnya.
+Nah, cukup sekian postingan pertama saya. Untuk postingan pertama ini mohon maaf belum bisa menunjukan contoh kodingan atau mencoba problem solving yang nantinya akan saya bahas di post selanjutnya. Gunakan **pocket** untuk menyimpan postingan saya atau bookmark saja blog saya. Sampai jumpa di postingan berikutnya.
 
 >Sing penting yakin

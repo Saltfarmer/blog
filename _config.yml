@@ -13,8 +13,8 @@ title                    : "Candra's blog"
 title_separator          : ""
 name                     : "Candra Gctk"
 description              : "Fans of code"
-url                      :  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  :  # the subpath of your site, e.g. "/blog"
+url                      : "https://saltfarmer.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
 repository               : "github.com/saltfarmer"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
@@ -55,7 +55,7 @@ atom_feed:
 
 # SEO Related
 google_site_verification : "sjRGvMyfBSMCC9CEVeOjQwIzLk3g5VB-BsiGYu4Xomg"
-bing_site_verification   : 
+bing_site_verification   : "946C4DCF0B211FE49CC49FDAFD2C084B"
 alexa_site_verification  :
 yandex_site_verification :
 naver-site-verification  :

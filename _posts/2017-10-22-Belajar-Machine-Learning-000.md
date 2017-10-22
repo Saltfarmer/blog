@@ -4,6 +4,7 @@ header:
   image: /assets/images/machinelearning_header.jpg
 comments : true
 share : true
+img : /assets/images/machinelearning_header.jpg
 categories:
   - Machine Learning
 tags:

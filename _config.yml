@@ -32,7 +32,11 @@ comments:
     colorscheme          : "dark" # "light" (default), "dark"
 staticman:
 <<<<<<< HEAD
+<<<<<<< HEAD
   allowedFields          : ['name', 'email', 'url', 'message'] # ['name', 'email', 'url', 'message']
+=======
+  allowedFields          : ['name', 'email', 'url', 'message']# ['name', 'email', 'url', 'message']
+>>>>>>> parent of 745b5f8... tes
   branch                 : "master" # "master"
   commitMessage          : "New comment." # "New comment."
   filename               : comment-{@timestamp} # comment-{@timestamp}

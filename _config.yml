@@ -46,8 +46,8 @@ staticman:
     date:
       type               : "date" # "date"
       options:
-        format           : "timestamp-seconds" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
-=======
+        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+
   allowedFields          : # ['name', 'email', 'url', 'message']
   branch                 : # "master"
   commitMessage          : # "New comment."

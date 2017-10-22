@@ -13,14 +13,14 @@ title                    : "Candra's blog"
 title_separator          : ""
 name                     : "Candra Gctk"
 description              : "Fans of code"
-url                      : "https://saltfarmer.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "https://saltfarmer.github.io/blog" # the subpath of your site, e.g. "/blog"
+url                      :  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  :  # the subpath of your site, e.g. "/blog"
 repository               : "github.com/saltfarmer"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "facebook" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
+  provider               : "staticman" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -31,12 +31,8 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : "dark" # "light" (default), "dark"
 staticman:
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   allowedFields          : ['name', 'email', 'url', 'message'] # ['name', 'email', 'url', 'message']
-=======
-  allowedFields          : ['name', 'email', 'url', 'message']# ['name', 'email', 'url', 'message']
->>>>>>> parent of 745b5f8... tes
   branch                 : "master" # "master"
   commitMessage          : "New comment." # "New comment."
   filename               : comment-{@timestamp} # comment-{@timestamp}
@@ -67,7 +63,7 @@ staticman:
       type               : # "date"
       options:
         format           : # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
->>>>>>> parent of db4758c... config and template post
+
 reCaptcha:
   siteKey                :
   secret                 :

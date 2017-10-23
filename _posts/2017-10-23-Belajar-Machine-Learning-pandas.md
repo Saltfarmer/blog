@@ -120,6 +120,6 @@ df1.join(df2, on="kolom_yang_sama", how='inner')
 * Menggabungkan kolom df1 ke akhir df2 (jumlah baris harus sama)
 * Metode SQL : melakukan **inner join** pada df1 dan df2 dengan mensyaratkan kolom yang sama. Seperti di SQL, terdapat juga Right join, Left Joim, outer join, dan tentunya inner join.
 
-Untuk lebih lengkapnya dalam penggunaan pandas bisa dilihat di [Dokumentasi pandas]("https://pandas.pydata.org/pandas-docs/stable/index.html"). Cukup sekian post dari saya. Sebenarnya masih banyak lagi fungsi - fungsi di pandas. Asalkan anda sering latihan maka saya yakin anda akan bisa menguasai library ini. Semoga bermanfaat postingan saya pada malam ini. Saya tunggu di postingan berikutnya
+Untuk lebih lengkapnya dalam penggunaan pandas bisa dilihat di [Dokumentasi pandas]("https://pandas.pydata.org/pandas-docs/stable/index.html"). Cukup sekian post dari saya. Sebenarnya masih banyak lagi fungsi - fungsi di pandas. Asalkan anda sering latihan maka saya yakin anda akan bisa menguasai library ini. Semoga bermanfaat postingan saya pada malam ini. Saya tunggu di postingan berikutnya.
 
 >Sing penting yakin

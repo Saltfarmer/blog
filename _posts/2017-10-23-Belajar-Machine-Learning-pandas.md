@@ -72,7 +72,7 @@ Pada index yang berisi ":" itu menandakan memilih semua semua urutan pada index.
 
 ## Data cleaning
 
-``` python
+```python
 df.columns =['a', 'b', 'c']
 pd.isnull()
 df.dropna()

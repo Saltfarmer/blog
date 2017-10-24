@@ -42,7 +42,7 @@ plt.legend()
 ```
 
 <figure>
-<img src='/assets/images/plot1.png'>
+<img src="https://raw.githubusercontent.com/Saltfarmer/blog/master/assets/images/plot1.png">
 </figure>
 
 <figure>
@@ -68,7 +68,7 @@ plt.xlim(0, 1.8);
 ```
 
 <figure>
-<img src='/assets/images/plot2.png'>
+<img src='https://raw.githubusercontent.com/Saltfarmer/blog/master/assets/images/plot2.png'>
 </figure>
 
 Contoh konkrit :
@@ -81,7 +81,7 @@ plt.plot(x, np.cos(x), '-p', color='green')
 ```
 
 <figure>
-<img src='/assets/images/plot3.png'>
+<img src='https://raw.githubusercontent.com/Saltfarmer/blog/master/assets/images/plot3.png'>
 </figure>
 
 ## Histogram
@@ -103,7 +103,7 @@ plt.hist(x3, histtype='stepfilled', alpha=0.3, normed=True, bins=40)
 ```
 
 <figure>
-<img src='/assets/images/plot4.png'>
+<img src='https://raw.githubusercontent.com/Saltfarmer/blog/master/assets/images/plot4.png'>
 </figure>
 
 Jadi akhir dari post ini hanya menunjukan ke3 grafik tersebut. Untuk detail lebih lengkapnya bisa melihat contoh grafik di <a href='https://pandas.pydata.org/pandas-docs/stable/index.html'>Dokumentasi matplotlib</a>. Semoga postingan ini bermanfaat dan jangan lupa untuk mencobanya di rumah :v

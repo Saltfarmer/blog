@@ -74,7 +74,7 @@ Lama nggak ngepost karena kehabisan bahasan postingan :v. Karena Dota Tournament
 
 ### PGL Open Bucharest
 | Top Picks | Pick Games | WinRate | Top Bans | Ban Games |
-|--------|-------:------|-------|--------|
+|--------|-------|------|-------|--------|
 | Earth Spirit | 	16 | 	10W-6L (62.5%) | 	Venomancer | 	27 |
 | Jakiro | 	16 | 	7W-9L (43.8%) | 	Night Stalker | 	24 |
 | Puck | 	15 | 	7W-8L (46.7%) | 	Nyx Assassin | 	17 |

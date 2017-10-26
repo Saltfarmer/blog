@@ -16,8 +16,6 @@ tags:
     <figcaption>credit to Liquipedia</figcaption>
 </figure>
 
-{% include toc title="Unique Title" icon="file-text" %}
-
 Lama nggak ngepost karena kehabisan bahasan postingan :v. Karena Dota Tournament Major pertama di musim 2017-2018 akan segera dimulai, mending preview sebentar tentang ESL One Hamburg 2017. Turnamen ini akan berlangsung selama 26-29 Oktober di Hamburg, Jerman. Tim yang akan berpartisipasi nantinya adalah Finalis The International 2017 Team Liquid (EU) dan Newbee (CN). Lalu diikuti dari tim yang lolos dari masing-masing daerah mereka yaitu Evil Geniuses (NA), SG-Esport (SA), Team Secret (EU), Virtus Pro (CIS), Keen Gaming (CN), dan yang terakhir adalah Fnatic (SEA). Untuk perwakilan regional dari SEA yang sebenarnya adalah HappyFeet, namum dikarenakan masalah Visa dengan terpakasa HappyFeet digantikan oleh Fnatic. Berikut daftar lengkap pemain dari masing-masing tim :
 
 **Invited**

@@ -63,7 +63,7 @@ Lama nggak ngepost karena kehabisan bahasan postingan :v. Karena Dota Tournament
 
 ### Starladder I-League Invitational Season 3
 |   Top Picks  | Pick Games |       WinRate   | Top Bans | Ban Games |
-|:-------------|:----------:|:---------------:|:--------:|----------:|
+|-------------|----------|---------------|--------|----------|
 | Earthshaker  | 	12      | 	9W-3L (75.0%) |   Lich | 	20 | 	12W-8L (60.0%) |
 | Venomancer   | 	12      | 	8W-4L (66.7%) |    Io | 	20 | 	5W-15L (25.0%) |
 | Earth Spirit | 	11      | 	10W-1L (90.9%)| Venomancer / Broodmother | 	17 | 	7W-12L (41.2%|
@@ -80,7 +80,7 @@ Lama nggak ngepost karena kehabisan bahasan postingan :v. Karena Dota Tournament
 | Mirana / Winter Wyvern | 	11 | 	8W-3L (72.7%) | 	Lich / Broodmother | 	14 |
 
 ## Tonton Live disini
-<iframe src="https://player.twitch.tv/?channel=esl_dota2" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/esl_dota2?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Tonton secara live disini</a>
+<iframe src="https://player.twitch.tv/?channel=esl_dota2" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/esl_dota2?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Twitch tv</a>
 
 Untuk tanggal dan detailnya bisa dilihat di <a href="http://wiki.teamliquid.net/dota2/ESL_One/Hamburg/2017">Dota Liquipedia</a>. Mohon maaf belum bisa menyampaikan opini tentang meta karena saya belum begitu mengikuti Dota akhir - akhir ini. Dan untuk review meta atau review Patch baru (yang akan rilis 1 November 2017) akan juga diposting nantinya dengan meminta bantuan dan diskusi dari Kak jo :v. Sekian postingan dari saya semoga bermanfaat.
 

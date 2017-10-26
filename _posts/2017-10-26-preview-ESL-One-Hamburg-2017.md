@@ -4,6 +4,7 @@ header:
   image: /assets/images/dota_header.jpg
 comments : true
 share : true
+toc : true
 categories:
   - Dota
 tags:

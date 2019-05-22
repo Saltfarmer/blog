@@ -1,13 +1,13 @@
 ---
-title: "Dota : Preview ESL One Hamburg 2017"
+title: "Ulasan channel Youtube KokBisa"
 header:
   image: /assets/images/kokbisa.png
 comments : true
 share : true
 categories:
-  - Yotube
+  - Youtube
 tags:
-  - Dota
+  - Youtube
   - Informatika Sosial
 ---
 

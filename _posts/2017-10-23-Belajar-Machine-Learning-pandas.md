@@ -66,7 +66,7 @@ df.describe()
 df.iloc([nomor_baris], [nomor kolom])
 df.loc([nomor_baris], ["Nama kolom"])
 df.loc([:], ["Nama kolom"])
-``` 
+```
 
 Pada index yang berisi ":" itu menandakan memilih semua semua urutan pada index. Lalu kenapa terkadang menggunakan **iloc()** atau **loc()**. Yang pertama untuk iloc() karena dia akan memilih data berdasarkan index, sedangkan untuk loc() menghiraukan kolom index nya. 
 

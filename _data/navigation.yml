@@ -2,14 +2,14 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Profile page"
-    url: https://saltfarmer.github.io/Curriculum-Vitae/
-  # - title: "Archive"
-  #   url: /year-archive/ß
+  # - title: "Profile page"
+  #   url: https://saltfarmer.github.io/Curriculum-Vitae/
+  - title: "Archive"
+    url: /year-archive/ß
   - title: "Categories"
     url: /categories/
-  - title: "Portfolio"
-    url: /portfolio/
+  # - title: "Portfolio"
+  #   url: /portfolio/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

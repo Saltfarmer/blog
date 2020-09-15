@@ -1,5 +1,5 @@
 ---
-title: "Evaluation Metric"
+title: "Evaluation Metric Binary Classification"
 header :
 comments : true
 share : true
@@ -8,6 +8,7 @@ categories:
 tags:
   - Machine Learning
   - Scoring
+  - Classification
 
 ---
 

@@ -60,23 +60,33 @@ In a classification task, the terms ‘’positive’’ and ‘’negative’�
 
 ### True Positive Rate, Recall, or Sensitivity
 
+
 $$
 {\displaystyle \mathrm {TPR} ={\frac {\mathrm {TP} }{\mathrm {P} }}={\frac {\mathrm {TP} }{\mathrm {TP} +\mathrm {FN} }}=1-\mathrm {FNR} }
 $$
 
+
+
 ### True Negative rate or Specificity
+
 
 $$
 {\displaystyle \mathrm {TNR} ={\frac {\mathrm {TN} }{\mathrm {N} }}={\frac {\mathrm {TN} }{\mathrm {TN} +\mathrm {FP} }}=1-\mathrm {FPR} }
 $$
 
+
+
 ### False Positive Rate or False Alarm
+
 
 $$
 {\displaystyle \mathrm {FPR} ={\frac {\mathrm {FP} }{\mathrm {N} }}={\frac {\mathrm {FP} }{\mathrm {FP} +\mathrm {TN} }}=1-\mathrm {TNR} }
 $$
 
+
+
 ### False Negative Rate or Miss Rate
+
 
 $$
 {\displaystyle \mathrm {FNR} ={\frac {\mathrm {FN} }{\mathrm {P} }}={\frac {\mathrm {FN} }{\mathrm {FN} +\mathrm {TP} }}=1-\mathrm {TPR} }
@@ -84,44 +94,66 @@ $$
 
 
 
+
+
 ## <u>Based on Prediction Data</u> (Subtracted by Prediction Result)
 
 ### Positive Predictive Value or Precision
+
 
 $$
 {\displaystyle \mathrm {PPV} ={\frac {\mathrm {TP} }{\mathrm {TP} +\mathrm {FP} }}=1-\mathrm {FDR} }
 $$
 
-### Negative Predictive Value
+
+
+Negative Predictive Value
+
 
 $$
 {\displaystyle \mathrm {NPV} ={\frac {\mathrm {TN} }{\mathrm {TN} +\mathrm {FN} }}=1-\mathrm {FOR} }
 $$
 
+
+
 ### False Discovery Rate
+
 
 $$
 {\displaystyle \mathrm {FDR} ={\frac {\mathrm {FP} }{\mathrm {FP} +\mathrm {TP} }}=1-\mathrm {PPV} }
 $$
 
+
+
 ### False Omission Rate
+
 
 $$
 {\displaystyle \mathrm {FOR} ={\frac {\mathrm {FN} }{\mathrm {FN} +\mathrm {TN} }}=1-\mathrm {NPV} }
 $$
 
+
+
 ## Accuracy
 
 According to ISO 5725-1,[[1\]](https://en.wikipedia.org/wiki/Accuracy_and_precision#cite_note-iso5725-1) the general term "accuracy" is used to describe the closeness of a measurement to the true value (Correct Values). Accuracy is the most common evaluation metrics used in classification. 
+
+
 $$
 {\displaystyle \mathrm {ACC} ={\frac {\mathrm {TP} +\mathrm {TN} }{\mathrm {P} +\mathrm {N} }}={\frac {\mathrm {TP} +\mathrm {TN} }{\mathrm {TP} +\mathrm {TN} +\mathrm {FP} +\mathrm {FN} }}}
 $$
+
+
 Then what's wrong with accuracy ? Well, nothing is wrong with  accuracy, if your dataset is already balanced, What is balanced dataset ? balanced dataset is when the proportion rate of positive and negative is equal or almost equal. The closer amount of positive and negative data, the more balance the data.
 
 If you have imbalance dataset and still want to use accuracy as evaluation metrics, you should use **Balanced Accuracy**.
+
+
 $$
 {\displaystyle \mathrm {BA} ={\frac {TPR+TNR}{2}}}
 $$
+
+
 Let's try from the example of this data
 
 |               |          |  Actual  |  Class   |
@@ -151,9 +183,13 @@ Now we see the metric is different. You see any difference between those 2 data 
 ## F1 Score
 
 F1 score (also F-score or F-measure) is another measure evaluation metrics. It is calculated from the precision and recall of the test, where the precision is the number of correctly identified positive results divided by the number of all positive results, including those not identified correctly, and the recall is the number of correctly identified positive results divided by the number of all samples that should have been identified as positive. 
+
+
 $$
 {\displaystyle \mathrm {F} _{1}=2\cdot {\frac {\mathrm {PPV} \cdot \mathrm {TPR} }{\mathrm {PPV} +\mathrm {TPR} }}={\frac {2\mathrm {TP} }{2\mathrm {TP} +\mathrm {FP} +\mathrm {FN} }}}
 $$
+
+
 F1 Score is needed when you want to seek a balance between Precision and Recall. So what is the difference between F1 Score and Accuracy then? We have previously seen that accuracy can be largely contributed by a large number of True Negatives which in most circumstances, we do not focus on much whereas False Negative and False Positive usually has business costs (tangible & intangible) thus F1 Score might be a better measure to use if we need to seek a balance between Precision and Recall AND there is an imbalance data.
 
 Let's try with Imbalanced data before.

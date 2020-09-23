@@ -13,9 +13,11 @@ tags:
 
 ---
 
-Before we dive into Pandas, Numpy and Matplotlib, let's try remind us the basic of the python first. I wont cover all Python stuff because it took too much time. In this post, i will add some interesting which might useful later. Let start with Python Operator.
+Before we dive into Pandas, Numpy and Matplotlib, let's try remind us the basic of the python first. I wont cover all Python stuff because it took too much time. In this post, I will add some interesting stuff which might useful later. Let start with Python Operator.
 
 # Operators
+
+Operators are used to perform operations on variables and values.
 
 ## Arithmetic Operators
 
@@ -85,6 +87,8 @@ Identity operators are used to compare the objects, not if they are equal, but i
 
 # Conditional Statement
 
+Python supports the usual logical conditions from mathematics. Mostly used in "if statements" and loops.
+
 ## If
 
 An "if statement" is written by using the if keyword. Example
@@ -141,6 +145,8 @@ a is greater than b
 
 
 # Strings
+
+String literals in python are surrounded by either single quotation marks, or double quotation marks.
 
 ## Array of String
 

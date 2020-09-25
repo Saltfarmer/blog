@@ -223,3 +223,111 @@ print(df[df['a']>0])
 1  0.08687 -0.639393 -0.762429 -0.306316 -0.675559
 ```
 
+For two conditions you can use `|` and `&` with parenthesis like this
+
+```python
+df[(df['a']>0) | (df['c'] > 1)]
+```
+
+```
+a	b	c	d
+1	0.426039	-0.310240	-0.842375	-0.376677
+3	-0.696941	-0.368143	2.026986	-0.486401
+```
+
+ lets take a look about more details in indexing dataframes. You can reset your index by usinf `df.reset_index()`. Letes take a look at the example
+
+```python
+print(df)
+print(df.reset_index())
+```
+
+```
+          a         b         c         d
+1  0.426039 -0.310240 -0.842375 -0.376677
+2 -2.555266  1.060464  0.697077 -0.611722
+3 -0.696941 -0.368143  2.026986 -0.486401
+4 -0.410270  0.059790 -0.804746 -0.293890
+5 -0.554131 -0.375219 -0.831811 -0.059533
+
+   index         a         b         c         d
+0      1  0.426039 -0.310240 -0.842375 -0.376677
+1      2 -2.555266  1.060464  0.697077 -0.611722
+2      3 -0.696941 -0.368143  2.026986 -0.486401
+3      4 -0.410270  0.059790 -0.804746 -0.293890
+4      5 -0.554131 -0.375219 -0.831811 -0.059533
+```
+
+You can see, pandas resetting the index from 0-n and make the old index names to columns. Then you can set the index with `df.set_index`.
+
+```python
+df = df.reset_index()
+newind = 'CA NY WY OR CO'.split()
+df['States'] = newind
+df.set_index('States')
+```
+
+```
+	index	a	b	c	d
+States					
+CA	1	0.486785	0.907007	-0.176515	0.136101
+NY	2	0.071172	1.313467	0.507755	-1.628941
+WY	3	-1.492063	-0.929157	-0.394949	0.706727
+OR	4	-1.512844	-0.058844	0.029634	0.887493
+CO	5	-1.445499	0.715998	0.997913	-1.257716
+```
+
+## Handling missing data with pandas
+
+Basically, there are 2 option dealing with missing value in dataset. Obviously, not all dataset is ready. Sometimes the dataset have a lot or some missing values. Let's take a look how to handle missing value by dropping with `df.dropna()`
+
+```python
+import numpy as np
+import pandas as pd
+
+df = pd.DataFrame({'A':[1,2,np.nan],
+                  'B':[5,np.nan,np.nan],
+                  'C':[1,2,3]})
+
+print(df)
+print(df.dropna(axis=0))
+print(df.dropna(axis=1))
+```
+
+```
+    A    B  C
+0  1.0  5.0  1
+1  2.0  NaN  2
+2  NaN  NaN  3
+     A    B  C
+0  1.0  5.0  1
+   C
+0  1
+1  2
+2  3
+```
+
+You see the difference between dropping values from axis=0 and axis=1. Dropping with axis=0 means that you delete the rows based on missing value. In the other hand you use axis=1 to drop the columns. You can also put a threshold of the minimal count of missing values.
+
+```python
+print(df.dropna(thresh=2))
+```
+
+```
+     A    B  C
+0  1.0  5.0  1
+1  2.0  NaN  2
+```
+
+Now, you can try filling missing values with either mode, mean, and median. You can use `df.fillna()` to do that
+
+```python
+print(df['A'].fillna(value=df['A'].mean()))
+```
+
+```
+0    1.0
+1    2.0
+2    1.5
+Name: A, dtype: float64
+```

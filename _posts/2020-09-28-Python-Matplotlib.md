@@ -143,8 +143,6 @@ ax.plot(x, x+16, color="purple", lw=1, ls='-', marker='s', markersize=8,
 ![](https://i.ibb.co/8XVXwFz/styles.png)
 
 ## Saving figures
-
-## Saving figures
 Matplotlib can generate high-quality output in a number formats, including PNG, JPG, EPS, SVG, PGF and PDF.  To save a figure to a file we can use the `savefig` method in the `Figure` class :
 
 ```pytho

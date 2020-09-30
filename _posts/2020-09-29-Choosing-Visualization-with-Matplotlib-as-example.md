@@ -16,7 +16,7 @@ tags:
 
 When it comes to data visualization, the first and the most critical step is to select the correct visualization for the data that you want to present. With a wide range of visualization software that is available offering a large number of chart varieties, it’s often confusing to pick the right one, which explains the data and insights in the simplest possible manner. 
 
-Most of the data can be visualized with some different visuialization. Personally, for me the most used visualization are:
+Most of the data can be visualized with some different visualization. Personally, for me the most used visualization are:
 
 1. Line Plot
 2. Histogram

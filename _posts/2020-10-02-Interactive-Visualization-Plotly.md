@@ -51,7 +51,9 @@ flights = sns.load_dataset('flights')
 flights.iplot(kind='line', y='passengers')
 ```
 
-![](https://i.ibb.co/XV381jr/ezgif-2-1791205089be.gif)
+<figure>
+    <img src="https://i.ibb.co/XV381jr/ezgif-2-1791205089be.gif">
+</figure>
 
 This is really useful for understanding TimeSeries data 
 
@@ -64,6 +66,8 @@ iris = sns.load_dataset('iris')
 iris.iplot(kind ='scatter', x ='sepal_length', y ='sepal_width', mode ='markers') 
 ```
 
-![](https://i.ibb.co/zrX1SKX/ezgif-2-a281e19dfc8e.gif)
+<figure>
+    <img src="https://i.ibb.co/zrX1SKX/ezgif-2-a281e19dfc8e.gif">
+</figure>
 
 

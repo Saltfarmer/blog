@@ -1,14 +1,14 @@
 ---
 title: "Handling Missing Values"
 header :
-  image: /assets/images/machinelearning_header.jpg
+  image: /assets/images/sklearn_head.jpg
 comments : true
 share : true
 categories:
   - Python
 tags:
   - Python
-  - Exercise
+  - Preprocessing
   - Pandas
   - Sklearn
 

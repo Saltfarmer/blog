@@ -5,7 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
+  - Machine Learning
 tags:
   - Python
   - Exercise

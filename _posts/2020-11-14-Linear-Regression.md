@@ -26,10 +26,11 @@ In simple terms
 
 - If $\beta_1$ > 0, then x(predictor) and y(target) have a positive relationship. That is increase in x will increase y.
 - If $\beta_1$ < 0, then x(predictor) and y(target) have a negative relationship. That is increase in x will decrease y.
-
 - If the model does not include x=0, then the prediction will become meaningless with only $\beta_0$. 
 - If the model includes value 0, then $\beta_0$ will be the average of all predicted values when x=0. But, setting zero for all the predictor variables is often impossible.
 - The value of $\beta_0$ guarantee that residual have mean zero. If there is no $\beta_0$ term, then regression will be forced to pass over the origin. Both the regression co-efficient and prediction will be biased.
+
+![](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimage.slideserve.com%2F523137%2Flinear-regression36-l.jpg&f=1&nofb=1)
 
 # Linear Regression Model
 

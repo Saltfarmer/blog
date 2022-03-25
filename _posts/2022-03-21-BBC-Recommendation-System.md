@@ -5,13 +5,10 @@ comments : true
 share : true
 categories:
   - Python
-  - Recommendation-System
-  - Text-mining
 tags:
   - Python
+
 ---
-
-
 
 ## Introduction
 

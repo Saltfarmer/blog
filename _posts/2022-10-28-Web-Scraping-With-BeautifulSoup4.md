@@ -37,7 +37,7 @@ In this quick tutorial, I will make use of [Toscape](https://toscrape.com/), a w
 
 To start with, we need to retrieve the website code using `requests` library in Python. When you send a **GET** request to a website, it returns a file with two things: a response code and the response data. To create a **GET** request, we first import the Python requests library. Making a **GET** request with this library requires one thing: the URL of the website. Try to request something from a non-existing URL and inspect the status code. The response object you have created has multiple properties, of which a new overview is shown at: https://www.w3schools.com/python/ref_requests_response.asp
 
-```python3
+```python
 # Import requests
 import requests
 # Write some code here to request the bookstore website
@@ -53,7 +53,7 @@ The response of the `get` request is one big HTML file. In order to extract data
 
 ![Web Scraping](https://mydatacareer.com/wp-content/uploads/2017/05/Web-scraping1-1-scaled-1.jpg)
 
-```python3
+```python
 # Import BeautifulSoup from bs4 
 from bs4 import BeautifulSoup
 # Parse the response to a soup object 
@@ -97,7 +97,7 @@ Output exceeds the size limit. Open the full output data in a text editor
 
 The `find()` and `find_all()` methods are among the most powerful weapons in your arsenal. `soup.find()` is great for cases where you know there is only one element you're looking for, such as the body tag. `soup.find_all()` is the most common method you will be using in your web scraping adventures. Using this you can iterate through all of the books on the page and print their names:
 
-```python3
+```python
 # Loop over the books and print to title 
 for link in soup.find_all('article', class_='product_pod'):
     print(link.find('h3').find('a').get('title'))
@@ -128,7 +128,7 @@ A Spy's Devotion (The Regency Spies of London #1)
 
 Then we are going to store the data with `Pandas`. 
 
-```python3
+```python
 # Import pandas
 import pandas as pd
 # Create an empty list called books 
@@ -137,7 +137,7 @@ books = []
 
 The soups contains a lot of books. The retrieve information from each specific book, we use a for each loop. More information on the ForEach loop [here](https://www.w3schools.com/python/python_for_loops.asp). An example of a for each loop that stores data to a list:
 
-```python3
+```python
 # Loop over each book and append to the empty list
 for link in soup.find_all('h3'):
     books.append(link.find('a').get('title')) 
@@ -169,7 +169,7 @@ books
 
 Create a dataframe based on the list. The code is 
 
-```python3
+```python
 # empty list
 title = []
 price = []
@@ -210,7 +210,7 @@ df
 1000 rows × 4 columns
 ```
 
-```python3
+```python
 df['price'] = df['price'].astype('float')
 ```
 

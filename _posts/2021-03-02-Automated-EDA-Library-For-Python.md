@@ -1,8 +1,7 @@
 ---
 title: "Automated EDA Library for Python"
-header : /assets/images/python-head.jpg
-comments : true
-share : true
+header : 
+  overlay_image : /assets/images/python-head.jpg
 categories:
   - Python
 tags:
@@ -46,13 +45,13 @@ Depending upon the relevant data type of the column, the following details are p
 
 **Installation**
 
-```python3
+```python
 pip install pandas-profiling
 ```
 
 **Profile Reports**
 
-```python3
+```python
 import pandas as pd
 
 # Read the Titanic Dataset

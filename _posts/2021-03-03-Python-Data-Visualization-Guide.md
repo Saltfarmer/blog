@@ -1,6 +1,7 @@
 ---
 title: "Python Data Visualization Guide"
-header : /assets/images/python-head.jpg
+header : 
+  overlay_image : /assets/images/python-head.jpg
 comments : true
 share : true
 categories:
@@ -17,7 +18,7 @@ A visualization should speak for itself. You should not need to spend time tryin
 
 Visualization type and what visualization to use is the main point of this post. There are mainly 4 narratives in "storytelling" with visualization.
 
-\## Time Series
+## Time Series
 
 Imagine you work for a Financial company or Banking. Or at least working as a Data Analyst in the Marketing Division. You would need to use time series analysis to set the initial context for the change. 
 

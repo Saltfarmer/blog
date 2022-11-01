@@ -1,8 +1,7 @@
 ---
 title: "Introduction Neural Network"
-header : /assets/images/tensorflow.png
-comments : true
-share : true
+header : 
+  overlay_image : /assets/images/tensorflow.png
 categories:
   - Machine Learning
   - Deep Learning

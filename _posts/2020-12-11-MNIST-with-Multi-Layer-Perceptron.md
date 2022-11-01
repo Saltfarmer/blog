@@ -1,9 +1,7 @@
 ---
-title: "K-Means Exercise"
+title: "MNIST with Multilayer Perceptron"
 header :
   image: /assets/images/tensorflow.png
-comments : true
-share : true
 categories:
   - Machine Learning
   - Deep Learning

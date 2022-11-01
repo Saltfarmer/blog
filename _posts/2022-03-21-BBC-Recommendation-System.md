@@ -1,7 +1,7 @@
 ---
 title: "BBC Recommendation System (Content-Based)"
 header: 
-  overlay_image : https://ichef.bbci.co.uk/images/ic/1920x1080/p09xtmrp.jpg
+  image : https://ichef.bbci.co.uk/images/ic/1920x1080/p09xtmrp.jpg
 comments : true
 share : true
 categories:

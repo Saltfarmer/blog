@@ -1,7 +1,7 @@
 ---
 title: "Handling Imbalance Data"
 header : 
-  overlay_image : /assets/images/python-head.jpg
+  image : /assets/images/python-head.jpg
 comments : true
 share : true
 categories:

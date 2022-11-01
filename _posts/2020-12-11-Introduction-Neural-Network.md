@@ -1,7 +1,7 @@
 ---
 title: "Introduction Neural Network"
 header : 
-  overlay_image : /assets/images/tensorflow.png
+  image : /assets/images/tensorflow.png
 comments : true
 share : true
 categories:

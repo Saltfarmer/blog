@@ -1,7 +1,7 @@
 ---
 title: "Principal Component Analysis"
 header : 
-  overlay_image : /assets/images/pca.jpeg
+  image : /assets/images/pca.jpeg
 categories:
   - Machine Learning
 tags:

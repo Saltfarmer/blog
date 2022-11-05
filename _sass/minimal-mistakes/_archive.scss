@@ -24,10 +24,12 @@
   a {
     position: relative;
     z-index: 10;
+    text-decoration: none;
   }
 
   a[rel="permalink"] {
     position: static;
+    text-decoration: none;
   }
 }
 
@@ -49,9 +51,11 @@
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
 
   a[rel="permalink"]::before {
     content: '';
+    text-decoration: none;
     position: absolute;
     left: 0;
     top: 0;

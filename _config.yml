@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "
 locale                   : "en-US"
 title                    : "Saltfarmer's Blog"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "Personal blog for random stuff that I am interested with" # site tagline that appears below site title in masthead
 name                     : "Gama Candra Tri K"
 description              : "Fans of code and dote"
 url                      : "https://saltfarmer.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -110,15 +110,12 @@ author:
   location         : "Utrecht, The Netherlands"
   email            : "candragctk17@gmail.com"
   links:
-    - label: "Youtube"
-      icon: "fab fa-fw fa-youtube"
-      url: "https://www.youtube.com/channel/UCUUyTlt6WZU6I4sOg0s-g4Q"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/candragctk17/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/saltfarmer"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/gama-candra-tri-kartika-18b735106/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/saltfarmer17/"
@@ -131,25 +128,26 @@ author:
     - label: "Discord"
       icon: "fab fa-fw fa-discord"
       url: "https://discord.com/users/SaltFarmer#4440"
-
-# Site Footer
-footer:
-  links:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/candragctk17/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/saltfarmer"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/gama-candra-tri-kartika-18b735106/"
     - label: "Telegram"
       icon: "fab fa-fw fa-telegram"
       url: "https://t.me/candra_gctk"
     - label: "Whatsapp"
       icon: "fab fa-fw fa-whatsapp"
       url: "https://wa.me/62895402708050"
+
+# Site Footer
+footer:
+  links:
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCUUyTlt6WZU6I4sOg0s-g4Q"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/saltfarmer"
+    - label: "Kaggle"
+      icon: "fab fa-fw fa-kaggle"
+      url: "https://www.kaggle.com/candragctk17"
+
 
 # Reading Files
 include:
@@ -217,7 +215,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 

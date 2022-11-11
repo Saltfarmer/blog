@@ -1,7 +1,7 @@
 ---
 title: "K Nearest Neighbour"
 header :
-  image: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/sklearn_head.jpg
 comments : true
 share : true
 categories:

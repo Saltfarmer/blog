@@ -1,7 +1,7 @@
 ---
 title: "Web Scraping with BeautifulSoup4"
 header: 
-  image : /assets/images/BS4.png
+  teaser : /assets/images/BS4.png
 categories:
   - Python
   - Data Engineering

@@ -1,7 +1,7 @@
 ---
 title: "Stocks Finance Exercise"
 header :
-  image: /assets/images/stonks.png
+  teaser: /assets/images/stonks.png
 comments : true
 share : true
 categories:

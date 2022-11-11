@@ -1,7 +1,7 @@
 ---
 title: "Python Crash Course Exercise 2"
 header :
-  image: /assets/images/numpy-head.jpg
+  teaser: /assets/images/numpy-head.jpg
 comments : true
 share : true
 categories:

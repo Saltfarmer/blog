@@ -1,7 +1,7 @@
 ---
 title: "Better Visualization : Seaborn"
 header :
-  image: /assets/images/matplotlib-head.jpg
+  teaser: /assets/images/matplotlib-head.jpg
 comments : true
 share : true
 categories:

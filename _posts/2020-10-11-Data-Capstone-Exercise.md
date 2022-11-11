@@ -1,7 +1,7 @@
 ---
 title: "Data Capstone Exercise"
 header :
-  image: /assets/images/calls.png
+  teaser: /assets/images/calls.png
 comments : true
 share : true
 categories:

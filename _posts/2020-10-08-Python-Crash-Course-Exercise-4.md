@@ -1,7 +1,7 @@
 ---
 title: "Python Crash Course Exercise 4"
 header :
-  image: /assets/images/pandas-head.jpg
+  teaser: /assets/images/pandas-head.jpg
 comments : true
 share : true
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "Automated EDA Library for Python"
 header : 
-  image : /assets/images/python-head.jpg
+  teaser : /assets/images/python-head.jpg
 categories:
   - Python
 tags:

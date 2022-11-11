@@ -1,7 +1,7 @@
 ---
 title: "Python Data Visualization Guide"
 header : 
-  image : /assets/images/python-head.jpg
+  teaser : /assets/images/python-head.jpg
 comments : true
 share : true
 categories:

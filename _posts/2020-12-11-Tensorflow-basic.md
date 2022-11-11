@@ -1,7 +1,7 @@
 ---
 title: "Introduction Neural Network"
 header : 
-  image : /assets/images/tensorflow.png
+  teaser : /assets/images/tensorflow.png
 categories:
   - Machine Learning
   - Deep Learning

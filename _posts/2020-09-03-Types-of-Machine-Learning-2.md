@@ -1,7 +1,7 @@
 ---
 title: "Types of Machine Learning 2"
 header :
-  image: /assets/images/machinelearning_header.jpg
+  teaser: /assets/images/machinelearning_header.jpg
 comments : true
 share : true
 categories:

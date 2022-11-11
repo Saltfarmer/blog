@@ -1,7 +1,7 @@
 ---
 title: "Introduction Spark"
 header : 
-  image : /assets/images/spark.png
+  teaser : /assets/images/spark.png
 comments : true
 share : true
 categories:

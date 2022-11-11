@@ -1,7 +1,7 @@
 ---
 title: "Python Pandas"
 header :
-  image: /assets/images/pandas-head.jpg
+  teaser: /assets/images/pandas-head.jpg
 comments : true
 share : true
 categories:

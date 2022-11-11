@@ -1,7 +1,7 @@
 ---
 title: "Python Numpy"
 header :
-  image: /assets/images/numpy-head.jpg
+  teaser: /assets/images/numpy-head.jpg
 comments : true
 share : true
 categories:

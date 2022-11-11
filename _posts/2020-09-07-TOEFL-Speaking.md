@@ -1,7 +1,7 @@
 ---
 title: "TOEFL Speaking Template"
 header :
-  image: /assets/images/toefl-ETS.png
+  teaser: /assets/images/toefl-ETS.png
 comments : true
 share : true
 categories:

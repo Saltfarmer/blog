@@ -1,7 +1,7 @@
 ---
 title: "Ulasan channel Youtube KokBisa"
 header:
-  image: /assets/images/kokbisa.png
+  teaser: /assets/images/kokbisa.png
 comments : true
 share : true
 categories:

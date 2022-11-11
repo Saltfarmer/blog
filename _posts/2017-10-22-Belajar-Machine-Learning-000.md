@@ -1,7 +1,7 @@
 ---
 title: "0000 Belajar Machine Learning : Hello Machine Learning"
 header:
-  image: /assets/images/machinelearning_header.jpg
+  teaser: /assets/images/machinelearning_header.jpg
 comments : true
 share : true
 categories:

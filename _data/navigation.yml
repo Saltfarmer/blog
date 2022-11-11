@@ -1,7 +1,9 @@
 main:
   - title: "Posts"
-    url: /year-archive/
+    url: /year-archive-grid/
   - title: "Category"
-    url: /categories/
+    url: /categories-grid/
   - title: "Tags"
-    url: /tags/
+    url: /tags-grid/
+  - title: "Sitemap"
+    url: /sitemap/

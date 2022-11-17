@@ -1,7 +1,7 @@
 ---
 title: "NLP Project"
 header :
-  teaser: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/sklearn-head.png
 comments : true
 share : true
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "Handling Missing Values"
 header :
-  teaser: /assets/images/sklearn-head.jpg
+  teaser: /assets/images/sklearn-head.png
 comments : true
 share : true
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "Feature Selection"
 header :
-  teaser: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/sklearn-head.jpg
 comments : true
 share : true
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "Logistic Regression"
 header :
-  teaser: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/LogReg.png
 comments : true
 share : true
 categories:

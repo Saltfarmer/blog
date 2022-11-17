@@ -1,5 +1,5 @@
 ---
-title: "Logistic Regression Exercise"
+title: "EDA Regression Exercise"
 header :
   teaser: /assets/images/python-head.jpg
 comments : true

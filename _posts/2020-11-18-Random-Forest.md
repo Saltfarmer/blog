@@ -1,7 +1,7 @@
 ---
 title: "Random Forest"
 header :
-  teaser: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/Random-forest.png
 comments : true
 share : true
 categories:

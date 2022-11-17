@@ -1,7 +1,7 @@
 ---
 title: "Support Vector Machine"
 header :
-  teaser: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/SVM.png
 comments : true
 share : true
 categories:

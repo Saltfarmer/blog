@@ -1,7 +1,7 @@
 ---
 title: "K Nearest Neighbour Exercise"
 header :
-  teaser: /assets/images/python-head.jpg
+  teaser: /assets/images/KNN.png
 comments : true
 share : true
 categories:

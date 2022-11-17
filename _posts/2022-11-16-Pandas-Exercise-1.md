@@ -1,7 +1,7 @@
 ---
 title: "Pandas Exercise 1 : Knowing your data"
 header :
-  teaser: /assets/images/pandas-head.
+  teaser: /assets/images/pandas-head.jpg
 
 categories:
   - Python

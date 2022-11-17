@@ -1,7 +1,7 @@
 ---
 title: "Linear Regression Exercise"
 header :
-  teaser: /assets/images/python-head.jpg
+  teaser: /assets/images/LinReg.png
 comments : true
 share : true
 categories:

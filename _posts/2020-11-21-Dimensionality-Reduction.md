@@ -1,7 +1,7 @@
 ---
 title: "Dimensionality Reduction"
 header :
-  teaser: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/sklearn-head.jpg
 comments : true
 share : true
 categories:

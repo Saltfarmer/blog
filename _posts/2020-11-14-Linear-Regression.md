@@ -1,7 +1,7 @@
 ---
 title: "Linear Regression"
 header :
-  teaser: /assets/images/sklearn_head.jpg
+  teaser: /assets/images/LinReg.png
 comments : true
 share : true
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "Pandas Exercise 2 : Filtering and Sorting"
 header :
-  teaser: /assets/images/pandas-head.
+  teaser: /assets/images/pandas-head.jpg
 
 categories:
   - Python

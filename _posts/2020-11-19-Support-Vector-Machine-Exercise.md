@@ -1,7 +1,7 @@
 ---
 title: "Support Vector Machine Exercise"
 header :
-  teaser: /assets/images/python-head.jpg
+  teaser: /assets/images/SVM.png
 comments : true
 share : true
 categories:

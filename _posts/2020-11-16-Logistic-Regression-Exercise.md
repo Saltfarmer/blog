@@ -1,7 +1,7 @@
 ---
 title: "Logistic Regression Exercise"
 header :
-  teaser: /assets/images/python-head.jpg
+  teaser: /assets/images/LogReg.png
 comments : true
 share : true
 categories:

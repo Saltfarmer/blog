@@ -37,18 +37,18 @@ chipo = pd.read_csv(url, sep = '\t')
 chipo.head(10)
 ```
 
-|    |   order_id |   quantity | item_name                             | choice_description                                                                                                 | item_price   |
-|---:|-----------:|-----------:|:--------------------------------------|:-------------------------------------------------------------------------------------------------------------------|:-------------|
-|  0 |          1 |          1 | Chips and Fresh Tomato Salsa          | nan                                                                                                                | $2.39        |
-|  1 |          1 |          1 | Izze                                  | [Clementine]                                                                                                       | $3.39        |
-|  2 |          1 |          1 | Nantucket Nectar                      | [Apple]                                                                                                            | $3.39        |
-|  3 |          1 |          1 | Chips and Tomatillo-Green Chili Salsa | nan                                                                                                                | $2.39        |
-|  4 |          2 |          2 | Chicken Bowl                          | [Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Sour Cream]]                                         | $16.98       |
-|  5 |          3 |          1 | Chicken Bowl                          | [Fresh Tomato Salsa (Mild), [Rice, Cheese, Sour Cream, Guacamole, Lettuce]]                                        | $10.98       |
-|  6 |          3 |          1 | Side of Chips                         | nan                                                                                                                | $1.69        |
-|  7 |          4 |          1 | Steak Burrito                         | [Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]] | $11.75       |
-|  8 |          4 |          1 | Steak Soft Tacos                      | [Tomatillo Green Chili Salsa, [Pinto Beans, Cheese, Sour Cream, Lettuce]]                                          | $9.25        |
-|  9 |          5 |          1 | Steak Burrito                         | [Fresh Tomato Salsa, [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Lettuce]]                                | $9.25        |
+|      | order_id | quantity | item_name                             | choice_description                                                                                                 | item_price |
+| ---: | -------: | -------: | :------------------------------------ | :----------------------------------------------------------------------------------------------------------------- | :--------- |
+|    0 |        1 |        1 | Chips and Fresh Tomato Salsa          | nan                                                                                                                | $2.39      |
+|    1 |        1 |        1 | Izze                                  | [Clementine]                                                                                                       | $3.39      |
+|    2 |        1 |        1 | Nantucket Nectar                      | [Apple]                                                                                                            | $3.39      |
+|    3 |        1 |        1 | Chips and Tomatillo-Green Chili Salsa | nan                                                                                                                | $2.39      |
+|    4 |        2 |        2 | Chicken Bowl                          | [Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Sour Cream]]                                         | $16.98     |
+|    5 |        3 |        1 | Chicken Bowl                          | [Fresh Tomato Salsa (Mild), [Rice, Cheese, Sour Cream, Guacamole, Lettuce]]                                        | $10.98     |
+|    6 |        3 |        1 | Side of Chips                         | nan                                                                                                                | $1.69      |
+|    7 |        4 |        1 | Steak Burrito                         | [Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]] | $11.75     |
+|    8 |        4 |        1 | Steak Soft Tacos                      | [Tomatillo Green Chili Salsa, [Pinto Beans, Cheese, Sour Cream, Lettuce]]                                          | $9.25      |
+|    9 |        5 |        1 | Steak Burrito                         | [Fresh Tomato Salsa, [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Lettuce]]                                | $9.25      |
 
 ### Step 5. What is the number of observations in the dataset?
 ```python
@@ -108,9 +108,9 @@ chipo.groupby(['item_name']).sum().sort_values(['quantity'], ascending = False).
 ```python
 chipo.groupby(['choice_description']).sum().sort_values(['quantity'], ascending = False).head(1)
 ```
-| choice_description   |   order_id |   quantity |
-|:---------------------|-----------:|-----------:|
-| [Diet Coke]          |     123455 |        159 |
+| choice_description | order_id | quantity |
+| :----------------- | -------: | -------: |
+| [Diet Coke]        |   123455 |      159 |
 
 ### Step 12. How many items were orderd in total?
 ```python
@@ -187,49 +187,49 @@ user_id = pd.read_csv(url, sep='|')
 ```python
 user_id.head(25)
 ```
-|    |   user_id |   age | gender   | occupation    |   zip_code |
-|---:|----------:|------:|:---------|:--------------|-----------:|
-|  0 |         1 |    24 | M        | technician    |      85711 |
-|  1 |         2 |    53 | F        | other         |      94043 |
-|  2 |         3 |    23 | M        | writer        |      32067 |
-|  3 |         4 |    24 | M        | technician    |      43537 |
-|  4 |         5 |    33 | F        | other         |      15213 |
-|  5 |         6 |    42 | M        | executive     |      98101 |
-|  6 |         7 |    57 | M        | administrator |      91344 |
-|  7 |         8 |    36 | M        | administrator |      05201 |
-|  8 |         9 |    29 | M        | student       |      01002 |
-|  9 |        10 |    53 | M        | lawyer        |      90703 |
-| 10 |        11 |    39 | F        | other         |      30329 |
-| 11 |        12 |    28 | F        | other         |      06405 |
-| 12 |        13 |    47 | M        | educator      |      29206 |
-| 13 |        14 |    45 | M        | scientist     |      55106 |
-| 14 |        15 |    49 | F        | educator      |      97301 |
-| 15 |        16 |    21 | M        | entertainment |      10309 |
-| 16 |        17 |    30 | M        | programmer    |      06355 |
-| 17 |        18 |    35 | F        | other         |      37212 |
-| 18 |        19 |    40 | M        | librarian     |      02138 |
-| 19 |        20 |    42 | F        | homemaker     |      95660 |
-| 20 |        21 |    26 | M        | writer        |      30068 |
-| 21 |        22 |    25 | M        | writer        |      40206 |
-| 22 |        23 |    30 | F        | artist        |      48197 |
-| 23 |        24 |    21 | F        | artist        |      94533 |
-| 24 |        25 |    39 | M        | engineer      |      55107 |
+|      | user_id |  age | gender | occupation    | zip_code |
+| ---: | ------: | ---: | :----- | :------------ | -------: |
+|    0 |       1 |   24 | M      | technician    |    85711 |
+|    1 |       2 |   53 | F      | other         |    94043 |
+|    2 |       3 |   23 | M      | writer        |    32067 |
+|    3 |       4 |   24 | M      | technician    |    43537 |
+|    4 |       5 |   33 | F      | other         |    15213 |
+|    5 |       6 |   42 | M      | executive     |    98101 |
+|    6 |       7 |   57 | M      | administrator |    91344 |
+|    7 |       8 |   36 | M      | administrator |    05201 |
+|    8 |       9 |   29 | M      | student       |    01002 |
+|    9 |      10 |   53 | M      | lawyer        |    90703 |
+|   10 |      11 |   39 | F      | other         |    30329 |
+|   11 |      12 |   28 | F      | other         |    06405 |
+|   12 |      13 |   47 | M      | educator      |    29206 |
+|   13 |      14 |   45 | M      | scientist     |    55106 |
+|   14 |      15 |   49 | F      | educator      |    97301 |
+|   15 |      16 |   21 | M      | entertainment |    10309 |
+|   16 |      17 |   30 | M      | programmer    |    06355 |
+|   17 |      18 |   35 | F      | other         |    37212 |
+|   18 |      19 |   40 | M      | librarian     |    02138 |
+|   19 |      20 |   42 | F      | homemaker     |    95660 |
+|   20 |      21 |   26 | M      | writer        |    30068 |
+|   21 |      22 |   25 | M      | writer        |    40206 |
+|   22 |      23 |   30 | F      | artist        |    48197 |
+|   23 |      24 |   21 | F      | artist        |    94533 |
+|   24 |      25 |   39 | M      | engineer      |    55107 |
 ### Step 5. See the last 10 entries
 ```python
 user_id.tail(10)
 ```
-|     |   user_id |   age | gender   | occupation    |   zip_code |
-|----:|----------:|------:|:---------|:--------------|-----------:|
-| 933 |       934 |    61 | M        | engineer      |      22902 |
-| 934 |       935 |    42 | M        | doctor        |      66221 |
-| 935 |       936 |    24 | M        | other         |      32789 |
-| 936 |       937 |    48 | M        | educator      |      98072 |
-| 937 |       938 |    38 | F        | technician    |      55038 |
-| 938 |       939 |    26 | F        | student       |      33319 |
-| 939 |       940 |    32 | M        | administrator |      02215 |
-| 940 |       941 |    20 | M        | student       |      97229 |
-| 941 |       942 |    48 | F        | librarian     |      78209 |
-| 942 |       943 |    22 | M        | student       |      77841 |
+|      | user_id |  age | gender | occupation    | zip_code |
+| ---: | ------: | ---: | :----- | :------------ | -------: |
+|  933 |     934 |   61 | M      | engineer      |    22902 |
+|  934 |     935 |   42 | M      | doctor        |    66221 |
+|  935 |     936 |   24 | M      | other         |    32789 |
+|  936 |     937 |   48 | M      | educator      |    98072 |
+|  937 |     938 |   38 | F      | technician    |    55038 |
+|  938 |     939 |   26 | F      | student       |    33319 |
+|  939 |     940 |   32 | M      | administrator |    02215 |
+|  940 |     941 |   20 | M      | student       |    97229 |
+|  941 |     942 |   48 | F      | librarian     |    78209 |
+|  942 |     943 |   22 | M      | student       |    77841 |
 ### Step 6. What is the number of observations in the dataset?
 ```python
 user_id.info()
@@ -321,40 +321,40 @@ user_id['occupation'].value_counts().count()
 ```python
 user_id.groupby(['occupation']).count().sort_values(['user_id'], ascending = False).head(1)
 ```
-| occupation   |   user_id |   age |   gender |   zip_code |
-|:-------------|----------:|------:|---------:|-----------:|
-| student      |       196 |   196 |      196 |        196 |
+| occupation | user_id |  age | gender | zip_code |
+| :--------- | ------: | ---: | -----: | -------: |
+| student    |     196 |  196 |    196 |      196 |
 ### Step 14. Summarize the DataFrame.
 ```python
 user_id.describe()
 ```
-|       |   user_id |      age |
-|:------|----------:|---------:|
-| count |   943     | 943      |
-| mean  |   472     |  34.052  |
-| std   |   272.365 |  12.1927 |
-| min   |     1     |   7      |
-| 25%   |   236.5   |  25      |
-| 50%   |   472     |  31      |
-| 75%   |   707.5   |  43      |
-| max   |   943     |  73      |
+|       | user_id |     age |
+| :---- | ------: | ------: |
+| count |     943 |     943 |
+| mean  |     472 |  34.052 |
+| std   | 272.365 | 12.1927 |
+| min   |       1 |       7 |
+| 25%   |   236.5 |      25 |
+| 50%   |     472 |      31 |
+| 75%   |   707.5 |      43 |
+| max   |     943 |      73 |
 ### Step 15. Summarize all the columns
 ```python
 user_id.describe(include= 'all')
 ```
-|        |   user_id |      age | gender   | occupation   |   zip_code |
-|:-------|----------:|---------:|:---------|:-------------|-----------:|
-| count  |   943     | 943      | 943      | 943          |        943 |
-| unique |   nan     | nan      | 2        | 21           |        795 |
-| top    |   nan     | nan      | M        | student      |      55414 |
-| freq   |   nan     | nan      | 670      | 196          |          9 |
-| mean   |   472     |  34.052  | nan      | nan          |        nan |
-| std    |   272.365 |  12.1927 | nan      | nan          |        nan |
-| min    |     1     |   7      | nan      | nan          |        nan |
-| 25%    |   236.5   |  25      | nan      | nan          |        nan |
-| 50%    |   472     |  31      | nan      | nan          |        nan |
-| 75%    |   707.5   |  43      | nan      | nan          |        nan |
-| max    |   943     |  73      | nan      | nan          |        nan |
+|        | user_id |     age | gender | occupation | zip_code |
+| :----- | ------: | ------: | :----- | :--------- | -------: |
+| count  |     943 |     943 | 943    | 943        |      943 |
+| unique |     nan |     nan | 2      | 21         |      795 |
+| top    |     nan |     nan | M      | student    |    55414 |
+| freq   |     nan |     nan | 670    | 196        |        9 |
+| mean   |     472 |  34.052 | nan    | nan        |      nan |
+| std    | 272.365 | 12.1927 | nan    | nan        |      nan |
+| min    |       1 |       7 | nan    | nan        |      nan |
+| 25%    |   236.5 |      25 | nan    | nan        |      nan |
+| 50%    |     472 |      31 | nan    | nan        |      nan |
+| 75%    |   707.5 |      43 | nan    | nan        |      nan |
+| max    |     943 |      73 | nan    | nan        |      nan |
 ### Step 16. Summarize only the occupation column
 ```python
 user_id['occupation'].describe()

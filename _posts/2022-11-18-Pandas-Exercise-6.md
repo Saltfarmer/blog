@@ -1,5 +1,5 @@
 ---
-title: "Pandas Exercise 5 : Stats"
+title: "Pandas Exercise 6 : Stats"
 header :
   teaser: /assets/images/pandas-head.jpg
 

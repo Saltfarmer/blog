@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Saltfarmer's Blog"
 title_separator          : "-"
 subtitle                 : "Personal blog for random stuff that I am interested with" # site tagline that appears below site title in masthead
-name                     : "Gama Candra Tri K"
+name                     : "Gama Candra Tri Kartika"
 description              : "Fans of code and dote"
 url                      : "https://saltfarmer.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"

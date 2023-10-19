@@ -28,7 +28,7 @@ teaser                   : "assets/teaser.jpg" # path of fallback teaser image, 
 logo                     : "assets/GC3K.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "Saltfarmer Blog" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
-words_per_minute         : 200
+words_per_minute         : 180
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
@@ -81,7 +81,7 @@ baidu_site_verification  :
 
 # Social Sharing
 twitter:
-  username               : 
+  username               : "https://twitter.com/Candra_gctk"
 facebook:
   username               :
   app_id                 :
@@ -104,7 +104,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Gama Candra Tri K"
+  name             : "Gama Candra Tri Kartika"
   avatar           : "/assets/slebew.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Fans of codes and dotes"
   location         : "Utrecht, The Netherlands"

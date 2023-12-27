@@ -24,7 +24,7 @@ description              : "Fans of code and dote"
 url                      : "https://saltfarmer.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
 repository               : "github.com/saltfarmer" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "assets/teaser.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : "assets/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "assets/GC3K.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "Saltfarmer Blog" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Gama Candra Tri Kartika"
-  avatar           : "/assets/slebew.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/gamma.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Fans of codes and dotes"
   location         : "Utrecht, The Netherlands"
   email            : "candragctk17@gmail.com"

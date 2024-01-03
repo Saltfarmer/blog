@@ -1,7 +1,7 @@
 ---
 title: "Creating a shortcut for Jupyter Notebook"
 header :
-  teaser: https://www.google.com/url?sa=i&url=https%3A%2F%2Fhkalabs.com%2Fmengintegrasikan-r-dengan-jupyter-notebook%2F&psig=AOvVaw1CIQL8kTNAQVg5rFyTXmdK&ust=1704372370067000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPD-_YCgwYMDFQAAAAAdAAAAABAI
+  teaser: /assets/images/JupyterBanner.jpg
 comments : true
 share : true
 categories:

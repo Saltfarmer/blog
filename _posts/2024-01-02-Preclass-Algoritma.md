@@ -1,6 +1,7 @@
 ---
 title: "Preclass Bootcamp Algorit.ma BFLP Audit"
 header :
+  image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png
 comments : true
 share : true
@@ -9,6 +10,7 @@ categories:
 tags:
   - Anaconda
   - Python
+  - Algoritma
 
 ---
 

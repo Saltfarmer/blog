@@ -2568,7 +2568,7 @@ stock['Close'].plot()
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_36_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_36_1.png)
     
 
 
@@ -3502,7 +3502,7 @@ stock['Volume'][-50:].plot()
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_53_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_53_1.png)
     
 
 
@@ -3547,7 +3547,7 @@ stock['Volume'].tail(50).plot()
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_58_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_58_1.png)
     
 
 
@@ -3668,7 +3668,7 @@ bris_sept.plot()
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_61_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_61_1.png)
     
 
 
@@ -3691,7 +3691,7 @@ bris_sept.drop(columns='Volume').plot(style='.-')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_63_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_63_1.png)
     
 
 
@@ -3764,7 +3764,7 @@ coef_of_var
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_69_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_69_1.png)
     
 
 
@@ -3783,7 +3783,7 @@ coef_of_var.plot(kind='bar')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_70_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_70_1.png)
     
 
 
@@ -3813,7 +3813,7 @@ plt.show()
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_72_0.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_72_0.png)
     
 
 
@@ -3832,7 +3832,7 @@ coef_of_var.sort_values(ascending = False).plot(kind='bar')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_73_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_73_1.png)
     
 
 
@@ -3856,7 +3856,7 @@ bbri.hist().xaxis.set_major_formatter('{x:1.0f}')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_76_0.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_76_0.png)
     
 
 
@@ -4129,7 +4129,7 @@ avg_close.plot(kind = 'bar')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_83_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_83_1.png)
     
 
 
@@ -4325,7 +4325,7 @@ close_mean.plot(kind = 'bar')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_92_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_92_1.png)
     
 
 
@@ -4348,7 +4348,7 @@ close_mean.loc[months,].plot(kind='bar')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_94_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_94_1.png)
     
 
 
@@ -4938,4 +4938,4 @@ summary_stock.plot(kind = 'bar')
 
 
     
-![png](https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/blob/main/3_dwv-dev/output_102_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_dwv-dev/output_102_1.png)

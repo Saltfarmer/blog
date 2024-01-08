@@ -1,5 +1,5 @@
 ---
-title: "Day 2 Algorit.ma : Practical Statistics"
+title: "Day 3 Algorit.ma : Practical Statistics"
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png
@@ -8,11 +8,10 @@ share : true
 categories:
   - Data Science
 tags:
-  - Anaconda
   - Python
   - Algoritma
   - Pandas
-  - Visualization
+  - Statistics
 
 ---
 
@@ -54,7 +53,7 @@ Secara umum, Practical Statistics terbagi 2, masing-masing membantu kita dalam h
 
 * **Inferential Statistics**: menyimpulkan sesuatu tentang kondisi di lapangan, berdasarkan data yang kita punya (sample -> population).
 
-![](assets/PS.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/PS.png)
 
 Untuk lebih memahami *practical statistics*, mari kita melakukan analisis menggunakan data asli.
 
@@ -408,7 +407,7 @@ $$var = \frac{\sum(X_i - \bar{X})^2}{n-1}$$
 - Variance tidak dapat diinterpretasikan karena satuannya dalam kuadrat.
 - Fungsi di Python: `var()`
 
-![](assets/var.PNG)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/var.PNG)
 
 **Contoh:**
 
@@ -534,7 +533,7 @@ Distribusi data numerik pada umumnya divisualisasikan dengan `boxplot()`, yang m
 - Whisker: pagar bawah dan atas (PENTING: hati-hati, nilai ini bukan nilai minimum dan maksimum data)
 - Data outliers: nilai ekstrim data yang berada di luar pagar bawah dan atas
 
-![](assets/boxplot.PNG)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/boxplot.PNG)
 
 Beberapa hal yang harus diperhatikan dalam boxplot:
 
@@ -571,7 +570,7 @@ cc['Rating'].plot.box(vert=False)
 
 
     
-![png](output_45_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/output_45_1.png)
     
 
 
@@ -819,7 +818,7 @@ plt.show()
 
 
     
-![png](output_48_0.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/output_48_0.png)
     
 
 
@@ -864,7 +863,7 @@ cc[['Rating', 'Balance']].plot(kind='scatter', x='Rating', y='Balance')
 
 
     
-![png](output_52_1.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/output_52_1.png)
     
 
 
@@ -893,7 +892,7 @@ ax2.scatter(cc.Rating, cc.Balance);
 
 
     
-![png](output_54_0.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/output_54_0.png)
     
 
 
@@ -905,7 +904,7 @@ Covariance menunjukkan bagaimana variansi 2 data (variable yang berbeda) bergera
 * Formula Covariance: $$Cov(X, Y) = \frac{1}{n-1}\sum\limits^n_{i=1}(X_i - \mu_X)(Y_i - \mu_Y)$$
 * Fungsi di Python: `cov()`
 
-![](assets/covariance-positive-vs-negative.jpg)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/covariance-positive-vs-negative.jpg)
 
 - Nilai covariance positif mengindikasikan pergerakan nilai yang searah / berbanding lurus.
 - Nilai covariance negatif mengindikasikan pergerakan nilai yang berbalik arah.
@@ -976,7 +975,7 @@ $$Cor(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}$$
 * Fungsi di Python: `corr()`
 
 - Nilai korelasi mengindikasikan kekuatan hubungan antara dua variable numerik sebagai berikut:
-![](assets/correlation-coef.jpg)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/correlation-coef.jpg)
 
 Bila korelasi dua variable numerik mendekati:
   - -1 artinya korelasi negatif kuat
@@ -1048,7 +1047,7 @@ cc.plot.scatter(x='Income',
 
 
     
-![png](output_64_0.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/output_64_0.png)
     
 
 
@@ -1064,13 +1063,13 @@ sns.heatmap(cc.select_dtypes(include='number').corr(), # nilai korelasi
 
 
     
-![png](output_66_0.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/output_66_0.png)
     
 
 
 Ilustrasi correlation:
 
-![](assets/correlation.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/correlation.png)
 
 ### Knowledge Check
 
@@ -1114,13 +1113,13 @@ Dari pernyataan berikut, jawablah benar atau salah. Apabila salah, tuliskan pern
 
 Inferential Statistics membantu kita **menarik kesimpulan tentang keseluruhan data (populasi) dengan menggunakan sebagian informasinya saja (sampel)**
 
-![](assets/statistical_cycle.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/statistical_cycle.png)
 
 Setiap data memiliki distribusi. Distribusi data yang spresial dan berperan dalam inferential statistics adalah **distribusi normal**
 
 ## Normal Distribution
 
-![](assets/normal-distribution.jpg)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/normal-distribution.jpg)
 
 Karakteristik:
 
@@ -1255,7 +1254,7 @@ plt.axvline(x.mean(), color = "red", linestyle = "--"); #garis rata-rata
 
 
     
-![png](output_80_0.png)
+![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/output_80_0.png)
     
 
 
@@ -1389,7 +1388,7 @@ Z = alpha/2
 - `norm.cdf()` untuk mencari peluang (x) dari sebuah titik/nilai z di distribusi normal baku (q)
 - `norm.ppf()` untuk mencari titik/nilai z di disribusi normal baku (q) dari sebuah peluang (x)
 
-![](assets/two-tailed.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/two-tailed.png)
 
 4. Hitung confidence interval
 
@@ -1562,7 +1561,7 @@ Daerah/area yang kita ingin cari dilihat dari tanda ketidaksamaan di hipotesis a
 
 * $H_1$: Penggunaan influencer meningkatkan customer engagement (>)
 
-![](assets/p-value.PNG)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/p-value.PNG)
 
 **c. Bandingkan P-value dengan alpha**
 
@@ -1638,7 +1637,7 @@ Uji hipotesis menggunakan T-test jika:
 
 Bentuk t-distribution mirip dengan normal distribution, hanya saja lebih landai ketika jumlah sampel sedikit:
 
-![](assets/t-distribution.jpg)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/t-distribution.jpg)
 
 **Contoh Kasus**
 
@@ -1724,7 +1723,7 @@ Dengan menggunakan tingkat kepercayaan 95% dapat disimpulkan penentuan $H_0$ dit
 
 **Summary penggunaan hipotesis testing:**
 
-![](assets/uji_hipotesis_mean.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/3_ps-main/assets/uji_hipotesis_mean.png)
 
 # Further Readings
 

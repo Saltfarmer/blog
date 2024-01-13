@@ -63,7 +63,7 @@ Logistic Regression merupakan salah satu metode klasifikasi yang konsepnya hampi
 - Linier regresion: y (numerik) -> **-inf, + inf**
 - Logistic regression: y (peluang) -> **0, 1**
 
-![](assets/data-science-programming-contrast-linear-logistic-regression.jpg)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/data-science-programming-contrast-linear-logistic-regression.jpg)
 
 📝 Hasil dari regresi logistik dapat digunakan untuk:
 - keperluan interpretasi
@@ -76,7 +76,7 @@ Suatu regresi yang dapat menghasilkan nilai (-inf sd. +inf), lalu dikonversikan 
   - nilai dapat dikonversikan antara **log of odds** - **odds** - **peluang**:
 
 <div>
-<img src="assets/linear_vs_logistic_regression.png" width="700"/>
+<img src="https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/linear_vs_logistic_regression.png" width="700"/>
 </div>
 
 ## Basic Intuition: Probability
@@ -210,7 +210,7 @@ expit(log_odds_fraud)
 
 
 
-![](assets/prob_to_logofodds_sigmoid.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/prob_to_logofodds_sigmoid.png)
 
 ## Logistic Regression Modeling Workflow
 
@@ -971,7 +971,7 @@ sns.heatmap(fraud_clean.select_dtypes(include=['int64', 'float64']).corr(), # ni
 
 
     
-![png](output_41_0.png)
+![png]([output_41_0.png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/output_41_0.png))
     
 
 
@@ -1192,7 +1192,7 @@ fraud_enc
 
 Lantas, bagaimana cara mengetahui apakah model yang kita buat telah baik dalam memprediksi data baru? Di sinilah mengapa kita melakukan Train-test splitting. Kita membagi data kita menjadi 2 kelompok, yaitu data `train` dan `test`.
 
-<img src="assets/test-train.png" width="600"/>
+<img src="https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/test-train.png" width="600"/>
 
 - Data `train`: Data yang model gunakan untuk training.
 
@@ -1592,7 +1592,7 @@ Setelah dilakukan prediksi menggunakan model, masih ada saja prediksi yang salah
     * FP (False Positive) = Ketika kita memprediksi kelas `positive`, namun data aktualnya `negative`
     * FN (False Negative) = Ketika kita memprediksi kelas `negative`, namun data aktualnya `positive`
     
-![](assets/tnfp.PNG)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/tnfp.PNG)
 
 
 ```python
@@ -1688,7 +1688,7 @@ Dalam bisnis/real-case, tak selamanya kita hanya mementingkan metric accuracy. S
 
 Seberapa banyak yang **benar diprediksi positif** dari yang **re**alitynya (aktualnya) positif.
 
-![](assets/recall.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/recall.png)
 
 $$
 Recall = \frac{TP}{TP + FN}
@@ -1711,7 +1711,7 @@ metrics.recall_score(y_test, pred_label)
 
 Seberapa banyak yang **benar diprediksi positif** dari yang di**pre**diksi positif.
 
-![](assets/precision.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/precision.png)
 
 $$
 Precision = \frac{TP}{TP + FP}
@@ -2311,7 +2311,7 @@ print(f'Precision score: {precision_score(y_test, knn_pred)}')
 
 # Logistic Regression & k-NN Comparation
 
-![](assets/Karakter.png)
+![](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/5.%20Classification%20Model/assets/Karakter.png)
 
 # Glossary & Additional Information
 

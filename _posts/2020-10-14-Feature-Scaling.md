@@ -32,7 +32,7 @@ There are some ways we can do for feature scaling
 Transform features by scaling each feature to a given range. This estimator scales and translates each feature individually such that it is in the given range on the training set mostly between zero and one. This Scaler shrinks the data within the range of -1 to 1 if there are negative values. We can set the range like [0,1] or [0,5] or [-1,1]. The general formula for [0,1] min-max is
 
 $$
-x={\frac  {x-{\text{min}}(x)}{{\text{max}}(x)-{\text{min}}(x)}}
+x={\frac{x-{\text{min}}(x)}{{\text{max}}(x)-{\text{min}}(x)}}
 $$
 
 

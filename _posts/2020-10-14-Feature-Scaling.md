@@ -11,10 +11,8 @@ tags:
   - Preprocessing
   - Pandas
   - Sklearn
-
 ---
-
-Numerical data is already digestible by machine learning or mathematical formula. But it doesn't mean that is no longer need feature engineering or preprocessing. If there is a vast difference in the range say few ranging in thousands and few ranging in the tens, and it makes the underlying assumption that higher ranging numbers have superiority of some sort. So these more significant number starts playing a more decisive role while training the model. The machine learning algorithm works on numbers and does not know what that number represents. A weight of 10 grams and a price of 10 dollars represents completely two different things, which doesn't make any sense for human. 
+Numerical data is already digestible by machine learning or mathematical formula. But it doesn't mean that is no longer need feature engineering or preprocessing. If there is a vast difference in the range say few ranging in thousands and few ranging in the tens, and it makes the underlying assumption that higher ranging numbers have superiority of some sort. So these more significant number starts playing a more decisive role while training the model. The machine learning algorithm works on numbers and does not know what that number represents. A weight of 10 grams and a price of 10 dollars represents completely two different things, which doesn't make any sense for human.
 
 Another reason why feature scaling is applied is that few algorithms like Neural network gradient descent converge much faster with feature scaling than without it. In many algorithms, when we desire faster convergence, scaling is a "must do" in Neural Network. The machine learning algorithm which sensitive to the relative scales of features,usually uses the numeric values of the features rather than say their rank. Some examples of algorithms where feature scaling matters are :
 
@@ -32,9 +30,8 @@ There are some ways we can do for feature scaling
 Transform features by scaling each feature to a given range. This estimator scales and translates each feature individually such that it is in the given range on the training set mostly between zero and one. This Scaler shrinks the data within the range of -1 to 1 if there are negative values. We can set the range like [0,1] or [0,5] or [-1,1]. The general formula for [0,1] min-max is
 
 $$
-x={\frac{x-{\text{min}}(x)}{{\text{max}}(x)-{\text{min}}(x)}}
+x = \frac{x - \text{min}(x)}{\text{max}(x) - \text{min}(x)}
 $$
-
 
 This Scaler responds well if the standard deviation is small and when a distribution is not Gaussian ( having the shape of a normal curve or a normal distribution). In the other hand, this Scaler is sensitive to outliers.
 
@@ -69,9 +66,11 @@ Before you take any conclusion, lets continue to other methods
 ## Standarization or Variance Scaling
 
 The Standard Scaler assumes data is normally distributed within each feature and scales them such that the distribution centered around 0, with a standard deviation of 1. Centering and scaling happen independently on each feature by computing the relevant statistics on the samples in the training set. If data is not normally distributed, this is not the best Scaler to use. The general formula is
+
 $$
 x' = \frac{x - \bar{x}}{\sigma}
 $$
+
 where $\sigma$ is Standard Deviation
 
 ```python
@@ -87,6 +86,7 @@ sns.distplot(stan)
 ## Max Abs Scaler
 
 Scale each feature by its maximum absolute value. This estimator scales and translates each feature individually such that the maximal absolute value of each feature in the training set is 1.0. It does not shift/center the data and thus does not destroy any sparsity (the condition of not having enough of something). On positive-only data, this Scaler behaves similarly to Min Max Scaler and, therefore, also suffers from the presence of significant **outliers**. The general formula is
+
 $$
 x' = \frac{x}{|\max{x}|}
 $$

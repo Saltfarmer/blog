@@ -12,7 +12,7 @@
 
 # theme                  : minimal-mistakes-jekyll
 remote_theme             : "mmistakes/minimal-mistakes@4.26.2" 
-minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -25,7 +25,7 @@ url                      : "https://saltfarmer.github.io" # the base hostname & 
 baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
 repository               : "github.com/saltfarmer" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "assets/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "assets/GC3K.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "assets/BGLogoGC3K.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "Saltfarmer Blog" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 180

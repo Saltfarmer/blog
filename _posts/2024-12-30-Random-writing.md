@@ -1,3 +1,4 @@
+---
 title: "Long time not writing, lets start"
 header :
 comments : true
@@ -8,8 +9,7 @@ categories:
 - Journal
 - Artificial Intelligence
 - Prompting
-
-
+---
 # Long time not writing, lets start
 
 ## Introduction

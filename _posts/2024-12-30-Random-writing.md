@@ -1,15 +1,15 @@
 ---
 title: "Long time not writing, lets start"
-header :
 comments : true
 share : true
 categories:
+    - Random
+    - Journal
+    - Artificial Intelligence
+    - Prompting
 
-- Random
-- Journal
-- Artificial Intelligence
-- Prompting
 ---
+
 # Long time not writing, lets start
 
 ## Introduction

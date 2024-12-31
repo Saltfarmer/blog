@@ -7,34 +7,45 @@ share : true
 categories:
     - Journal
 ---
-Well hello again, it's me the usual salty guys that start to write again. Today I wanted to share that I finish "good habit" in 2 days in a row LOL. Basically my habit that i need to track is
 
-* Absent
-* Morning Jog
-* Drink Vitamin
-* Abs exercise
-* Duolingo
-* Reading for at least 30 minutes
-* Facecare
+# Back on Track: 2 Days of Good Habits and Counting!
 
-The only stuff that I havent do it yet is doing facecare because i usually do it before i sleep. About the Duolingo tho, I'd like to learn new language but Duolingo isnt kind of fun because 5 mistakes and you are out. It's more like bragging game instead of studying tools so far I've felt like. So I might change those habits. However I felt like reading is getting easier because I got the part where i got hooked when I am reading novels.
+Hey there, it's your favorite salty guy here, and I'm thrilled to share that I've managed to stick to my good habits for two days in a row! I know, I know, it's not a record-breaking achievement, but hey, it's a start, right?
 
-## New year but nothing special 
+So, what are these habits I'm trying to cultivate? Well, I've got a list:
 
-Funny thing is I discuss it with my coworker why we should celebrate new year? Isnt it just another day in our life? I mean compared to lets say Independence day or Eid, there is no like historical enjoyment about new year compared to other holiday. Maybe my writing assistant can explain it better hahaha.
+* Being present and accounted for (no absent days!)
+* Morning jogs to get the blood pumping
+* Drinking vitamins to keep the engine running
+* Abs exercises to get those coveted six-packs
+* Learning a new language with Duolingo (more on this later)
+* Reading for at least 30 minutes a day to escape reality
+* Facecare before bed to keep the skin looking fresh
 
-So I have plan for new year actually, first thing first I would like to do morning run a little bit later at Gelora Bung Karno. Maybe 4-5 laps and force myself till im tired. I also conside i should bring my bagpack to run so I can bring my iPad to read a book in a cafe. But now I am thinking about it its really inconvenience.
+The only habit I haven't quite nailed yet is facecare, but that's because I usually do it right before bed. No biggie!
 
-## Thing I might to do or need to do
+Now, about Duolingo... I'm not sure if it's just me, but I find it more like a bragging game than a studying tool. I mean, five mistakes and you're out? That's not exactly the most encouraging way to learn a new language. Maybe I'll have to explore other options or find ways to make it more enjoyable.
 
-* [ ] Run in GBK in the morning tomorrow
-* [ ] Laundry
-* [ ] Fixing my blog
-* [ ] Creating a video intro and outro for my Youtube project
+On a more positive note, I've been getting into reading again, and it's been a game-changer! I've found myself getting hooked on novels, and it's amazing how much more enjoyable it is when you're invested in the story.
 
-I guess thats my plan for tomorrow. Of course I wont forget my habit. Now time to share about cobalt.tools, quiet useful site and FREE.
+## The New Year: Just Another Day?
 
+I had an interesting conversation with a coworker the other day about why we celebrate the new year. Is it really that special? I mean, compared to holidays like Independence Day or Eid, there doesn't seem to be much historical significance to it. Maybe my writing assistant can shed some light on this (hint, hint!).
 
+## Plans for the New Year
+
+Despite my skepticism about the new year, I do have some plans to make the most of it. Tomorrow, I'm aiming to go for a morning run at Gelora Bung Karno, maybe 4-5 laps, and push myself until I'm tired. I'm also thinking of bringing my backpack with my iPad so I can read a book in a cafe afterward. However, the more I think about it, the more I realize it might be a bit of a hassle.
+
+## To-Do List
+
+Here are some things I need to tackle tomorrow:
+
+* [ ] Go for a morning run at GBK
+* [ ] Do laundry (because, adulting)
+* [ ] Fix my blog (it's been a while!)
+* [ ] Create a video intro and outro for my YouTube project (exciting times ahead!)
+
+Of course, I won't forget about my daily habits. Now, let's talk about something cool – cobalt.tools! It's a super useful site, and the best part? It's free!
 
 # **Cobalt.Tools: A Comprehensive Overview**
 
@@ -46,7 +57,7 @@ Cobalt.Tools was created with public benefit in mind, rooted in the belief that 
 
 The ongoing success of Cobalt.Tools is made possible by its long-standing partnership with RoyaleHosting.net, whose robust infrastructure supports the platform’s main instances. This collaboration ensures that Cobalt.Tools remains a dependable and efficient service for its growing user base. Whether you’re saving a memorable video or archiving a valuable audio clip, Cobalt.Tools delivers a secure and efficient experience, embodying the principles of accessibility and user-centric design.
 
-Thanks for reading my blog and stay tunes because I will post a blog everyday
+Stay tuned for more updates, and thanks for reading!
 
 > True freedom lies in the unbounded pursuit of knowledge. When knowledge is free, it becomes the foundation of progress, the beacon of equality, and the birthright of every mind eager to explore the infinite.
 >

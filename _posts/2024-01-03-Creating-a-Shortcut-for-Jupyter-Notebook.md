@@ -5,13 +5,11 @@ header :
 comments : true
 share : true
 categories:
-  - Data Science
+  - Tips
 tags:
   - Anaconda
   - Jupyter Notebook
-
 ---
-
 This is a quick post on how to create a shortcut for Jupyter Notebook. In this case, you need to connect your PATH of your Python Conda. Here's how:
 
 1. Open your "Edit the system environment variables"
@@ -36,5 +34,3 @@ Type in the following: `cmd /k conda activate 'envName' & jupyter notebook`
 ## (Optional) add the icon
 
 You can get the icon of jupyter notebook [here](https://icon-icons.com/icon/jupyter-app/161280) and then choose `ICO` part
-
-

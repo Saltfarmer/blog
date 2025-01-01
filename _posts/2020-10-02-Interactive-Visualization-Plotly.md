@@ -5,16 +5,13 @@ header :
 comments : true
 share : true
 categories:
-  - Python
+  - Visualization
 tags:
   - Machine Learning
   - Python
   - Matplotlib
   - Plotly
- 
-
 ---
-
 The plotly Python library is an interactive, open-source plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases. Built on top of the Plotly JavaScript library (plotly.js), plotly enables Python users to create beautiful interactive web-based visualizations that can be displayed in Jupyter notebooks, saved to standalone HTML files, or served as part of pure Python-built web applications using Dash. However, Cufflinks connects Plotly with pandas to produce the interactive data visualizations.
 
 Let's get start with
@@ -55,7 +52,7 @@ flights.iplot(kind='line', y='passengers')
     <img src="https://i.ibb.co/XV381jr/ezgif-2-1791205089be.gif">
 </figure>
 
-This is really useful for understanding TimeSeries data 
+This is really useful for understanding TimeSeries data
 
 ## Scatter Plots
 
@@ -69,5 +66,3 @@ iris.iplot(kind ='scatter', x ='sepal_length', y ='sepal_width', mode ='markers'
 <figure>
     <img src="https://i.ibb.co/zrX1SKX/ezgif-2-a281e19dfc8e.gif">
 </figure>
-
-

@@ -5,16 +5,13 @@ header :
 comments : true
 share : true
 categories:
-  - Python
+  - Visualization
 tags:
   - Machine Learning
   - Python
   - Matplotlib
   - Seaborn
- 
-
 ---
-
 Multiplot grid are general types of plots that allow you to map plot types to rows and columns of a grid, this helps you create similar plots separated by features.
 
 ## Facet Grids
@@ -48,7 +45,7 @@ g.map(sns.histplot, "total_bill")
 
 ## Pair Grids
 
-This Pair Grids let you visualize plots of every combination of various attributes together, so you can look for interesting patterns between features. The PairGrid does require further setup, but it also provides greater control of the output. This comes in the form of specifying the plots to be used in relation to the grid. It feels good when the best plot form can be used for the data relation in question. 
+This Pair Grids let you visualize plots of every combination of various attributes together, so you can look for interesting patterns between features. The PairGrid does require further setup, but it also provides greater control of the output. This comes in the form of specifying the plots to be used in relation to the grid. It feels good when the best plot form can be used for the data relation in question.
 
 Let see the example
 
@@ -85,8 +82,3 @@ g.plot_marginals(sns.histplot, kde=True)
 ```
 
 ![](https://i.ibb.co/qW4PyP9/joint1.png)
-
-
-
-
-

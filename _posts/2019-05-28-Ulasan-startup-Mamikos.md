@@ -5,15 +5,14 @@ header:
 comments : true
 share : true
 categories:
-  - Startup
+  - Joournal
 tags:
   - Startup
   - Informatika Sosial
 ---
-
 Mencari info kost adalah sesuatu yang wajib dilakukan oleh anak rantau. Melanjutkan pendidikan di luar kota atau bekerja di luar kota tentunya sudah bukan hal yang aneh lagi saat ini. Mereka yang memutuskan untuk merantau haruslah hidup di luar kota asalnya dan tinggal di hunian sementara seperti di kamar kost. Mencari kamar kost yang sesuai dengan keinginan dan budget bukanlah hal yang sepele. Di kota-kota yang banyak didatangi oleh perantau seperti Jogjakarta, Bandung, Surabaya, dan lain sebagainya, pasti tersedia ratusan rumah kost yang tersebar di daerah-daerah strategis seperti di dekat-dekat kampus hingga di daerah pelosok. Untuk dapat menyewa kost yang sesuai dengan keinginan, dibutuhkan waktu cari info dan waktu survey yang tidak sebentar.
 
-Bagi perantau yang baru pertama kali datang ke kota yang akan ditinggalinya, biasanya proses pencarian kost akan dimulai dengan cara survey dan mendatangi satu per satu kos-kosan yang di pagarnya terdapat tulisan “terima kost”. Hal ini tentunya membutuhkan waktu yang tidak sebentar dan tidak bisa dilakukan apabila perantau membutuhkan kost secepatnya. Cara lain yang dapat dilakukan perantau dalam mencari kost adalah meminta tolong saudara atau kenalan di kota rantau untuk mencarikan infokost dan disurvey sekalian. Akan tetapi, tidak semua orang memiliki kenalan di kota rantau. Jika tak ada kenalan seperti ini, sepertinya mencari kos-kosan harus diupayakan seorang diri. 
+Bagi perantau yang baru pertama kali datang ke kota yang akan ditinggalinya, biasanya proses pencarian kost akan dimulai dengan cara survey dan mendatangi satu per satu kos-kosan yang di pagarnya terdapat tulisan “terima kost”. Hal ini tentunya membutuhkan waktu yang tidak sebentar dan tidak bisa dilakukan apabila perantau membutuhkan kost secepatnya. Cara lain yang dapat dilakukan perantau dalam mencari kost adalah meminta tolong saudara atau kenalan di kota rantau untuk mencarikan infokost dan disurvey sekalian. Akan tetapi, tidak semua orang memiliki kenalan di kota rantau. Jika tak ada kenalan seperti ini, sepertinya mencari kos-kosan harus diupayakan seorang diri.
 
 <figure>
     <img src="https://banten.co/wp-content/uploads/2016/06/rumah-kos.jpg">
@@ -37,10 +36,9 @@ Untuk masalah fitur, fitur-futur yang ada di aplikasi Mamikos ini sudah cukup le
 Hal yang membedakan Mamikos dengan aplikasi pencari kost lainnya adalah dalam soal akurasi data. Data-data kost yang ada di Mamikos tak perlu Anda ragukan kebenarannya karena Mamikos menggunakan agen surveyor yang turun langsung ke lapangan dan bertemu dengan pemilik kost. Mereka ini jugalah yang mengambil foto-foto seputar kamar kost yang nantinya ditampilkan dalam aplikasi. Jadi, jangan takut mendapatkan info kost yang hoax karena di Mamikos semua datanya 100% asli dan terverifikasi. Selain soal data, Mamikos juga memiliki keunggulan dalam soal sistem pencarian kost. Fitur pencarian kost yang ada di aplikasi ini lebih mudah dan terintegrasi. Alhasil, Anda bisa mencari kost jenis apapun dan di manapun lokasinya. Anda bisa mencari kos-kosan berdasarkan kota, wilayah, atau bahkan dengan patokan dekat kampus atau sekolah. Mamikos juga menggunakan sistem GPS sehingga bisa mendeteksi lokasi-lokasi kost di dekat Anda saat itu juga. Hal lain yang membedakan Mamikos dengan aplikasi pencarian kost yang lainnya adalah kemudahan untuk menggunakan aplikasinya karena Mamikos tak hanya tersedia untuk user Android saja namun juga bisa diunduh di AppStore untuk pengguna iOS. Mamikos juga tersedia dalam bentuk website sehingga bisa diakses menggunakan komputer atau laptop.
 Mencari kost bukanlah hal yang sepele jika dilakukan tanpa memiliki info kost yang akurat dan terpercaya. Dengan aplikasi Mamikos, kini Anda tak perlu repot lagi mencari infokost di internet yang belum tentu 100% benar. Aplikasi Mamikos akan membantu Anda untuk mencari kost sesuai dengan keinginan dan budget Anda dengan mudah.
 
-Upaya yang perlu dilakukan Mamikos berikutnya untuk mengembangkan Startup yaitu 
+Upaya yang perlu dilakukan Mamikos berikutnya untuk mengembangkan Startup yaitu
 
 •	Membuat komunitas dan asosiasi para pemilik kos per daerah (terutama daerah yang memiliki banyak pelajar)
 •	Menambahkan fitur “Jarak ke kampus/kantor/sekolah” untuk preferensi tambahan saat memilih kos
 •	Berusaha untuk melakukan survey internal untuk mendapatkan semua informasi tentang lokasi kos yang ada, tidak hanya para pemilik kos yang harus memasukkan informasi ke dalamnya
-•	Mengikutsertakan jenis kontrakan kedalam mamikos 
-
+•	Mengikutsertakan jenis kontrakan kedalam mamikos

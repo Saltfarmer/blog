@@ -1,17 +1,12 @@
 ---
 title: "Long time not writing, lets start"
+header:
+  image:https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNXO5us6A4OAnECK9JeE5q9fTVndMmCZAgSQ&s
 comments : true
 share : true
 categories:
-    - Random
     - Journal
-    - Artificial Intelligence
-    - Prompting
-
 ---
-
-# Long time not writing, lets start
-
 ## Introduction
 
 It's been a while since I last wrote a blog post, and I'm excited to start again. With the new year approaching, I want to revive my old habit of writing and share my thoughts with you. In this post, I'll be writing randomly without a structure, so bear with me.

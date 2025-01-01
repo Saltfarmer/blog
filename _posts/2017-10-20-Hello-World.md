@@ -3,19 +3,16 @@ title: "Hello World"
 comments : true
 share : true
 categories:
-  - Random
+  - Template
 tags:
   - Random
 ---
-
 Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.[^1]
 
 <figure>
 	<a href="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"><img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg"></a>
 	<figcaption><a href="http://www.flickr.com/photos/80901381@N04/7758832526/" title="Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr">Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr</a>.</figcaption>
 </figure>
-
-[^1]: <http://en.wikipedia.org/wiki/Syntax_highlighting>
 
 ### GFM Code Blocks
 
@@ -51,13 +48,14 @@ GitHub Flavored Markdown [fenced code blocks](https://help.github.com/articles/c
 ```
 
 {% highlight html linenos %}
-{% raw %}<nav class="pagination" role="navigation">
+{% raw %}`<nav class="pagination" role="navigation">`
   {% if page.previous %}
-    <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
+    `<a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">`Previous article`</a>`
   {% endif %}
   {% if page.next %}
-    <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
+    `<a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">`Next article`</a>`
   {% endif %}
+
 </nav><!-- /.pagination -->{% endraw %}
 {% endhighlight %}
 
@@ -73,7 +71,7 @@ module Jekyll
       self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
       self.data['tag'] = tag
       tag_title_prefix = site.config['tag_title_prefix'] || 'Tagged: '
-      tag_title_suffix = site.config['tag_title_suffix'] || '&#8211;'
+      tag_title_suffix = site.config['tag_title_suffix'] || '–'
       self.data['title'] = "#{tag_title_prefix}#{tag}"
       self.data['description'] = "An archive of posts tagged #{tag}."
     end
@@ -87,7 +85,7 @@ Indentation matters. Be sure the indent of the code block aligns with the first 
 
 1. Do step 1.
 2. Now do this:
-   
+
    ```ruby
    def print_hi(name)
      puts "Hi, #{name}"
@@ -95,7 +93,6 @@ Indentation matters. Be sure the indent of the code block aligns with the first 
    print_hi('Tom')
    #=> prints 'Hi, Tom' to STDOUT.
    ```
-        
 3. Now you can do this.
 
 ### GitHub Gist Embed
@@ -137,27 +134,27 @@ Multi line blockquote with a cite reference:
 
 > People think focus means saying yes to the thing you've got to focus on. But that's not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I'm actually as proud of the things we haven't done as the things I have done. Innovation is saying no to 1,000 things.
 
-<cite>Steve Jobs</cite> --- Apple Worldwide Developers' Conference, 1997
+`<cite>`Steve Jobs`</cite>` --- Apple Worldwide Developers' Conference, 1997
 {: .small}
 
 ## Tables
 
-| Employee         | Salary |                                                              |
-| --------         | ------ | ------------------------------------------------------------ |
-| [John Doe](#)    | $1     | Because that's all Steve Jobs needed for a salary.           |
-| [Jane Doe](#)    | $100K  | For all the blogging she does.                               |
+| Employee      | Salary |                                                               |
+| ------------- | ------ | ------------------------------------------------------------- |
+| [John Doe](#)    | $1     | Because that's all Steve Jobs needed for a salary.            |
+| [Jane Doe](#)    | $100K  | For all the blogging she does.                                |
 | [Fred Bloggs](#) | $100M  | Pictures are worth a thousand words, right? So Jane × 1,000. |
-| [Jane Bloggs](#) | $100B  | With hair like that?! Enough said.                           |
+| [Jane Bloggs](#) | $100B  | With hair like that?! Enough said.                            |
 
-| Header1 | Header2 | Header3 |
-|:--------|:-------:|--------:|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-|-----------------------------|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-|=============================|
-| Foot1   | Foot2   | Foot3   |
+| Header1                       | Header2 | Header3 |
+| :---------------------------- | :-----: | ------: |
+| cell1                         |  cell2  |   cell3 |
+| cell4                         |  cell5  |   cell6 |
+| ----------------------------- |        |         |
+| cell1                         |  cell2  |   cell3 |
+| cell4                         |  cell5  |   cell6 |
+| ============================= |        |         |
+| Foot1                         |  Foot2  |   Foot3 |
 
 ## Definition Lists
 
@@ -175,33 +172,33 @@ Do It Live
 
 ## Unordered Lists (Nested)
 
-  * List item one 
-      * List item one 
-          * List item one
-          * List item two
-          * List item three
-          * List item four
-      * List item two
-      * List item three
-      * List item four
+* List item one
+  * List item one
+    * List item one
+    * List item two
+    * List item three
+    * List item four
   * List item two
   * List item three
   * List item four
+* List item two
+* List item three
+* List item four
 
 ## Ordered List (Nested)
 
-  1. List item one 
-      1. List item one 
-          1. List item one
-          2. List item two
-          3. List item three
-          4. List item four
+1. List item one
+   1. List item one
+      1. List item one
       2. List item two
       3. List item three
       4. List item four
-  2. List item two
-  3. List item three
-  4. List item four
+   2. List item two
+   3. List item three
+   4. List item four
+2. List item two
+3. List item three
+4. List item four
 
 ## Buttons
 
@@ -266,7 +263,7 @@ The abbreviation CSS stands for "Cascading Style Sheets".
 
 ### Cite Tag
 
-"Code is poetry." ---<cite>Automattic</cite>
+"Code is poetry." ---`<cite>`Automattic`</cite>`
 
 ### Code Tag
 
@@ -274,7 +271,7 @@ You will learn later on in these tests that `word-wrap: break-word;` will be you
 
 ### Strike Tag
 
-This tag will let you <strike>strikeout text</strike>.
+This tag will let you `<strike>`strikeout text`</strike>`.
 
 ### Emphasize Tag
 
@@ -282,11 +279,11 @@ The emphasize tag should _italicize_ text.
 
 ### Insert Tag
 
-This tag should denote <ins>inserted</ins> text.
+This tag should denote `<ins>`inserted`</ins>` text.
 
 ### Keyboard Tag
 
-This scarcely known tag emulates <kbd>keyboard text</kbd>, which is usually styled like the `<code>` tag.
+This scarcely known tag emulates `<kbd>`keyboard text`</kbd>`, which is usually styled like the `<code>` tag.
 
 ### Preformatted Tag
 
@@ -304,7 +301,7 @@ This tag styles large blocks of code.
 
 ### Quote Tag
 
-<q>Developers, developers, developers&#8230;</q> &#8211;Steve Ballmer
+`<q>`Developers, developers, developers&#8230;`</q>` &#8211;Steve Ballmer
 
 ### Strong Tag
 
@@ -312,12 +309,14 @@ This tag shows **bold text**.
 
 ### Subscript Tag
 
-Getting our science styling on with H<sub>2</sub>O, which should push the "2" down.
+Getting our science styling on with H`<sub>`2`</sub>`O, which should push the "2" down.
 
 ### Superscript Tag
 
-Still sticking with science and Albert Einstein's E = MC<sup>2</sup>, which should lift the 2 up.
+Still sticking with science and Albert Einstein's E = MC`<sup>`2`</sup>`, which should lift the 2 up.
 
 ### Variable Tag
 
-This allows you to denote <var>variables</var>.
+This allows you to denote `<var>`variables`</var>`.
+
+[^1]: [http://en.wikipedia.org/wiki/Syntax_highlighting](http://en.wikipedia.org/wiki/Syntax_highlighting)

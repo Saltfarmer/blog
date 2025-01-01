@@ -3,28 +3,31 @@ title: "Web Scraping with BeautifulSoup4"
 header: 
   teaser : /assets/images/BS4.png
 categories:
-  - Python
   - Data Engineering
 tags:
   - Python
   - BeautifulSoup4
 ---
-
 The surge of available data we can find on the internet is insane. With this surge, data analytics has become a hugely important part of the way organizations are run. And while data has many sources, its biggest repository is on the internet. As the fields of big data analytics, artificial intelligence and machine learning grow, everyone needs data analysts who can scrape the web in the most eloquent ways.
 
 ## What is web scraping?
+
 Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites. Web scraping programs may directly access the World Wide Web using the Hypertext Transfer Protocol or a web browser. While web scraping can be done manually by a software user, the term typically refers to automated processes implemented using a bot or a web crawler. It is a form of copying in which specific data is gathered and copied from the web, typically into a central local database or spreadsheet, for later retrieval or analysis. The types of data you can scrape on the internet could be any. Everything that computer programs can read on the internet, also can be scraped. Websites that don't wish to be crawled or found by search engines can use tools like the `robots.txt` file to request bots not index a website or only index portions of it.
 
 ## How does it work?
+
 Every program has different methods. But most of them follow these 3 main principles :
+
 1. Making HTTP Request to the website that you want to scrap
 2. Extracting (or parsing) the code of the website
 3. Find the specific data that you want to scrap this code
 
 ## What tools do you use to scrape the data?
+
 In this post, I want to focus on scraping data using the library from Python. The 3 main library that you can use to scrape data is `Pandas` for data manipulation, `Request` to get access to the websites, and `BeautifulSoup4` to parse the code of the website for scraping data. There might be different alternatives library that you can use to scrape data such as Selenium Web Driver and Scrapy.
 
 ## What is BeautifulSoup4 ?
+
 Beautiful Soup is a Python library for pulling data out of HTML and XML files. It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree. It commonly saves programmers hours or days of work. Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping. Three features make it powerful:
 
 - Beautiful Soup provides a few simple methods and Pythonic idioms for navigating, searching, and modifying a parse tree: a toolkit for dissecting a document and extracting what you need. It doesn't take much code to write an application
@@ -34,6 +37,7 @@ Beautiful Soup is a Python library for pulling data out of HTML and XML files. I
 Beautiful Soup parses anything you give it and does the tree traversal stuff for you. You can tell it "Find all the links", "Find all the links of class external link", "Find all the links whose URLs match "foo.com", or "Find the table heading that's got bold text, then give me that text." Valuable data that was once locked up in poorly-designed websites is now within your reach. Projects that would have taken hours to take only minutes with Beautiful Soup.
 
 ## Quick way to start web scraping with BS4
+
 In this quick tutorial, I will make use of [Toscape](https://toscrape.com/), a web scraping sandbox, ideal for both beginners and advanced scrapers. It’s one of the most popular websites to try out web scraping tools. The website is divided into two parts. We will focus on the first part; a fictional bookstore that offers thousands of books to scrape. [Books.toscrape.com](https://Books.toscrape.com) allows you to practice many basic skills like extracting data – title, stock availability, price, and authors. It only includes static content, so you can use simple libraries like `Requests` and `Beautiful Soup`.
 
 To start with, we need to retrieve the website code using `requests` library in Python. When you send a **GET** request to a website, it returns a file with two things: a response code and the response data. To create a **GET** request, we first import the Python requests library. Making a **GET** request with this library requires one thing: the URL of the website. Try to request something from a non-existing URL and inspect the status code. The response object you have created has multiple properties, of which a new overview is shown at: https://www.w3schools.com/python/ref_requests_response.asp
@@ -80,9 +84,9 @@ Output exceeds the size limit. Open the full output data in a text editor
 <p class="price_color">£38.00</p>
 <p class="instock availability">
 <i class="icon-ok"></i>
-    
+  
         In stock
-    
+  
 </p>
 <form>
 <button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
@@ -127,7 +131,7 @@ A Spy's Devotion (The Regency Spies of London #1)
 1,000 Places to See Before You Die
 ```
 
-Then we are going to store the data with `Pandas`. 
+Then we are going to store the data with `Pandas`.
 
 ```python
 # Import pandas
@@ -168,7 +172,7 @@ books
  "It's Only the Himalayas"]
 ```
 
-Create a data frame based on the list. The code is 
+Create a data frame based on the list. The code is
 
 ```python
 # empty list
@@ -216,5 +220,3 @@ df['price'] = df['price'].astype('float')
 ```
 
 Try to explore the pandas dataframe. What is the most expensive book on the webpage? Share your founding in the new features of my blog below.
-
-  

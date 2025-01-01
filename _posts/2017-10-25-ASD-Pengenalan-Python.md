@@ -5,13 +5,12 @@ header:
 comments : true
 share : true
 categories:
-  - Algoritma dan Struktur Data
+  - Python
 tags:
   - Algoritma dan Struktur Data
   - Python
 ---
-
-Pagi gan, semoga udah pada bangun. Jadi untuk mengisi kegabutan saya di kampus, pada hari ini saya akan mulai posting tentang algoritma dan struktur data. Karena sudah kebanyakan orang *ngoding* di bahasa c++, pada postingan ini dan seterusnya saya akan menjelaskannya dalam bahasa Python3. Kenapa Python ??? karena Python sangat mudah bagi para nubie seperti saya (ya, saya masih noob :v) untuk membaca alur programnya. Lalu kelebihan selanjutnya adalah komunitasnya. Alasannya adalah karena Python adalah basa paling populer di dunia. 
+Pagi gan, semoga udah pada bangun. Jadi untuk mengisi kegabutan saya di kampus, pada hari ini saya akan mulai posting tentang algoritma dan struktur data. Karena sudah kebanyakan orang *ngoding* di bahasa c++, pada postingan ini dan seterusnya saya akan menjelaskannya dalam bahasa Python3. Kenapa Python ??? karena Python sangat mudah bagi para nubie seperti saya (ya, saya masih noob :v) untuk membaca alur programnya. Lalu kelebihan selanjutnya adalah komunitasnya. Alasannya adalah karena Python adalah basa paling populer di dunia.
 
 <figure>
 	<img src='https://static1.squarespace.com/static/51361f2fe4b0f24e710af7ae/51363c0de4b0b95e028b2e8c/51363c0ee4b0b95e028b2ea9/1362508821226/'>
@@ -70,6 +69,7 @@ a and b = c #dan pada operasi boolean
 a or b = c #atau pada operasi boolean
 not a != b #negasi pada operasi boolean
 ```
+
 CATATAN : Untuk operasi penghitungan terhadap dirinya sendiri bisa menggunnakan operator sebelum sama dengan. Lalu untuk perbandingan kurang sama dengan atau lebih sama dengan operator pembanding kurang atau lebih ditulis telebih dahulu. Contoh :
 
 ```python
@@ -138,4 +138,4 @@ while (i<5):
 
 Karena pada pengulangan diawali dengan nilai angka awal namun tidak menyentuh batas atas. Sekian postingan tentang dasar - dasar penggunaan python. Untuk jenis array akan dibahas di postingan berikutnya beserta dari contoh soal yang menarik dan juga solusyen nya :v. Semoga bermanfaat.
 
->Sing penting yakin
+> Sing penting yakin

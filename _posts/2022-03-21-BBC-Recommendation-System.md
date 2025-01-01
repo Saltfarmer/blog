@@ -5,15 +5,10 @@ header:
 comments : true
 share : true
 categories:
-  - Python
-  - Recommendation-System
-  - Text-mining
+  - Recommendation System
 tags:
   - Python
 ---
-
-
-
 ## Introduction
 
 Recommender systems aim to predict users' interests and recommend stuff that is interesting for the user. Data are required for recommender systems from either the user (collaborative filtering), service provider (content-based filtering), or both (hybrid filtering). In this project, I am trying to create a prototype of a recommendation system based on the articles from BBC.
@@ -28,7 +23,7 @@ In this recommender system prototype, I am trying to apply transparency and auto
 
 The content-based news recommendation system is already has been researched by [Kompan & Bielikova, 2010]([Content-Based News Recommendation | SpringerLink](https://link.springer.com/chapter/10.1007/978-3-642-15208-5_6)). The paper recommendation system uses Title, Article content, Names & Places, Keywords, Category, and Coleman-Liau Index (CLI). For the recommendation part, they use Cosine-Similarity as similarity measurement as a recommendation of one article to another article. In my case, **I am using K-Means clustering as a recommendation for the related content**.
 
-[Kim & Ahn, 2008](https://www.sciencedirect.com/science/article/pii/S0957417406004076) did a recommender system using K-Means. the result is that **K-means clustering may improve segmentation performance in comparison to other typical clustering algorithms**. In addition, their study validated the usefulness of the proposed model as a preprocessing tool for recommendation systems.
+[Kim &amp; Ahn, 2008](https://www.sciencedirect.com/science/article/pii/S0957417406004076) did a recommender system using K-Means. the result is that **K-means clustering may improve segmentation performance in comparison to other typical clustering algorithms**. In addition, their study validated the usefulness of the proposed model as a preprocessing tool for recommendation systems.
 
 From the perspective of BBC as a provider, based on the [2020-2021 Annual Report](https://downloads.bbc.co.uk/aboutthebbc/reports/annualreport/2020-21.pdf#page=20) I can get the value from the provider. According to the report, there are 5 things to measure audience performance started from. One of them is to **provide impartial news and information to help people to understand and engage with the world around them**. This recommendation system will provide you with more engaging news and interesting news depending either on only the same cluster or the same cluster and the same category.
 
@@ -73,14 +68,8 @@ Third, there is no application of value from service provider stakeholders. The 
 ## Reference
 
 1. Kompan, M., & Bieliková, M. (2010, September). Content-based news recommendation. In *International conference on electronic commerce and web technologies* (pp. 61-72). Springer, Berlin, Heidelberg.
-
 2. Kim, K. J., & Ahn, H. (2008). A recommender system using GA K-means clustering in an online shopping market. *Expert systems with applications*, *34*(2), 1200-1209.
-
 3. *BBC group annual report and accounts 2020/21*. (2021). Https://Www.Bbc.Com/. Retrieved March 18, 2022, from https://downloads.bbc.co.uk/aboutthebbc/reports/annualreport/2020-21.pdf
-
 4. Friedman, B. (1996). Value-sensitive design. *interactions*, *3*(6), 16-23.
-
 5. Dexe, J., Franke, U., Nöu, A. A., & Rad, A. (2020, July). Towards increased transparency with value sensitive design. In *International Conference on Human-Computer Interaction* (pp. 3-15). Springer, Cham.
-
 6. *Public opinion on the BBC and BBC news*. (2011b, November). Https://Www.Ofcom.Org.Uk/. Retrieved March 18, 2022, from https://www.ofcom.org.uk/__data/assets/pdf_file/0014/58001/bbc-annex2.pdf
-  

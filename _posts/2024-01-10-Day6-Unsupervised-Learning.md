@@ -7,26 +7,22 @@ comments : true
 share : true
 categories:
   - Data Science
-  - Sklearn
-  - Statsmodel
 tags:
   - Python
   - Algoritma
   - Clustering
   - PCA
-
 ---
-
 Day 6, here I will share my notes of Inclass notebook. For further example you can check out on https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/tree/main
 
 **Inclass: Unsupervised Learning**
+
 - Durasi: 7 hours
 - _Last Updated_: Desember 2023
 
-___
+---
 
 - Disusun dan dikurasi oleh tim produk dan instruktur [Algoritma Data Science School](https://algorit.ma).
-
 
 ```python
 import numpy as np
@@ -51,21 +47,19 @@ from helper import *
 
 # Introduction
 
-
 Machine learning berfokus pada prediksi berdasarkan properti/fitur yang dipelajari dari data training. Beberapa tipe machine learning yaitu:
 
+**Supervised Learning**:
 
-**Supervised Learning**: 
-
-* memiliki target variable. 
+* memiliki target variable.
 * untuk pembuatan model prediksi $(y \sim x)$
 * ada ground truth (label aktual) sehingga ada evaluasi model
 
-**Unsupervised Learning**: 
+**Unsupervised Learning**:
 
-* tidak memiliki target variable. 
+* tidak memiliki target variable.
 * untuk mencari pola dalam data sehingga menghasilkan informasi yang berguna/dapat diolah lebih lanjut. umumnya dipakai untuk tahap explanatory data analysis (EDA)/data pre-processing.
-* tidak ada ground truth sehingga sulit mengevaluasi model 
+* tidak ada ground truth sehingga sulit mengevaluasi model
 
 # Dimensionality Reduction
 
@@ -82,10 +76,9 @@ Note:
 
 ## Refresher on Variance
 
-Berikut adalah data gaji perusahaan A dan B dalam **satuan juta rupiah**. 
+Berikut adalah data gaji perusahaan A dan B dalam **satuan juta rupiah**.
 
 Pertanyaan: Tanpa menghitung nilai [variance](#Glossary), perusahaan mana yang memiliki gaji lebih bervariasi?
-
 
 ```python
 # coba bandingkan variansi kedua data ini:
@@ -98,7 +91,6 @@ print(np.var(B))
 
     8.25
     0.6900000000000001
-    
 
 <div class="alert alert-block alert-warning">
 <b>⚠️ Note:</b> variansi  bergantung pada skala variable 
@@ -106,18 +98,12 @@ print(np.var(B))
 
 Ada pula data gaji perusahaan C dalam **satuan dollar**. Untuk mempermudah, asumsi 1 dollar = 10000 rupiah
 
-
 ```python
 C = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 np.var(C)
 ```
 
-
-
-
     82500.0
-
-
 
 Apakah bisa dibilang gaji di perusahaan C lebih bervariasi daripada A?
 
@@ -129,9 +115,8 @@ Pada data gambar, setiap kotak pixel akan menjadi 1 kolom. Foto berukuran 40x40 
 
 Image compression adalah salah satu contoh nyata dimensionality reduction menggunakan data gambar yang  dan tetap menghasilkan gambar yang serupa (informasi inti tidak hilang), sehingga data gambar lebih mudah diproses. Salah satu algoritma yang dapat digunakan untuk dimensionality reduction adalah **Principal Component Analysis (PCA)**.
 
-
 <img src="assets/cat_pca.png" width="700">
-    
+
 <a href="https://www.tandfonline.com/doi/pdf/10.1080/09500340.2016.1270881" style="margin:auto; display:block;" class="button large hpbottom">alternatives on lenna image</a>
 
 ✅ **Knowledge Check:**
@@ -141,11 +126,9 @@ Dalam suatu gambar apa yang dimaksud dengan dimensi dan informasi?
 - dimensi : Banyak kolom dari pixelnya(dan layer kalo berwarna)
 - informasi: Variance dari grayscale value
 
-
 Apakah nilai dari variansi dipengaruhi oleh skala dari nilai itu sendiri? jelaskan!
 
-> Ans: Betul, karena variance yang tinggi dapat mempengaruhi skala 
-
+> Ans: Betul, karena variance yang tinggi dapat mempengaruhi skala
 
 ## Principle Component Analysis
 
@@ -177,35 +160,35 @@ Ide dasar dari PCA adalah untuk membuat sumbu (axis) baru yang dapat menangkap i
 
 **✅ Knowledge Check:**
 
-<img src="assets/knowledge check.png" width="500">
+`<img src="assets/knowledge check.png" width="500">`
 
-1.  Dari Gambar diatas mana data yang cocok dilakukan PCA?
+1. Dari Gambar diatas mana data yang cocok dilakukan PCA?
 
--   [ ] Sale Price of Vehicles
--   [x] Blind Tasting
--   [ ] Logistic Machinery
+- [ ] Sale Price of Vehicles
+- [X] Blind Tasting
+- [ ] Logistic Machinery
 
-2.  Bila terdapat 3 PC, PC ke-berapa yang merangkum variansi (informasi) paling besar?
+2. Bila terdapat 3 PC, PC ke-berapa yang merangkum variansi (informasi) paling besar?
 
--   [x] PC1
--   [ ] PC2
--   [ ] PC3
+- [X] PC1
+- [ ] PC2
+- [ ] PC3
 
-3.  Dalam PCA jumlah PC yang dihasilkan sebanyak....
+3. Dalam PCA jumlah PC yang dihasilkan sebanyak....
 
--   [x] Jumlah variabel yang digunakan
--   [ ] Setengah dari jumlah variabel yang digunakan
--   [ ] Ditentukan oleh user 
+- [X] Jumlah variabel yang digunakan
+- [ ] Setengah dari jumlah variabel yang digunakan
+- [ ] Ditentukan oleh user
 
-4.  PC1 dibentuk oleh variabel pertama dan PC4 dibentuk oleh variabel ke empat
+4. PC1 dibentuk oleh variabel pertama dan PC4 dibentuk oleh variabel ke empat
 
--   [x] Salah
--   [ ] Benar
+- [X] Salah
+- [ ] Benar
 
 ### Math Behind PCA [optional]
 
 <div class="alert alert-block alert-success">
-<b>&#128250; Rekomendasi Video:</b> <a href="https://www.youtube.com/watch?v=PFDu9oVAE-g" class="button large hpbottom">3Blue1Brown: Eigenvectors and eigenvalues</a>
+<b>📺 Rekomendasi Video:</b> <a href="https://www.youtube.com/watch?v=PFDu9oVAE-g" class="button large hpbottom">3Blue1Brown: Eigenvectors and eigenvalues</a>
 </div>
 
 Untuk membentuk PC dibutuhkan **eigen values** & **eigen vector**. Secara manual, eigen values dan eigen vector didapatkan dari operasi matrix.
@@ -216,29 +199,29 @@ Teori matrix:
 * vektor: nilai yang memiliki besaran dan arah (umum digambarkan dalam suatu koordinat)
 * matrix: kumpulan nilai/bentukan data dalam baris dan kolom
 
-
 **Eigen- dari suatu Matrix**
 
 Untuk setiap matrix $A$, terdapat **vektor spesial (eigen vector)** yang jika dikalikan dengan matrixnya, hasilnya akan sama dengan vektor tersebut dikalikan suatu **skalar (eigen value)**. Sehingga didapatkan rumus:
 
-$$Ax = \lambda x$$
+$$
+Ax = \lambda x
+$$
 
 dengan $x$ adalah eigen vector dan $\lambda$ adalah eigen value dari matrix $A$.
 
 Contoh:
 
-Pada perhitungan matrix di bawah, salah satu eigen vector dari matrix 
+Pada perhitungan matrix di bawah, salah satu eigen vector dari matrix
 $\begin{bmatrix}
-2 & 3\\ 
+2 & 3\\
 2 & 1
 \end{bmatrix}$
-adalah 
+adalah
 $\begin{bmatrix}
-3\\ 
+3\\
 2
 \end{bmatrix}$
 dengan eigen value sebesar 4.
-
 
 $$
 \left(\begin{array}{cc} 
@@ -267,18 +250,22 @@ Teori eigen dipakai untuk menentukan PC dan nilai-nilai pada PC.
 
 **Matrix [covariance](#Glossary)** adalah matrix yang dapat merangkum informasi (variance) dari data. Kita menggunakan matrix covariance untuk mendapatkan eigen vector dan eigen value dari matrix tersebut, dengan:
 
-* **eigen vector**: arah sumbu tiap PC, yang menjadi formula untuk mentransformasi data awal ke PC baru. 
+* **eigen vector**: arah sumbu tiap PC, yang menjadi formula untuk mentransformasi data awal ke PC baru.
 * **eigen value**: variansi yang ditangkap oleh setiap PC.
 * tiap PC memiliki 1 eigen value & 1 eigen vector.
 * alur: matrix covariance $\rightarrow$ eigen value $\rightarrow$ eigen vector $\rightarrow$ nilai di tiap PC
 
 Eigen vector akan menjadi formula untuk kalkulasi nilai di setiap PC. Contohnya, untuk data yang terdiri dari 2 variabel, bila diketahui eigen vector dari PC1 adalah:
 
-$$x_{PC1}= \left[\begin{array}{cc}a_1\\a_2\end{array}\right]$$
+$$
+x_{PC1}= \left[\begin{array}{cc}a_1\\a_2\end{array}\right]
+$$
 
 Maka formula untuk menghitung nilai pada PC1 (untuk tiap barisnya) adalah:
 
-$$PC1= a_1X_1 + a_2X_2$$
+$$
+PC1= a_1X_1 + a_2X_2
+$$
 
 Keterangan:
 
@@ -289,16 +276,12 @@ Keterangan:
 
 **Contoh menghitung eigen value dan eigen vector dari sebuah data**
 
-
 ```python
 # membuat data dummy
 dummy = pd.DataFrame(np.random.rand(4, 2), #generate random value dengan 4 baris dan 2 kolom
                  columns=list('XY')) #nama tiap kolom
 dummy
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -312,8 +295,8 @@ dummy
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -347,18 +330,12 @@ dummy
 </table>
 </div>
 
-
-
 Mencari nilai [covariance](#Glossary) pada dataframe dummy:
-
 
 ```python
 matrix_cov = dummy.cov()
 matrix_cov
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -372,8 +349,8 @@ matrix_cov
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -397,10 +374,7 @@ matrix_cov
 </table>
 </div>
 
-
-
-Mencari nilai dan vector eigen dengan fungsi [eig](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html) dari library [numpy](https://numpy.org/doc/stable/index.html) 
-
+Mencari nilai dan vector eigen dengan fungsi [eig](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html) dari library [numpy](https://numpy.org/doc/stable/index.html)
 
 ```python
 eig_vals,eig_vecs = eig(matrix_cov.T) 
@@ -408,19 +382,16 @@ print('E-value: \n', eig_vals) #\n untuk newline (enter ke bawah)
 print('E-vector: \n', eig_vecs)
 ```
 
-    E-value: 
+    E-value:
      [0.08731741 0.03197376]
-    E-vector: 
+    E-vector:
      [[ 0.98672189  0.16241896]
      [-0.16241896  0.98672189]]
-    
 
-**Note**: hasil fungsi eig() tidak berurutan berdasarkan nilainya. Eigenvalues dari PC1 adalah nilai terbesar, dilanjutkan PC2 dengan nilai kedua terbesar dan seterusnya.    
+**Note**: hasil fungsi eig() tidak berurutan berdasarkan nilainya. Eigenvalues dari PC1 adalah nilai terbesar, dilanjutkan PC2 dengan nilai kedua terbesar dan seterusnya.
 
-* `E-value:`: Eigen value untuk tiap PC, besar variansi yang dapat ditangkap oleh tiap PC. Eigen value tertinggi adalah milik PC1, kedua tertinggi milik PC2, dan seterusnya. 
-
+* `E-value:`: Eigen value untuk tiap PC, besar variansi yang dapat ditangkap oleh tiap PC. Eigen value tertinggi adalah milik PC1, kedua tertinggi milik PC2, dan seterusnya.
 * `E-vector`: Eigen vector untuk tiap PC. Kolom `eig_vecs[:,i]` adalah vektor eigen yang sesuai dengan nilai eigen `eig_vals[i]`
-
 
 ### PCA Workflow
 
@@ -428,15 +399,11 @@ print('E-vector: \n', eig_vecs)
 
 Kita akan kembali menggunakan data `fraud_dataset.csv` yang sudah digunakan pada pembelajaran sebelumnya. Perbedaannya adalah kita akan menggunakan keseluruhan kolom pada data ini dan hanya akan membuang kolom yang kemaren kita jadikan sebagai target.
 
-
 ```python
 fraud = pd.read_csv('data_input/fraud_dataset.csv')
 fraud.drop(columns=['fraud_bool'], inplace=True)
 fraud.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -450,8 +417,8 @@ fraud.head()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -605,8 +572,6 @@ fraud.head()
 <p>5 rows × 28 columns</p>
 </div>
 
-
-
 **Penjelasan Dataset**
 
 Berikut adalah penjelasan setiap kolom yang terdapat pada _dataset_:
@@ -641,7 +606,6 @@ Berikut adalah penjelasan setiap kolom yang terdapat pada _dataset_:
 - `month` (numeric): _Month where the application was made. Ranges between [0, 7]._
 - `fraud_bool` (binary): _If the application is fraudulent or not._
 
-
 ```python
 fraud.info()
 ```
@@ -649,47 +613,42 @@ fraud.info()
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 14905 entries, 0 to 14904
     Data columns (total 28 columns):
-     #   Column                            Non-Null Count  Dtype  
-    ---  ------                            --------------  -----  
-     0   income                            14905 non-null  float64
+     #   Column                            Non-Null Count  Dtype
+    ---  ------                            --------------  -----
+    0   income                            14905 non-null  float64
      1   name_email_similarity             14905 non-null  float64
      2   current_address_months_count      14905 non-null  float64
-     3   customer_age                      14905 non-null  int64  
-     4   days_since_request                14905 non-null  float64
+     3   customer_age                      14905 non-null  int64
+    4   days_since_request                14905 non-null  float64
      5   intended_balcon_amount            14905 non-null  float64
-     6   payment_type                      14905 non-null  object 
-     7   zip_count_4w                      14905 non-null  int64  
-     8   velocity_6h                       14905 non-null  float64
+     6   payment_type                      14905 non-null  object
+     7   zip_count_4w                      14905 non-null  int64
+    8   velocity_6h                       14905 non-null  float64
      9   velocity_24h                      14905 non-null  float64
      10  velocity_4w                       14905 non-null  float64
-     11  bank_branch_count_8w              14905 non-null  int64  
-     12  date_of_birth_distinct_emails_4w  14905 non-null  int64  
-     13  employment_status                 14905 non-null  object 
+     11  bank_branch_count_8w              14905 non-null  int64
+    12  date_of_birth_distinct_emails_4w  14905 non-null  int64
+    13  employment_status                 14905 non-null  object
      14  credit_risk_score                 14905 non-null  float64
-     15  email_is_free                     14905 non-null  int64  
-     16  housing_status                    14905 non-null  object 
-     17  phone_home_valid                  14905 non-null  int64  
-     18  phone_mobile_valid                14905 non-null  int64  
-     19  has_other_cards                   14905 non-null  int64  
-     20  proposed_credit_limit             14905 non-null  float64
-     21  foreign_request                   14905 non-null  int64  
-     22  source                            14905 non-null  object 
+     15  email_is_free                     14905 non-null  int64
+    16  housing_status                    14905 non-null  object
+     17  phone_home_valid                  14905 non-null  int64
+    18  phone_mobile_valid                14905 non-null  int64
+    19  has_other_cards                   14905 non-null  int64
+    20  proposed_credit_limit             14905 non-null  float64
+     21  foreign_request                   14905 non-null  int64
+    22  source                            14905 non-null  object
      23  session_length_in_minutes         14905 non-null  float64
-     24  device_os                         14905 non-null  object 
-     25  keep_alive_session                14905 non-null  int64  
-     26  device_distinct_emails_8w         14905 non-null  float64
-     27  month                             14905 non-null  int64  
+     24  device_os                         14905 non-null  object
+     25  keep_alive_session                14905 non-null  int64
+    26  device_distinct_emails_8w         14905 non-null  float64
+     27  month                             14905 non-null  int64
     dtypes: float64(12), int64(11), object(5)
     memory usage: 3.2+ MB
-    
-
 
 ```python
 fraud.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -703,8 +662,8 @@ fraud.describe()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -930,9 +889,6 @@ fraud.describe()
 <p>8 rows × 23 columns</p>
 </div>
 
-
-
-
 ```python
 fraud_clean = fraud.drop(columns='intended_balcon_amount')
 fraud_clean = fraud_clean[(fraud_clean['proposed_credit_limit'] >= 200) & (fraud_clean['proposed_credit_limit'] <= 2000)]
@@ -940,15 +896,11 @@ fraud_clean = fraud_clean[(fraud_clean['proposed_credit_limit'] >= 200) & (fraud
 
 Pilih data yang hanya bertipe numeric :
 
-
 ```python
 cols = fraud_clean.select_dtypes("number").columns
 fraud_num = fraud_clean[cols]
 fraud_num.sample(3)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -962,8 +914,8 @@ fraud_num.sample(3)
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1069,18 +1021,12 @@ fraud_num.sample(3)
 <p>3 rows × 22 columns</p>
 </div>
 
-
-
 Melihat nilai covariance pada dataframe `fraud_num` :
-
 
 ```python
 # covariance
 fraud_num.cov()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1094,8 +1040,8 @@ fraud_num.cov()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1657,8 +1603,6 @@ fraud_num.cov()
 <p>22 rows × 22 columns</p>
 </div>
 
-
-
 Di atas adalah distribusi nilai covariance dari data yang belum distandarisasi (scale). Variance dari masing-masing variabel berbeda jauh karena range/skala dari tiap variabel berbeda, begitupun covariance. **Nilai variance dan covariance dipengaruhi oleh skala dari data**. Semakin tinggi skala, nilai variance atau covariance akan semakin tinggi.
 
 [**Data dengan perbedaan skala antar variabel yang tinggi tidak baik untuk langsung dianalisis PCA karena dapat menimbulkan bias**](https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html).
@@ -1667,13 +1611,9 @@ Di atas adalah distribusi nilai covariance dari data yang belum distandarisasi (
 
 Melakukan normalisasi pada dataframe `fraud_num` agar setiap prediktor memiliki scala yang sama.
 
-
 ```python
 fraud_num.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1687,8 +1627,8 @@ fraud_num.head()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1842,10 +1782,7 @@ fraud_num.head()
 <p>5 rows × 23 columns</p>
 </div>
 
-
-
 Menggunakan Z-score standardization untuk scaling dataset numerik dengan fungsi [StandardScaler()](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler) pada library sklearn:
-
 
 ```python
 scaler = StandardScaler()
@@ -1855,14 +1792,10 @@ fraud_scaled = scaler.fit_transform(fraud_num.values)
 fraud_scaled = pd.DataFrame(fraud_scaled, columns=[cols])
 ```
 
-
 ```python
 # cek covariance setelah di scaling
 fraud_scaled.cov()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1876,8 +1809,8 @@ fraud_scaled.cov()
 
     .dataframe thead tr th {
         text-align: left;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr>
@@ -2439,22 +2372,17 @@ fraud_scaled.cov()
 <p>22 rows × 22 columns</p>
 </div>
 
-
-
 <div class="alert alert-block alert-warning">
 <b>Diskusi:</b> kenapa kita menggunakan StandardScaler bukan Min-Max scaling untuk kasus PCA?
 </div>
 
 > jawaban: Karena fokus dari standard scaler agar membentuk distribusi data senormal mungkin dengan data lain
 
-
-
 ```python
 fraud_minmax = MinMaxScaler().fit_transform(fraud_num.values)
 
 fraud_minmax = pd.DataFrame(fraud_minmax, columns=[cols])
 ```
-
 
 ```python
 plt.figure(figsize=(7, 9))
@@ -2471,14 +2399,9 @@ sns.kdeplot(data=fraud_scaled.iloc[:,2:7], legend=None)
 plt.ylabel("StandardScaler");
 ```
 
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_42_0.png)
-    
-
 
 #### Principal Component Analysis menggunakan library [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
-
 
 ```python
 # inisialisasi objek PCA
@@ -2489,22 +2412,16 @@ pca.fit(fraud_scaled) # menghitung PCA
 # atau dapat menggunakan pca = pca.fit_transform(scale(balance_scaled))
 ```
 
-
 **[additional] Note:** jika kita perhatikan bagian dokumentasi pada library scikit-learn, fungsi PCA menggunakan [Singular Value Decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition) sebagai reduksi dimensi linearnya. Output yang dihasilkan akan tetap sama dengan menggunakan dekomposisi eigen (mencari eigen vector dan eigen value), tetapi komputasi numeriknya lebih stabil dan efisien.
 
 <div class="alert alert-block alert-success">
-<b>&#128250; Rekomendasi Video:</b> <a href="https://www.youtube.com/watch?v=DQ_BkPHIl-g" class="button large hpbottom">hubungan PCA dengan SVD </a>
+<b>📺 Rekomendasi Video:</b> <a href="https://www.youtube.com/watch?v=DQ_BkPHIl-g" class="button large hpbottom">hubungan PCA dengan SVD </a>
 </div>
-
-
 
 ```python
 # menampilkan banyaknya PC yang terbentuk dengan n_components_
 pca.components_
 ```
-
-
-
 
     array([[-1.58193111e-01,  4.17231004e-02, -3.12993736e-02,
             -1.12354402e-01,  4.29029060e-02,  2.35194605e-01,
@@ -2683,19 +2600,13 @@ pca.components_
             -3.49762045e-03, -6.35362842e-03, -2.33000686e-03,
              7.14998950e-01]])
 
-
-
 `pca.components_` : berisi nilai *eigen vector* yang akan dijadikan formula untuk PC baru
-
 
 ```python
 # opsional
 pd.DataFrame(pca.components_.T, # dibalik/transpose agar representasi tiap pca menjadi kolom, bukan baris
              columns=pca.get_feature_names_out()) # ambil nama kolom tiap pca
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2709,8 +2620,8 @@ pd.DataFrame(pca.components_.T, # dibalik/transpose agar representasi tiap pca m
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3272,18 +3183,12 @@ pd.DataFrame(pca.components_.T, # dibalik/transpose agar representasi tiap pca m
 <p>22 rows × 22 columns</p>
 </div>
 
-
-
 Melihat proporsi nilai informasi yang dapat ditangkap untuk setiap PC dengan atribut `explained_variance_ratio_`:
-
 
 ```python
 # menampilkan banyaknya PC yang terbentuk dengan explained_variance_ratio
 pca.explained_variance_ratio_
 ```
-
-
-
 
     array([0.1376811 , 0.09104272, 0.06854404, 0.05763219, 0.05041625,
            0.04800417, 0.04643708, 0.04563752, 0.04525991, 0.04340626,
@@ -3291,31 +3196,22 @@ pca.explained_variance_ratio_
            0.0349525 , 0.03072321, 0.02931932, 0.02269744, 0.02195474,
            0.01515074, 0.00722711])
 
-
-
-Melihat kumulatif proporsi nilai informasi yang dapat ditangkap untuk setiap penambahan PC: 
-
+Melihat kumulatif proporsi nilai informasi yang dapat ditangkap untuk setiap penambahan PC:
 
 ```python
 np.cumsum(np.round(pca.explained_variance_ratio_, decimals=4)*100)
 ```
 
-
-
-
     array([13.77, 22.87, 29.72, 35.48, 40.52, 45.32, 49.96, 54.52, 59.05,
            63.39, 67.68, 71.87, 75.93, 79.92, 83.78, 87.28, 90.35, 93.28,
            95.55, 97.75, 99.27, 99.99])
 
-
-
-**Note:** 
+**Note:**
 
 - Proportion of Variance: informasi yang ditangkap oleh tiap PC
 - Cumulative Proportion: jumlah informasi yang ditangkap secara kumulatif dari PC0 hingga PC tersebut
 
 Untuk lebih jelasnya, kita dapat mengeluarkan Cumulative Proportion di atas menggunakan plot di bawah ini.
-
 
 ```python
 # Hitung proporsi variasi yang dijelaskan oleh setiap komponen utama
@@ -3347,15 +3243,11 @@ pyo.iplot(fig, 'Scree')
 
 Menampilkan nilai di setiap PC pada dimensi baru
 
-
 ```python
 transform_ = pd.DataFrame(pca.transform(fraud_scaled), 
                           columns=pca.get_feature_names_out())
 transform_.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3369,8 +3261,8 @@ transform_.head()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3524,8 +3416,6 @@ transform_.head()
 <p>5 rows × 22 columns</p>
 </div>
 
-
-
 <div class="alert alert-block alert-warning">
 <b>Diskusi:</b> ketika kita declare value dari `n_components` sama dengan jumlah dari fitur/variabel datasetnya <b>dan</b> kita menggunakan <b>semua</b> PC yang terbentuk, apakah kita sudah melakukan <b>reduksi dimensi</b>?
 </div>
@@ -3534,14 +3424,10 @@ transform_.head()
 
 Reduksi dimensi dengan mempertahankan at least 90% informasi maka PC dipilih sampai 16
 
-
 ```python
 fraud_pca = transform_.iloc[:,:17]
 fraud_pca.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3555,8 +3441,8 @@ fraud_pca.head()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3685,14 +3571,11 @@ fraud_pca.head()
 </table>
 </div>
 
-
-
 > **Notes**: Setelah dipilih PC yang merangkum informasi yang dibutuhkan, PC dapat digabung dengan data awal dan digunakan untuk analisis lebih lanjut (misal: supervised learning).
 
 Cara yang dilakukan di atas adalah cara manual, sebenarnya kita bisa secara langsung melakukan reduksi dimensi ketika membuat objek PCA yaitu menuliskan proporsi informasi yang ingin dipertahankan pada parameter `n_components`.
 
 Kekurangan dari cara ini adalah kita tidak bisa melakukan detransform ke bentuk awal karena adanya informasi yang hilang.
-
 
 ```python
 pca2 = PCA(n_components = 0.9, # gunakan proporsi data
@@ -3704,9 +3587,6 @@ fraud_pca90 = pd.DataFrame(pca2.fit_transform(fraud_scaled),
 
 fraud_pca90.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3720,8 +3600,8 @@ fraud_pca90.head()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3850,19 +3730,13 @@ fraud_pca90.head()
 </table>
 </div>
 
-
-
 **[optional] Detransform PCA**
 
 Mengembalikan hasil reduksi dimensi menjadi data bentuk aslinya. Tetapi hal ini hanya bisa dilakukan pada data hasil PCA yang masih lengkap.
 
-
 ```python
 pd.DataFrame(pca.inverse_transform(transform_)).head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3876,8 +3750,8 @@ pd.DataFrame(pca.inverse_transform(transform_)).head()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -4031,18 +3905,15 @@ pd.DataFrame(pca.inverse_transform(transform_)).head()
 <p>5 rows × 22 columns</p>
 </div>
 
-
-
-
 ```python
 
 ```
+
 **Contoh aplikasi PCA (bahasa pemrograman R):**
 
 - sebagai metode untuk mengurangi multikolinearitas: [rpubs](https://rpubs.com/tomytjandra/PCA-reduce-multicollinearity)
 - sebagai input untuk model klasifikasi: [rpubs](https://rpubs.com/tomytjandra/PCA-before-classification)
-Mari kita coba bandingkan bagaimana kondisi covariance data kita sebelum discaling, sesudah scaling, dan setelah menjadi bentuk PCA. Silakan jalankan kode berikut ini.
-
+  Mari kita coba bandingkan bagaimana kondisi covariance data kita sebelum discaling, sesudah scaling, dan setelah menjadi bentuk PCA. Silakan jalankan kode berikut ini.
 
 ```python
 # alternatif menggunakan seaborn heatmap, sebelum dilakukan scaled
@@ -4052,12 +3923,7 @@ sns.heatmap(fraud_num.cov().round(2), vmin=-1, vmax=1, annot=True, cmap='YlGnBu'
             annot_kws={"size": 5, "color":'white', "alpha":0.7, "ha": 'center', "va": 'center'});
 ```
 
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_66_0.png)
-    
-
-
 
 ```python
 plt.figure(figsize=(8, 6), dpi=100)
@@ -4065,12 +3931,7 @@ sns.heatmap(fraud_scaled.cov().round(2), vmin=-1, vmax=1, annot=True, cmap='YlGn
             annot_kws={"size": 5, "color":'white', "alpha":0.7, "ha": 'center', "va": 'center'});
 ```
 
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_67_0.png)
-    
-
-
 
 ```python
 plt.figure(figsize=(8, 6), dpi=100)
@@ -4078,49 +3939,42 @@ sns.heatmap(fraud_pca90.cov().round(2), vmin=-1, vmax=1, annot=True, cmap='YlGnB
             annot_kws={"size": 5, "color":'white', "alpha":0.7, "ha": 'center', "va": 'center'});
 ```
 
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_68_0.png)
-    
-
 
 ## Visualizing PCA
 
 PCA tidak hanya berguna untuk dimensionality reduction namun baik untuk visualisasi high-dimensional data. Visualisasi dapat menggunakan **biplot** yang menampilkan:
 
 1. **Individual factor map**, yaitu sebaran data secara keseluruhan menggunakan 2 PC. Tujuannya untuk:
-  - observasi yang serupa
-  - outlier dari keseluruhan data
+
+- observasi yang serupa
+- outlier dari keseluruhan data
+
 2. **Variables factor map**, yaitu plot yang menunjukkan korelasi antar variable dan kontribusinya terhadap PC.
 
 ### Biplot Visualization
 
 Kita akan menggunakan fungsi custom dari helper yaitu `biplot_pca`.
 
-
 ```python
 # method dari helper.py
 biplot_pca(fraud_scaled.head(50))
 ```
 
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_71_0.png)
-    
-
 
 Keterangan:
 
 - **Titik/poin observasi:**
-    + index angka dari observasi.
-    + Semakin berdekatan maka karakteristiknya semakin mirip, sedangkan yang jauh dari gerombolan data dianggap sebagai outlier
-    
+
+  + index angka dari observasi.
+  + Semakin berdekatan maka karakteristiknya semakin mirip, sedangkan yang jauh dari gerombolan data dianggap sebagai outlier
 - **Garis vektor:**
-    + loading score, menunjukkan kontribusi variabel tersebut terhadap PC, atau banyaknya informasi variabel tersebut yang dirangkum oleh PC.
-    + Semakin jauh panah, semakin banyak informasi yang dirangkum.
+
+  + loading score, menunjukkan kontribusi variabel tersebut terhadap PC, atau banyaknya informasi variabel tersebut yang dirangkum oleh PC.
+  + Semakin jauh panah, semakin banyak informasi yang dirangkum.
 
 Visualisasi biplot (loadings) menggunakan library [plotly](https://plotly.com/python/pca-visualization/#visualize-loadings). Fungsi ini merupakan fungsi custom yang dapat dilihat pada file `helper.py`.
-
 
 ```python
 biplot_plotly(fraud_scaled, pca)
@@ -4129,21 +3983,16 @@ biplot_plotly(fraud_scaled, pca)
 #### Individual
 
 1. **Outlier detection**: observasi yang jauh dari kumpulan observasi lainnya mengindikasikan outlier dari keseluruhan data. Observasi ini dapat ditandai untuk nantinya dicek karakteristik datanya untuk keperluan bisnis, atau apakah mempengaruhi performa model, dll.
-
-
 2. **Observasi searah panah** mengindikasikan observasi tersebut nilainya tinggi pada variabel tersebut. Bila bertolak belakang, maka nilainya rendah pada variable tersebut.
-
-
 3. **Observasi berdekatan**: observasi yang saling berdekatan memiliki karakteristik yang mirip.
-
 
 ```python
 
 ```
 
-####  Variable
+#### Variable
 
-**Korelasi antar variabel** dapat dilihat dari sudut antar panah: 
+**Korelasi antar variabel** dapat dilihat dari sudut antar panah:
 
 - Panah saling berdekatan (sudut antar panah < 90), maka korelasi positif
 - Panah saling tegak lurus (sudut antar panah = 90), maka tidak berkorelasi
@@ -4151,8 +4000,7 @@ biplot_plotly(fraud_scaled, pca)
 
 **Variable Importance**
 
-Selain melihat berdasarkan variable factor map, kita juga dapat memetakan 
-
+Selain melihat berdasarkan variable factor map, kita juga dapat memetakan
 
 ```python
 # Dapatkan loadings dari PCA
@@ -4170,9 +4018,6 @@ significant_loadings = loadings_df[abs(loadings_df['pca0']) > 0.2]
 significant_loadings
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4185,8 +4030,8 @@ significant_loadings
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -4388,8 +4233,6 @@ significant_loadings
 <p>7 rows × 23 columns</p>
 </div>
 
-
-
 ## Pros and Cons PCA
 
 Kelebihan melakukan PCA:
@@ -4406,7 +4249,7 @@ Kekurangan melakukan PCA (sebelum pemodelan):
 
 ## Local Outlier Factor with PyOD
 
-**Local Outlier Factor** (LOF) merupakan salah satu algoritma umum yang digunakan untuk kasus anomaly detection. Teknik ini bekerja dengan menghitung skor berdasarkan kepadatan data berdasarkan jaraknya (sangat mirip dengan konsep k-NN). 
+**Local Outlier Factor** (LOF) merupakan salah satu algoritma umum yang digunakan untuk kasus anomaly detection. Teknik ini bekerja dengan menghitung skor berdasarkan kepadatan data berdasarkan jaraknya (sangat mirip dengan konsep k-NN).
 
 LOF dapat menjadi pilihan yang baik untuk deteksi fraud dalam menentukan anomali data, berikut adalah beberapa kelebihan dan kekurangan dari metode ini.
 
@@ -4425,19 +4268,15 @@ Secara sederhana, LOF akan menghitung jarak antar data dan data yang secara kump
 
 ![LOF2](assets/lof2.jpg)
 
-Pada ilustrasi di atas, C1 dan C2 merupakan kumpulan data lokal. Titik yang diperhatikan adalah O1, O2, O3, dan O4. 
+Pada ilustrasi di atas, C1 dan C2 merupakan kumpulan data lokal. Titik yang diperhatikan adalah O1, O2, O3, dan O4.
 
 Pada kasus kita ini O1 dan O2 dapat dianggap sebagai outlier lokal untuk kelompok C1. Sementara O4 kemungkinan bukan merupakan outlier untuk kelompok C2 karena rentang jarak per data di kelompok C2 cukup renggang/tidak sepadat C1. Sementara O3 dapat dikatakan sebagai outlier global.
 
 Kita akan menggunakan data hasil PCA yaitu `fraud_pca90` untuk mencoba metode ini.
 
-
 ```python
 fraud_pca90.head(3)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -4451,8 +4290,8 @@ fraud_pca90.head(3)
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -4545,11 +4384,7 @@ fraud_pca90.head(3)
 </table>
 </div>
 
-
-
-
 Fungsi `LOF()` dapat digunakan setelah mengakses modul `model.lof` dari library `pyod`.
-
 
 ```python
 from sklearn.neighbors import LocalOutlierFactor
@@ -4557,13 +4392,9 @@ lof_model = LOF()
 lof_model2 = LocalOutlierFactor(contamination=0.1,n_jobs=1, novelty=True )
 ```
 
-
 ```python
 fraud_pca90
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -4577,8 +4408,8 @@ fraud_pca90
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -4840,10 +4671,7 @@ fraud_pca90
 <p>14900 rows × 18 columns</p>
 </div>
 
-
-
 Objek LOF di atas dapat langsung kita gunakan kepada data yang sudah kita olah sebelumnya menggunakan method `fit_predict()`.
-
 
 ```python
 lof_label = lof_model.fit_predict(fraud_pca90)
@@ -4854,7 +4682,6 @@ lof_label2 = lof_model2.predict()
 
 Karena merupakan proses unsupervised, maka metode fit_predict akan langsung menghasilkan label. Tetapi sebenarnya terdapat skor anomali untuk setiap data yang dimasukkan ke model. Skor anomali ini dapat dilihat menggunakan method `decision_function()`.
 
-
 ```python
 # Menghitung nilai LOF
 lof_scores = lof_model.decision_function(fraud_pca90)
@@ -4862,14 +4689,8 @@ lof_scores = lof_model.decision_function(fraud_pca90)
 lof_scores
 ```
 
-
-
-
     array([1.18030495, 1.11967908, 1.19635871, ..., 0.98605162, 1.54397575,
            1.12362949])
-
-
-
 
 ```python
 # Menghitung nilai LOF
@@ -4879,122 +4700,63 @@ lof_scores2
 ```
 
     C:\Users\SaltFarmer\miniconda3\envs\algoritma\lib\site-packages\sklearn\base.py:465: UserWarning:
-    
+
     X does not have valid feature names, but LocalOutlierFactor was fitted with feature names
-    
-    
-
-
-
 
     array([ 0.00680207,  0.06742794, -0.00925168, ...,  0.2010554 ,
            -0.35686873,  0.06347754])
 
-
-
 Karena merupakan skor setiap data, maka untuk lebih jelasnya kita bisa lihat distribusinya menggunakan histogram ataupun boxplot.
-
 
 ```python
 sns.histplot(lof_scores)
 ```
 
-
-
-
     <Axes: ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_93_1.png)
-    
-
-
 
 ```python
 sns.histplot(lof_scores2)
 ```
 
-
-
-
     <Axes: ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_94_1.png)
-    
-
-
 
 ```python
 sns.boxplot(lof_scores, orient='h',)
 ```
 
-
-
-
     <Axes: >
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_95_1.png)
-    
-
-
 
 ```python
 sns.boxplot(lof_scores2, orient='h',)
 ```
 
-
-
-
     <Axes: >
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_96_1.png)
-    
-
 
 Sementara untuk label, kita dapat dengan mudah menghitung masing-masing hasil label menggunakan `value_counts()`.
-
 
 ```python
 pd.Series(lof_label).value_counts()
 ```
 
-
-
-
     0    13410
     1     1490
     Name: count, dtype: int64
-
-
-
 
 ```python
 pd.Series(lof_label2).apply(lambda x: 1 if x==-1 else 0).value_counts()
 ```
 
-
-
-
     0    13410
     1     1490
     Name: count, dtype: int64
-
-
 
 ## Parameter on LOF Model
 
@@ -5010,13 +4772,9 @@ Nilai contamination ini dapat kita isi disesuaikan dengan kasus yang ada, contoh
 
 > Apabila kita ketahui terdapat 1% akun bank BRI merupakan akun yang digunakan untuk penipuan maka kita dapat menggunakan nilai `contamination = 0.01`.
 
-
 ```python
 fraud.columns
 ```
-
-
-
 
     Index(['income', 'name_email_similarity', 'current_address_months_count',
            'customer_age', 'days_since_request', 'intended_balcon_amount',
@@ -5030,9 +4788,6 @@ fraud.columns
            'device_distinct_emails_8w', 'month'],
           dtype='object')
 
-
-
-
 ```python
 lof_tune = LOF(
     contamination = 0.005,
@@ -5044,22 +4799,15 @@ lof_label_tune = lof_tune.fit_predict(fraud_pca90)
 
 Mari kita lihat dampak penggunaan parameter contamination dari jumlah anomali yang dideteksi oleh model kita.
 
-
 ```python
 pd.Series(lof_label_tune).value_counts(normalize=True)
 ```
-
-
-
 
     0    0.994966
     1    0.005034
     Name: proportion, dtype: float64
 
-
-
 Selain melihat plot distribusinya, kita dapat menampilkan persebaran outlier kita pada bidang 2 dimensi hasil PCA. Berikut adalah kodenya:
-
 
 ```python
 # menampilkan plot anomali (___ diisi dengan nama dataframe PCA)
@@ -5073,14 +4821,9 @@ plt.xlabel(f'PC 1 ({pca.explained_variance_ratio_[0]*100:.2f}%)')
 plt.ylabel(f'PC 2 ({pca.explained_variance_ratio_[1]*100:.2f}%)');
 ```
 
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/6.%20Unsupervised%20Learning/output_106_0.png)
-    
-
 
 Atau untuk lebih jelasnya, kita dapat menggunakan fungsi scatter dari `plotly.express` untuk mengatur posisi legend yang ingin kita lihat.
-
 
 ```python
 # masukkan nama dataframe PCA ke ___
@@ -5101,14 +4844,10 @@ fig.show()
 
 Untuk melihat index data yang terdeteksi anomali, kita bisa menggunakan cara berikut ini.
 
-
 ```python
 anomaly_indices = np.where(lof_label_tune == 1)[0]
 anomaly_indices
 ```
-
-
-
 
     array([  405,   536,   587,   826,  1033,  1412,  1447,  1785,  2367,
             2379,  2829,  2857,  2873,  3223,  3374,  3719,  3925,  3949,
@@ -5120,12 +4859,9 @@ anomaly_indices
            12639, 12741, 13209, 13264, 13587, 13884, 14113, 14150, 14209,
            14393, 14438, 14898], dtype=int64)
 
-
-
-Kita juga dapat mengambil data yang sifatnya anomali ini menggunakan index yang sudah ditemukan di atas. Dari proses ini kita dapat mentransformasi kembali data kita ke bentuk semula. 
+Kita juga dapat mengambil data yang sifatnya anomali ini menggunakan index yang sudah ditemukan di atas. Dari proses ini kita dapat mentransformasi kembali data kita ke bentuk semula.
 
 Ingat bahwa kita sebelumnya membuat dua buah pca yaitu pca yang menyimpan seluruh informasi dan pca yang mengambil 90% informasi. Maka kita gunakan pca yang menyimpan seluruh informasi ini setelah itu kita kembalikan ke bentuk sebelum di scaling.
-
 
 ```python
 anomaly = fraud_pca.iloc[anomaly_indices]
@@ -5137,9 +4873,6 @@ anomaly_df = pd.DataFrame(scaler.inverse_transform(temp),
 
 anomaly_df
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -5153,8 +4886,8 @@ anomaly_df
 
     .dataframe thead tr th {
         text-align: left;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr>
@@ -5452,15 +5185,9 @@ anomaly_df
 <p>75 rows × 22 columns</p>
 </div>
 
-
-
-
 ```python
 fraud.iloc[anomaly_indices]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -5474,8 +5201,8 @@ fraud.iloc[anomaly_indices]
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -5773,29 +5500,19 @@ fraud.iloc[anomaly_indices]
 <p>75 rows × 28 columns</p>
 </div>
 
-
-
-
 ```python
 from joblib import dump
 
 dump(pca2, "Pca Uhuy")
 ```
 
-
-
-
     ['Pca Uhuy.exe']
-
-
-
 
 ```python
 from joblib import load
 
 halo = load("Pca Uhuy")
 ```
-
 
 ```python
 halo

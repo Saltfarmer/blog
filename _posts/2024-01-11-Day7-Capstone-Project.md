@@ -7,24 +7,20 @@ comments : true
 share : true
 categories:
   - Data Science
-  - Sklearn
-  - Capstone
 tags:
   - Python
   - Algoritma
   - Exercise
-
 ---
-
 # **Fraud Prediction**
 
 ## **Problem Statement**
 
-💼 **Fraud** merupakan suatu tindakan penipuan pada transaksi keuangan. Transaksi ini bertujuan untuk memperoleh keuntungan dari suatu entitas lain dengan cara ilegal sehingga dapat menyebabkan kerugian. 
+💼 **Fraud** merupakan suatu tindakan penipuan pada transaksi keuangan. Transaksi ini bertujuan untuk memperoleh keuntungan dari suatu entitas lain dengan cara ilegal sehingga dapat menyebabkan kerugian.
 
 Transaksi fraud sering terjadi di industri perbankan. Beberapa contoh transaksi fraud pada industri perbankan antara lain adalah *pishing, skimming*, penipuan kartu kredit, penipuan pinjaman, dll.
 
-Efek negatif dari transaksi fraud adalah adanya kerugian finansial di kedua belah pihak baik customer maupun industri perbankan. Oleh karena itu diperlukan tindakan pencegahan dengan deteksi lebih dini terhadap potensi transaksi fraud. 
+Efek negatif dari transaksi fraud adalah adanya kerugian finansial di kedua belah pihak baik customer maupun industri perbankan. Oleh karena itu diperlukan tindakan pencegahan dengan deteksi lebih dini terhadap potensi transaksi fraud.
 
 Transaksi fraud dapat dideteksi lebih awal dengan cara membangun model *machine learning* dengan metode klasifikasi. Tugas kita pada project kali ini adalah membuat model klasifikasi untuk mendeteksi transaksi fraud agar dapat dilakukan action plan berikutnya
 
@@ -38,7 +34,7 @@ Untuk menyelesaikan project ini, silahkan mengacu pada rubrics di bawah ini sert
 
 - Metode apa saja yang yang dilakukan dalam proses persiapan data?
 - Apakah terdapat data yang *missing* atau *duplicate*, bagaimana cara mengatasi data tersebut?
-Referensi: [dokumentasi pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html) atau [FAQ](https://askalgo-py.netlify.app/faq/eda?highlight=fillna#missing-values)
+  Referensi: [dokumentasi pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html) atau [FAQ](https://askalgo-py.netlify.app/faq/eda?highlight=fillna#missing-values)
 
 (4 poin) Bagaimana cara untuk melakukan *feature engineering* ataupun pemilihan variabel dari data yang tersedia.
 
@@ -68,12 +64,12 @@ Referensi: [dokumentasi pandas](https://pandas.pydata.org/docs/reference/api/pan
 
 ***Prediction Performance***
 
-(1 poin) Metrics yang dipilih mencapai 60% pada data train 
-(2 poin) Metrics yang dipilih mencapai 60% pada data test 
+(1 poin) Metrics yang dipilih mencapai 60% pada data train
+(2 poin) Metrics yang dipilih mencapai 60% pada data test
 
 ***Conclusion***
 
-(2 poin) Tuliskan kesimpulan dari project yang anda kerjakan. 
+(2 poin) Tuliskan kesimpulan dari project yang anda kerjakan.
 
 - Apakah model sudah dapat melakukan prediksi dengan baik? Jelaskan.
 - Apakah model sudah dapat menjawab pertanyaan bisnis yang ada? Jelaskan.
@@ -93,17 +89,17 @@ Berikut adalah penjelasan setiap kolom yang terdapat pada _dataset_ yang akan di
 - `id_tanggal_transaksi_awal`: ID tanggal transaksi dilakukan
 - `tanggal_transaksi_awal`: tanggal dilakukan transaksi (POSIX format)
 - `tipe_kartu`: tipe kartu yang bertransaksi
-- `id_merchant`: ID merchant kartu tersebut bertransaksi 
+- `id_merchant`: ID merchant kartu tersebut bertransaksi
 - `nama_merchant`: nama merchant kartu tersebut bertransaksi
-- `tipe_mesin`: tipe mesin yang digunakan untuk bertransaksi (ATM, EDC, dll) 
-- `tipe_transaksi`: jenis transaksi 
-- `nama_transaksi`: nama jenis transaksi 
+- `tipe_mesin`: tipe mesin yang digunakan untuk bertransaksi (ATM, EDC, dll)
+- `tipe_transaksi`: jenis transaksi
+- `nama_transaksi`: nama jenis transaksi
 - `nilai_transaksi`: nilai uang yang tercatat saat transaksi
-- `id_negara`: ID negara tempat terjadi transaksi 
+- `id_negara`: ID negara tempat terjadi transaksi
 - `nama_negara`: nama negara tempat terjadi transaksi
 - `nama_kota`: nama kota tempat terjadi transaksi
 - `lokasi_mesin` : lokasi mesin
-- `pemilik_mesin`: pemilik mesin 
+- `pemilik_mesin`: pemilik mesin
 - `waktu_transaksi`: waktu transaksi berlangsung
 - `kuartal_transaksi`: kuartal waktu transaksi berlangsung
 - `kepemilikan_kartu`: kepemilikan kartu
@@ -124,10 +120,9 @@ Berikut adalah penjelasan setiap kolom yang terdapat pada _dataset_ yang akan di
 
 - Metode apa saja yang yang dilakukan dalam proses persiapan data?
 - Apakah terdapat data yang *missing* atau *duplicate*, bagaimana cara mengatasi data tersebut?
-Referensi: [dokumentasi pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html) atau [FAQ](https://askalgo-py.netlify.app/faq/eda?highlight=fillna#missing-values)u FAQ
+  Referensi: [dokumentasi pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html) atau [FAQ](https://askalgo-py.netlify.app/faq/eda?highlight=fillna#missing-values)u FAQ
 
 ### Import Library yang dibutuhkan
-
 
 ```python
 import pandas as pd
@@ -144,14 +139,10 @@ from sklearn.preprocessing import StandardScaler
 
 ### Read Data
 
-
 ```python
 fraud = pd.read_csv('transaksi_fraud.csv')
 fraud.head().T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -165,8 +156,8 @@ fraud.head().T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -407,28 +398,19 @@ fraud.head().T
 </table>
 </div>
 
-
-
 ### Cek keseimbangan fraudnya
-
 
 ```python
 fraud_asli = fraud.copy()
 fraud_asli['flag_transaksi_fraud'].value_counts()
 ```
 
-
-
-
     flag_transaksi_fraud
     0    12215
     1      910
     Name: count, dtype: int64
 
-
-
 ### Cek informasi sekilas dan tipe data
-
 
 ```python
 fraud.info()
@@ -437,39 +419,38 @@ fraud.info()
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 13125 entries, 0 to 13124
     Data columns (total 28 columns):
-     #   Column                      Non-Null Count  Dtype  
-    ---  ------                      --------------  -----  
-     0   X                           13125 non-null  int64  
-     1   id_tanggal_transaksi_awal   13125 non-null  int64  
-     2   tanggal_transaksi_awal      13125 non-null  int64  
-     3   tipe_kartu                  13125 non-null  int64  
-     4   id_merchant                 13125 non-null  int64  
-     5   nama_merchant               13125 non-null  int64  
-     6   tipe_mesin                  13125 non-null  int64  
-     7   tipe_transaksi              13125 non-null  int64  
-     8   nama_transaksi              13125 non-null  int64  
-     9   nilai_transaksi             13125 non-null  float64
-     10  id_negara                   13125 non-null  int64  
-     11  nama_negara                 13125 non-null  int64  
-     12  nama_kota                   13125 non-null  int64  
-     13  lokasi_mesin                13125 non-null  int64  
-     14  pemilik_mesin               13125 non-null  int64  
-     15  waktu_transaksi             13125 non-null  int64  
-     16  kuartal_transaksi           13125 non-null  int64  
-     17  kepemilikan_kartu           13125 non-null  int64  
-     18  nama_channel                13125 non-null  int64  
-     19  id_channel                  13125 non-null  int64  
-     20  flag_transaksi_finansial    13125 non-null  bool   
-     21  status_transaksi            13125 non-null  int64  
-     22  bank_pemilik_kartu          13125 non-null  int64  
-     23  rata_rata_nilai_transaksi   13104 non-null  float64
+     #   Column                      Non-Null Count  Dtype
+    ---  ------                      --------------  -----
+    0   X                           13125 non-null  int64
+    1   id_tanggal_transaksi_awal   13125 non-null  int64
+    2   tanggal_transaksi_awal      13125 non-null  int64
+    3   tipe_kartu                  13125 non-null  int64
+    4   id_merchant                 13125 non-null  int64
+    5   nama_merchant               13125 non-null  int64
+    6   tipe_mesin                  13125 non-null  int64
+    7   tipe_transaksi              13125 non-null  int64
+    8   nama_transaksi              13125 non-null  int64
+    9   nilai_transaksi             13125 non-null  float64
+     10  id_negara                   13125 non-null  int64
+    11  nama_negara                 13125 non-null  int64
+    12  nama_kota                   13125 non-null  int64
+    13  lokasi_mesin                13125 non-null  int64
+    14  pemilik_mesin               13125 non-null  int64
+    15  waktu_transaksi             13125 non-null  int64
+    16  kuartal_transaksi           13125 non-null  int64
+    17  kepemilikan_kartu           13125 non-null  int64
+    18  nama_channel                13125 non-null  int64
+    19  id_channel                  13125 non-null  int64
+    20  flag_transaksi_finansial    13125 non-null  bool
+    21  status_transaksi            13125 non-null  int64
+    22  bank_pemilik_kartu          13125 non-null  int64
+    23  rata_rata_nilai_transaksi   13104 non-null  float64
      24  maksimum_nilai_transaksi    13104 non-null  float64
      25  minimum_nilai_transaksi     13104 non-null  float64
      26  rata_rata_jumlah_transaksi  13104 non-null  float64
-     27  flag_transaksi_fraud        13125 non-null  int64  
+     27  flag_transaksi_fraud        13125 non-null  int64
     dtypes: bool(1), float64(5), int64(22)
     memory usage: 2.7 MB
-    
 
 Berdasarkan deskripsi data sebelumnya dan `fraud.info()` maka beberapa kolom akan diubah ke tipe data lain.
 
@@ -479,13 +460,11 @@ Berdasarkan deskripsi data sebelumnya dan `fraud.info()` maka beberapa kolom aka
 
 ### Ubah datatype
 
-
 ```python
 obj_kolom = ['X', 'id_tanggal_transaksi_awal', 'nama_channel', 'id_channel', 'bank_pemilik_kartu', 'id_merchant', 'nama_merchant', 'nama_transaksi']
 cat_kolom = ['kuartal_transaksi', 'tipe_kartu', 'tipe_mesin', 'tipe_transaksi', 'id_negara', 'nama_negara', 'nama_kota', 'lokasi_mesin', 'pemilik_mesin', 'kepemilikan_kartu', 'status_transaksi']
 dt_kolom = ['tanggal_transaksi_awal', 'waktu_transaksi']
 ```
-
 
 ```python
 # -> object
@@ -497,7 +476,6 @@ fraud['tanggal_transaksi_awal'] = fraud['tanggal_transaksi_awal'].apply(lambda x
 fraud['waktu_transaksi'] = fraud['waktu_transaksi'].apply(lambda x : datetime.fromtimestamp(x))
 ```
 
-
 ```python
 fraud.info()
 ```
@@ -505,50 +483,45 @@ fraud.info()
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 13125 entries, 0 to 13124
     Data columns (total 28 columns):
-     #   Column                      Non-Null Count  Dtype         
-    ---  ------                      --------------  -----         
-     0   X                           13125 non-null  object        
-     1   id_tanggal_transaksi_awal   13125 non-null  object        
-     2   tanggal_transaksi_awal      13125 non-null  datetime64[ns]
-     3   tipe_kartu                  13125 non-null  category      
-     4   id_merchant                 13125 non-null  object        
-     5   nama_merchant               13125 non-null  object        
-     6   tipe_mesin                  13125 non-null  category      
-     7   tipe_transaksi              13125 non-null  category      
-     8   nama_transaksi              13125 non-null  object        
-     9   nilai_transaksi             13125 non-null  float64       
-     10  id_negara                   13125 non-null  category      
-     11  nama_negara                 13125 non-null  category      
-     12  nama_kota                   13125 non-null  category      
-     13  lokasi_mesin                13125 non-null  category      
-     14  pemilik_mesin               13125 non-null  category      
-     15  waktu_transaksi             13125 non-null  datetime64[ns]
-     16  kuartal_transaksi           13125 non-null  category      
-     17  kepemilikan_kartu           13125 non-null  category      
-     18  nama_channel                13125 non-null  object        
-     19  id_channel                  13125 non-null  object        
-     20  flag_transaksi_finansial    13125 non-null  bool          
-     21  status_transaksi            13125 non-null  category      
-     22  bank_pemilik_kartu          13125 non-null  object        
-     23  rata_rata_nilai_transaksi   13104 non-null  float64       
-     24  maksimum_nilai_transaksi    13104 non-null  float64       
-     25  minimum_nilai_transaksi     13104 non-null  float64       
-     26  rata_rata_jumlah_transaksi  13104 non-null  float64       
-     27  flag_transaksi_fraud        13125 non-null  int64         
+     #   Column                      Non-Null Count  Dtype
+    ---  ------                      --------------  -----
+    0   X                           13125 non-null  object
+    1   id_tanggal_transaksi_awal   13125 non-null  object
+    2   tanggal_transaksi_awal      13125 non-null  datetime64[ns]
+     3   tipe_kartu                  13125 non-null  category
+    4   id_merchant                 13125 non-null  object
+    5   nama_merchant               13125 non-null  object
+    6   tipe_mesin                  13125 non-null  category
+    7   tipe_transaksi              13125 non-null  category
+    8   nama_transaksi              13125 non-null  object
+    9   nilai_transaksi             13125 non-null  float64
+    10  id_negara                   13125 non-null  category
+    11  nama_negara                 13125 non-null  category
+    12  nama_kota                   13125 non-null  category
+    13  lokasi_mesin                13125 non-null  category
+    14  pemilik_mesin               13125 non-null  category
+    15  waktu_transaksi             13125 non-null  datetime64[ns]
+     16  kuartal_transaksi           13125 non-null  category
+    17  kepemilikan_kartu           13125 non-null  category
+    18  nama_channel                13125 non-null  object
+    19  id_channel                  13125 non-null  object
+    20  flag_transaksi_finansial    13125 non-null  bool
+    21  status_transaksi            13125 non-null  category
+    22  bank_pemilik_kartu          13125 non-null  object
+    23  rata_rata_nilai_transaksi   13104 non-null  float64
+    24  maksimum_nilai_transaksi    13104 non-null  float64
+    25  minimum_nilai_transaksi     13104 non-null  float64
+    26  rata_rata_jumlah_transaksi  13104 non-null  float64
+    27  flag_transaksi_fraud        13125 non-null  int64
     dtypes: bool(1), category(11), datetime64[ns](2), float64(5), int64(1), object(8)
     memory usage: 2.2+ MB
-    
 
 ### Cek deskripsi data numerik dan kategorik
-
 
 ```python
 # numerik
 fraud.describe().T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -562,8 +535,8 @@ fraud.describe().T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -671,16 +644,10 @@ fraud.describe().T
 </table>
 </div>
 
-
-
-
 ```python
 # numerik
 fraud.select_dtypes(include=['object', 'category']).describe().T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -694,8 +661,8 @@ fraud.select_dtypes(include=['object', 'category']).describe().T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -844,17 +811,11 @@ fraud.select_dtypes(include=['object', 'category']).describe().T
 </table>
 </div>
 
-
-
 ### Cek missing atau duplicated
-
 
 ```python
 fraud.isna().sum()
 ```
-
-
-
 
     X                              0
     id_tanggal_transaksi_awal      0
@@ -886,15 +847,9 @@ fraud.isna().sum()
     flag_transaksi_fraud           0
     dtype: int64
 
-
-
-
 ```python
 fraud[fraud['rata_rata_nilai_transaksi'].isna()].T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -908,8 +863,8 @@ fraud[fraud['rata_rata_nilai_transaksi'].isna()].T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1615,20 +1570,15 @@ fraud[fraud['rata_rata_nilai_transaksi'].isna()].T
 <p>28 rows × 21 columns</p>
 </div>
 
-
-
 Saya akan coba menggunakan 2 metode dalam mengatasi missing value.
+
 1. Drop missing value karena missing value hanya 21 dan secara kumulatif hanya 0.16 % saja kehilangan data (prioritas karena mudah)
 2. Menggunakan imputasi (singular (`mean`,`median`) atau flexible imputation (`KNNImputer` atau `IterativeImputer`))
-
 
 ```python
 fraud = fraud.dropna()
 fraud.isna().sum()
 ```
-
-
-
 
     X                             0
     id_tanggal_transaksi_awal     0
@@ -1660,21 +1610,13 @@ fraud.isna().sum()
     flag_transaksi_fraud          0
     dtype: int64
 
-
-
 ### Cek duplikat
-
 
 ```python
 fraud.duplicated().any()
 ```
 
-
-
-
     False
-
-
 
 Alhamdulillah tidak ada duplikat wkwkwkwkwk
 
@@ -1683,14 +1625,10 @@ Alhamdulillah tidak ada duplikat wkwkwkwkwk
 - Apakah terdapat variable yang dihilangkan? Jika iya, kenapa?
 - Apakah terdapat variable yang ditambahkan? Jika iya, kenapa?
 
-
 ```python
 # numerik
 fraud.select_dtypes(include=['object', 'category']).describe().T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1704,8 +1642,8 @@ fraud.select_dtypes(include=['object', 'category']).describe().T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1854,19 +1792,13 @@ fraud.select_dtypes(include=['object', 'category']).describe().T
 </table>
 </div>
 
-
-
 ### Apakah terdapat variable yang dihilangkan? Jika iya, kenapa?
 
 Iya, terutama variabel yang hanya menyangkut ID dan Nama yang memiliki nilai unik terlalu banyak akan dihilangkan seperti `X`, `id_tanggal_transaksi_awal`, `id_merchant`, `nama_merchant`, `tipe_mesin`, `tipe_transaksi`, `nama_transaksi`, `id_negara`, `nama_negara`,`tipe_kartu`, `nama_kota`, `lokasi_mesin`, `pemilik_mesin` lalu untuk `status_transaksi` dan `bank_pemilik_kartu` juga dihapus karena kategori yang tidak punya unique value
 
-
 ```python
 fraud[['nama_channel', 'id_channel']].corr()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1880,8 +1812,8 @@ fraud[['nama_channel', 'id_channel']].corr()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1905,18 +1837,12 @@ fraud[['nama_channel', 'id_channel']].corr()
 </table>
 </div>
 
-
-
 Karena `nama_channel` dan `id_channel` tidak berkorelasi cukup kuat seperti asumsi saya diawal jadi dibiarkan saja
-
 
 ```python
 fraud_clean = fraud.drop(columns=['X', 'id_tanggal_transaksi_awal', 'id_merchant', 'nama_merchant', 'tipe_mesin', 'tipe_transaksi', 'nama_transaksi', 'id_negara','tipe_kartu', 'nama_negara', 'nama_kota', 'lokasi_mesin', 'pemilik_mesin', 'status_transaksi', 'bank_pemilik_kartu'])
 fraud_clean.head().T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1930,8 +1856,8 @@ fraud_clean.head().T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2052,23 +1978,21 @@ fraud_clean.head().T
 </table>
 </div>
 
-
-
 ### Apakah terdapat variable yang ditambahkan? Jika iya, kenapa?
+
 Sepertinya belum ada variable yang perlu ditambahkan dikarenakan belum diperlukannya. **Namun** ada kemungkinan penambahan variabel berdasarkan waktu seperti jam, hari, tanggal dan sebagainya. Beberapa dari variabel kategori atau objek akan ditambahkan untuk keperluan encoding agar input dapat dibaca oleh model. Namun akan dilakukan di cell lain. Lalu untuk variabel tanggal (`tanggal_transaksi_awal`, `waktu_transaksi`) akan diubah ke dalam bentuk `timestamp` agar dapat diproses model juga
 
 Untuk analisis saya akan fokus menggunakan `fraud_clean` sedangkan untuk modelling akan menggunakan `fraud_clean_enc`
 
 ## Exploratory Data Analysis
 
-(2 poin) Exploratory Data Analyss- 
+(2 poin) Exploratory Data Analyss-
 
 Berikan penjelasan informatif dari visualisasi dan/atau segala jenis hasil eksplorasi An- da.
 Bagaimana distribusi data pada setiap varia- bel?
 Apakah terdapat informasi menarik antara variable predictor dengan variable target?
 
 Multivariate analysis
-
 
 ```python
 matplotlib.rc('figure', figsize=(10, 5)) # Buat melebarkan gambar
@@ -2079,205 +2003,102 @@ sns.heatmap(fraud_clean.select_dtypes(include=['int64', 'float64']).corr(), # ni
             cmap='Blues'); # warna heatmap
 ```
 
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_37_0.png)
-    
-
 
 Terlihat insight menarik bahwa korelasi antar prediktor `nilai_transaksi`, `rata_rata_nilai_transaksi`, dan `maksimum_nilai_transaksi` cukup tinggi. Ini akan cukup mempengaruhi model karena redundansi yang tinggi. Mari kita lihat distribusi ketiga variabel tersebut
 
 ### Distribusi `nilai_transaksi` terhadap `flag_transaksi_fraud`
 
-
 ```python
 sns.histplot(data=fraud_clean, x='nilai_transaksi', log_scale=True, kde=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='nilai_transaksi', ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_40_1.png)
-    
-
-
 
 ```python
 sns.boxplot(data=fraud_clean, x='nilai_transaksi', log_scale=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='nilai_transaksi'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_41_1.png)
-    
-
 
 ### Distribusi `rata_rata_nilai_transaksi` terhadap `flag_transaksi_fraud`
-
 
 ```python
 sns.histplot(data=fraud_clean, x='rata_rata_nilai_transaksi', log_scale=True, kde=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='rata_rata_nilai_transaksi', ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_43_1.png)
-    
-
-
 
 ```python
 sns.boxplot(data=fraud_clean, x='rata_rata_nilai_transaksi', log_scale=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='rata_rata_nilai_transaksi'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_44_1.png)
-    
-
 
 ### Distribusi `maksimum_nilai_transaksi` terhadap `flag_transaksi_fraud`
-
 
 ```python
 sns.histplot(data=fraud_clean, x='maksimum_nilai_transaksi', log_scale=True, kde=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='maksimum_nilai_transaksi', ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_46_1.png)
-    
-
-
 
 ```python
 sns.boxplot(data=fraud_clean, x='maksimum_nilai_transaksi', log_scale=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='maksimum_nilai_transaksi'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_47_1.png)
-    
-
 
 ### Distribusi `minimum_nilai_transaksi` terhadap `flag_transaksi_fraud`
-
 
 ```python
 sns.histplot(data=fraud_clean, x='minimum_nilai_transaksi', log_scale=True, kde=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='minimum_nilai_transaksi', ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_49_1.png)
-    
-
-
 
 ```python
 sns.boxplot(data=fraud_clean, x='minimum_nilai_transaksi', log_scale=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='minimum_nilai_transaksi'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_50_1.png)
-    
-
 
 ### Distribusi `rata_rata_jumlah_transaksi` terhadap `flag_transaksi_fraud`
-
 
 ```python
 sns.histplot(data=fraud_clean, x='rata_rata_jumlah_transaksi', log_scale=True, kde=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='rata_rata_jumlah_transaksi', ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_52_1.png)
-    
-
-
 
 ```python
 sns.boxplot(data=fraud_clean, x='rata_rata_jumlah_transaksi', log_scale=True, hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='rata_rata_jumlah_transaksi'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_53_1.png)
-    
-
 
 ### Kesimpulan yang didapat pada data kontinu
+
 - Terdapat persebaran yang sangat luas pada `nilai_transaksi` dan `minimum_nilai_transaksi`.
 - Untuk `rata_rata_nilai_transaksi` distribusinya cukup normal
 - Untuk `maksimum_jumlah_transaksi` dan `rata_rata_jumlah_transaksi` mempunyai skewness yang berlawanan
@@ -2286,171 +2107,85 @@ sns.boxplot(data=fraud_clean, x='rata_rata_jumlah_transaksi', log_scale=True, hu
 
 ### Analysis tanggal dan transaksi fraud
 
-
 ```python
 sns.histplot(data=fraud_clean, x='tanggal_transaksi_awal', hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='tanggal_transaksi_awal', ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_56_1.png)
-    
-
-
 
 ```python
 sns.boxplot(data=fraud_clean, x='tanggal_transaksi_awal', hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='tanggal_transaksi_awal'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_57_1.png)
-    
-
 
 Kesimpulan dari sini fraud lebih banyak terjadi waktu di waktu yang lebih sore/malam
-
 
 ```python
 sns.histplot(data=fraud_clean, x='waktu_transaksi', hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='waktu_transaksi', ylabel='Count'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_59_1.png)
-    
-
-
 
 ```python
 sns.boxplot(data=fraud_clean, x='waktu_transaksi', hue='flag_transaksi_fraud')
 ```
 
-
-
-
     <Axes: xlabel='waktu_transaksi'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_60_1.png)
-    
-
 
 ### Analysis kategorikal data dengan target
-
 
 ```python
 non_num_kolom
 ```
 
-
-
-
     ['kuartal_transaksi', 'kepemilikan_kartu', 'nama_channel', 'id_channel']
-
-
-
 
 ```python
 sns.barplot(data=fraud_clean, x='kuartal_transaksi', y='flag_transaksi_fraud' )
 ```
 
-
-
-
     <Axes: xlabel='kuartal_transaksi', ylabel='flag_transaksi_fraud'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_63_1.png)
-    
-
 
 Dapat dilihat bahwa transaksi fraud lebih condong ke awal awal kuartal transaksi
-
 
 ```python
 sns.barplot(data=fraud_clean, x='kepemilikan_kartu', y='flag_transaksi_fraud' )
 ```
 
-
-
-
     <Axes: xlabel='kepemilikan_kartu', ylabel='flag_transaksi_fraud'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_65_1.png)
-    
-
 
 Lalu untuk `kepemilikan_kartu` = 1 lebih condong melakukan fraud
-
 
 ```python
 sns.barplot(data=fraud_clean, x='nama_channel', y='flag_transaksi_fraud' )
 ```
 
-
-
-
     <Axes: xlabel='nama_channel', ylabel='flag_transaksi_fraud'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_67_1.png)
-    
-
 
 Lalu untuk `nama_channel` 3 dan 5 lebih condong fraud dibanding yang lain
-
 
 ```python
 sns.barplot(data=fraud_clean, x='id_channel', y='flag_transaksi_fraud' )
 ```
 
-
-
-
     <Axes: xlabel='id_channel', ylabel='flag_transaksi_fraud'>
 
-
-
-
-    
 ![png](https://raw.githubusercontent.com/Saltfarmer/Algoritma-BFLP-DS-Audit/main/7.%20Capstone%20Project/output_69_1.png)
-    
-
 
 Lalu untuk `id_channel` 8 lebih condong fraud dibanding yang lain
 
@@ -2466,20 +2201,13 @@ Untuk kolom yang perlu di encoding adalah `kuartal_transaksi`, `kepemilikan_kart
 
 Oh iya jangan lupa `datetimens[64]` juga terkadang tidak bisa dibaca mode makanya sebaiknya diubah lagi dalam bentuk `timestamp`
 
-
 ```python
 fraud_asli['flag_transaksi_finansial'].value_counts()
 ```
 
-
-
-
     flag_transaksi_finansial
     False    13125
     Name: count, dtype: int64
-
-
-
 
 ```python
 # Ternyata False semua WKWKWKWKWKWWKK
@@ -2487,8 +2215,7 @@ fraud_clean = fraud_clean.drop(columns='flag_transaksi_finansial')
 ```
 
 Dikarenakan variabel `nama_channel` dan `id_channel` nilai encoding nya punya korelasi tinggi maka salah satu kolom dihapus dan diambillah `id_channel`.
-Lalu untuk `tanggal_transaksi_awal` karena banyak sekali keanehan saat dalam bentuk `datettimens(64)` (cuma 1 hari) maka di drop untuk menghindari kesalahan data 
-
+Lalu untuk `tanggal_transaksi_awal` karena banyak sekali keanehan saat dalam bentuk `datettimens(64)` (cuma 1 hari) maka di drop untuk menghindari kesalahan data
 
 ```python
 non_num_kolom = ['kuartal_transaksi', 'kepemilikan_kartu', 'id_channel'] 
@@ -2497,9 +2224,6 @@ fraud_clean_enc[dt_kolom] = fraud_asli[dt_kolom]
 fraud_clean_enc = fraud_clean_enc.drop(columns=['tanggal_transaksi_awal', 'nama_channel'])
 fraud_clean_enc.head().T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2513,8 +2237,8 @@ fraud_clean_enc.head().T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2643,29 +2367,23 @@ fraud_clean_enc.head().T
 </table>
 </div>
 
-
-
 ### (4 poin) Membuat model, pilih model berdasarkan model yang sudah diajarkan dikelas (logistic regression / knn)
 
-- Buatlah model yang dapat menjawab pertanyaan bisnis di atas. : 
-Untuk Capstone, saya akan mencoba menggunakan kedua model `Logit()` dan `KNN`
-
-- Variable apa yang dirasa cukup penting dalam pembuatan model? Sertakan alasannya. : 
-Untuk model `Logit()` saya akan mencoba menggunakan semua data yang ada, namun ada beberapa prediktor kategorikal akan dihapus karena memiliki korelasi tinggi. Lalu untuk `KNN`, saya mencoba menggunakan semua nilai numerik yang ada dan melakukan scaling  
-
-- Metode evaluasi apa yang cocok digunakan untuk kasus ini? Jelaskan. : 
-Evaluasi yang digunakan adalah `precision` karena target tidak seimbang dan dalam business case ini difokuskan untuk mencari True Positive dengan menurunkan dan menghindari False Positive sebanyak mungkin
+- Buatlah model yang dapat menjawab pertanyaan bisnis di atas. :
+  Untuk Capstone, saya akan mencoba menggunakan kedua model `Logit()` dan `KNN`
+- Variable apa yang dirasa cukup penting dalam pembuatan model? Sertakan alasannya. :
+  Untuk model `Logit()` saya akan mencoba menggunakan semua data yang ada, namun ada beberapa prediktor kategorikal akan dihapus karena memiliki korelasi tinggi. Lalu untuk `KNN`, saya mencoba menggunakan semua nilai numerik yang ada dan melakukan scaling
+- Metode evaluasi apa yang cocok digunakan untuk kasus ini? Jelaskan. :
+  Evaluasi yang digunakan adalah `precision` karena target tidak seimbang dan dalam business case ini difokuskan untuk mencari True Positive dengan menurunkan dan menghindari False Positive sebanyak mungkin
 
 ### Uji coba menggunakan Logistic Regression
 
 ### Train Test split
 
-
 ```python
 X = sm.add_constant(fraud_clean_enc.drop(columns='flag_transaksi_fraud'))
 y = fraud_clean_enc['flag_transaksi_fraud']
 ```
-
 
 ```python
 X.info()
@@ -2674,38 +2392,32 @@ X.info()
     <class 'pandas.core.frame.DataFrame'>
     Index: 13104 entries, 0 to 13124
     Data columns (total 14 columns):
-     #   Column                      Non-Null Count  Dtype  
-    ---  ------                      --------------  -----  
-     0   const                       13104 non-null  float64
+     #   Column                      Non-Null Count  Dtype
+    ---  ------                      --------------  -----
+    0   const                       13104 non-null  float64
      1   nilai_transaksi             13104 non-null  float64
-     2   waktu_transaksi             13104 non-null  int64  
-     3   rata_rata_nilai_transaksi   13104 non-null  float64
+     2   waktu_transaksi             13104 non-null  int64
+    3   rata_rata_nilai_transaksi   13104 non-null  float64
      4   maksimum_nilai_transaksi    13104 non-null  float64
      5   minimum_nilai_transaksi     13104 non-null  float64
      6   rata_rata_jumlah_transaksi  13104 non-null  float64
-     7   kuartal_transaksi_2         13104 non-null  int32  
-     8   kuartal_transaksi_3         13104 non-null  int32  
-     9   kuartal_transaksi_4         13104 non-null  int32  
-     10  kepemilikan_kartu_2         13104 non-null  int32  
-     11  id_channel_4                13104 non-null  int32  
-     12  id_channel_8                13104 non-null  int32  
-     13  id_channel_9                13104 non-null  int32  
+     7   kuartal_transaksi_2         13104 non-null  int32
+    8   kuartal_transaksi_3         13104 non-null  int32
+    9   kuartal_transaksi_4         13104 non-null  int32
+    10  kepemilikan_kartu_2         13104 non-null  int32
+    11  id_channel_4                13104 non-null  int32
+    12  id_channel_8                13104 non-null  int32
+    13  id_channel_9                13104 non-null  int32
     dtypes: float64(6), int32(7), int64(1)
     memory usage: 1.1 MB
-    
-
 
 ```python
 # X = X.iloc[:, :12]
 ```
 
-
 ```python
 X.corr()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2719,8 +2431,8 @@ X.corr()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2984,17 +2696,11 @@ X.corr()
 </table>
 </div>
 
-
-
 #### Membuat kolom dengan korelasi tinggi
-
 
 ```python
 X.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3008,8 +2714,8 @@ X.head()
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3120,15 +2826,9 @@ X.head()
 </table>
 </div>
 
-
-
-
 ```python
 fraud_clean_enc.describe().T
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3142,8 +2842,8 @@ fraud_clean_enc.describe().T
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3317,9 +3017,6 @@ fraud_clean_enc.describe().T
 </table>
 </div>
 
-
-
-
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, 
                                                    y, # kolom target
@@ -3328,13 +3025,9 @@ X_train, X_test, y_train, y_test = train_test_split(X,
                                                    stratify=y)
 ```
 
-
 ```python
 X_train.dtypes
 ```
-
-
-
 
     const                         float64
     nilai_transaksi               float64
@@ -3352,10 +3045,7 @@ X_train.dtypes
     id_channel_9                    int32
     dtype: object
 
-
-
 ### Modelling menggunakan Logistic Regression
-
 
 ```python
 model_logit = sm.Logit(y_train, X_train)
@@ -3365,14 +3055,9 @@ model_logit.fit().summary()
     Warning: Maximum number of iterations has been exceeded.
              Current function value: 0.209745
              Iterations: 35
-    
 
     C:\Users\SaltFarmer\miniconda3\envs\algoritma\lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
       warnings.warn("Maximum Likelihood optimization failed to "
-    
-
-
-
 
 <table class="simpletable">
 <caption>Logit Regression Results</caption>
@@ -3446,14 +3131,11 @@ model_logit.fit().summary()
 </tr>
 </table>
 
-
-
 ### Prediction Performance
 
 - (1 poin) Metrics yang dipilih mencapai 60% pada data train (2 poin) Metrics yang dipilih mencapai 60% pada data test
 
 #### Hasil metric data train
-
 
 ```python
 logit_pred_tr = model_logit.fit().predict(X_train)
@@ -3463,21 +3145,16 @@ logit_pred_tr
     Warning: Maximum number of iterations has been exceeded.
              Current function value: 0.209745
              Iterations: 35
-    
 
     C:\Users\SaltFarmer\miniconda3\envs\algoritma\lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
       warnings.warn("Maximum Likelihood optimization failed to "
-    
-
-
-
 
     11191    0.037380
     1027     0.056526
     10908    0.057065
     4404     0.057710
     5958     0.027605
-               ...   
+               ...
     3071     0.380087
     4977     0.050986
     574      0.048985
@@ -3485,23 +3162,14 @@ logit_pred_tr
     203      0.048698
     Length: 10483, dtype: float64
 
-
-
-
 ```python
 pred_label_tr = logit_pred_tr.apply(lambda x: 1 if x > 0.5 else 0)
 pred_label_tr.value_counts()
 ```
 
-
-
-
     0    10416
     1       67
     Name: count, dtype: int64
-
-
-
 
 ```python
 print(f'Accuracy score: {accuracy_score(y_train, pred_label_tr)}')
@@ -3512,25 +3180,17 @@ print(f'Precision score: {precision_score(y_train, pred_label_tr)}')
     Accuracy score: 0.9311265859009825
     Recall score: 0.04195804195804196
     Precision score: 0.44776119402985076
-    
 
 Karena Precision belum lebih dari 60% maka saya atur lagi thresholdnya
-
 
 ```python
 pred_label_tr = logit_pred_tr.apply(lambda x: 1 if x > 0.8 else 0)
 pred_label_tr.value_counts()
 ```
 
-
-
-
     0    10470
     1       13
     Name: count, dtype: int64
-
-
-
 
 ```python
 print(f'Accuracy score: {accuracy_score(y_train, pred_label_tr)}')
@@ -3541,12 +3201,10 @@ print(f'Precision score: {precision_score(y_train, pred_label_tr)}')
     Accuracy score: 0.9322712963846227
     Recall score: 0.012587412587412588
     Precision score: 0.6923076923076923
-    
 
 Sudah ditemukan threshold yang tepat untuk Data Train melebihi nilai threshold 60%
 
 #### Hasil metric data Test
-
 
 ```python
 logit_pred = model_logit.fit().predict(X_test)
@@ -3556,21 +3214,16 @@ logit_pred
     Warning: Maximum number of iterations has been exceeded.
              Current function value: 0.209745
              Iterations: 35
-    
 
     C:\Users\SaltFarmer\miniconda3\envs\algoritma\lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
       warnings.warn("Maximum Likelihood optimization failed to "
-    
-
-
-
 
     12431    0.057628
     4523     0.049031
     8211     0.011157
     4172     0.048879
     5746     0.389036
-               ...   
+               ...
     11842    0.048245
     9454     0.046732
     2449     0.055409
@@ -3578,23 +3231,14 @@ logit_pred
     5465     0.051302
     Length: 2621, dtype: float64
 
-
-
-
 ```python
 pred_label = logit_pred.apply(lambda x: 1 if x > 0.5 else 0)
 pred_label.value_counts()
 ```
 
-
-
-
     0    2602
     1      19
     Name: count, dtype: int64
-
-
-
 
 ```python
 print(f'Accuracy score: {accuracy_score(y_test, pred_label)}')
@@ -3605,25 +3249,17 @@ print(f'Precision score: {precision_score(y_test, pred_label)}')
     Accuracy score: 0.9320869896985883
     Recall score: 0.055865921787709494
     Precision score: 0.5263157894736842
-    
 
 Saya coba atur sedikit threshold nya agar mendapatkan nilai presisi yang diinginkan
-
 
 ```python
 pred_label = logit_pred.apply(lambda x: 1 if x > 0.8 else 0)
 pred_label.value_counts()
 ```
 
-
-
-
     0    2619
     1       2
     Name: count, dtype: int64
-
-
-
 
 ```python
 print(f'Accuracy score: {accuracy_score(y_test, pred_label)}')
@@ -3634,7 +3270,6 @@ print(f'Precision score: {precision_score(y_test, pred_label)}')
     Accuracy score: 0.9324685234643266
     Recall score: 0.0111731843575419
     Precision score: 1.0
-    
 
 Melihat hasil metric dari data train dan data test maka model bisa dianggap **undefitting** (hasil train < hasil test)
 
@@ -3642,13 +3277,11 @@ Melihat hasil metric dari data train dan data test maka model bisa dianggap **un
 
 Hasil dengan presisi 1 dan terbaik
 
-
 ```python
 # fraud_asli = fraud_asli.dropna()
 # X = sm.add_constant(fraud_asli.drop(columns='flag_transaksi_fraud')[['nilai_transaksi', 'waktu_transaksi', 'rata_rata_nilai_transaksi', 'maksimum_nilai_transaksi', 'minimum_nilai_transaksi', 'rata_rata_jumlah_transaksi']])
 # y = fraud_asli['flag_transaksi_fraud']
 ```
-
 
 ```python
 # X_train, X_test, y_train, y_test = train_test_split(X, 
@@ -3658,13 +3291,9 @@ Hasil dengan presisi 1 dan terbaik
 #                                                    stratify=y)
 ```
 
-
 ```python
 # X_train
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3678,8 +3307,8 @@ Hasil dengan presisi 1 dan terbaik
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3809,9 +3438,6 @@ Hasil dengan presisi 1 dan terbaik
 <p>10483 rows × 7 columns</p>
 </div>
 
-
-
-
 ```python
 # model_logit2 = sm.Logit(y_train, X_train)
 # model_logit2.fit().summary()
@@ -3820,10 +3446,6 @@ Hasil dengan presisi 1 dan terbaik
     Optimization terminated successfully.
              Current function value: 0.240125
              Iterations 7
-    
-
-
-
 
 <table class="simpletable">
 <caption>Logit Regression Results</caption>
@@ -3876,9 +3498,6 @@ Hasil dengan presisi 1 dan terbaik
 </tr>
 </table>
 
-
-
-
 ```python
 # logit_pred2 = model_logit2.fit().predict(X_test)
 # logit_pred2
@@ -3887,17 +3506,13 @@ Hasil dengan presisi 1 dan terbaik
     Optimization terminated successfully.
              Current function value: 0.240125
              Iterations 7
-    
-
-
-
 
     12431    0.075937
     4523     0.082749
     8211     0.015727
     4172     0.065997
     5746     0.081120
-               ...   
+               ...
     11842    0.062634
     9454     0.071733
     2449     0.072522
@@ -3905,23 +3520,14 @@ Hasil dengan presisi 1 dan terbaik
     5465     0.078226
     Length: 2621, dtype: float64
 
-
-
-
 ```python
 # pred_label2 = logit_pred2.apply(lambda x: 1 if x > 0.5 else 0)
 # pred_label2.value_counts()
 ```
 
-
-
-
     0    2618
     1       3
     Name: count, dtype: int64
-
-
-
 
 ```python
 # print(f'Accuracy score: {accuracy_score(y_test, pred_label2)}')
@@ -3932,36 +3538,24 @@ Hasil dengan presisi 1 dan terbaik
     Accuracy score: 0.9320869896985883
     Recall score: 0.0111731843575419
     Precision score: 0.6666666666666666
-    
 
 # Coba KNN
-
 
 ```python
 KNN_model = KNeighborsClassifier(n_neighbors=10)
 scaler = StandardScaler()
 ```
 
-
 ```python
 KNN_model
 ```
 
-
-
-
 <style>#sk-container-id-7 {color: black;}#sk-container-id-7 pre{padding: 0;}#sk-container-id-7 div.sk-toggleable {background-color: white;}#sk-container-id-7 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-7 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-7 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-7 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-7 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-7 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-7 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-7 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-7 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-7 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-7 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-7 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-7 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-7 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-7 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-7 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-7 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-7 div.sk-item {position: relative;z-index: 1;}#sk-container-id-7 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-7 div.sk-item::before, #sk-container-id-7 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-7 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-7 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-7 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-7 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-7 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-7 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-7 div.sk-label-container {text-align: center;}#sk-container-id-7 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-7 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-7" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" checked><label for="sk-estimator-id-7" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(n_neighbors=10)</pre></div></div></div></div></div>
-
-
-
 
 ```python
 fraud_clean_num = fraud_clean_enc.iloc[:, :6]
 fraud_clean_num
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3975,8 +3569,8 @@ fraud_clean_num
 
     .dataframe thead th {
         text-align: right;
-    }
-</style>
+    }`</style>`
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -4094,9 +3688,6 @@ fraud_clean_num
 <p>13104 rows × 6 columns</p>
 </div>
 
-
-
-
 ```python
 # prediktor
 X = fraud_clean_num
@@ -4113,7 +3704,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, # kolom prediktor
 
 ### Scaling
 
-
 ```python
 cols = X_train.columns
 
@@ -4123,12 +3713,10 @@ X_train_scale = scaler.transform(X_train)
 X_test_scale = scaler.transform(X_test)
 ```
 
-
 ```python
 KNN_model.fit(X_train_scale, y_train)
 pred_knn_tr = KNN_model.predict(X_train_scale)
 ```
-
 
 ```python
 print(f'Accuracy score: {accuracy_score(y_train, pred_knn_tr)}')
@@ -4139,16 +3727,13 @@ print(f'Precision score: {precision_score(y_train, pred_knn_tr)}')
     Accuracy score: 0.9324620814652295
     Recall score: 0.013986013986013986
     Precision score: 0.7692307692307693
-    
 
 Precision score dari KNN sudah cukup memuaskan karena sudah diatas 60%
-
 
 ```python
 KNN_model.fit(X_train_scale, y_train)
 pred_knn_label = KNN_model.predict(X_test_scale)
 ```
-
 
 ```python
 print(f'Accuracy score: {accuracy_score(y_test, pred_knn_label)}')
@@ -4159,9 +3744,8 @@ print(f'Precision score: {precision_score(y_test, pred_knn_label)}')
     Accuracy score: 0.9328500572300649
     Recall score: 0.01675977653631285
     Precision score: 1.0
-    
 
-Didapatkan score precisision dari Data Test yang lebih tinggi lagi sehingga dianggap modelnya **underfitting** (hasil train < hasil test) 
+Didapatkan score precisision dari Data Test yang lebih tinggi lagi sehingga dianggap modelnya **underfitting** (hasil train < hasil test)
 
 ## Conclusion
 
@@ -4176,18 +3760,14 @@ Sudah cukup baik karena memenuhi pertanyaan bisnis untuk metric `precision` diat
 Sudah, karena pertanyaan bisnisnya mendeteksi fraud sebaik mungkin. Dikarenakan ketidakseimbangan jumlah target, maka metric yang digunakan pun harus tepat untuk fokus melihat True Positive sebaik mungkin dan melihat False Negative sesedikit mungkin. Dari hasil diatas, model Logit dan KNN sudah bekerja dengan baik sudah memenuhi standar presisi yang diinginkan.
 
 - Action plan apa yang dapat dilakukan untuk tindakan preventif transaksi fraud?
-  
-Berdasarkan hasil dari model Logit, maka perlu diwaspadai saat ada momen `nilai_transaksi`, `minimum_nilai_transaksi`, tinggi serta mempunyai `kepemilikan_kartu` 2 dan melakukan `id_channel` selain 3 dikarenakan variabel - variabel ber koefisiensi positive terhadap model dalam memberikan peluang positif Fraud 
+
+Berdasarkan hasil dari model Logit, maka perlu diwaspadai saat ada momen `nilai_transaksi`, `minimum_nilai_transaksi`, tinggi serta mempunyai `kepemilikan_kartu` 2 dan melakukan `id_channel` selain 3 dikarenakan variabel - variabel ber koefisiensi positive terhadap model dalam memberikan peluang positif Fraud
 
 ## Freestyle SMOTE dan XGBoost
-
 
 ```python
 fraud_clean_enc
 ```
-
-
-
 
     Index(['nilai_transaksi', 'waktu_transaksi', 'rata_rata_nilai_transaksi',
            'maksimum_nilai_transaksi', 'minimum_nilai_transaksi',
@@ -4196,75 +3776,50 @@ fraud_clean_enc
            'kepemilikan_kartu_2', 'id_channel_4', 'id_channel_8', 'id_channel_9'],
           dtype='object')
 
-
-
-
 ```python
 from imblearn.combine import SMOTEENN
 
 sme = SMOTEENN(random_state=10)
 ```
 
-
 ```python
 X_0 = fraud_clean_enc.drop(columns='flag_transaksi_fraud')
 y_0 = fraud_clean_enc['flag_transaksi_fraud']
 ```
 
-
 ```python
 X_res, y_res = sme.fit_resample(X_0, y_0)
 ```
 
-
 ```python
 y_res.value_counts()
 ```
-
-
-
 
     flag_transaksi_fraud
     1    10106
     0     8553
     Name: count, dtype: int64
 
-
-
-
 ```python
 X_res.shape
 ```
 
-
-
-
     (18659, 13)
-
-
-
 
 ```python
 fraud_clean_enc['flag_transaksi_fraud'].value_counts()
 ```
-
-
-
 
     flag_transaksi_fraud
     0    12210
     1      894
     Name: count, dtype: int64
 
-
-
-
 ```python
 from xgboost import XGBClassifier
 
 xgb = XGBClassifier(random_state=10)
 ```
-
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X_res, # kolom prediktor
@@ -4274,233 +3829,8 @@ X_train, X_test, y_train, y_test = train_test_split(X_res, # kolom prediktor
                                                    stratify = y_res)
 ```
 
-
 ```python
 xgb.fit(X_train, y_train)
 ```
 
-
-
-
 <style>#sk-container-id-8 {color: black;}#sk-container-id-8 pre{padding: 0;}#sk-container-id-8 div.sk-toggleable {background-color: white;}#sk-container-id-8 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-8 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-8 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-8 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-8 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-8 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-8 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-8 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-8 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-8 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-8 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-8 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-8 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-8 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-8 div.sk-item {position: relative;z-index: 1;}#sk-container-id-8 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-8 div.sk-item::before, #sk-container-id-8 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-8 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-8 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-8 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-8 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-8 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-8 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-8 div.sk-label-container {text-align: center;}#sk-container-id-8 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-8 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-8" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
-              colsample_bylevel=None, colsample_bynode=None,
-              colsample_bytree=None, device=None, early_stopping_rounds=None,
-              enable_categorical=False, eval_metric=None, feature_types=None,
-              gamma=None, grow_policy=None, importance_type=None,
-              interaction_constraints=None, learning_rate=None, max_bin=None,
-              max_cat_threshold=None, max_cat_to_onehot=None,
-              max_delta_step=None, max_depth=None, max_leaves=None,
-              min_child_weight=None, missing=nan, monotone_constraints=None,
-              multi_strategy=None, n_estimators=None, n_jobs=None,
-              num_parallel_tree=None, random_state=10, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" checked><label for="sk-estimator-id-8" class="sk-toggleable__label sk-toggleable__label-arrow">XGBClassifier</label><div class="sk-toggleable__content"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
-              colsample_bylevel=None, colsample_bynode=None,
-              colsample_bytree=None, device=None, early_stopping_rounds=None,
-              enable_categorical=False, eval_metric=None, feature_types=None,
-              gamma=None, grow_policy=None, importance_type=None,
-              interaction_constraints=None, learning_rate=None, max_bin=None,
-              max_cat_threshold=None, max_cat_to_onehot=None,
-              max_delta_step=None, max_depth=None, max_leaves=None,
-              min_child_weight=None, missing=nan, monotone_constraints=None,
-              multi_strategy=None, n_estimators=None, n_jobs=None,
-              num_parallel_tree=None, random_state=10, ...)</pre></div></div></div></div></div>
-
-
-
-
-```python
-pred_tr = xgb.predict(X_train)
-pred_tr
-```
-
-
-
-
-    array([0, 1, 0, ..., 1, 1, 0])
-
-
-
-
-```python
-print(f'Accuracy score: {accuracy_score(y_train, pred_tr)}')
-print(f'Recall score: {recall_score(y_train, pred_tr)}')
-print(f'Precision score: {precision_score(y_train, pred_tr)}')
-```
-
-    Accuracy score: 0.9952435184564883
-    Recall score: 0.9922077922077922
-    Precision score: 0.9990037359900373
-    
-
-
-```python
-pred_ts = xgb.predict(X_test)
-pred_ts
-```
-
-
-
-
-    array([1, 1, 1, ..., 0, 0, 1])
-
-
-
-
-```python
-print(f'Accuracy score: {accuracy_score(y_test, pred_ts)}')
-print(f'Recall score: {recall_score(y_test, pred_ts)}')
-print(f'Precision score: {precision_score(y_test, pred_ts)}')
-```
-
-    Accuracy score: 0.964898177920686
-    Recall score: 0.9609104403760514
-    Precision score: 0.9739217652958877
-    
-
-
-```python
-model_logit3 = sm.Logit(y_train, X_train)
-model_logit3.fit().summary()
-```
-
-    Warning: Maximum number of iterations has been exceeded.
-             Current function value: 0.290377
-             Iterations: 35
-    
-
-    C:\Users\SaltFarmer\miniconda3\envs\algoritma\lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
-      warnings.warn("Maximum Likelihood optimization failed to "
-    
-
-
-
-
-<table class="simpletable">
-<caption>Logit Regression Results</caption>
-<tr>
-  <th>Dep. Variable:</th>   <td>flag_transaksi_fraud</td> <th>  No. Observations:  </th>  <td> 14927</td> 
-</tr>
-<tr>
-  <th>Model:</th>                   <td>Logit</td>        <th>  Df Residuals:      </th>  <td> 14914</td> 
-</tr>
-<tr>
-  <th>Method:</th>                   <td>MLE</td>         <th>  Df Model:          </th>  <td>    12</td> 
-</tr>
-<tr>
-  <th>Date:</th>              <td>Thu, 11 Jan 2024</td>   <th>  Pseudo R-squ.:     </th>  <td>0.5790</td> 
-</tr>
-<tr>
-  <th>Time:</th>                  <td>14:25:01</td>       <th>  Log-Likelihood:    </th> <td> -4334.5</td>
-</tr>
-<tr>
-  <th>converged:</th>               <td>False</td>        <th>  LL-Null:           </th> <td> -10295.</td>
-</tr>
-<tr>
-  <th>Covariance Type:</th>       <td>nonrobust</td>      <th>  LLR p-value:       </th>  <td> 0.000</td> 
-</tr>
-</table>
-<table class="simpletable">
-<tr>
-               <td></td>                 <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>nilai_transaksi</th>            <td> 2.549e-07</td> <td> 1.37e-08</td> <td>   18.650</td> <td> 0.000</td> <td> 2.28e-07</td> <td> 2.82e-07</td>
-</tr>
-<tr>
-  <th>waktu_transaksi</th>            <td> 4.549e-05</td> <td> 1.14e-06</td> <td>   39.752</td> <td> 0.000</td> <td> 4.32e-05</td> <td> 4.77e-05</td>
-</tr>
-<tr>
-  <th>rata_rata_nilai_transaksi</th>  <td> 6.933e-08</td> <td> 3.18e-08</td> <td>    2.182</td> <td> 0.029</td> <td> 7.07e-09</td> <td> 1.32e-07</td>
-</tr>
-<tr>
-  <th>maksimum_nilai_transaksi</th>   <td>-1.684e-08</td> <td> 2.85e-09</td> <td>   -5.909</td> <td> 0.000</td> <td>-2.24e-08</td> <td>-1.13e-08</td>
-</tr>
-<tr>
-  <th>minimum_nilai_transaksi</th>    <td> 2.725e-06</td> <td> 2.21e-07</td> <td>   12.346</td> <td> 0.000</td> <td> 2.29e-06</td> <td> 3.16e-06</td>
-</tr>
-<tr>
-  <th>rata_rata_jumlah_transaksi</th> <td>   -0.0988</td> <td>    0.024</td> <td>   -4.099</td> <td> 0.000</td> <td>   -0.146</td> <td>   -0.052</td>
-</tr>
-<tr>
-  <th>kuartal_transaksi_2</th>        <td>   -2.9516</td> <td>    0.095</td> <td>  -31.185</td> <td> 0.000</td> <td>   -3.137</td> <td>   -2.766</td>
-</tr>
-<tr>
-  <th>kuartal_transaksi_3</th>        <td>   -5.2644</td> <td>    0.138</td> <td>  -38.187</td> <td> 0.000</td> <td>   -5.535</td> <td>   -4.994</td>
-</tr>
-<tr>
-  <th>kuartal_transaksi_4</th>        <td>   -8.5689</td> <td>    0.202</td> <td>  -42.511</td> <td> 0.000</td> <td>   -8.964</td> <td>   -8.174</td>
-</tr>
-<tr>
-  <th>kepemilikan_kartu_2</th>        <td>   19.4428</td> <td> 2287.246</td> <td>    0.009</td> <td> 0.993</td> <td>-4463.477</td> <td> 4502.362</td>
-</tr>
-<tr>
-  <th>id_channel_4</th>               <td>  -23.9954</td> <td> 2287.246</td> <td>   -0.010</td> <td> 0.992</td> <td>-4506.915</td> <td> 4458.924</td>
-</tr>
-<tr>
-  <th>id_channel_8</th>               <td>   -0.3650</td> <td>    0.106</td> <td>   -3.455</td> <td> 0.001</td> <td>   -0.572</td> <td>   -0.158</td>
-</tr>
-<tr>
-  <th>id_channel_9</th>               <td>  -22.4858</td> <td> 2287.246</td> <td>   -0.010</td> <td> 0.992</td> <td>-4505.405</td> <td> 4460.434</td>
-</tr>
-</table>
-
-
-
-
-```python
-logit_pred_tr2 = model_logit3.fit().predict(X_train)
-logit_pred_tr2
-```
-
-    Warning: Maximum number of iterations has been exceeded.
-             Current function value: 0.290377
-             Iterations: 35
-    
-
-    C:\Users\SaltFarmer\miniconda3\envs\algoritma\lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
-      warnings.warn("Maximum Likelihood optimization failed to "
-    
-
-
-
-
-    4595     0.475110
-    15122    0.978847
-    5773     0.342949
-    10132    0.853132
-    18484    0.757783
-               ...   
-    2803     0.415036
-    14465    0.998638
-    12002    0.999722
-    12342    0.887879
-    3115     0.110515
-    Length: 14927, dtype: float64
-
-
-
-
-```python
-pred_label = logit_pred_tr2.apply(lambda x: 1 if x > 0.5 else 0)
-pred_label.value_counts()
-```
-
-
-
-
-    0    7604
-    1    7323
-    Name: count, dtype: int64
-
-
-
-
-```python
-print(f'Accuracy score: {accuracy_score(y_train, pred_label)}')
-print(f'Recall score: {recall_score(y_train, pred_label)}')
-print(f'Precision score: {precision_score(y_train, pred_label)}')
-```
-
-    Accuracy score: 0.8929456689220875
-    Recall score: 0.8540507111935683
-    Precision score: 0.9429195684828622
-    

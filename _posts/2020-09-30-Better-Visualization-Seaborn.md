@@ -5,16 +5,13 @@ header :
 comments : true
 share : true
 categories:
-  - Python
+  - Visualization
 tags:
   - Machine Learning
   - Python
   - Matplotlib
   - Seaborn
- 
-
 ---
-
 After discussing basic visualization with Matplotlib, now let's try another but more attractive visualization library called Seaborn. Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
 
 There are 5 main plots that really useful for your visualization.
@@ -120,7 +117,6 @@ This function provides access to several axes-level functions that show the rela
   ```
 
   ![](https://i.ibb.co/DCV3Sf3/sns-strip.png)
-
 - [`swarmplot()`](https://seaborn.pydata.org/generated/seaborn.swarmplot.html#seaborn.swarmplot) (with `kind="swarm"`)
 
 ```python
@@ -138,22 +134,20 @@ sns.catplot(data=tips, x='sex', y='total_bill', kind='swarm')
   ```
 
   ![](https://i.ibb.co/9GHk2YB/sns-box.png)
-
 - [`violinplot()`](https://seaborn.pydata.org/generated/seaborn.violinplot.html#seaborn.violinplot) (with `kind="violin"`)
 
   ```python
   sns.catplot(data=tips, x='sex', y='total_bill', kind='violin')
   ```
 
-    ![](https://i.ibb.co/RHq7wJs/sns-violin.png)
-
+  ![](https://i.ibb.co/RHq7wJs/sns-violin.png)
 - [`boxenplot()`](https://seaborn.pydata.org/generated/seaborn.boxenplot.html#seaborn.boxenplot) (with `kind="boxen"`)
 
   ```python
   sns.catplot(data=tips, x='sex', y='total_bill', kind='boxen')
   ```
 
-    ![](https://i.ibb.co/9yCSq42/sns-boxen.png)
+  ![](https://i.ibb.co/9yCSq42/sns-boxen.png)
 
 ### Categorical estimate plots:
 
@@ -163,23 +157,21 @@ sns.catplot(data=tips, x='sex', y='total_bill', kind='swarm')
   sns.catplot(data=tips, x='day', y='total_bill', kind='point')
   ```
 
-    ![](https://i.ibb.co/S63GM3y/sns-point.png)
-
+  ![](https://i.ibb.co/S63GM3y/sns-point.png)
 - [`barplot()`](https://seaborn.pydata.org/generated/seaborn.barplot.html#seaborn.barplot) (with `kind="bar"`)
 
   ```python
   sns.catplot(data=tips, x='day', y='total_bill', kind='bar')  
   ```
 
-    ![](https://i.ibb.co/8sQnjRV/sns-bar.png)
-
+  ![](https://i.ibb.co/8sQnjRV/sns-bar.png)
 - [`countplot()`](https://seaborn.pydata.org/generated/seaborn.countplot.html#seaborn.countplot) (with `kind="count"`)
 
   ```python
   sns.catplot(data=tips, x='sex', hue='day', kind='count')
   ```
 
-    ![](https://i.ibb.co/djyVjhY/sns-count.png)
+  ![](https://i.ibb.co/djyVjhY/sns-count.png)
 
 ## Regression Plot
 
@@ -202,16 +194,3 @@ sns.heatmap(tips.corr())
 ```
 
 ![](https://i.ibb.co/Y8V4B0Q/sns-heatmap.png)
-
-
-
-
-
-
-
-
-
-
-
-
-

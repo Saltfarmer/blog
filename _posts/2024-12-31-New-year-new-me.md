@@ -1,13 +1,12 @@
 ---
 title: "New year new me"
 header :
-  image : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgP-LmH83d_xQD84f9EE6ycgM7r1nfhr3ZTA&s
+  teaser : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgP-LmH83d_xQD84f9EE6ycgM7r1nfhr3ZTA&s
 comments : true
 share : true
 categories:
     - Journal
 ---
-
 # Back on Track: 2 Days of Good Habits and Counting!
 
 Hey there, it's your favorite salty guy here, and I'm thrilled to share that I've managed to stick to my good habits for two days in a row! I know, I know, it's not a record-breaking achievement, but hey, it's a start, right?

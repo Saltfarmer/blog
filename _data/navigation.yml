@@ -3,7 +3,7 @@ main:
     url: /year-archive-grid/
   - title: "Category"
     url: /categories-grid/
-  - title: "Tags"
-    url: /tags-grid/
-  - title: "Sitemap"
-    url: /sitemap/
+  # - title: "Tags"
+  #   url: /tags-grid/
+  # - title: "Sitemap"
+  #   url: /sitemap/

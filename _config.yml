@@ -105,9 +105,9 @@ analytics:
 # Site Author
 author:
   name             : "Gama Candra Tri Kartika"
-  avatar           : "/assets/BGLogoGC3K.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/newlogo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Fans of codes and dotes"
-  location         : "Utrecht, The Netherlands"
+  location         : "Jakarta, Indonesia"
   email            : "candragctk17@gmail.com"
   links:
     - label: "Facebook"

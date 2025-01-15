@@ -9,7 +9,7 @@ Good evening everyone. A bit tired today. A lot of meeting. Even back to back me
 
 ## Back 2 back meeting
 
-Apparently I have another meeting today. But now its for my team. So its quite chill. The target is quite difficult tho. Some of the targets is quite a bit difficult.  
+Apparently I have another meeting today. But now its for my team. So its quite chill. The target is quite difficult tho. Some of the targets is quite a bit difficult.
 
 That’s all for today, folks! Thanks for reading. I’ll catch you in the next post. Stay tuned for more updates, and don’t forget to follow me for more wholesome content!
 

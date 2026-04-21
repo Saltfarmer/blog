@@ -1,6 +1,5 @@
 ---
 title: "Quick Update"  
-header:  
 comments: true  
 share: true  
 categories:  
@@ -23,9 +22,7 @@ I am truly happy with her. Please wish us luck, readers! And Bubu, if you’re r
 My professional life has undergone a massive shift recently. Since I can't quite remember the exact chronology of events anymore, I’ll list the highlights here:
 
 - Team Turnover: My teammates seem to have vanished one by one.
-
 - Leadership Changes: My Department Head transferred to another branch, my Team Leader changed (again), and even my Division Head has moved on.
-
 - Increased Workload: The best part of all these departures? My workload has increased significantly!
 
 I’ve lost track of some of the smaller details, but I just wanted to get myself—and you—up to speed.

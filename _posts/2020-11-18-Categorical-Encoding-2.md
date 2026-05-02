@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Pandas
-  - Preprocessing
-  - Sklearn
-
+  - Data Wrangling
 ---
 
 Another reference and shared post from https://www.mygreatlearning.com/blog/label-encoding-in-python/

@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Python
-  - Machine Learning
-  - Classification
-  - EDA
-  - Exercise
+ - Classification
  
 
 ---
@@ -443,8 +437,3 @@ from sklearn.metrics import classification_report
 ​    
 
 ## Great Job!
-
-
-
-
-

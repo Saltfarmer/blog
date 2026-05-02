@@ -6,11 +6,6 @@ comments : true
 share : true
 categories:
   - Visualization
-tags:
-  - Machine Learning
-  - Python
-  - Matplotlib
-  - Seaborn
 ---
 After discussing basic visualization with Matplotlib, now let's try another but more attractive visualization library called Seaborn. Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
 

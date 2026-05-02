@@ -5,9 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
+  - Tips
 ---
 
 Data imbalance usually reflects an unequal distribution of classes within a dataset. In class imbalance, one trains on a dataset that contains a large number of instances of one type, for example, malicious files, and only a few instances of other types, for example, clean files. The most common example, in a credit card fraud detection dataset, most of the credit card transactions are not fraud and very few classes are fraud transactions. This leaves us with something like a 99:1 ratio between the fraud and non-fraud classes. 

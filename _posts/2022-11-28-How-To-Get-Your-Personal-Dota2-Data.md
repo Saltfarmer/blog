@@ -4,10 +4,6 @@ header :
   teaser: /assets/images/opendota.jpg
 categories:
   - Dota
-tags:
-  - Random
-  - Dota
-  - Python
 ---
 
 This is going to be a short post. This is really interesting for me personally. As a Data Scientist and avid Dota 2 player, what could be better than doing data analysis on Dota 2 matches? In this post, I used the API from [opendota.com](https://www.opendota.com/api-keys). This API is free to use at least for your personal Dota 2 data which I assume is not that much and not exceeding the free tier limits. For the data cleaning and data collection, I will use `Pandas` and `requests`.
@@ -226,5 +222,3 @@ for match in matchlist:
 
 matches_df.to_csv('Yourdataname.csv')
 ```
-
-  

@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Exercise
   - Numpy
- 
-
 ---
 
 Today i will completing Numpy Exercise. If you want to solve it all by yourself, you can download notebooks file [here](https://drive.google.com/file/d/12fAKS5q6pLe8wRtg5DyyWRW41Y6TEmD4/view?usp=sharing)

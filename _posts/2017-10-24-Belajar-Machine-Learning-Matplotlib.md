@@ -5,11 +5,7 @@ header:
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - Python
-  - Matplotlib
+  - Visualization
 ---
 
 Midnight post lagi -_-. Enaknya bahas apaan ya ??? Karena bakal nggak asik kalo ML tanpa illustrasi ( ͡° ͜ʖ ͡°), mendingan bahas tentang illustrasi yang bisa dilakukan di python. Library yang akan digunakan pada hari ini yaitu **matplotlib**. Jadi berikut akan saya berikan contoh contoh penggunaan matplotlib. Untuk postingan akan membahas sedikit tentang penggunaan numpy juga. Untuk seaborn hanya digunakan sebagaia background dari grafik yang digambarkan. Silahkan dinikmati :v

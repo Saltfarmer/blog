@@ -4,12 +4,8 @@ title: "Libraries in Python for Data Science"
 comments : true
 share : true
 categories:
-  - Journal
-tags:
-  - Python
-  - Data Science
-  - Machine Learning
-  - Libraries
+  - Tips
+
 ---
 First of all, why using Python for Data Science ? According to recent surveys by [KDNugget](https://www.kdnuggets.com/2018/05/poll-tools-analytics-data-science-machine-learning-results.html), Python is the preferred programming language for data scientists. Python has long been known as a easiest programming language to learn, from a syntax point of view, anyway. Python also has an active community with a vast selection of libraries and resources. As i mention befire, huge success of Python in Data Science is its extensive library support for data science and analytics. There are many Python libraries that contain a host of functions, tools, and methods to manage and analyze data. Each of these libraries has a particular focus with some libraries managing image and textual data, data mining, neural networks, data visualization, and so on. In this post, i will tell you about the libraries in Python you must have.
 

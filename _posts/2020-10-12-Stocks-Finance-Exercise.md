@@ -5,14 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Exercise
-  - Pandas
-  - Seaborn
-  - EDA
- 
+  - Data Science Project
 
 ---
 
@@ -686,11 +679,3 @@ sns.clustermap(bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr())
 # Great Job!
 
 Definitely a lot of more specific finance topics here, so don't worry if you didn't understand them all! The only thing you should be concerned with understanding are the basic pandas and visualization operations.
-
-
-
-
-
-
-
-

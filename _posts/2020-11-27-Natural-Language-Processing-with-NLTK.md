@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - NLTK
-  - Classification
-  - Sklearn
+  - Natural Language Processing
 
 ---
 
@@ -108,4 +103,3 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 bag_of_words = CountVectorizer().fit_transform(text)
 ```
-

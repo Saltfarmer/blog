@@ -4,10 +4,7 @@ header :
   teaser: /assets/images/modin.png
 
 categories:
-  - Python
-tags:
-  - Pandas
-  - Python
+  - Tips
 
 ---
 

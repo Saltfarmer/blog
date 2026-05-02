@@ -4,11 +4,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
   - Scoring
-  - Classification
 
 ---
 
@@ -208,7 +204,4 @@ F1-Score = 2 * 8 / (2*8 + 3 + 3) = 0.73
 
 Then which one is the better evaluation metrics for imbalance dataset ? F1-Score is much better evaluation metrics because they look both the amount of positive and negative value whereas Balanced Accuracy works more better in positive > negative condition.
 
-That's all for today. In the next post, I will explain the other evaluation metric especially for Regression problem and Clustering problem.  
-
-
-
+That's all for today. In the next post, I will explain the other evaluation metric especially for Regression problem and Clustering problem.

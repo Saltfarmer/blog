@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Preprocessing
-  - Numpy
-  - Sklearn
-
+  - Data Wrangling
 ---
 
 After rescaling or normalize the data, there is another way to change the distribution of the data by transformation. There are 3 different ways to transform the data by using Power function, Quartile function, and custom function with Numpy.
@@ -70,7 +64,3 @@ sns.distplot(ft.fit_transform(df))
 ```
 
 ![](https://i.ibb.co/VWQVVz9/download-8.png)
-
-
-
-

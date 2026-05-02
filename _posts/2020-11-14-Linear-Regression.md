@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - Linear Regression
   - Regression
-  - Sklearn
-
 ---
 
 Linear regression is useful for finding relationship between two continuous variables. Linear regression is a **linear model**, a model that creates a linear relationship between the input variables $x$ and the single output variable $y$. More specifically, that y can be calculated from a linear combination of the input variables $x$. Different techniques can be used to prepare or train the linear regression equation from data, the most common of which is called **Ordinary Least Squares**. 

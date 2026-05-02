@@ -5,14 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Exercise
-  - Pandas
-  - Numpy
-  - EDA
- 
+  - Data Science Projects
 
 ---
 
@@ -1051,8 +1044,3 @@ sns.clustermap(dayMonth)
 **Continue exploring the Data however you see fit!**
 
 # Great Job!
-
-
-
-
-

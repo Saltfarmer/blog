@@ -6,12 +6,7 @@ header :
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Anaconda
-  - Python
-  - Algoritma
-
+  - Tips
 ---
 
 Well this post (I hope I can make it as a series) will be my personal notes and documentation of data science bootcamp session from **Algorit.ma**. Please notes that it will be different than usual I write it with my personal flavor and focus on my perspective. In this post of preparation and preclass Bootcamp session, I will put it simple step by step from my perspective, so it wont be the same as the instructor.
@@ -80,5 +75,3 @@ scikit-learn plotly imbalanced-learn gower statsmodels nbformat
 ```
 
 In case you dont why do you need to install all of those libraries, I dont even know. Usually I just install `pandas`, `numpy`, `matplotlib`, `scikit-learn`, and `statsmodels`. Now if you are curious, you can check it by yourself in pypi.org on each library.
-
-

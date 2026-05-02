@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Exercise
-  - Matplotlib
- 
-
+  - Visualization
 ---
 
 This day i will completing Matplotlib Exercise. If you want to solve it all by yourself, you can download notebooks file [here](https://drive.google.com/file/d/1LJAoRsI-F1UbY1gjjnQo5jATBMjua_qO/view?usp=sharing)

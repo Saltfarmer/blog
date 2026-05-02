@@ -4,9 +4,6 @@ header :
   teaser : /assets/images/python-head.jpg
 categories:
   - Python
-tags:
-  - Python
-  - EDA
 ---
 
 After I reviewed my knowledge of exploratory data analysis (EDA) [here](https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python), I am wondering if there is some way or a new way to understand your dataset more easily. Luckily, I stumbled on this [site](https://github.com/mstaniak/autoEDA-resources). 
@@ -70,6 +67,3 @@ profile
 ```
 
 You can see the result of profile report [here](https://pandas-profiling.github.io/pandas-profiling/examples/master/titanic/titanic_report.html).
-
-
-

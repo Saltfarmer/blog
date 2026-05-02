@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Preprocessing
-  - Pandas
-  - Sklearn
-
+  - Data Wrangling
 ---
 
 Missing value in your data is pretty common in real life. In fact, the chance that at least one data point is missing increases as the data set size increases. Missing data can occur any number of ways, some of which include the following.
@@ -330,4 +324,3 @@ from missingpy import MissForest
 imputer = MissForest()
 imputer.fit_transform(data_sample)
 ```
-

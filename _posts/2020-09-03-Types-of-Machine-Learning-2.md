@@ -5,10 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-
+  - Journal
 ---
 
 ..... Continue from [last post](https://saltfarmer.github.io/blog/machine%20learning/Types-of-Machine-Learning/)

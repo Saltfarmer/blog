@@ -5,15 +5,8 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Python
-  - Machine Learning
   - Classification
-  - EDA
-  - Exercise
  
-
 ---
 
 Exercise from [Jose Portilla Python for Data Science Bootcamp](https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/).

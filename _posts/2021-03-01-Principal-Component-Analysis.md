@@ -3,10 +3,7 @@ title: "Principal Component Analysis"
 header : 
   teaser : /assets/images/pca.jpeg
 categories:
-  - Machine Learning
-tags:
   - Unsupervised Learning
-  - Principal Component Analysis
 ---
 
 Hello guys, it's been 3 months since my last post in Machine Learning. I'll admit that I am a little bit rusty nowadays. Because of my interviews in some company last week, I am trying to dig up again a lot of things about Principal Component Analysis (PCA). So what is PCA? PCA is the process of computing the principal components (Which is mostly Data Features) and using them to perform a change in the basis of the data (or you can say the dimension of the data). 

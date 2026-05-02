@@ -6,11 +6,6 @@ comments : true
 share : true
 categories:
   - TOEFL
-tags:
-  - English
-  - iBT
-  - Speaking  
-
 ---
 
 # TOEFL Speaking Question 1 (Opinion about something)

@@ -5,10 +5,7 @@ header:
 comments : true
 share : true
 categories:
-  - Joournal
-tags:
-  - Startup
-  - Informatika Sosial
+  - Journal
 ---
 Mencari info kost adalah sesuatu yang wajib dilakukan oleh anak rantau. Melanjutkan pendidikan di luar kota atau bekerja di luar kota tentunya sudah bukan hal yang aneh lagi saat ini. Mereka yang memutuskan untuk merantau haruslah hidup di luar kota asalnya dan tinggal di hunian sementara seperti di kamar kost. Mencari kamar kost yang sesuai dengan keinginan dan budget bukanlah hal yang sepele. Di kota-kota yang banyak didatangi oleh perantau seperti Jogjakarta, Bandung, Surabaya, dan lain sebagainya, pasti tersedia ratusan rumah kost yang tersebar di daerah-daerah strategis seperti di dekat-dekat kampus hingga di daerah pelosok. Untuk dapat menyewa kost yang sesuai dengan keinginan, dibutuhkan waktu cari info dan waktu survey yang tidak sebentar.
 

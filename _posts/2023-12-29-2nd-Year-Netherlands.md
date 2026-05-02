@@ -4,8 +4,6 @@ header :
   teaser: "https://i.ibb.co/9TW8LjK/IMG-20220422-145909.jpg"
 categories:
   - Journal
-tags:
-  - Personal
 ---
 A long break between the previous post. I've been busy with my new job (more like training) recently so yeah I might update this blog a little bit next year but more on a personal level. So in this post, I will continue my experience in my 2nd year in the Netherlands.
 

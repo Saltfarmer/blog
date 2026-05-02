@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Python
-  - Exercise
- 
-
+  - Regression
 ---
 
 This week I will dedicate my time to solve all exercise from [Jose Portilla Python for Data Science Bootcamp](https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/).

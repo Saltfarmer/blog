@@ -6,11 +6,6 @@ header :
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Python
-  - Algoritma
-  - Pandas
   - Classification
 ---
 Day 5, here I will share my notes of Inclass notebook. For further example you can check out on https://github.com/Saltfarmer/Algoritma-BFLP-DS-Audit/tree/main

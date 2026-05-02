@@ -6,9 +6,6 @@ comments : true
 share : true
 categories:
   - Journal
-tags:
-  - Youtube
-  - Informatika Sosial
 ---
 <figure>
     <img src="https://kokbisa.id/img/logo/kokbisa-red.webp.png">

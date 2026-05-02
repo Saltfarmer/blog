@@ -5,15 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Python
-  - Machine Learning
   - Clustering
-  - EDA
-  - Exercise
-  - K-Means
- 
 
 ---
 

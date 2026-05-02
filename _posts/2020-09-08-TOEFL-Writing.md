@@ -6,10 +6,6 @@ comments : true
 share : true
 categories:
   - TOEFL
-tags:
-  - English
-  - iBT
-  - Writng
 
 ---
 

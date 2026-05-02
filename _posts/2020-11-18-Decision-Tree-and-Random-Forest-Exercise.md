@@ -5,16 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Python
-  - Machine Learning
   - Classification
-  - EDA
-  - Exercise
-  - Decision Tree
-  - Random Forest
- 
 
 ---
 

@@ -4,10 +4,6 @@ header :
   teaser: /assets/images/tensorflow.png
 categories:
   - Deep Learning
-tags:
-  - Tensorflow
-  - Exercise
-  - Image
 ---
 In this postwe will build out a Multi Layer Perceptron model to try to classify hand written digits using TensorFlow (a very famous example).
 

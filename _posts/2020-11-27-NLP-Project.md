@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - EDA
-  - Classification
-  - NLP
-  - Data Visualization
+  - Natural Language Processing
 
 ---
 

@@ -5,10 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-
+  - Journal
 ---
 
 There are many different types of machine learning system. At a high-level, machine learning is simply the study of teaching a computer program or algorithm how to progressively improve upon a set task that it is given. On the research-side of things, machine learning can be viewed through the lens of theoretical and mathematical modeling of how this process works. However, more practically it is the study of how to build applications that exhibit this iterative improvement. It is useful to classify these broad categories based on 
@@ -70,4 +67,3 @@ Reinforcement learning is fairly different when compared to supervised and unsup
 **Example** : OpenAI implement Reinforcement Learning algorithms to learn Dota 2 hero Shadow Fiend in 1vs1 match. The Reinforcement Learning algorithm works by making the AI play by itself in million of simulation. Then the AI will learn every iteration based on the rewards and penalties.
 
 > To be continued tomorrow for next part
-

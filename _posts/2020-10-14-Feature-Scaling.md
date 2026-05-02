@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Preprocessing
-  - Pandas
-  - Sklearn
+  - Data Wrangling
 ---
 Numerical data is already digestible by machine learning or mathematical formula. But it doesn't mean that is no longer need feature engineering or preprocessing. If there is a vast difference in the range say few ranging in thousands and few ranging in the tens, and it makes the underlying assumption that higher ranging numbers have superiority of some sort. So these more significant number starts playing a more decisive role while training the model. The machine learning algorithm works on numbers and does not know what that number represents. A weight of 10 grams and a price of 10 dollars represents completely two different things, which doesn't make any sense for human.
 

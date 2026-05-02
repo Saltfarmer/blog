@@ -4,11 +4,7 @@ title: "Structured and Unstructured Data"
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Data Types
-  - Data Science
-
+  - Data Wrangling
 ---
 
 One of the simple ways to think about data is wether it is structured or not. Well, the first thing not all data is created equal or the same. Some data is structured, but most of them is unstructured. The way it is collected are different. From how it is collected, processed, and analyzed. In this post, i want to distinguished the difference between structured and unstructured data.

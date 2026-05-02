@@ -4,12 +4,7 @@ header :
   teaser: /assets/images/pandas-head.jpg
 
 categories:
-  - Python
-tags:
   - Pandas
-  - Python
-  - Exercise
-
 ---
 
 The continuity of my practice on Pandas exercise from [guisapmora](https://github.com/guipsamora/pandas_exercises/archive/refs/heads/master.zip).
@@ -3579,5 +3574,3 @@ data.groupby(data.index.isocalendar().week).describe()
 </table>
 <p>53 rows × 96 columns</p>
 </div>
-
-

@@ -6,11 +6,6 @@ comments : true
 share : true
 categories:
   - Python
-tags:
-  - Python
-  - Exercise
- 
-
 ---
 
 This week I will dedicate my time to solve all exercise from [Jose Portilla Python for Data Science Bootcamp](https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/). Today i will completing some exercise from Python Basic until Finance Project. If you want to solve it all by yourself, you can download notebooks file [here](https://drive.google.com/file/d/1nkbR1Q2XYwigiQ0n8jUMi7NJlmmvB0CH/view?usp=sharing)

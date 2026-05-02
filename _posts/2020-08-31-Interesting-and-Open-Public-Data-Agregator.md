@@ -4,12 +4,8 @@ title: "Interesting and Open Public Data Agregator"
 comments : true
 share : true
 categories:
-  - Journal
-tags:
-  - Data Agreagator
-  - Data Science
-  - Machine Learning
-  - Machine Vision
+  - Tips
+
 ---
 There are hundreds of zettabytes of data available on internet, but most of them is not publicly accessed. Today, i will share where to find open public datasets.
 

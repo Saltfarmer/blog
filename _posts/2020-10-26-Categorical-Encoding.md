@@ -5,11 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Preprocessing
-  - Sklearn
+  - Data Wrangling
 
 ---
 

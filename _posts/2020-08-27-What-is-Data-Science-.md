@@ -4,11 +4,7 @@ title: "What is Data Science"
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Random
-  - Data Science
-
+  - Journal
 ---
 
 So today i will start my journey with recollecting from the internet about what is Data Science ? So what is Data Science ? Why is Data Science so popular before (until trends shifted to Artificial Intelligence) ? Where do we see it ?
@@ -35,4 +31,3 @@ I mean where we don't ? It's application basically everywhere. Such as Finances,
 5. I cant give you any explanation about application of Data Science in **Urban Planning**. So i just quoting from The Urban Center for Computation and Data (UrbanCCD), at the University of Chicago that they are use it to understands the growth of the city.
 
 So, that's all for today. Thanks for "A Hand-on Introduction to Data Science" by Chirag Shah. Most of the explanation i get it from this book, so i really recommend this book. I hope i can explain more in the next post consistently. See you
-

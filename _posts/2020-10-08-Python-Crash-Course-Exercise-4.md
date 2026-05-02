@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Exercise
   - Pandas
- 
-
 ---
 
 Today i will completing Pandas Exercise using SF Salaries. If you want to solve it all by yourself, you can download notebooks file [here](https://drive.google.com/file/d/1NYKbH7Lo6sV21jbXn2Qs5ZQlqy2v3fha/view?usp=sharing) and dataset [here](https://drive.google.com/file/d/1LtynC1iXncAfuPLUCLDoZXoc_Js3rlqq/view?usp=sharing)

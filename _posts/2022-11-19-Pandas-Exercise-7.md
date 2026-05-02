@@ -4,12 +4,7 @@ header :
   teaser: /assets/images/pandas-head.jpg
 
 categories:
-  - Python
-tags:
   - Pandas
-  - Python
-  - Exercise
-  - Visualization
 
 ---
 
@@ -466,4 +461,3 @@ sns.histplot(x=titanic['Fare'])
 ```python
 
 ```
-  

@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - Decision Tree
   - Classification
-  - Sklearn
 
 ---
 

@@ -6,10 +6,6 @@ comments : true
 share : true
 categories:
   - Visualization
-tags:
-  - Python
-  - EDA
-  - Visualization
 ---
 Creating a visualization may not as easier as it looks. Some of the visualizations may look cool but not interpret what they mean. Imagine after a hard and long time working on some projects. Next days, you need to present your project to your executives or your boss. You thought "Ah it's fine, my visualization is cool and eye-catching".  On judgement day, all your optimism while naive thought was wrong. Your boss doesn't get any point and don't understand what you are presenting.  Then you are thinking, what should i do to make them understand what i am presenting.
 

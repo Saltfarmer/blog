@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Exercise
-  - Matplotlib
-  - Pandas 
-
+  - Visualization
 ---
 
 This day i will completing data visualization with Pandas Exercise. If you want to solve it all by yourself, you can download notebooks file [here](https://drive.google.com/file/d/1C49lGuzr32JxnsSBQUihlesHekJt04vm/view?usp=sharing) and sample data [here](https://drive.google.com/file/d/1Mv0KmDBzzSA7xhxUL8kmBkF9wO12eJeZ/view?usp=sharing)

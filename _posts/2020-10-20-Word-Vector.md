@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Preprocessing
-  - Sklearn
-
+  - Data Wrangling
 ---
 
 Machine learning can't process non-numeric value. Then how to process image or text data ? Before you train your image or text data, you need to transform the data into numeric value first. This is called feature extraction or feature encoding. In this post, i will focus it on text data first. One way to digitize data is what most machine learning enthusiast called **Bag of words**. The bag-of-words model is a way of representing text data when modeling text with machine learning algorithms. The bag-of-words model is simple to understand and implement and has seen great success in problems such as language modeling and document classification.

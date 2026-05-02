@@ -4,11 +4,7 @@ header :
   teaser: /assets/images/pandas-head.jpg
 
 categories:
-  - Python
-tags:
   - Pandas
-  - Python
-  - Exercise
 
 ---
 
@@ -1421,4 +1417,3 @@ for group in regiment.groupby(['regiment']):
     9    Scouts     1st  Piger             3             70
     10   Scouts     2nd  Riani             2             62
     11   Scouts     2nd    Ali             3             70)
-    

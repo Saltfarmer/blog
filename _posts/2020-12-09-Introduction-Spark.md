@@ -5,10 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Spark
-  - RDD
+  - Data Engineering
 ---
 Let's learn how to use Spark with Python by using the pyspark library! Make sure to view the video lecture explaining Spark and RDDs before continuing on with this code.
 

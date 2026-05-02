@@ -5,10 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-
+  - Journal
 ---
 
 At a some level, running machine learning systems at scale is challenging for several reasons. The systems issues are often misunderstood. Although best practices are emerging quickly, they’re extremely decentralized. You need to research a lot of stuff from books, posts, conference talks, and github repositories. In this post, I would like to share into some challenges to running machine learning systems.
@@ -96,4 +93,4 @@ It is always preferred to build a pipeline to collect, analyze, build/train, tes
 
 ## Conclusion
 
-So i think there are more challenge that i can cover or i can found. Especially challenge in production, i can't really explain properly because i never have a chance to participate in production. I will be happy if you can comment below what challenge for machine learning practitioner i have missed. 
+So i think there are more challenge that i can cover or i can found. Especially challenge in production, i can't really explain properly because i never have a chance to participate in production. I will be happy if you can comment below what challenge for machine learning practitioner i have missed.

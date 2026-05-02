@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Machine Learning
-  - Python
-  - Matplotlib
- 
-
+  - Visualization
 ---
 
 Matplotlib is the most basic library of data visualization with Python. It created to try to replicate MatLab's (another programming language) plotting capabilities in Python. So if you happen to be familiar with matlab, matplotlib will feel natural to you.
@@ -148,4 +142,3 @@ Matplotlib can generate high-quality output in a number formats, including PNG, 
 ```pytho
 fig.savefig("filename.png")
 ```
-

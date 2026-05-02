@@ -5,9 +5,7 @@ header:
 comments : true
 share : true
 categories:
-  - Recommendation System
-tags:
-  - Python
+  - Data Science Project
 ---
 ## Introduction
 

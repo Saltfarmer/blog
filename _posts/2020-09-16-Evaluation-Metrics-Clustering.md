@@ -4,12 +4,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
   - Scoring
-  - Clustering
-
 ---
 
 Clustering is an important part of the machine learning pipeline for business or scientific enterprises utilizing data science. As the name suggests, it helps to identify congregations of closely related (by some measurement) data points in a blob of data, which, otherwise, would be difficult to make sense of. 

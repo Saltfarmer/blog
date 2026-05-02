@@ -6,9 +6,6 @@ comments : true
 share : true
 categories:
   - Tips
-tags:
-  - Anaconda
-  - Jupyter Notebook
 ---
 This is a quick post on how to create a shortcut for Jupyter Notebook. In this case, you need to connect your PATH of your Python Conda. Here's how:
 

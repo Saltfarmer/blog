@@ -5,11 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Preprocessing
-  - Sklearn
+  - Data Wrangling
 
 ---
 
@@ -680,4 +676,3 @@ df_new2.shape
 ```
 (506, 6)
 ```
-

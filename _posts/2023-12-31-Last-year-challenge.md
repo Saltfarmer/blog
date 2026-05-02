@@ -4,8 +4,6 @@ header :
   teaser: "https://i.ibb.co/9TW8LjK/IMG-20220422-145909.jpg"
 categories:
   - Journal
-tags:
-  - Personal
 ---
 Well, this post going to be my finaly year in the Netherlands. A bit of drama here and there but let;s see what happens.
 

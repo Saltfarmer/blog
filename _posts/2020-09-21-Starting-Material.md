@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - IDE
- 
-
+  - Journal
 ---
 
 Ok, now after 1 day break and dilly dally learning theory about Machine Learning and Evaluation Metric (I'm kind of regret tell the theory first because it took a lot amount of research), we will start practicing together by little by little. 
@@ -55,4 +50,3 @@ But personally, i'm using Jupyter Lab because it is pretty much the same as Jupy
 4. (optional) download jupyter logo and place it on your shortcut
 
 Then after you finished preparation, in the next few weeks lets try mastering Pandas together with me with some example to get a good grasp for it. See you tomorrow.
-

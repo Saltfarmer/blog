@@ -5,8 +5,6 @@ comments : true
 share : true
 categories:
   - Journal
-tags:
-  - Random
 ---
 • February 23, 1996
 • By John Perry

@@ -6,11 +6,6 @@ comments : true
 share : true
 categories:
   - Visualization
-tags:
-  - Machine Learning
-  - Python
-  - Matplotlib
-  - Plotly
 ---
 The plotly Python library is an interactive, open-source plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases. Built on top of the Plotly JavaScript library (plotly.js), plotly enables Python users to create beautiful interactive web-based visualizations that can be displayed in Jupyter notebooks, saved to standalone HTML files, or served as part of pure Python-built web applications using Dash. However, Cufflinks connects Plotly with pandas to produce the interactive data visualizations.
 

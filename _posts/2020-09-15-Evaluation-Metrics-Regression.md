@@ -4,12 +4,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
   - Scoring
-  - Regression
-
 ---
 
 Regression task is the prediction of the state of an outcome variable at a particular timepoint with the help of other correlated independent variables. The regression task, unlike the classification task, outputs **continuous** value within a given range. Regression is the task of predicting continuous values by learning from various independent features. The various metrics used to evaluate the results of the prediction are.

@@ -4,12 +4,7 @@ title: "Data Types"
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Data Types
-  - Data Science
-  - Pandas
-
+  - Data Wrangling
 ---
 
 There are many different kind of data types. In this blog, i will explain these data types based on most common understanding in Data Science. Specifically in Python Pandas. When doing data analysis, it is important to make sure you are using the correct data types; otherwise you may get unexpected results or errors. 
@@ -63,4 +58,3 @@ Nominal values represent discrete units and are used to label variables, that ha
 ## Ordinal Data
 
 Ordinal values represent discrete and ordered units. It is therefore nearly the same as nominal data, except that it’s **ordering matters**. For example, what is your level in video games.
-

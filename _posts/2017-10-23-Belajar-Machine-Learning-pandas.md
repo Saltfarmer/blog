@@ -5,10 +5,6 @@ header:
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - Python
   - Pandas
 ---
 

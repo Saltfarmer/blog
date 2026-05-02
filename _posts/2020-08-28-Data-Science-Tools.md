@@ -4,11 +4,7 @@ title: "Data Science Tools"
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Tools
-  - Data Science
-
+  - Tips
 ---
 
 After finding a reason and motivation to start learning about Data Science, lets we talk about the Tools to practicing Data Science. Machine learning tools make applied machine learning faster, easier and more fun.

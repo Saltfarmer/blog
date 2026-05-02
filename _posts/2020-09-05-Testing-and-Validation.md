@@ -5,11 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - Validation
-
+  - Scoring
 ---
 
 To know how good your model is to actually try it on new cases or different cases. But if your model not doing good as it expected, surely you will hesitate to apply that model to production environment. A better option is to split your data into two sets: the **training set** and the **test set**. 
@@ -32,10 +28,3 @@ But what if your validation set is too small ? your model will evaluation most l
 Each model is evaluated once per validation set, after it is trained on the rest of the data. By averaging out all the evaluations of a model, we get a much more accurate measure of its performance. However, there is a drawback, the training time is multiplied by the number of validation sets.  
 
 But how many fold cross-validation is recommended ? In their book, Kuhn and Johnson have a section titled “Data Splitting Recommendations”, They go on to make a recommendation for small sample sizes of using 10-fold cross validation in general because of the desirable low bias and variance properties of the performance estimate. They recommend the holdout-validation in the case of comparing model performance because of the low variance in the performance estimate. For larger sample sizes, they again recommend a 10-fold cross-validation approach, in general.
-
-
-
-
-
-
-

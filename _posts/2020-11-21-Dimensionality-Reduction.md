@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
   - Clustering
-  - Sklearn
-
 ---
 
 The performance of machine learning algorithms can degrade with too many input variables. Having a large number of dimensions in the feature space can mean that the volume of that space is very large, and in turn, the points that we have in that space (rows of data) often represent a small and non-representative sample. This can dramatically impact the performance of machine learning algorithms fit on data with many input features, generally referred to as the **curse of dimensionality**. This reduces the number of dimensions of the feature space, hence the name **dimensionality reduction**.
@@ -58,4 +53,3 @@ from sklearn.decomposition import KernelPCA
 kpca = KernelPCA(n_components=2,kernel='rbf', gamma=45)
 kpca_components = kpca.fit_transform(X)
 ```
-

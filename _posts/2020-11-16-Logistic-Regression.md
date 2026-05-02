@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - Logistic Regression
   - Classification
-  - Sklearn
 
 ---
 

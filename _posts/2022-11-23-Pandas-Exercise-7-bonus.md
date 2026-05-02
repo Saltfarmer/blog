@@ -4,12 +4,7 @@ header :
   teaser: /assets/images/pandas-head.jpg
 
 categories:
-  - Python
-tags:
   - Pandas
-  - Python
-  - Exercise
-  - Visualization
 
 ---
 
@@ -229,5 +224,3 @@ sns.FacetGrid(tips, col='day', row='time').map(sns.scatterplot, x=tips['total_bi
 
     
 ![png](https://i.ibb.co/nf6gzsW/output-25-1.png)
-    
-

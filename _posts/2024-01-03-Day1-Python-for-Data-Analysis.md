@@ -6,11 +6,6 @@ header :
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Anaconda
-  - Python
-  - Algoritma
   - Pandas
 
 ---

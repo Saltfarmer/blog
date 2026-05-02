@@ -4,11 +4,7 @@ header :
   teaser: /assets/images/pandas-head.jpg
 
 categories:
-  - Python
-tags:
   - Pandas
-  - Python
-  - Exercise
 
 ---
 
@@ -1503,5 +1499,3 @@ df.apply(lambda x : x*10)
 </table>
 <p>395 rows × 13 columns</p>
 </div>
-
-

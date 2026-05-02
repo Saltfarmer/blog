@@ -4,9 +4,6 @@ header :
   teaser : /assets/images/tensorflow.png
 categories:
   - Deep Learning
-tags:
-  - Neural Network
-  - Tensorflow
 ---
 You can import the library:
 

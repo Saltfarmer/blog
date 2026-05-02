@@ -3,10 +3,7 @@ title: "Web Scraping with BeautifulSoup4"
 header: 
   teaser : /assets/images/BS4.png
 categories:
-  - Data Engineering
-tags:
-  - Python
-  - BeautifulSoup4
+  - Scraping
 ---
 The surge of available data we can find on the internet is insane. With this surge, data analytics has become a hugely important part of the way organizations are run. And while data has many sources, its biggest repository is on the internet. As the fields of big data analytics, artificial intelligence and machine learning grow, everyone needs data analysts who can scrape the web in the most eloquent ways.
 

@@ -6,11 +6,6 @@ comments : true
 share : true
 categories:
   - Visualization
-tags:
-  - Machine Learning
-  - Python
-  - Matplotlib
-  - Seaborn
 ---
 Multiplot grid are general types of plots that allow you to map plot types to rows and columns of a grid, this helps you create similar plots separated by features.
 

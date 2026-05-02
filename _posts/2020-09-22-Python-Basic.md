@@ -6,10 +6,6 @@ comments : true
 share : true
 categories:
   - Python
-tags:
-  - Machine Learning
-  - Python
- 
 
 ---
 
@@ -443,6 +439,3 @@ print(x(5))
 ```
 15
 ```
-
-
-

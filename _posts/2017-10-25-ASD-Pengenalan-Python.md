@@ -6,9 +6,6 @@ comments : true
 share : true
 categories:
   - Python
-tags:
-  - Algoritma dan Struktur Data
-  - Python
 ---
 Pagi gan, semoga udah pada bangun. Jadi untuk mengisi kegabutan saya di kampus, pada hari ini saya akan mulai posting tentang algoritma dan struktur data. Karena sudah kebanyakan orang *ngoding* di bahasa c++, pada postingan ini dan seterusnya saya akan menjelaskannya dalam bahasa Python3. Kenapa Python ??? karena Python sangat mudah bagi para nubie seperti saya (ya, saya masih noob :v) untuk membaca alur programnya. Lalu kelebihan selanjutnya adalah komunitasnya. Alasannya adalah karena Python adalah basa paling populer di dunia.
 

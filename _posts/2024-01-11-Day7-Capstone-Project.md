@@ -6,11 +6,7 @@ header :
 comments : true
 share : true
 categories:
-  - Data Science
-tags:
-  - Python
-  - Algoritma
-  - Exercise
+  - Data Science Project
 ---
 # **Fraud Prediction**
 

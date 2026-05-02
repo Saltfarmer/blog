@@ -1,11 +1,9 @@
 ---
 title: "Quick Update"  
-comments: true  
-share: true  
-categories:  
-  - Journal  
-tags:  
-  - Personal
+comments : true  
+share : true  
+categories:
+    - Journal
 ---
 Hello everyone! I’m not sure if anyone is reading this, but if you are, please leave a comment—I’d love to hear from you.
 

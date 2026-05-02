@@ -4,12 +4,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
   - Scoring
-  - Classification
-
 ---
 
 A receiver operating characteristic curve, or ROC curve, is a graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied. Remember True Positive Rate and False Positive Rate ? The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings.

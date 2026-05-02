@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
-  - Support Vector Machine
-  - Sklearn
-
+  - Classification
 ---
 
 The support vector machine is a generalization of a classifier called **maximal margin classifier**. The maximal margin classifier is simple, but it cannot be applied to the majority of datasets, since the classes must be separated by a linear boundary. That is why the **support vector classifier** was introduced as an extension of the maximal margin classifier, which can be applied in a broader range of cases. Finally, **support vector machine** is simply a further extension of the support vector classifier to accommodate non-linear class boundaries.

@@ -4,8 +4,6 @@ header :
   teaser: "https://i.ibb.co/9TW8LjK/IMG-20220422-145909.jpg"
 categories:
   - Journal
-tags:
-  - Personal
 ---
 It's been a while I created a blog post. Apparently my last post was almost 8 months ago. But now I created a farewell post to The Netherlands because I am going to leave (or already leave when this post is published) because my permit has been expired (or soon enough). As I stand at the crossroads of departure, my heart swells with a mixture of gratitude, nostalgia, and a touch of melancholy. I'll try to summarize my journey as much as detailed possible because it started 2 years ago so please pardon I am missing some details.
 

@@ -5,13 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Python
-  - Exercise
   - Pandas
- 
-
 ---
 
 Today i will completing Pandas Exercise using Ecommerce Purchase. If you want to solve it all by yourself, you can download notebooks file [here](https://drive.google.com/file/d/1ehpuK3y8FTyCmqwgJ7jIv7zsT5vMCOj7/view?usp=sharing) and dataset [here](https://drive.google.com/file/d/1tBDm1wSiVvuS9H_rjtK4HpI5CWerCiaD/view?usp=sharing)

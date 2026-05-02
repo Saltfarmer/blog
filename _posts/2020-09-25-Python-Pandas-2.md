@@ -5,12 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Machine Learning
-  - Python
   - Pandas
- 
 
 ---
 
@@ -255,4 +250,3 @@ print(df['col1'].apply(times2))
 3    8
 Name: col1, dtype: int64
 ```
-

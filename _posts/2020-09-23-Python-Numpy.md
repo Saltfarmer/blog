@@ -5,10 +5,6 @@ header :
 comments : true
 share : true
 categories:
-  - Python
-tags:
-  - Machine Learning
-  - Python
   - Numpy
  
 
@@ -237,4 +233,3 @@ print(arr[1:,1])
 ```
 [5 8 11]
 ```
-

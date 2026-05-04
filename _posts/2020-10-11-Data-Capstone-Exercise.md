@@ -5,7 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Data Science Projects
+  - Data Science Project
 
 ---
 

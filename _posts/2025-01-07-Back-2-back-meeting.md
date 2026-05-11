@@ -1,5 +1,7 @@
 ---
 title: "Back to back meetings"
+header:
+  teaser: https://i.imgflip.com/6067t8.jpg
 comments : true
 share : true
 categories:

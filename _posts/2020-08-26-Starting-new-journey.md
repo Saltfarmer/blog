@@ -1,6 +1,5 @@
 ---
 title: "Starting New Journey"
-
 comments : true
 share : true
 categories:

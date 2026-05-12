@@ -1,6 +1,7 @@
 ---
 title: "Data Science Tools"
-
+header :
+  teaser: https://dgsthal.in/blogs/wp-content/uploads/2025/06/Data-Science-Basics-1024x683.jpg
 comments : true
 share : true
 categories:

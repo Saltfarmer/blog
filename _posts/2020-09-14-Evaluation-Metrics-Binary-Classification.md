@@ -1,6 +1,7 @@
 ---
 title: "Evaluation Metric Binary Classification"
 header :
+  teaser: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Binary-classification-labeled.svg/1280px-Binary-classification-labeled.svg.png
 comments : true
 share : true
 categories:

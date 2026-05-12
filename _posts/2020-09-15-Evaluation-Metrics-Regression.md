@@ -1,6 +1,8 @@
 ---
 title: "Evaluation Metric Regression"
 header :
+  image : https://miro.medium.com/v2/resize:fit:1400/1*gHBqrUhWTCnJVHT4ltm-Zg.png
+  teaser : https://miro.medium.com/v2/resize:fit:1400/1*gHBqrUhWTCnJVHT4ltm-Zg.png
 comments : true
 share : true
 categories:

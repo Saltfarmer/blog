@@ -1,6 +1,8 @@
 ---
 title: "Structured and Unstructured Data"
-
+header :
+  image : https://chartexpo.com/blog/wp-content/uploads/2024/12/structured-data-vs-unstructured-data.jpg
+  teaser: https://chartexpo.com/blog/wp-content/uploads/2024/12/structured-data-vs-unstructured-data.jpg
 comments : true
 share : true
 categories:

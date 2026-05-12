@@ -1,6 +1,8 @@
 ---
 title: "Data Types"
-
+header :
+  image : https://miro.medium.com/v2/resize:fit:1400/1*QfI8H_8HplGa1v9IrrWjBA.png
+  teaser: https://miro.medium.com/v2/resize:fit:1400/1*QfI8H_8HplGa1v9IrrWjBA.png
 comments : true
 share : true
 categories:

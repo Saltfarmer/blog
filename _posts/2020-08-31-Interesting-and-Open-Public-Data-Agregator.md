@@ -1,6 +1,7 @@
 ---
 title: "Interesting and Open Public Data Agregator"
-
+header:
+  teaser : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9vBXpa0F3ms31k4Jd6_dz_gKz7Q5_SPaZKw&s
 comments : true
 share : true
 categories:

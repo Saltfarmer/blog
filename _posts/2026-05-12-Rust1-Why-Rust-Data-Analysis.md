@@ -143,3 +143,10 @@ These advantages and others make Rust an attractive option for developers such a
 
 # TL;DR
 Rust stands out as a practical choice in data science due to its exceptional performance and persistent security features. While it may not possess all the bells and whistles that Python does, Rust offers outstanding efficiency when handling large datasets. Additionally, developers can use an array of libraries explicitly designed for data analysis to streamline their workflow further. With proper mastery of this language’s complexities, those working within the field can gain significant advantages by incorporating Rust into their toolkit.
+
+| Python Tool          | Rust Crate | Purpose                                  |
+| -------------------- | ---------- | ---------------------------------------- |
+| pandas               | `polars`   | DataFrames, wrangling, grouping          |
+| NumPy                | `ndarray`  | N-dimensional arrays, linear algebra     |
+| matplotlib / seaborn | `plotters` | Static plotting and visualization        |
+| scikit-learn         | `linfa`    | Machine learning, preprocessing, metrics |

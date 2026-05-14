@@ -5,7 +5,7 @@ header :
 comments : true  
 share : true  
 categories:
-    - Journal
+    - Self Improvement
 ---
 Let’s be honest: nobody likes feeling stupid or dumb. Maybe to some people it is fun to be ignorant. We spend our whole lives learning new stuffs in this modern data. But according to **Martin A. Schwartz** in his brilliant essay, "The importance of stupidity in scientific research," if you want to be a great scientist, you need to get really comfortable with feeling absolutely, entirely dumb.
 

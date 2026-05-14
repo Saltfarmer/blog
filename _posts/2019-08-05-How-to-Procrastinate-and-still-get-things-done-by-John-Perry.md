@@ -5,7 +5,7 @@ header :
 comments : true
 share : true
 categories:
-  - Journal
+  - Self Improvement
 ---
 • February 23, 1996
 • By John Perry

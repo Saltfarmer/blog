@@ -1,12 +1,12 @@
 ---
-title: "LeTAD #3: Next Season DPC"
+title: "From Europe’s Peak to SEA’s Underdogs: Mind_Control’s New Chapter as a Coach"
 header :
   teaser: https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dpc/social_generic.jpg
 categories:
   - Dota
 ---
 
-For nearly a decade, Ivan Borislavov Ivanov—better known to the Dota 2 world as Mind_Control (or MC) —was the structural pillar of Europe’s competitive dominance for Tean=m Liquid. As an International 7 Champion and a legendary offlaner, his mechanical expertise and tactical stability defined elite-tier play.
+For nearly a decade, Ivan Borislavov Ivanov—better known to the Dota 2 world as Mind_Control (or MC) —was the structural pillar of Europe’s competitive dominance for Team Liquid. As an International 7 Champion and a legendary offlaner, his mechanical expertise and tactical stability defined elite-tier play.
 
 However, the tides of competitive esports have shifted. In a surprising roster turn, Mind_Control has stepped away from the player's desk to assume the role of Head Coach for the rising Indonesian roster, [https://liquipedia.net/dota2/REKONIX](Rekonix).
 

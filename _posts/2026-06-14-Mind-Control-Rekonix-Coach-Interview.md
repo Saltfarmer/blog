@@ -1,7 +1,7 @@
 ---
 title: "From Europe’s Peak to SEA’s Underdogs: Mind_Control’s New Chapter as a Coach"
 header :
-  teaser: https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dpc/social_generic.jpg
+  teaser: https://i.ytimg.com/an_webp/fS4lRzPV5WE/mqdefault_6s.webp?du=3000&sqp=CJb8udEG&rs=AOn4CLAmv9qaKa9_90DcyjhMGnwKWWIOlQ
 categories:
   - Dota
 ---

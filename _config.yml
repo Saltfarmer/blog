@@ -25,7 +25,7 @@ url: "https://saltfarmer.github.io" # the base hostname & protocol for your site
 baseurl: "/blog" # the subpath of your site, e.g. "/blog"
 repository: "Saltfarmer/blog" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: "/assets/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo: "assets/Gama Candra Tri Kartika.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo: "assets/newlogo.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: "Saltfarmer Blog" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs: true # true, false (default)
 words_per_minute: 180
@@ -109,7 +109,7 @@ analytics:
 # Site Author
 author:
   name: "Gama Candra Tri Kartika"
-  avatar: "/assets/newlogo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar: "/assets/Gama Candra Tri Kartika.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "Fans of codes and dotes"
   location: "Jakarta, Indonesia"
   email: "candragctk17@gmail.com"

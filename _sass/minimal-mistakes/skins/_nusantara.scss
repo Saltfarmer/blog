@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Nusantara skin (light)
+   Palette: Nusantara Blue #0857C3, Cakrawala Blue #307FE2, Mentari Blue #71C5E8,
+   Deep Navy #042A61, Soft Ice #D6EFFB, accent Amber #C37408
+   ========================================================================== */
+
+/* Typography: Inter first, then each platform's UI font */
+$sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$serif: $sans-serif !default;
+$monospace: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
+$doc-font-size: 16px !default;
+$doc-font-size-medium: 17px !default;
+$doc-font-size-large: 17px !default;
+$doc-font-size-x-large: 17px !default;
+$border-radius: 10px !default;
+
+/* Colors */
+$gray: #6b7c99 !default;
+$background-color: #ffffff !default;
+$text-color: #0f2447 !default;
+$muted-text-color: #5b6b85 !default;
+$primary-color: #0857c3 !default;
+$success-color: #08c316 !default;
+$warning-color: #c37408 !default;
+$danger-color: #c32a08 !default;
+$info-color: #088bc3 !default;
+$border-color: #dce6f3 !default;
+$code-background-color: #f3f7fc !default;
+$code-background-color-dark: #d6effb !default;
+$form-background-color: #f3f7fc !default;
+$footer-background-color: #f3f7fc !default;
+$link-color: #0857c3 !default;
+$link-color-hover: #042a61 !default;
+$link-color-visited: mix(#042a61, #0857c3, 30%) !default;
+$masthead-link-color: #0f2447 !default;
+$masthead-link-color-hover: #0857c3 !default;
+$navicon-link-color-hover: #d6effb !default;

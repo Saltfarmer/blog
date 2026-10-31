@@ -1,5 +1,10 @@
-<!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
+<!-- Inter, self-hosted (assets/fonts). Latin subset, 4 weights. -->
+<link rel="preload" href="{{ '/assets/fonts/inter-Regular.woff' | relative_url }}" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/inter-SemiBold.woff' | relative_url }}" as="font" type="font/woff" crossorigin>
+<style>
+  @font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap; src: url("{{ '/assets/fonts/inter-Regular.woff' | relative_url }}") format("woff"); }
+  @font-face { font-family: "Inter"; font-style: normal; font-weight: 500; font-display: swap; src: url("{{ '/assets/fonts/inter-Medium.woff' | relative_url }}") format("woff"); }
+  @font-face { font-family: "Inter"; font-style: normal; font-weight: 600; font-display: swap; src: url("{{ '/assets/fonts/inter-SemiBold.woff' | relative_url }}") format("woff"); }
+  @font-face { font-family: "Inter"; font-style: normal; font-weight: 700; font-display: swap; src: url("{{ '/assets/fonts/inter-Bold.woff' | relative_url }}") format("woff"); }
+</style>
+<meta name="theme-color" content="#0857C3">

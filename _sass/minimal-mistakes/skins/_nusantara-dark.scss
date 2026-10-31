@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Nusantara skin (dark)
+   ========================================================================== */
+
+$sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$serif: $sans-serif !default;
+$monospace: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
+$doc-font-size: 16px !default;
+$doc-font-size-medium: 17px !default;
+$doc-font-size-large: 17px !default;
+$doc-font-size-x-large: 17px !default;
+$border-radius: 10px !default;
+
+/* Colors */
+$gray: #93a4c3 !default;
+$background-color: #071326 !default;
+$text-color: #e6eefb !default;
+$muted-text-color: #93a4c3 !default;
+$primary-color: #307fe2 !default;
+$success-color: #08c316 !default;
+$warning-color: #e8a271 !default;
+$danger-color: #e8664d !default;
+$info-color: #71c5e8 !default;
+$border-color: #1e3358 !default;
+$code-background-color: #0d1d38 !default;
+$code-background-color-dark: #050f20 !default;
+$form-background-color: #0d1d38 !default;
+$footer-background-color: #050f20 !default;
+$link-color: #71c5e8 !default;
+$link-color-hover: #d6effb !default;
+$link-color-visited: #9fb4e8 !default;
+$masthead-link-color: #e6eefb !default;
+$masthead-link-color-hover: #71c5e8 !default;
+$navicon-link-color-hover: #0d1d38 !default;
+
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}

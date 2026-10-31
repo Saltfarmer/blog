@@ -1,0 +1,258 @@
+/* ==========================================================================
+   NUSANTARA: small, flat overrides on top of Minimal Mistakes.
+   Colors come from the active skin variables, so this works for both
+   "nusantara" (light) and "nusantara-dark".
+   Accent: Amber #c37408 (used only for the nav hover bar and text selection).
+   ========================================================================== */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+::selection {
+  background: rgba(#c37408, 0.25);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  scroll-margin-top: 5rem;
+}
+
+/* ---- Masthead / navigation ---- */
+.masthead {
+  position: sticky;
+  top: 0;
+}
+
+.masthead .site-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.greedy-nav a {
+  font-weight: 500;
+}
+
+.greedy-nav .visible-links a:before {
+  height: 2px;
+  background: #c37408;
+}
+
+/* ---- Post page ---- */
+.page__title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.page__meta,
+.page__meta a {
+  font-size: 0.8rem;
+  color: $muted-text-color;
+}
+
+.page__content {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.page__content h2 {
+  margin-top: 2.2em;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.page__content p,
+.page__content ul,
+.page__content ol {
+  margin-bottom: 1.2em;
+}
+
+.page__content a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-color: rgba($primary-color, 0.35);
+  text-underline-offset: 3px;
+}
+
+.page__content a:not(.btn):hover {
+  text-decoration-color: currentColor;
+}
+
+.page__content img {
+  border-radius: 8px;
+}
+
+.page__content figcaption,
+.page__content .image-caption {
+  font-size: 0.8rem;
+  color: $muted-text-color;
+  text-align: center;
+}
+
+blockquote {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  background: rgba($primary-color, 0.06);
+  border-radius: 0 $border-radius $border-radius 0;
+}
+
+:not(pre) > code {
+  padding: 0.15em 0.4em;
+  font-size: 0.88em;
+  border-radius: 6px;
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  margin: 1.5em 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  border-radius: $border-radius;
+}
+
+th {
+  font-weight: 600;
+  background: rgba($primary-color, 0.1);
+}
+
+.notice,
+.notice--primary,
+.notice--info,
+.notice--warning,
+.notice--success,
+.notice--danger {
+  border-radius: $border-radius;
+}
+
+.btn {
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.page__taxonomy-item {
+  padding: 0.15em 0.75em;
+  font-size: 0.8rem;
+  border-color: $border-color;
+  border-radius: 999px;
+}
+
+.page__taxonomy-item:hover {
+  background: rgba($primary-color, 0.08);
+}
+
+.toc {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.pagination--pager {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ---- Author sidebar ---- */
+.author__name {
+  font-weight: 700;
+}
+
+.author__bio,
+.author__content .author__desc {
+  color: $muted-text-color;
+}
+
+/* ---- Archive lists and grids ---- */
+.archive__subtitle {
+  font-weight: 600;
+}
+
+.archive__item-title {
+  font-weight: 600;
+}
+
+.archive__item-title a {
+  text-decoration: none;
+}
+
+.archive__item-excerpt {
+  color: $muted-text-color;
+}
+
+.archive__item-teaser {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.archive__item-teaser img {
+  width: 100%;
+  aspect-ratio: 1.7778;
+  object-fit: cover;
+}
+
+.grid__item .archive__item {
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.grid__item .archive__item:hover {
+  transform: translateY(-3px);
+  border-color: $primary-color;
+  box-shadow: 0 10px 28px rgba($primary-color, 0.16);
+}
+
+.grid__item .archive__item-teaser {
+  border-radius: 0;
+}
+
+.grid__item .archive__item-title,
+.grid__item .archive__item-excerpt,
+.grid__item .page__meta {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.grid__item .archive__item-title {
+  margin-top: 0.9rem;
+}
+
+.grid__item .archive__item-excerpt {
+  padding-bottom: 1rem;
+}
+
+/* ---- Footer ---- */
+.page__footer {
+  margin-top: 4rem;
+  border-top: 1px solid $border-color;
+}
+
+.page__footer-copyright {
+  font-size: 0.8rem;
+  color: $muted-text-color;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid__item .archive__item {
+    transition: none;
+  }
+
+  .grid__item .archive__item:hover {
+    transform: none;
+  }
+}

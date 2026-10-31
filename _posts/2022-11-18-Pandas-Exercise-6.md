@@ -1,5 +1,8 @@
 ---
 title: "Pandas Exercise 6 : Stats"
+lang: en
+series: "Pandas Exercises"
+series_order: 6
 header :
   teaser: /assets/images/pandas-head.jpg
 

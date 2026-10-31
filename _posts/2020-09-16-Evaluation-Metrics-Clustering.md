@@ -1,5 +1,8 @@
 ---
 title: "Evaluation Metric Clustering"
+lang: en
+series: "Evaluation Metrics"
+series_order: 3
 header :
   teaser: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Binary-classification-labeled.svg/1280px-Binary-classification-labeled.svg.png
 comments : true

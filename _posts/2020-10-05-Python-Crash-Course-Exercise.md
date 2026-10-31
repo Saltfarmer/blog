@@ -1,5 +1,8 @@
 ---
 title: "Python Crash Course Exercise"
+lang: en
+series: "Python Crash Course"
+series_order: 1
 header :
   teaser: /assets/images/python-head.jpg
 comments : true

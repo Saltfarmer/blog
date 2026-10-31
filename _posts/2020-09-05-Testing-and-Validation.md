@@ -1,5 +1,8 @@
 ---
 title: "Testing and Validation"
+lang: en
+series: "Data Science Fundamentals"
+series_order: 10
 header :
   teaser: /assets/images/machinelearning_header.jpg
 comments : true

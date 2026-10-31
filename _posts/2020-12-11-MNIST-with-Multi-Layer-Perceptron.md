@@ -1,5 +1,6 @@
 ---
 title: "MNIST with Multilayer Perceptron"
+lang: en
 header :
   teaser: /assets/images/tensorflow.png
 categories:

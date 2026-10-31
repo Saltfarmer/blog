@@ -1,0 +1,37 @@
+{%- comment -%} Series navigation. Uses front matter: series: "Name" and series_order: 1 {%- endcomment -%}
+{%- if page.series -%}
+  {%- assign series_posts = site.posts | where: "series", page.series | sort: "series_order" -%}
+  {%- assign series_total = series_posts.size -%}
+  {%- assign series_idx = 0 -%}
+  {%- for p in series_posts -%}
+    {%- if p.url == page.url -%}{%- assign series_idx = forloop.index0 -%}{%- endif -%}
+  {%- endfor -%}
+  {%- assign prev_i = series_idx | minus: 1 -%}
+  {%- assign next_i = series_idx | plus: 1 -%}
+  {%- if series_idx > 0 -%}{%- assign series_prev = series_posts[prev_i] -%}{%- else -%}{%- assign series_prev = nil -%}{%- endif -%}
+  {%- if next_i < series_total -%}{%- assign series_next = series_posts[next_i] -%}{%- else -%}{%- assign series_next = nil -%}{%- endif -%}
+  {%- if series_total > 1 -%}
+  {%- if include.compact -%}
+  <nav class="series-nav series-nav--compact" aria-label="Series navigation">
+    {%- if series_prev -%}<a class="series-nav__prev" href="{{ series_prev.url | relative_url }}" rel="prev"><span>Previous in series</span>{{ series_prev.title | strip_html }}</a>{%- endif -%}
+    {%- if series_next -%}<a class="series-nav__next" href="{{ series_next.url | relative_url }}" rel="next"><span>Next in series</span>{{ series_next.title | strip_html }}</a>{%- endif -%}
+  </nav>
+  {%- else -%}
+  <nav class="series-nav" aria-label="Series">
+    <p class="series-nav__label">Series &middot; {{ page.series }} &middot; Part {{ series_idx | plus: 1 }} of {{ series_total }}</p>
+    <details>
+      <summary>See all parts</summary>
+      <ol>
+        {%- for p in series_posts -%}
+          {%- if p.url == page.url -%}
+          <li class="current" aria-current="page">{{ p.title | strip_html }}</li>
+          {%- else -%}
+          <li><a href="{{ p.url | relative_url }}">{{ p.title | strip_html }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ol>
+    </details>
+  </nav>
+  {%- endif -%}
+  {%- endif -%}
+{%- endif -%}

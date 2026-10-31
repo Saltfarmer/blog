@@ -1,5 +1,8 @@
 ---
 title: "Day 4 Algorit.ma : Regression Model"
+lang: en
+series: "Algorit.ma Bootcamp"
+series_order: 5
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

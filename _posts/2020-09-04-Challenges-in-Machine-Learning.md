@@ -1,5 +1,8 @@
 ---
 title: "Challenges in Machine Learning"
+lang: en
+series: "Data Science Fundamentals"
+series_order: 9
 header :
   teaser: /assets/images/machinelearning_header.jpg
 comments : true

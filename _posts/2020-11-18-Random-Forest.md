@@ -1,5 +1,6 @@
 ---
 title: "Random Forest"
+lang: en
 header :
   teaser: /assets/images/Random-forest.png
 comments : true

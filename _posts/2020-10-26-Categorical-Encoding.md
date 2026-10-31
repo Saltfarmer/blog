@@ -1,5 +1,8 @@
 ---
 title: "Categorical Encoding"
+lang: en
+series: "Data Preprocessing"
+series_order: 4
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

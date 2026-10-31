@@ -1,5 +1,8 @@
 ---
 title: "Structured and Unstructured Data"
+lang: en
+series: "Data Science Fundamentals"
+series_order: 3
 header :
   image : https://chartexpo.com/blog/wp-content/uploads/2024/12/structured-data-vs-unstructured-data.jpg
   teaser: https://chartexpo.com/blog/wp-content/uploads/2024/12/structured-data-vs-unstructured-data.jpg

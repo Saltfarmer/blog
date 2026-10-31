@@ -1,5 +1,8 @@
 ---
 title: "Choosing Visualization with Matplotlib as Example"
+lang: en
+series: "Python Data Visualization"
+series_order: 2
 header :
   teaser: /assets/images/matplotlib-head.jpg
 comments : true

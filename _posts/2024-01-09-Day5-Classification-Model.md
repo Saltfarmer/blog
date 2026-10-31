@@ -1,5 +1,8 @@
 ---
 title: "Day 5 Algorit.ma : Classification Model"
+lang: en
+series: "Algorit.ma Bootcamp"
+series_order: 6
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

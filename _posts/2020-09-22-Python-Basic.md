@@ -1,5 +1,8 @@
 ---
 title: "Python Basic"
+lang: en
+series: "Python for Data Science"
+series_order: 2
 header :
   teaser: /assets/images/python-head.jpg
 comments : true

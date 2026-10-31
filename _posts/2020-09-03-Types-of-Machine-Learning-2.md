@@ -1,5 +1,8 @@
 ---
 title: "Types of Machine Learning 2"
+lang: en
+series: "Data Science Fundamentals"
+series_order: 8
 header :
   teaser: /assets/images/machinelearning_header.jpg
 comments : true

@@ -1,5 +1,6 @@
 ---
 title: "Movie Recommender System Analysis"
+lang: en
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

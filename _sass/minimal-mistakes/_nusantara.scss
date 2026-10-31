@@ -31,6 +31,25 @@ h6 {
 .masthead {
   position: sticky;
   top: 0;
+  z-index: 100;
+  background: $background-color;
+}
+
+.masthead__inner-wrap {
+  background: $background-color;
+}
+
+/* Sidebars stick below the header and scroll inside themselves if taller than the screen */
+@media (min-width: 64em) {
+  .sidebar.sticky {
+    top: 5rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+  }
+
+  .sidebar__right.sticky {
+    top: 5rem;
+  }
 }
 
 .masthead .site-title {

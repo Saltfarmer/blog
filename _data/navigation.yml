@@ -1,4 +1,6 @@
 main:
+  - title: "Start here"
+    url: /start-here/
   - title: "Posts"
     url: /year-archive-grid/
   - title: "Category"

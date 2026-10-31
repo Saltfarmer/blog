@@ -1,5 +1,6 @@
 ---
 title: "Maintenance"  
+lang: en
 header :
   teaser : https://pridesonline.wordpress.com/wp-content/uploads/2010/08/lagi-maintenance2.jpg
 comments : true  

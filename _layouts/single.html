@@ -48,9 +48,15 @@ layout: default
             </nav>
           </aside>
         {% endif %}
-        {{ content }}
+        {% include series-nav.html %}
+        {% include takeaways.html %}
+        {{ content | replace: '<img ', '<img loading="lazy" decoding="async" ' }}
+        {% include series-nav.html compact=true %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
+
+      {% include run-it.html %}
+      {% include subscribe.html %}
 
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
@@ -70,11 +76,8 @@ layout: default
     {% endif %}
   </article>
 
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    {% include page__related.html posts=site.related_posts %}
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
-  {% elsif page.id and page.related %}
-    {% include page__related.html posts=site.posts %}
+  {% comment %}<!-- related posts: same tags, else same category, else recent -->{% endcomment %}
+  {% if page.id and page.related %}
+    {% include related-posts.html %}
   {% endif %}
 </div>

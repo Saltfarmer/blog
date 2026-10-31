@@ -1,5 +1,8 @@
 ---
 title: "Pandas Exercise 4 : Apply"
+lang: en
+series: "Pandas Exercises"
+series_order: 4
 header :
   teaser: /assets/images/pandas-head.jpg
 

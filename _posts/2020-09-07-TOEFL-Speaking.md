@@ -1,5 +1,6 @@
 ---
 title: "TOEFL Speaking Template"
+lang: en
 header :
   teaser: /assets/images/toefl-ETS.png
 comments : true

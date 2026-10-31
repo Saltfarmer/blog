@@ -1,5 +1,8 @@
 ---
 title: "Interactive Visualization Plotly"
+lang: en
+series: "Python Data Visualization"
+series_order: 5
 header :
   teaser: /assets/images/matplotlib-head.jpg
 comments : true

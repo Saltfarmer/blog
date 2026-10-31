@@ -8,3 +8,18 @@
   @font-face { font-family: "Inter"; font-style: normal; font-weight: 700; font-display: swap; src: url("{{ '/assets/fonts/inter-Bold.woff' | relative_url }}") format("woff"); }
 </style>
 <meta name="theme-color" content="#0857C3">
+
+<!-- Light/dark: follows the visitor's system until they press the toggle; the choice is remembered. -->
+<link id="dark-css" rel="stylesheet" href="{{ '/assets/css/dark.css' | relative_url }}" media="not all">
+<link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}">
+<script>
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('bw-theme'); } catch (e) {}
+    var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    document.getElementById('dark-css').media = dark ? 'all' : 'not all';
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', dark ? '#071326' : '#0857C3');
+  })();
+</script>

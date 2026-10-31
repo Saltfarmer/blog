@@ -1,5 +1,8 @@
 ---
 title: "Day 6 Algorit.ma : Unsupervised Learning"
+lang: id
+series: "Algorit.ma Bootcamp"
+series_order: 7
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

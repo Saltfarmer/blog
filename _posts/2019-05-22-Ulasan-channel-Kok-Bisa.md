@@ -1,5 +1,6 @@
 ---
 title: "Ulasan channel Youtube KokBisa"
+lang: id
 header:
   teaser: /assets/images/kokbisa.png
 comments : true

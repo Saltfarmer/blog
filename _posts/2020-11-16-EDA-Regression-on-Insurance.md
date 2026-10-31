@@ -1,5 +1,6 @@
 ---
 title: "EDA Regression Exercise"
+lang: en
 header :
   teaser: /assets/images/python-head.jpg
 comments : true

@@ -1,5 +1,6 @@
 ---
 title: "Creating a shortcut for Jupyter Notebook"
+lang: en
 header :
   teaser: /assets/images/JupyterBanner.jpg
 comments : true

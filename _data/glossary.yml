@@ -1,0 +1,87 @@
+# Glossary terms. The first mention of each term in a post gets a hover/tap definition.
+# Add more at any time. Fields: term, aliases (optional), def.
+# Turn it off for one post with `glossary: false` in its front matter.
+- term: Overfitting
+  aliases: [overfit, overfitted]
+  def: "A model learns the training data too closely, noise included, so it does well on training data but poorly on new data."
+- term: Underfitting
+  aliases: [underfit, underfitted]
+  def: "A model is too simple to capture the pattern in the data, so it does poorly even on the training data."
+- term: Supervised learning
+  def: "Learning from examples that already have the right answer (labels), such as predicting prices from past sales."
+- term: Unsupervised learning
+  def: "Finding structure in data that has no labels, such as grouping similar customers."
+- term: Regression
+  def: "Predicting a number, such as a price or a temperature."
+- term: Classification
+  def: "Predicting a category, such as spam or not spam."
+- term: Clustering
+  def: "Grouping similar items together without being told the groups in advance."
+- term: Feature
+  aliases: [features]
+  def: "One input column the model uses to make a prediction, such as age or income."
+- term: Hyperparameter
+  aliases: [hyperparameters]
+  def: "A setting you choose before training (like tree depth) rather than one the model learns from data."
+- term: Cross-validation
+  def: "Testing a model several times on different splits of the data to get a more reliable score."
+- term: Confusion matrix
+  def: "A table that counts correct and wrong predictions for each class."
+- term: Precision
+  def: "Of everything the model flagged as positive, the share that really was positive."
+- term: Recall
+  def: "Of everything that really was positive, the share the model found."
+- term: F1-score
+  aliases: [F1 score, F1]
+  def: "A single score that balances precision and recall."
+- term: ROC curve
+  aliases: [ROC]
+  def: "A plot of true positive rate against false positive rate across all decision thresholds."
+- term: AUC
+  def: "Area under the ROC curve. 1.0 is perfect; 0.5 is no better than guessing."
+- term: RMSE
+  def: "Root mean squared error: the typical size of a prediction error, in the same unit as the target. Big mistakes count extra."
+- term: MAE
+  def: "Mean absolute error: the average size of a prediction error, in the same unit as the target."
+- term: MSE
+  def: "Mean squared error: the average of the squared prediction errors."
+- term: Outlier
+  aliases: [outliers]
+  def: "A value far away from the rest of the data."
+- term: Correlation
+  def: "How strongly two things move together. It does not prove one causes the other."
+- term: Normalization
+  aliases: [normalisation]
+  def: "Rescaling values to a common range, often 0 to 1, so no feature dominates just because of its units."
+- term: Standardization
+  aliases: [standardisation]
+  def: "Rescaling values to have mean 0 and standard deviation 1."
+- term: One-hot encoding
+  aliases: [one hot encoding]
+  def: "Turning a category into several 0/1 columns, one per category value."
+- term: Gradient descent
+  def: "An optimization method that improves a model step by step by moving in the direction that lowers the error."
+- term: Neural network
+  aliases: [neural networks]
+  def: "A model made of layers of simple connected units that learn patterns from data."
+- term: PCA
+  aliases: [Principal Component Analysis]
+  def: "A method that compresses many columns into a few new ones while keeping most of the information."
+- term: K-Means
+  aliases: [K Means, k-means]
+  def: "A clustering method that groups data into K groups around centre points."
+- term: Decision tree
+  aliases: [decision trees]
+  def: "A model that predicts by asking a chain of yes/no questions about the features."
+- term: Random forest
+  aliases: [random forests]
+  def: "Many decision trees voting together, which is usually more accurate than one tree."
+- term: DataFrame
+  aliases: [DataFrames]
+  def: "A table of rows and columns in pandas."
+- term: EDA
+  aliases: [exploratory data analysis]
+  def: "Exploratory data analysis: looking at the data with summaries and charts before modelling."
+- term: Imbalanced data
+  aliases: [imbalance data, imbalanced]
+  def: "Data where one class is far more common than the others, such as fraud versus normal transactions."

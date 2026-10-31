@@ -1,5 +1,6 @@
 ---
 title: "Ulasan Startup di Indonesia (Mamikos)"
+lang: id
 header:
   teaser: /assets/images/mamikos.png
 comments : true

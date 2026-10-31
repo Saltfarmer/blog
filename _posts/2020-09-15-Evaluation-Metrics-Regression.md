@@ -1,5 +1,8 @@
 ---
 title: "Evaluation Metric Regression"
+lang: en
+series: "Evaluation Metrics"
+series_order: 2
 header :
   image : https://miro.medium.com/v2/resize:fit:1400/1*gHBqrUhWTCnJVHT4ltm-Zg.png
   teaser : https://miro.medium.com/v2/resize:fit:1400/1*gHBqrUhWTCnJVHT4ltm-Zg.png

@@ -1,5 +1,6 @@
 ---
 title: "Pandas Alternatives : Modin"
+lang: en
 header :
   teaser: /assets/images/modin.png
 

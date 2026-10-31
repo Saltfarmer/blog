@@ -1,5 +1,8 @@
 ---
 title: "Data Science Tools"
+lang: en
+series: "Data Science Fundamentals"
+series_order: 2
 header :
   teaser: https://dgsthal.in/blogs/wp-content/uploads/2025/06/Data-Science-Basics-1024x683.jpg
 comments : true

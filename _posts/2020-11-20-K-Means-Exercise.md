@@ -1,5 +1,6 @@
 ---
 title: "K-Means Exercise"
+lang: en
 header :
   teaser: /assets/images/python-head.jpg
 comments : true

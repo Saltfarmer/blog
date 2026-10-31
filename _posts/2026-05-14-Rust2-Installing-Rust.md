@@ -1,5 +1,8 @@
 ---
 title: "Rust 2 : Installing Rust"
+lang: en
+series: "Rust for Data Analysis"
+series_order: 2
 header :
   image : /assets/images/Rust-4-Data-Analysis.png
   teaser: https://logowik.com/content/uploads/images/rust4784.logowik.com.webp

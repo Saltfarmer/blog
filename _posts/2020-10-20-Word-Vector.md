@@ -1,5 +1,6 @@
 ---
 title: "Word Vector"
+lang: en
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

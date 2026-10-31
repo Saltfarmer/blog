@@ -1,5 +1,6 @@
 ---
 title: "Logistic Regression Exercise"
+lang: en
 header :
   teaser: /assets/images/LogReg.png
 comments : true

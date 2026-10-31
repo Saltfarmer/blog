@@ -1,5 +1,8 @@
 ---
 title: "Pandas Exercise 2 : Filtering and Sorting"
+lang: en
+series: "Pandas Exercises"
+series_order: 2
 header :
   teaser: /assets/images/pandas-head.jpg
 

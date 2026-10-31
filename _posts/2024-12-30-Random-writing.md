@@ -1,5 +1,6 @@
 ---
 title: "Long time not writing, lets start"
+lang: en
 header:
   image:https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNXO5us6A4OAnECK9JeE5q9fTVndMmCZAgSQ&s
 comments : true

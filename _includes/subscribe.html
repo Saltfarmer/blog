@@ -1,0 +1,15 @@
+{%- if page.date -%}
+<aside class="subscribe" aria-label="Subscribe">
+  <p class="subscribe__title">Enjoyed this post?</p>
+  <div class="subscribe__row">
+    <a class="btn" href="{{ '/feed.xml' | relative_url }}"><i class="fas fa-rss" aria-hidden="true"></i> Follow via RSS</a>
+    {%- if site.subscribe.newsletter_action and site.subscribe.newsletter_action != "" -%}
+    <form class="subscribe__form" action="{{ site.subscribe.newsletter_action }}" method="post" target="_blank">
+      <label class="sr-only" for="subscribe-email">Email</label>
+      <input id="subscribe-email" type="email" name="email" placeholder="you@example.com" required>
+      <button class="btn btn--primary" type="submit">{{ site.subscribe.newsletter_label | default: "Subscribe" }}</button>
+    </form>
+    {%- endif -%}
+  </div>
+</aside>
+{%- endif -%}

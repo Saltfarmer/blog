@@ -1,5 +1,6 @@
 ---
 title: "Data Capstone Exercise"
+lang: en
 header :
   teaser: /assets/images/calls.png
 comments : true

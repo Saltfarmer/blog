@@ -1,5 +1,8 @@
 ---
 title: "0000 Belajar Machine Learning : Hello Machine Learning"
+lang: id
+series: "Belajar Machine Learning"
+series_order: 1
 header:
   teaser: /assets/images/machinelearning_header.jpg
 comments : true

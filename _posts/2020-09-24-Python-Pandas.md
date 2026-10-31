@@ -1,5 +1,8 @@
 ---
 title: "Python Pandas"
+lang: en
+series: "Python for Data Science"
+series_order: 4
 header :
   teaser: /assets/images/pandas-head.jpg
 comments : true

@@ -1,5 +1,6 @@
 ---
 title: "Principal Component Analysis"
+lang: en
 header : 
   teaser : /assets/images/pca.jpeg
 categories:

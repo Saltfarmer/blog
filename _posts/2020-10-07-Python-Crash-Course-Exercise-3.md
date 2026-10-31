@@ -1,5 +1,8 @@
 ---
 title: "Python Crash Course Exercise 3"
+lang: en
+series: "Python Crash Course"
+series_order: 3
 header :
   teaser: /assets/images/pandas-head.jpg
 comments : true

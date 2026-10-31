@@ -1,5 +1,8 @@
 ---
 title: "Handling Missing Values"
+lang: en
+series: "Data Preprocessing"
+series_order: 1
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

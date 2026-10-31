@@ -1,5 +1,8 @@
 ---
 title: "Numerical Transformer"
+lang: en
+series: "Data Preprocessing"
+series_order: 3
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

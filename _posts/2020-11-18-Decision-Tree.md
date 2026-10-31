@@ -1,5 +1,6 @@
 ---
 title: "Decision Tree"
+lang: en
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

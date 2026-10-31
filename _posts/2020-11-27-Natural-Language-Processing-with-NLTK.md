@@ -1,5 +1,6 @@
 ---
 title: "Natural Language Processing with NLTK"
+lang: en
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

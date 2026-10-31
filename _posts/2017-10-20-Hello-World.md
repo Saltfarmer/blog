@@ -1,5 +1,6 @@
 ---
 title: "Hello World"
+lang: en
 header :
   teaser: https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HelloWorld.svg/1280px-HelloWorld.svg.png
 comments : true

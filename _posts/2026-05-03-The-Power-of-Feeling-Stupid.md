@@ -1,5 +1,6 @@
 ---
 title: "The Power of Feeling Stupid"  
+lang: en
 header :
   teaser : https://i.ibb.co.com/5WvjtcGQ/Whats-App-Image-2026-04-25-at-16-07-53.jpg
 comments : true  

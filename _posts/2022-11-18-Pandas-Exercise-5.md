@@ -1,5 +1,8 @@
 ---
 title: "Pandas Exercise 5 : Merge"
+lang: en
+series: "Pandas Exercises"
+series_order: 5
 header :
   teaser: /assets/images/pandas-head.jpg
 

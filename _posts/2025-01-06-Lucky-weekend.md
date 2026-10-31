@@ -1,5 +1,6 @@
 ---
 title: "Lucky weekends"
+lang: en
 header:
   teaser: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaQOmbl8RkUWuE4goc4tSRdqpb9zbyvRWP_A&s
 comments : true

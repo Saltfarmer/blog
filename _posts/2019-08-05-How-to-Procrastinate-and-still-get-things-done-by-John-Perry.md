@@ -1,5 +1,6 @@
 ---
 title: "How to Procrastinate and still get things done by John Perry"
+lang: id
 header :
   teaser: https://m.media-amazon.com/images/I/71XK1M+-czL._AC_UF894,1000_QL80_.jpg
 comments : true

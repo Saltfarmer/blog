@@ -1,5 +1,8 @@
 ---
 title: "Evaluation Metric Special ROC-AUC"
+lang: en
+series: "Evaluation Metrics"
+series_order: 4
 header :
   teaser : https://cdn.prod.website-files.com/660ef16a9e0687d9cc27474a/662c42679571ef35419c9968_64760779d5dc484958a3f917_classification_metrics_017-min.png
 comments : true

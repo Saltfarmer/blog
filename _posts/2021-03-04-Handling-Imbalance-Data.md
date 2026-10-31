@@ -1,5 +1,6 @@
 ---
 title: "Handling Imbalance Data"
+lang: en
 header : 
   teaser : /assets/images/python-head.jpg
 comments : true

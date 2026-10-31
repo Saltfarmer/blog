@@ -1,5 +1,6 @@
 ---
 title: "Happy new year"
+lang: en
 comments : true
 share : true
 categories:

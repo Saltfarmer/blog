@@ -1,5 +1,6 @@
 ---
 title: "BBC Recommendation System (Content-Based)"
+lang: en
 header: 
   teaser : https://ichef.bbci.co.uk/images/ic/1920x1080/p09xtmrp.jpg
 comments : true

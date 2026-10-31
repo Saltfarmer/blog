@@ -1,5 +1,8 @@
 ---
 title: "Python Crash Course Exercise 5"
+lang: en
+series: "Python Crash Course"
+series_order: 5
 header :
   teaser: /assets/images/matplotlib-head.jpg
 comments : true

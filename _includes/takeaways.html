@@ -1,0 +1,11 @@
+{%- comment -%} Front matter: takeaways: ["point one", "point two"] {%- endcomment -%}
+{%- if page.takeaways and page.takeaways.size > 0 -%}
+<aside class="takeaways" aria-label="Key takeaways">
+  <p class="takeaways__title">Key takeaways</p>
+  <ul>
+    {%- for t in page.takeaways -%}
+    <li>{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+    {%- endfor -%}
+  </ul>
+</aside>
+{%- endif -%}

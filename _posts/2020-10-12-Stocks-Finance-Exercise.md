@@ -1,5 +1,6 @@
 ---
 title: "Stocks Finance Exercise"
+lang: en
 header :
   teaser: /assets/images/stonks.png
 comments : true

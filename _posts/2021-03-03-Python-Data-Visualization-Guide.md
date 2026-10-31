@@ -1,5 +1,6 @@
 ---
 title: "Python Data Visualization Guide"
+lang: en
 header : 
   teaser : /assets/images/python-head.jpg
 comments : true

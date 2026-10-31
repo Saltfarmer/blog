@@ -1,0 +1,20 @@
+{%- comment -%} Front matter: colab, notebook, dataset (full URLs, or paths like /assets/files/x.ipynb) {%- endcomment -%}
+{%- if page.colab or page.notebook or page.dataset -%}
+<aside class="runit" aria-label="Run it yourself">
+  <p class="runit__title">Run it yourself</p>
+  <div class="runit__links">
+    {%- if page.colab -%}
+      {%- capture runit_colab -%}{%- if page.colab contains "://" -%}{{ page.colab }}{%- else -%}{{ page.colab | relative_url }}{%- endif -%}{%- endcapture -%}
+      <a class="btn btn--primary" href="{{ runit_colab }}" target="_blank" rel="noopener"><i class="fas fa-play" aria-hidden="true"></i> Open in Colab</a>
+    {%- endif -%}
+    {%- if page.notebook -%}
+      {%- capture runit_nb -%}{%- if page.notebook contains "://" -%}{{ page.notebook }}{%- else -%}{{ page.notebook | relative_url }}{%- endif -%}{%- endcapture -%}
+      <a class="btn" href="{{ runit_nb }}" download><i class="fas fa-download" aria-hidden="true"></i> Notebook</a>
+    {%- endif -%}
+    {%- if page.dataset -%}
+      {%- capture runit_ds -%}{%- if page.dataset contains "://" -%}{{ page.dataset }}{%- else -%}{{ page.dataset | relative_url }}{%- endif -%}{%- endcapture -%}
+      <a class="btn" href="{{ runit_ds }}"><i class="fas fa-database" aria-hidden="true"></i> Dataset</a>
+    {%- endif -%}
+  </div>
+</aside>
+{%- endif -%}

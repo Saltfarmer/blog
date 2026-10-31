@@ -1,5 +1,6 @@
 ---
 title: "Introduction Neural Network"
+lang: en
 header : 
   teaser : /assets/images/tensorflow.png
 categories:

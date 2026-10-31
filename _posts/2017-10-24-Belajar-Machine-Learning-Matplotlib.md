@@ -1,5 +1,8 @@
 ---
 title: "0010 Belajar Machine Learning : Matplotlib"
+lang: id
+series: "Belajar Machine Learning"
+series_order: 3
 header:
   teaser: /assets/images/machinelearning_header.jpg
 comments : true

@@ -1,5 +1,6 @@
 ---
 title: "Predicting BBRI Stocks with Meta’s Prophet"  
+lang: en
 header :
   teaser : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM_Fs2pjAqnLAHBnRSiVUXXAvgURKPytD3Yw&s
 comments : true  

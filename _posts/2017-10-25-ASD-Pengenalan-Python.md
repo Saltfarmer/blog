@@ -1,5 +1,6 @@
 ---
 title: "0000 Belajar Algoritma dan Struktur data : Pengenalan Python 3"
+lang: id
 header:
   teaser: /assets/images/cp-header.jpg
 comments : true

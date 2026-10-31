@@ -1,5 +1,8 @@
 ---
 title: "Python Matplotlib"
+lang: en
+series: "Python Data Visualization"
+series_order: 1
 header :
   teaser: /assets/images/matplotlib-head.jpg
 comments : true

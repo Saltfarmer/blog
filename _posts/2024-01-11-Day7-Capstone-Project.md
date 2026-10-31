@@ -1,5 +1,8 @@
 ---
 title: "Day 7 Algorit.ma : Capstone Project"
+lang: en
+series: "Algorit.ma Bootcamp"
+series_order: 8
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

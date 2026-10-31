@@ -1,5 +1,8 @@
 ---
 title: "Python Crash Course Exercise 2"
+lang: en
+series: "Python Crash Course"
+series_order: 2
 header :
   teaser: /assets/images/numpy-head.jpg
 comments : true

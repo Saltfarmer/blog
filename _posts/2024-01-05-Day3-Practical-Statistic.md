@@ -1,5 +1,8 @@
 ---
 title: "Day 3 Algorit.ma : Practical Statistics"
+lang: en
+series: "Algorit.ma Bootcamp"
+series_order: 4
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

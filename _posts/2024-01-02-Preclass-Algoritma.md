@@ -1,5 +1,8 @@
 ---
 title: "Preclass Bootcamp Algorit.ma BFLP Audit"
+lang: en
+series: "Algorit.ma Bootcamp"
+series_order: 1
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

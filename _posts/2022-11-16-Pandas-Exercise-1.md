@@ -1,5 +1,8 @@
 ---
 title: "Pandas Exercise 1 : Knowing your data"
+lang: en
+series: "Pandas Exercises"
+series_order: 1
 header :
   teaser: /assets/images/pandas-head.jpg
 

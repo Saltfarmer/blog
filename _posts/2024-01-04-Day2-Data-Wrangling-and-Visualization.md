@@ -1,5 +1,8 @@
 ---
 title: "Day 2 Algorit.ma : Data Wrangling and Visualization"
+lang: en
+series: "Algorit.ma Bootcamp"
+series_order: 3
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

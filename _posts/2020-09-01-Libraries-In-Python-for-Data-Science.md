@@ -1,5 +1,8 @@
 ---
 title: "Libraries in Python for Data Science"
+lang: en
+series: "Data Science Fundamentals"
+series_order: 6
 header:
   teaser: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXf_ZxfNT8UZSE7O48u9J0HQ6avZMJwfHwxA&s
 comments : true

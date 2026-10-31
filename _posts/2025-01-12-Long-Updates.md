@@ -1,5 +1,6 @@
 ---
 title: "Long Updates"
+lang: en
 header:
   teaser: https://allsortsorganizing.com/wp-content/uploads/2020/07/shutterstock_1313470685-2880x1800.jpg
 comments : true

@@ -1,5 +1,6 @@
 ---
 title: "Web Scraping with BeautifulSoup4"
+lang: en
 header: 
   teaser : /assets/images/BS4.png
 categories:

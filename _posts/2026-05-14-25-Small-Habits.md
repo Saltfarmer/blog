@@ -1,5 +1,6 @@
 ---
 title: "25 Small Habits That Will Make a Huge Impact on Your Life"  
+lang: en
 header :
   teaser: /assets/images/25_small_habits.png
 comments : true  

@@ -1,5 +1,8 @@
 ---
 title: "Pandas Exercise 3 : Grouping"
+lang: en
+series: "Pandas Exercises"
+series_order: 3
 header :
   teaser: /assets/images/pandas-head.jpg
 

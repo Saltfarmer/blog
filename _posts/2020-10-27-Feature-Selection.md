@@ -1,5 +1,8 @@
 ---
 title: "Feature Selection"
+lang: en
+series: "Data Preprocessing"
+series_order: 6
 header :
   teaser: /assets/images/sklearn-head.png
 comments : true

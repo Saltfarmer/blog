@@ -1,5 +1,6 @@
 ---
 title: "From Europe’s Peak to SEA’s Underdogs: Mind_Control’s New Chapter as a Coach"
+lang: en
 header :
   teaser: https://i.ytimg.com/an_webp/fS4lRzPV5WE/mqdefault_6s.webp?du=3000&sqp=CJb8udEG&rs=AOn4CLAmv9qaKa9_90DcyjhMGnwKWWIOlQ
 categories:

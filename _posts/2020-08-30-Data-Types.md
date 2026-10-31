@@ -1,5 +1,8 @@
 ---
 title: "Data Types"
+lang: en
+series: "Data Science Fundamentals"
+series_order: 4
 header :
   image : https://miro.medium.com/v2/resize:fit:1400/1*QfI8H_8HplGa1v9IrrWjBA.png
   teaser: https://miro.medium.com/v2/resize:fit:1400/1*QfI8H_8HplGa1v9IrrWjBA.png

@@ -1,5 +1,8 @@
 ---
 title: "Better Visualization : Seaborn 2"
+lang: en
+series: "Python Data Visualization"
+series_order: 4
 header :
   teaser: /assets/images/matplotlib-head.jpg
 comments : true

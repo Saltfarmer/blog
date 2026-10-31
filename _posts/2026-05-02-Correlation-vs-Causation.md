@@ -1,5 +1,6 @@
 ---
 title: "Correlation != Causation"
+lang: en
 header :
   teaser : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS8631aeb4oCdvvKiX55DY4KmwswebwS1Pqg&s
 comments : true  

@@ -1,5 +1,8 @@
 ---
 title: "Python Numpy"
+lang: en
+series: "Python for Data Science"
+series_order: 3
 header :
   teaser: /assets/images/numpy-head.jpg
 comments : true

@@ -1,5 +1,8 @@
 ---
 title: "Starting Material"
+lang: en
+series: "Python for Data Science"
+series_order: 1
 header :
   teaser: /assets/images/python-head.jpg
 comments : true

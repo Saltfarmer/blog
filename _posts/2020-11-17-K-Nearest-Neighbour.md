@@ -1,5 +1,6 @@
 ---
 title: "K Nearest Neighbour"
+lang: en
 header :
   teaser: /assets/images/KNN.png
 comments : true

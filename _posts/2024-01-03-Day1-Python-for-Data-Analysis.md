@@ -1,5 +1,8 @@
 ---
 title: "Day 1 Algorit.ma : Python For Data Analysis"
+lang: en
+series: "Algorit.ma Bootcamp"
+series_order: 2
 header :
   image : /assets/images/AlgoritmaBanner.jpg
   teaser: /assets/images/Algoritma.png

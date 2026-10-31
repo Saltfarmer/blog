@@ -1,5 +1,6 @@
 ---
 title: "New year new me"
+lang: en
 header :
   teaser : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgP-LmH83d_xQD84f9EE6ycgM7r1nfhr3ZTA&s
 comments : true

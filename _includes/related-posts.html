@@ -1,0 +1,21 @@
+{%- comment -%} Related = same tags if any, otherwise same first category; newest first. Falls back to recent posts. {%- endcomment -%}
+{%- assign rel_posts = "" | split: "," -%}
+{%- if page.tags and page.tags.size > 0 -%}
+  {%- for tag in page.tags -%}
+    {%- for p in site.tags[tag] -%}
+      {%- unless p.url == page.url -%}{%- assign rel_posts = rel_posts | push: p -%}{%- endunless -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- if rel_posts.size < 4 and page.categories and page.categories.size > 0 -%}
+  {%- assign first_cat = page.categories | first -%}
+  {%- for p in site.categories[first_cat] -%}
+    {%- unless p.url == page.url -%}{%- assign rel_posts = rel_posts | push: p -%}{%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- assign rel_posts = rel_posts | uniq | sort: "date" | reverse -%}
+{%- if rel_posts.size > 0 -%}
+  {%- include page__related.html posts=rel_posts -%}
+{%- else -%}
+  {%- include page__related.html posts=site.posts -%}
+{%- endif -%}

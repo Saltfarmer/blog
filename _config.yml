@@ -23,12 +23,16 @@ name: "Gama Candra Tri Kartika"
 description: "Fans of code and dote"
 url: "https://saltfarmer.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "/blog" # the subpath of your site, e.g. "/blog"
-repository: "github.com/saltfarmer" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser: "assets/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+repository: "Saltfarmer/blog" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser: "/assets/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: "assets/saltlogo.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: "Saltfarmer Blog" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs: true # true, false (default)
 words_per_minute: 180
+# To switch from Disqus to giscus (GitHub Discussions, no ads):
+#  1. Enable Discussions on the Saltfarmer/blog repo and install https://github.com/apps/giscus
+#  2. Open https://giscus.app, enter Saltfarmer/blog, pick a category, copy repo_id and category_id below
+#  3. Change provider to "giscus". Comments only show on the published site (production build).
 comments:
   provider: "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
@@ -45,11 +49,12 @@ comments:
     issue_term: # "pathname" (default)
   giscus:
     repo_id: # Shown during giscus setup at https://giscus.app
-    category_name: # Full text name of the category
+    category_name: "Announcements" # Full text name of the category
     category_id: # Shown during giscus setup at https://giscus.app
     discussion_term: # "pathname" (default), "url", "title", "og:title"
     reactions_enabled: # '1' for enabled (default), '0' for disabled
-    theme: # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+    theme: "preferred_color_scheme" # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+    lazy: true
   staticman:
     branch: # "master"
     endpoint: # "https://{your Staticman v3 API}/v3/entry/github/"
@@ -90,7 +95,7 @@ og_image: # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type: # Person or Organization (defaults to Person)
+  type: Person # Person or Organization (defaults to Person)
   name: # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
@@ -104,7 +109,7 @@ analytics:
 # Site Author
 author:
   name: "Gama Candra Tri Kartika"
-  avatar: "/assets/newlogo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar: "/assets/Gama Candra Tri Kartika.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "Fans of codes and dotes"
   location: "Jakarta, Indonesia"
   email: "candragctk17@gmail.com"
@@ -288,6 +293,16 @@ defaults:
       comments: true
       share: true
       related: true
+      toc: true
+      toc_sticky: true
+      toc_label: "On this page"
+      toc_icon: "list"
+
+# Subscribe box under each post. RSS is always shown.
+# Optional newsletter: paste the form action URL from Buttondown / Formspree / Mailchimp.
+subscribe:
+  newsletter_action: ""
+  newsletter_label: "Get new posts by email"
 
 enable_copy_code_button: true
 breadcrumbs: true  # disabled by default

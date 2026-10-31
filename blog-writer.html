@@ -182,10 +182,26 @@ dialog.wide{width:min(780px,94vw)}
         <div class="row" style="margin-top:6px"><button class="btn" id="bTeaserFile" type="button">Choose file…</button><button class="btn" id="bTeaserFirst" type="button">Use first image</button></div>
         <input type="file" id="fTeaser" accept="image/*" hidden></div>
       <div class="f"><label>Excerpt (optional)</label><textarea id="excerpt" rows="2"></textarea></div>
+      <div class="f"><label>Language</label><select id="lang"><option value="en">English</option><option value="id">Bahasa Indonesia</option></select>
+        <div class="hint">Lets readers filter the post lists by language.</div></div>
+      <div class="f"><label>Series (optional)</label>
+        <div class="row"><input type="text" id="series" list="seriesList" placeholder="e.g. Rust for Data Analysis"><input type="number" id="seriesOrder" min="1" placeholder="Part #" style="width:90px"></div>
+        <datalist id="seriesList"><option>Belajar Machine Learning<option>Data Science Fundamentals<option>Evaluation Metrics<option>Python for Data Science<option>Python Data Visualization<option>Python Crash Course<option>Data Preprocessing<option>Pandas Exercises<option>LeTAD (Dota 2)<option>Algorit.ma Bootcamp<option>Rust for Data Analysis</datalist>
+        <div class="hint">Same name on every part, and the part number (1, 2, 3…). Readers get a “Part 2 of 5” box and previous/next buttons.</div></div>
+      <div class="f"><label>Key takeaways (optional)</label><textarea id="takeaways" rows="3" placeholder="One point per line, 2–4 short lines"></textarea>
+        <div class="hint">Shown in a box at the top so readers know in 10 seconds if the post is for them.</div></div>
+      <div class="f"><label>Run it yourself (optional)</label>
+        <input type="text" id="colab" placeholder="Colab link (https://colab.research.google.com/…)">
+        <input type="text" id="notebook" placeholder="Notebook file or link (.ipynb)" style="margin-top:6px">
+        <input type="text" id="dataset" placeholder="Dataset file or link (.csv)" style="margin-top:6px">
+        <div class="hint">Adds buttons under the post. A path like <code>/assets/files/x.ipynb</code> works if you put the file in your repo.</div></div>
+      <div class="f"><label>Last updated (optional)</label><input type="date" id="modified">
+        <div class="hint">Set it when you revise an old post. Readers then see “Last updated”.</div>
+        <label class="chk"><input type="checkbox" id="featured"> featured (listed first on “Start here”)</label></div>
       <div class="f"><label>Options</label>
         <label class="chk"><input type="checkbox" id="comments" checked> comments: true</label>
         <label class="chk"><input type="checkbox" id="share" checked> share: true</label>
-        <label class="chk"><input type="checkbox" id="toc"> table of contents (toc: true)</label></div>
+        <label class="chk"><input type="checkbox" id="toc" checked> table of contents (on by default; untick for short posts)</label></div>
       <div class="f"><label>Extra front matter (YAML)</label><textarea id="extra" rows="3" spellcheck="false" placeholder="Optional. One setting per line, e.g.&#10;read_time: false"></textarea>
         <select id="snipSel" style="margin-top:6px"></select>
         <div class="hint">Most posts need nothing here. Pick from the list to add a common option; see ? for what each one does.</div></div>
@@ -454,7 +470,7 @@ function listVals(e){
 }
 const bool=e=>/^true$/i.test(e.val.trim());
 function applyFm(fm){
-  const st={title:'',date:'',useDate:false,excerpt:'',teaser:'',comments:false,share:false,toc:false,cats:[],tags:[],extra:[]};
+  const st={title:'',date:'',useDate:false,excerpt:'',teaser:'',comments:false,share:false,toc:true,cats:[],tags:[],extra:[],lang:'en',series:'',order:'',takeaways:[],colab:'',notebook:'',dataset:'',modified:'',featured:false};
   S.headerExtra=[];
   for(const e of parseFm(fm)){
     switch(e.key){
@@ -464,6 +480,15 @@ function applyFm(fm){
       case 'comments':st.comments=bool(e);break;
       case 'share':st.share=bool(e);break;
       case 'toc':st.toc=bool(e);break;
+      case 'lang':st.lang=unq(e.val)||'en';break;
+      case 'series':st.series=unq(e.val);break;
+      case 'series_order':st.order=unq(e.val);break;
+      case 'takeaways':st.takeaways=listVals(e);break;
+      case 'colab':st.colab=unq(e.val);break;
+      case 'notebook':st.notebook=unq(e.val);break;
+      case 'dataset':st.dataset=unq(e.val);break;
+      case 'last_modified_at':{const d=unq(e.val).match(/\d{4}-\d{2}-\d{2}/);st.modified=d?d[0]:'';break;}
+      case 'featured':st.featured=bool(e);break;
       case 'categories':st.cats=listVals(e);break;
       case 'category':st.cats=listVals(e);break;
       case 'tags':st.tags=listVals(e);break;
@@ -479,20 +504,28 @@ function applyFm(fm){
   $('#useDate').checked=st.useDate;
   $('#excerpt').value=st.excerpt;$('#teaser').value=st.teaser;
   $('#comments').checked=st.comments;$('#share').checked=st.share;$('#toc').checked=st.toc;
+  $('#lang').value=st.lang==='id'?'id':'en';$('#series').value=st.series;$('#seriesOrder').value=st.order;$('#takeaways').value=st.takeaways.join('\n');
+  $('#colab').value=st.colab;$('#notebook').value=st.notebook;$('#dataset').value=st.dataset;$('#modified').value=st.modified;$('#featured').checked=st.featured;
   cats.set(st.cats);tags.set(st.tags);$('#extra').value=st.extra.join('\n');
 }
 function buildFm(){
   const q=s=>JSON.stringify(s);const o=['---','title: '+q($('#title').value.trim())];
+  o.push('lang: '+$('#lang').value);
+  const sr=$('#series').value.trim();if(sr){o.push('series: '+q(sr));const so=parseInt($('#seriesOrder').value,10);if(so>0)o.push('series_order: '+so);}
   const dt=$('#date').value;
   if($('#useDate').checked&&dt)o.push('date: '+dt);
+  const md_=$('#modified').value;if(md_)o.push('last_modified_at: '+md_);
+  if($('#featured').checked)o.push('featured: true');
   const ex=$('#excerpt').value.trim();if(ex)o.push('excerpt: '+q(ex.replace(/\n+/g,' ')));
+  const tk=$('#takeaways').value.split('\n').map(x=>x.trim()).filter(Boolean);if(tk.length){o.push('takeaways:');tk.forEach(x=>o.push('  - '+q(x)));}
+  [['colab','#colab'],['notebook','#notebook'],['dataset','#dataset']].forEach(([k,id])=>{const v=$(id).value.trim();if(v)o.push(k+': '+q(v));});
   const tz=$('#teaser').value.trim();
   let xt=$('#extra').value.replace(/\s+$/,''),hdr=[];
   xt=xt.replace(/^header[ \t]*:[ \t]*\n((?:[ \t]+.*(?:\n|$))*)/m,(m,b)=>{hdr=b.split('\n').filter(l=>l.trim()&&!(tz&&/^\s+teaser\s*:/.test(l)));return '';}).replace(/\n{2,}/g,'\n').trim();
   if(tz||hdr.length){o.push('header:');if(tz)o.push('  teaser: '+tz);hdr.forEach(l=>o.push(l));}
   if($('#comments').checked)o.push('comments: true');
   if($('#share').checked)o.push('share: true');
-  if($('#toc').checked)o.push('toc: true');
+  if(!$('#toc').checked)o.push('toc: false');
   if(cats.vals.length){o.push('categories:');cats.vals.forEach(c=>o.push('  - '+c));}
   if(tags.vals.length){o.push('tags:');tags.vals.forEach(c=>o.push('  - '+c));}
   if(xt)o.push(xt);
@@ -950,7 +983,13 @@ function showManual(){
 <tr><td>Excerpt</td><td>Short summary shown under the title in lists and used as the page description for Google and link previews. Your <code>_config.yml</code> sets the excerpt separator to a blank line, so if you leave this empty the first paragraph is used.</td><td>Write 1–2 sentences (about 160 characters) when the first paragraph is not a good summary. Otherwise leave empty.</td></tr>
 <tr><td>comments</td><td>Shows the Disqus comment box.</td><td>On, like your other posts.</td></tr>
 <tr><td>share</td><td>Shows share buttons.</td><td>On.</td></tr>
-<tr><td>Table of contents</td><td>Adds a clickable contents list from your headings.</td><td>On for long tutorials with 3+ headings, off for short posts.</td></tr></table></details>
+<tr><td>Table of contents</td><td>Clickable contents list from your headings, sticky on the side.</td><td>On by default. Untick for very short posts (it then writes <code>toc: false</code>).</td></tr>
+<tr><td>Language</td><td>Marks the post as English or Bahasa Indonesia. Readers can filter post lists by it.</td><td>The language you wrote the post in.</td></tr>
+<tr><td>Series + part #</td><td>Groups posts into a series with “Part 2 of 5”, a list of parts and previous/next buttons.</td><td>Use the exact same series name on every part (pick it from the list). Give each part its number.</td></tr>
+<tr><td>Key takeaways</td><td>A box at the top with 2–4 short points.</td><td>Use for long tutorials. Skip for journal posts.</td></tr>
+<tr><td>Run it yourself</td><td>Buttons under the post: Open in Colab, Notebook, Dataset.</td><td>For data posts with a notebook or CSV. A repo path like <code>/assets/files/x.ipynb</code> works once the file is in the repo.</td></tr>
+<tr><td>Last updated</td><td>Shows “Last updated” under the post.</td><td>Only when you really revise an old post.</td></tr>
+<tr><td>featured</td><td>Lists the post first on the “Start here” page.</td><td>Your best 5–10 posts.</td></tr></table></details>
 
 <details><summary>5. Extra front matter (YAML), with recipes</summary>
 <p>This box is for any other front-matter setting, one <code>key: value</code> per line. It is copied straight into the top of the file. <b>Most posts need nothing here.</b> Your <code>_config.yml</code> already gives every post a wide layout, the author sidebar, read time and related posts, so you only add a line to <i>turn something off</i> or add something extra. The list below the box adds these safely (and merges <code>header:</code> with the teaser).</p><table>
@@ -969,6 +1008,16 @@ function showManual(){
 <li><b>Export</b> writes the post to <code>_posts</code>. If a post with that name exists it asks before replacing it (editing a post you opened from the repo does not ask).</li>
 <li><b>Not connected:</b> use <b>Download .md</b> for the post and <b>Download uploaded images</b> (Post settings) for the pictures, then move them into <code>_posts</code> and <code>assets/images</code> yourself. That button hides itself when a repo is connected.</li>
 <li><b>Open .md</b> lists the posts in <code>_posts</code> so you can edit an old one and Export it back.</li></ul></details>
+
+<details><summary>7. What readers get on the blog (and what you do)</summary><table>
+<tr><th>Reader feature</th><th>Your part</th></tr>
+<tr><td>Table of contents, progress bar, back-to-top, copy link to a section, image zoom, code language label, dark/light switch</td><td>Nothing. Automatic on every post.</td></tr>
+<tr><td>Glossary hover tips (Overfitting, RMSE, …)</td><td>Nothing. Add terms in <code>_data/glossary.yml</code>. Use <code>glossary: false</code> in Extra YAML to switch off for one post.</td></tr>
+<tr><td>Related posts</td><td>Use tags (or the same category) so the “Keep reading” cards are relevant.</td></tr>
+<tr><td>“Start here” page</td><td>Fill Series and tick featured on your best posts.</td></tr>
+<tr><td>Language filter</td><td>Always set Language.</td></tr>
+<tr><td>Subscribe box (RSS)</td><td>Nothing. For an email form, paste the form URL into <code>subscribe.newsletter_action</code> in <code>_config.yml</code>.</td></tr>
+<tr><td>Comments</td><td>Disqus now. To switch to giscus, see the note in the blog’s <code>_config.yml</code>.</td></tr></table></details>
 </div><div class="acts"><button type="button" class="btn primary" data-close>Close</button></div>`,true);
   $('#dform').onclick=e=>{const b=e.target.closest('[data-snip]');if(b)addSnippet(b.dataset.snip);};
 }
@@ -986,13 +1035,14 @@ $('#bOpen').onclick=()=>R.root?openFromRepo():$('#fOpen').click();
 $('#fOpen').onchange=async e=>{const f=e.target.files[0];if(!f)return;importMd(await f.text(),f.name);R.opened=f.name;e.target.value='';toast('Opened '+f.name);};
 $('#bNew').onclick=()=>{if(!confirm('Start a new post? The current draft will be cleared.'))return;
   localStorage.removeItem('bw.draft');R.opened='';$('#title').value='';setBody('');cats.set([]);tags.set([]);$('#teaser').value='';$('#excerpt').value='';$('#extra').value='';S.headerExtra=[];
-  $('#date').value=new Date().toLocaleDateString('en-CA');$('#useDate').checked=false;$('#comments').checked=true;$('#share').checked=true;$('#toc').checked=false;$('#autoName').checked=true;sync();};
+  $('#date').value=new Date().toLocaleDateString('en-CA');$('#useDate').checked=false;$('#comments').checked=true;$('#share').checked=true;$('#toc').checked=true;$('#autoName').checked=true;
+  $('#lang').value='en';['series','seriesOrder','takeaways','colab','notebook','dataset','modified'].forEach(id=>$('#'+id).value='');$('#featured').checked=false;sync();};
 $('#bTheme').onclick=()=>{const d=document.documentElement;d.dataset.theme=d.dataset.theme==='dark'?'light':'dark';save();};
 $('#bHelp').onclick=showManual;
 $$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.toggle('on',x===b));$('#tab-set').hidden=b.dataset.tab!=='set';$('#tab-mdt').hidden=b.dataset.tab!=='mdt';});
 
 /* settings inputs */
-['date','useDate','filename','autoName','lower','teaser','excerpt','comments','share','toc','extra'].forEach(id=>$('#'+id).addEventListener('input',()=>{if(id==='filename')$('#autoName').checked=false;sync();}));
+['date','useDate','filename','autoName','lower','teaser','excerpt','comments','share','toc','extra','lang','series','seriesOrder','takeaways','colab','notebook','dataset','modified','featured'].forEach(id=>$('#'+id).addEventListener('input',()=>{if(id==='filename')$('#autoName').checked=false;sync();}));
 $('#bTeaserFile').onclick=()=>$('#fTeaser').click();
 $('#fTeaser').onchange=async e=>{const f=e.target.files[0];if(!f)return;S.teaserFile={name:safeName(f.name),url:await readFile(f)};if(R.root){try{S.teaserFile.name=await saveImageToRepo(S.teaserFile.name,f);}catch(e){toast('Could not save image');}}$('#teaser').value='/assets/images/'+S.teaserFile.name;sync();};
 $('#bTeaserFirst').onclick=()=>{const im=ed.querySelector('img');if(!im)return toast('No image in the post yet');$('#teaser').value=im.dataset.path||im.getAttribute('src');sync();};

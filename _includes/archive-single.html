@@ -4,7 +4,7 @@ post.id %} {% assign title = post.title | markdownify | remove: "
 <p>" | remove: "</p>
 " %} {% else %} {% assign title = post.title %} {% endif %}
 
-<div class="{{ include.type | default: 'list' }}__item">
+<div class="{{ include.type | default: 'list' }}__item" data-lang="{{ post.lang | default: 'en' }}">
     <article
         class="archive__item"
         itemscope
@@ -12,7 +12,7 @@ post.id %} {% assign title = post.title | markdownify | remove: "
     >
         {% if include.type == "grid" and teaser %}
         <div class="archive__item-teaser">
-            <img src="{{ teaser | relative_url }}" alt="" />
+            <img src="{{ teaser | relative_url }}" alt="" loading="lazy" decoding="async" />
         </div>
         {% endif %}
 
@@ -39,7 +39,7 @@ post.id %} {% assign title = post.title | markdownify | remove: "
         <!-- THIS IS THE MAGIC TRICK FROM THE ARTICLE -->
         {% if include.type == "list" and teaser %}
         <div class="archive__item-teaser">
-            <img src="{{ teaser | relative_url }}" alt="" />
+            <img src="{{ teaser | relative_url }}" alt="" loading="lazy" decoding="async" />
         </div>
         {% endif %}
         <!-- END OF MAGIC TRICK -->

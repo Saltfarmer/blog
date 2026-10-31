@@ -1,5 +1,6 @@
 ---
 title: "Seems usual"
+lang: en
 comments : true
 share : true
 categories:

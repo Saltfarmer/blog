@@ -1,5 +1,6 @@
 ---
 title: "Support Vector Machine Exercise"
+lang: en
 header :
   teaser: /assets/images/SVM.png
 comments : true

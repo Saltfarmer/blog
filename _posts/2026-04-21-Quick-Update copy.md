@@ -1,5 +1,6 @@
 ---
 title: "Quick Update"
+lang: en
 header :
   teaser : https://a.pinatafarm.com/1280x720/dcde6f541d/spongebob-wanna-see-me-do-it-again.jpg
 comments : true  

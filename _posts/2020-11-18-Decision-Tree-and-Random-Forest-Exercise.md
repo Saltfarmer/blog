@@ -1,5 +1,6 @@
 ---
 title: "Decision Tree and Random Forest Exercise"
+lang: en
 header :
   teaser: /assets/images/python-head.jpg
 comments : true

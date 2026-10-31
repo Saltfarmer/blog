@@ -1,5 +1,8 @@
 ---
 title: "0001 Belajar Machine Learning : Pandas"
+lang: id
+series: "Belajar Machine Learning"
+series_order: 2
 header:
   teaser: /assets/images/machinelearning_header.jpg
 comments : true

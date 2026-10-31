@@ -1,5 +1,6 @@
 ---
 title: "Linear Regression Exercise"
+lang: en
 header :
   teaser: /assets/images/LinReg.png
 comments : true

@@ -1,5 +1,8 @@
 ---
 title: "Pandas Exercise 7 : Visualization Bonus"
+lang: en
+series: "Pandas Exercises"
+series_order: 8
 header :
   teaser: /assets/images/pandas-head.jpg
 

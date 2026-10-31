@@ -255,3 +255,6 @@ html[data-theme="dark"] .lang-filter button[aria-pressed="true"] { background: #
 @media (prefers-reduced-motion: reduce) {
   .gloss::after, .bw-toast { transition: none; }
 }
+
+/* ---- Broken images are simply removed ---- */
+.img-missing { display: none !important; }

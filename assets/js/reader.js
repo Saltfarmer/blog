@@ -288,3 +288,43 @@
     langFilter();
   });
 })();
+
+/* ---------- Hide images that fail to load (404, blocked, expired links) ---------- */
+(function () {
+  'use strict';
+  function lone(el, parent) {
+    // true when `parent` contains nothing visible except `el` (ignoring whitespace and a caption)
+    var kids = Array.prototype.filter.call(parent.childNodes, function (n) {
+      if (n === el) return false;
+      if (n.nodeType === 3) return n.nodeValue.trim() !== '';
+      return n.nodeType === 1 && n.tagName !== 'BR' && n.tagName !== 'FIGCAPTION' && !n.classList.contains('img-missing');
+    });
+    return kids.length === 0;
+  }
+  function hide(img) {
+    if (img.getAttribute('data-missing')) return;
+    img.setAttribute('data-missing', '1');
+    var target = img;
+    var a = img.parentElement && img.parentElement.tagName === 'A' ? img.parentElement : null;
+    if (a && lone(img, a)) target = a;
+    var fig = target.closest ? target.closest('figure') : null;
+    if (fig && lone(target, fig)) target = fig;
+    var teaser = img.closest ? img.closest('.archive__item-teaser') : null;
+    if (teaser) target = teaser;
+    var p = target.parentElement;
+    target.classList.add('img-missing');
+    if (p && p.tagName === 'P' && lone(target, p)) p.classList.add('img-missing');
+  }
+  document.addEventListener('error', function (e) {
+    var t = e.target;
+    if (t && t.tagName === 'IMG' && !t.classList.contains('emoji')) hide(t);
+  }, true);
+  function scan() {
+    Array.prototype.forEach.call(document.querySelectorAll('img'), function (img) {
+      if (img.getAttribute('loading') === 'lazy') return; // lazy ones report errors when they load
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) hide(img);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scan); else scan();
+  window.addEventListener('load', scan);
+})();

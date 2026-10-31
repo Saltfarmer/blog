@@ -12,6 +12,7 @@
 <!-- Light/dark: follows the visitor's system until they press the toggle; the choice is remembered. -->
 <link id="dark-css" rel="stylesheet" href="{{ '/assets/css/dark.css' | relative_url }}" media="not all">
 <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/motion.css' | relative_url }}">
 <script>
   (function () {
     var saved = null;
@@ -21,5 +22,7 @@
     document.getElementById('dark-css').media = dark ? 'all' : 'not all';
     var m = document.querySelector('meta[name="theme-color"]');
     if (m) m.setAttribute('content', dark ? '#071326' : '#0857C3');
+    // Motion is on unless the visitor asked their system for reduced motion.
+    if (!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) document.documentElement.classList.add('js-motion');
   })();
 </script>

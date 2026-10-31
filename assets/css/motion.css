@@ -1,0 +1,93 @@
+/* Motion: small, purposeful movement. Everything here is off for visitors who ask their
+   system for reduced motion (prefers-reduced-motion). Plain CSS, not compiled by Sass. */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  html { scroll-behavior: smooth; }
+
+  /* Smooth fade between pages (Chrome/Edge/Brave; ignored elsewhere). The header stays put. */
+  @view-transition { navigation: auto; }
+  .masthead { view-transition-name: masthead; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.22s; }
+
+  /* ---- Scroll reveal (classes added by motion.js) ---- */
+  html.js-motion .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--d, 0ms);
+  }
+  html.js-motion .reveal.in { opacity: 1; transform: none; }
+
+  /* ---- Cards: tilt toward the pointer, soft light that follows it, image zoom ---- */
+  html.js-motion .grid__item .archive__item {
+    position: relative;
+    transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
+    transition: transform 0.18s ease-out, box-shadow 0.25s ease, border-color 0.25s ease;
+    will-change: transform;
+  }
+  html.js-motion .grid__item .archive__item:hover { --ty: -4px; }
+  .grid__item .archive__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(113, 197, 232, 0.2), transparent 62%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .grid__item .archive__item:hover::before { opacity: 1; }
+  .archive__item-teaser img { transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .archive__item:hover .archive__item-teaser img { transform: scale(1.07); }
+
+  /* ---- Logo and avatar ---- */
+  .site-logo img { transition: transform 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); }
+  .site-logo:hover img { transform: rotate(-10deg) scale(1.1); }
+  .site-logo img.spin { animation: bw-spin 0.9s cubic-bezier(0.5, 0, 0.2, 1); }
+  .author__avatar { animation: bw-bob 6s ease-in-out infinite; }
+  .author__avatar img { transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1); }
+  .author__avatar:hover img { transform: rotate(8deg) scale(1.06); }
+
+  /* ---- Links, buttons, chips ---- */
+  .greedy-nav .visible-links a { transition: color 0.2s ease, transform 0.2s ease; }
+  .greedy-nav .visible-links a:hover { transform: translateY(-1px); }
+  .btn { transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(8, 87, 195, 0.25); }
+  .btn:active { transform: translateY(0) scale(0.98); }
+  .page__taxonomy-item { transition: transform 0.15s ease, background-color 0.2s ease; }
+  .page__taxonomy-item:hover { transform: translateY(-2px); }
+  .author__urls a { display: inline-block; transition: transform 0.2s ease, color 0.2s ease; }
+  .author__urls a:hover { transform: translateX(4px); }
+  .page__footer-follow .social-icons a i,
+  .page__footer-follow .social-icons a .svg-inline--fa { transition: transform 0.2s cubic-bezier(0.3, 1.6, 0.5, 1); }
+  .page__footer-follow .social-icons a:hover i,
+  .page__footer-follow .social-icons a:hover .svg-inline--fa { transform: translateY(-3px) scale(1.18); }
+  .page__content h2 .header-link, .page__content h3 .header-link { transition: opacity 0.2s ease, transform 0.2s ease; }
+  .page__content h2:hover .header-link, .page__content h3:hover .header-link { transform: translateX(3px); }
+  .toc__menu a { transition: color 0.2s ease, padding-left 0.2s ease; }
+  .toc__menu .active a { padding-left: 0.4em; font-weight: 600; }
+
+  /* ---- Theme switch: icon pops, colours glide ---- */
+  .theme-toggle i { display: inline-block; animation: bw-pop 0.5s cubic-bezier(0.3, 1.5, 0.5, 1); }
+  html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease !important;
+  }
+
+  /* ---- Back to top, lightbox ---- */
+  .to-top.show { animation: bw-pop 0.35s cubic-bezier(0.3, 1.5, 0.5, 1); }
+  .to-top:hover { transform: translateY(-3px); }
+  .lightbox { animation: bw-fade 0.2s ease; }
+  .lightbox img { animation: bw-zoom 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .series-nav--compact a { transition: transform 0.15s ease, border-color 0.2s ease; }
+  .series-nav--compact a:hover { transform: translateY(-2px); }
+
+  @keyframes bw-spin { to { transform: rotate(360deg) scale(1); } }
+  @keyframes bw-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+  @keyframes bw-pop { from { transform: scale(0.4) rotate(-120deg); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes bw-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes bw-zoom { from { transform: scale(0.94); opacity: 0; } to { transform: none; opacity: 1; } }
+}
+
+/* Confetti canvas (drawn by motion.js) */
+.bw-confetti { position: fixed; inset: 0; z-index: 500; pointer-events: none; }

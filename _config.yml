@@ -25,7 +25,7 @@ url: "https://saltfarmer.github.io" # the base hostname & protocol for your site
 baseurl: "/blog" # the subpath of your site, e.g. "/blog"
 repository: "Saltfarmer/blog" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: "/assets/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo: "assets/saltlogo.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo: "assets/Gama Candra Tri Kartika.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: "Saltfarmer Blog" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs: true # true, false (default)
 words_per_minute: 180
@@ -95,7 +95,7 @@ og_image: # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type: Person # Person or Organization (defaults to Person)
+  type: # Person or Organization (defaults to Person)
   name: # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
@@ -109,11 +109,14 @@ analytics:
 # Site Author
 author:
   name: "Gama Candra Tri Kartika"
-  avatar: "/assets/Gama Candra Tri Kartika.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar: "/assets/newlogo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "Fans of codes and dotes"
   location: "Jakarta, Indonesia"
   email: "candragctk17@gmail.com"
   links:
+    - label: "Micro Salt (short notes)"
+      icon: "fas fa-fw fa-feather"
+      url: "https://saltfarmer.github.io/micro-salt/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/candragctk17/"

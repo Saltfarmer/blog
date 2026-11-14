@@ -1,0 +1,21 @@
+Delete these old files from your repo after copying (or replace the whole folder, keeping .git):
+  4.24.0
+  _pages/archive-layout-with-content.md
+  _pages/collection-archive-grid.html
+  _pages/collection-archive.html
+  _pages/edge-case-grid.md
+  _pages/edge-case.md
+  _pages/lorem-ipsum.md
+  _pages/markup-grid.md
+  _pages/markup.md
+  _pages/page-a.md
+  _pages/page-archive-grid.html
+  _pages/page-archive.html
+  _pages/page-b.md
+  _pages/portfolio-archive.md
+  _pages/post-archive-feature-rows.html
+  _pages/recipes-archive.md
+  _pages/sample-page.md
+  _pages/splash-page.md
+  _pages/terms.md
+  _posts/2026-04-21-Quick-Update copy.md   ->  renamed to  _posts/2026-04-21-Quick-Update.md

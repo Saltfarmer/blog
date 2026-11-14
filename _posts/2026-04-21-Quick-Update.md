@@ -7,6 +7,8 @@ comments : true
 share : true  
 categories:
     - Journal
+redirect_from:
+  - /journal/Quick-Update-copy/
 ---
 Hello everyone! I’m not sure if anyone is reading this, but if you are, please leave a comment—I’d love to hear from you.
 

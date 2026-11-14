@@ -20,7 +20,7 @@ title: "Saltfarmer's Blog"
 title_separator: "-"
 subtitle: "Personal blog for random stuff that I am interested with" # site tagline that appears below site title in masthead
 name: "Gama Candra Tri Kartika"
-description: "Fans of code and dote"
+description: "Fans of codes and dotes"
 url: "https://saltfarmer.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "/blog" # the subpath of your site, e.g. "/blog"
 repository: "Saltfarmer/blog" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -86,7 +86,7 @@ baidu_site_verification:
 
 # Social Sharing
 twitter:
-  username: "https://twitter.com/Candra_gctk"
+  username: "Candra_gctk"
 facebook:
   username:
   app_id:
@@ -101,7 +101,7 @@ social:
 
 # Analytics
 analytics:
-  provider: "google-universal" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: false # was "google-universal" (UA-108464378-1, shut down July 2023). Set to "google-gtag" + a G- id, or "custom", to re-enable. # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id: "UA-108464378-1"
     anonymize_ip: true # true, false (default)
@@ -224,7 +224,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Jakarta # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins (previously gems:)
 plugins:
@@ -234,6 +234,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jemoji
+  - jekyll-redirect-from
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -243,6 +244,7 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
   - jemoji
+  - jekyll-redirect-from
 
 # Archives
 #  Type
@@ -308,4 +310,3 @@ subscribe:
   newsletter_label: "Get new posts by email"
 
 enable_copy_code_button: true
-breadcrumbs: true  # disabled by default

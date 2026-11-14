@@ -7,3 +7,4 @@ gem 'susy', '~> 2.1' # Adjust the version as necessary
 gem "github-pages", group: :jekyll_plugins
 gem "jekyll-include-cache", group: :jekyll_plugins
 gemspec
+gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin]

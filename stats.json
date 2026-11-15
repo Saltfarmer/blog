@@ -1,0 +1,19 @@
+---
+layout: null
+sitemap: false
+permalink: /stats.json
+---
+{%- assign series = site.posts | map: "series" | compact | uniq -%}
+{%- assign words = 0 -%}
+{%- for p in site.posts -%}{%- assign w = p.content | number_of_words -%}{%- assign words = words | plus: w -%}{%- endfor -%}
+{
+  "posts": {{ site.posts.size }},
+  "series": {{ series.size }},
+  "categories": {{ site.categories.size }},
+  "words": {{ words }},
+  "first_post": "{{ site.posts.last.date | date: '%Y-%m-%d' }}",
+  "latest_post": "{{ site.posts.first.date | date: '%Y-%m-%d' }}",
+  "latest_title": {{ site.posts.first.title | jsonify }},
+  "latest_url": "{{ site.posts.first.url | absolute_url }}",
+  "built": "{{ site.time | date_to_xmlschema }}"
+}

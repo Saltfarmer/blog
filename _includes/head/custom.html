@@ -22,6 +22,8 @@
     document.getElementById('dark-css').media = dark ? 'all' : 'not all';
     var m = document.querySelector('meta[name="theme-color"]');
     if (m) m.setAttribute('content', dark ? '#071326' : '#0857C3');
+    // Sidebar: hidden if the visitor hid it before (wide screens only; see reader.js)
+    try { if (localStorage.getItem('bw-sidebar') === 'hidden') document.documentElement.classList.add('sidebar-hidden'); } catch (e) {}
     // Motion is on unless the visitor asked their system for reduced motion.
     if (!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) document.documentElement.classList.add('js-motion');
   })();

@@ -38,6 +38,18 @@ html[data-theme="dark"] {
 }
 .greedy-nav .theme-toggle:hover { background: var(--r-tint); }
 
+/* ---- Sidebar toggle (only where the sidebar sits beside the content) ---- */
+.greedy-nav .sidebar-toggle-item { display: none; }
+.sidebar-hidden .greedy-nav .sidebar-toggle { color: var(--r-accent, #307FE2); }
+@media (min-width: 1024px) {
+  .greedy-nav .sidebar-toggle-item { display: flex; }
+  .sidebar-hidden .sidebar { display: none; }
+  .sidebar-hidden .page,
+  .sidebar-hidden .archive,
+  .sidebar-hidden .page__related,
+  .sidebar-hidden .breadcrumbs ol { width: 100%; }
+}
+
 /* ---- Reading progress + back to top ---- */
 .reading-progress {
   position: fixed;

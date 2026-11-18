@@ -278,7 +278,35 @@
     }
   }
 
+  /* ---------- Sidebar toggle (wide screens) ---------- */
+  function sidebarToggle() {
+    var list = doc.querySelector('.greedy-nav .visible-links');
+    if (!list || !doc.querySelector('.sidebar')) return;
+    var li = doc.createElement('li');
+    li.className = 'masthead__menu-item theme-toggle-item sidebar-toggle-item';
+    var btn = doc.createElement('button');
+    btn.type = 'button';
+    btn.className = 'theme-toggle sidebar-toggle';
+    btn.innerHTML = '<i class="fas fa-table-columns" aria-hidden="true"></i>';
+    li.appendChild(btn);
+    var theme = list.querySelector('.theme-toggle-item:not(.sidebar-toggle-item)');
+    list.insertBefore(li, theme || null);
+    function paint() {
+      var hidden = root.classList.contains('sidebar-hidden');
+      btn.setAttribute('aria-pressed', hidden ? 'true' : 'false');
+      btn.setAttribute('aria-label', hidden ? 'Show sidebar' : 'Hide sidebar');
+      btn.title = btn.getAttribute('aria-label');
+    }
+    btn.addEventListener('click', function () {
+      var hidden = root.classList.toggle('sidebar-hidden');
+      try { localStorage.setItem('bw-sidebar', hidden ? 'hidden' : 'shown'); } catch (e) {}
+      paint();
+    });
+    paint();
+  }
+
   ready(function () {
+    sidebarToggle();
     themeToggle();
     progressAndTop();
     codeLabels();

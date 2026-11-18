@@ -5,5 +5,9 @@ search: false
 @charset "utf-8";
 
 // Dark version of the whole theme. Loaded on demand by the theme toggle (see _includes/head/custom.html).
+// Narrower sidebars than the theme default (200px / 300px)
+$right-sidebar-width-narrow: 180px;
+$right-sidebar-width: 240px;
+
 @import "minimal-mistakes/skins/nusantara-dark";
 @import "minimal-mistakes";

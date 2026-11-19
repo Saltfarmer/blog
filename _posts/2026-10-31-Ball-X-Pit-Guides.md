@@ -3,7 +3,6 @@ title: "Ball X Pit Guides"
 lang: en
 series: "Gaming Guides"
 series_order: 1
-featured: true
 header:
   teaser: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2062430/7cc45ff009f1edb5f59c11c07cbacc242106661f/capsule_616x353_alt_assets_2.jpg?t=1786035856
 comments: true

@@ -1,5 +1,6 @@
 ---
 title: "Handling Missing Values"
+featured: true
 lang: en
 series: "Data Preprocessing"
 series_order: 1

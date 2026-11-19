@@ -1,5 +1,6 @@
 ---
 title: "How to get your personal Dota2 Data"
+featured: true
 lang: en
 header :
   teaser: /assets/images/opendota.jpg

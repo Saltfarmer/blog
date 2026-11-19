@@ -270,3 +270,57 @@ html[data-theme="dark"] .lang-filter button[aria-pressed="true"] { background: #
 
 /* ---- Broken images are simply removed ---- */
 .img-missing { display: none !important; }
+
+/* ===== Image sizing overhaul (Nov 2026) ===== */
+
+/* Post lists (home, categories, search): teaser at 75% of the title width,
+   whole image visible, height follows the image */
+.list__item .archive__item-teaser {
+  width: 75%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.list__item .archive__item-teaser img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Inside posts: every image is 50% of the post width, centred, never cropped.
+   Large images shrink, small ones grow. Skipped: emoji, images inside tables,
+   and gallery images that set their own size inline (style="..."). */
+.page__content img:not(.emoji):not([style]) {
+  display: block;
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  margin: 1.25em auto;
+  object-fit: contain;
+}
+.page__content table img:not(.emoji):not([style]) {
+  display: inline;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Phones: 50% would be too small to see, so use most of the width */
+@media (max-width: 600px) {
+  .list__item .archive__item-teaser { width: 100%; }
+  .page__content img:not(.emoji):not([style]) { width: 90%; max-width: 90%; }
+}
+
+/* ===== Random post button + arcade (Nov 2026) ===== */
+.greedy-nav .random-post.rolling i { animation: bw-roll .5s linear infinite; }
+@keyframes bw-roll { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .greedy-nav .random-post.rolling i { animation: none; } }
+.arcade-invite {
+  margin: 1.5em 0;
+  padding: 1em 1.2em;
+  border: 1px dashed var(--r-primary);
+  border-radius: 12px;
+  background: var(--r-tint);
+}
+.arcade-invite p { margin: 0 0 .6em; }

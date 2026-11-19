@@ -1,5 +1,6 @@
 ---
 title: "How to Research Anything (Even When You Have a Full-Time Job)"
+featured: true
 lang: en
 excerpt: "You don't need a PhD or endless free time to do deep research. Here is a practical system to scope questions, filter sources, and actually finish what you start."
 takeaways:

@@ -4,6 +4,8 @@
   'use strict';
 
   var doc = document, root = doc.documentElement;
+  var scriptSrc = (doc.currentScript && doc.currentScript.src) ||
+    ((doc.querySelector('script[src*="reader.js"]') || {}).src || '');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function ready(fn) {
@@ -305,7 +307,79 @@
     paint();
   }
 
+  /* ---------- Random post button (top menu) ---------- */
+  function randomPost() {
+    var list = doc.querySelector('.greedy-nav .visible-links');
+    if (!list) return;
+    var li = doc.createElement('li');
+    li.className = 'masthead__menu-item theme-toggle-item random-post-item';
+    var btn = doc.createElement('button');
+    btn.type = 'button';
+    btn.className = 'theme-toggle random-post';
+    btn.setAttribute('aria-label', 'Read a random post');
+    btn.title = 'Random post';
+    btn.innerHTML = '<i class="fas fa-dice" aria-hidden="true"></i>';
+    li.appendChild(btn);
+    list.insertBefore(li, list.querySelector('.theme-toggle-item') || null);
+    var urls = null;
+    btn.addEventListener('click', function () {
+      btn.classList.add('rolling');
+      var go = function () {
+        var here = location.pathname;
+        var pool = urls.filter(function (u) { return u !== here; });
+        if (pool.length) location.href = pool[Math.floor(Math.random() * pool.length)];
+      };
+      if (urls) return go();
+      var base = scriptSrc.replace(/assets\/js\/reader\.js.*$/, '');
+      fetch(base + 'posts.json').then(function (r) { return r.json(); })
+        .then(function (d) { urls = d; go(); })
+        .catch(function () { btn.classList.remove('rolling'); toast('Could not load posts'); });
+    });
+  }
+
+  /* ---------- Secret arcade: arrows code, 5 logo clicks, or the 404 page ---------- */
+  function openArcade() {
+    if (window.SaltArcade) return window.SaltArcade.open();
+    var s = doc.createElement('script');
+    s.src = scriptSrc.replace(/reader\.js(\?.*)?$/, 'arcade.js');
+    s.onload = function () { if (window.SaltArcade) window.SaltArcade.open(); };
+    s.onerror = function () { toast('Arcade failed to load'); };
+    doc.head.appendChild(s);
+  }
+  function arcadeTriggers() {
+    // 1. Up Up Down Down Left Right Left Right
+    var code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
+    var pos = 0;
+    doc.addEventListener('keydown', function (e) {
+      if (doc.querySelector('.arc-overlay')) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      pos = e.key === code[pos] ? pos + 1 : (e.key === code[0] ? 1 : 0);
+      if (pos === code.length) { pos = 0; toast('🕹️ Arcade unlocked!'); openArcade(); }
+    });
+    // 2. Click the logo 5 times (a single click still goes home)
+    var logo = doc.querySelector('.site-logo');
+    if (logo) {
+      var clicks = 0, timer = null;
+      logo.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        clicks++;
+        clearTimeout(timer);
+        if (clicks >= 5) { clicks = 0; toast('🕹️ Arcade unlocked!'); openArcade(); return; }
+        if (clicks >= 2) toast(5 - clicks + ' more…');
+        timer = setTimeout(function () { if (clicks === 1) location.href = logo.href; clicks = 0; }, 350);
+      });
+    }
+    // 3. Any button with data-arcade (used on the 404 page)
+    doc.querySelectorAll('[data-arcade]').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.preventDefault(); openArcade(); });
+    });
+  }
+
   ready(function () {
+    randomPost();
+    arcadeTriggers();
     sidebarToggle();
     themeToggle();
     progressAndTop();

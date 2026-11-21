@@ -307,79 +307,122 @@
     paint();
   }
 
-  /* ---------- Random post button (top menu) ---------- */
+  /* ---------- Random post: dice in the top menu + any [data-random-post] button ---------- */
+  var postUrls = null;
+  function goRandom(btn) {
+    if (btn) btn.classList.add('rolling');
+    var go = function () {
+      var here = location.pathname, read = readSet();
+      var pool = postUrls.filter(function (u) { return u !== here && !read[u]; });
+      if (!pool.length) pool = postUrls.filter(function (u) { return u !== here; }); // read everything? any post then
+      if (pool.length) location.href = pool[Math.floor(Math.random() * pool.length)];
+    };
+    if (postUrls) return go();
+    var base = scriptSrc.replace(/assets\/js\/reader\.js.*$/, '');
+    fetch(base + 'posts.json').then(function (r) { return r.json(); })
+      .then(function (d) { postUrls = d; go(); })
+      .catch(function () { if (btn) btn.classList.remove('rolling'); toast('Could not load posts'); });
+  }
   function randomPost() {
     var list = doc.querySelector('.greedy-nav .visible-links');
-    if (!list) return;
-    var li = doc.createElement('li');
-    li.className = 'masthead__menu-item theme-toggle-item random-post-item';
-    var btn = doc.createElement('button');
-    btn.type = 'button';
-    btn.className = 'theme-toggle random-post';
-    btn.setAttribute('aria-label', 'Read a random post');
-    btn.title = 'Random post';
-    btn.innerHTML = '<i class="fas fa-dice" aria-hidden="true"></i>';
-    li.appendChild(btn);
-    list.insertBefore(li, list.querySelector('.theme-toggle-item') || null);
-    var urls = null;
-    btn.addEventListener('click', function () {
-      btn.classList.add('rolling');
-      var go = function () {
-        var here = location.pathname;
-        var pool = urls.filter(function (u) { return u !== here; });
-        if (pool.length) location.href = pool[Math.floor(Math.random() * pool.length)];
-      };
-      if (urls) return go();
-      var base = scriptSrc.replace(/assets\/js\/reader\.js.*$/, '');
-      fetch(base + 'posts.json').then(function (r) { return r.json(); })
-        .then(function (d) { urls = d; go(); })
-        .catch(function () { btn.classList.remove('rolling'); toast('Could not load posts'); });
+    if (list) {
+      var li = doc.createElement('li');
+      li.className = 'masthead__menu-item theme-toggle-item random-post-item';
+      var btn = doc.createElement('button');
+      btn.type = 'button';
+      btn.className = 'theme-toggle random-post';
+      btn.setAttribute('aria-label', 'Read a random post');
+      btn.title = 'Random post';
+      btn.innerHTML = '<i class="fas fa-dice" aria-hidden="true"></i>';
+      li.appendChild(btn);
+      list.insertBefore(li, list.querySelector('.theme-toggle-item') || null);
+      btn.addEventListener('click', function () { goRandom(btn); });
+    }
+    doc.querySelectorAll('[data-random-post]').forEach(function (b) {
+      b.addEventListener('click', function () { goRandom(b); });
     });
   }
 
-  /* ---------- Secret arcade: arrows code, 5 logo clicks, or the 404 page ---------- */
-  function openArcade() {
-    if (window.SaltArcade) return window.SaltArcade.open();
-    var s = doc.createElement('script');
-    s.src = scriptSrc.replace(/reader\.js(\?.*)?$/, 'arcade.js');
-    s.onload = function () { if (window.SaltArcade) window.SaltArcade.open(); };
-    s.onerror = function () { toast('Arcade failed to load'); };
-    doc.head.appendChild(s);
+  /* ---------- Reading memory (this browser only) ----------
+     - remembers posts you finished  -> "Read" marks in lists, unread first in "Read next"
+     - remembers a post you left halfway -> "Continue reading" on the home page */
+  function store(key, val) {
+    try { if (val === undefined) return JSON.parse(localStorage.getItem(key) || 'null'); localStorage.setItem(key, JSON.stringify(val)); } catch (e) { return null; }
   }
-  function arcadeTriggers() {
-    // 1. Up Up Down Down Left Right Left Right
-    var code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
-    var pos = 0;
-    doc.addEventListener('keydown', function (e) {
-      if (doc.querySelector('.arc-overlay')) return;
-      var t = e.target;
-      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
-      pos = e.key === code[pos] ? pos + 1 : (e.key === code[0] ? 1 : 0);
-      if (pos === code.length) { pos = 0; toast('🕹️ Arcade unlocked!'); openArcade(); }
-    });
-    // 2. Click the logo 5 times (a single click still goes home)
-    var logo = doc.querySelector('.site-logo');
-    if (logo) {
-      var clicks = 0, timer = null;
-      logo.addEventListener('click', function (e) {
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-        e.preventDefault();
-        clicks++;
-        clearTimeout(timer);
-        if (clicks >= 5) { clicks = 0; toast('🕹️ Arcade unlocked!'); openArcade(); return; }
-        if (clicks >= 2) toast(5 - clicks + ' more…');
-        timer = setTimeout(function () { if (clicks === 1) location.href = logo.href; clicks = 0; }, 350);
-      });
+  function readSet() { return store('bw-read') || {}; }
+
+  function readingMemory() {
+    var read = readSet();
+    var here = location.pathname;
+    var content = doc.querySelector('.layout--single .page__content');
+    var isPost = !!doc.querySelector('.read-next');
+
+    // 1. Track progress on a post
+    if (content && isPost) {
+      var title = (doc.querySelector('.page__title') || {}).textContent || doc.title;
+      title = title.trim();
+      var saved = false, pending = false;
+      var track = function () {
+        pending = false;
+        var r = content.getBoundingClientRect();
+        var pct = Math.min(1, Math.max(0, (window.innerHeight - r.top) / r.height));
+        if (pct >= 0.85 && !saved) {
+          saved = true;
+          read = readSet(); read[here] = Date.now(); store('bw-read', read);
+          var last = store('bw-last'); if (last && last.u === here) { try { localStorage.removeItem('bw-last'); } catch (e) {} }
+        } else if (!saved && pct > 0.12) {
+          store('bw-last', { u: here, t: title, p: Math.round(pct * 100), y: Math.round(window.scrollY), ts: Date.now() });
+        }
+      };
+      window.addEventListener('scroll', function () { if (!pending) { pending = true; requestAnimationFrame(track); } }, { passive: true });
+
+      // Came back via "Continue reading"? jump to where they stopped
+      if (location.hash === '#continue') {
+        var last = store('bw-last');
+        if (last && last.u === here) {
+          history.replaceState(null, '', here);
+          setTimeout(function () { window.scrollTo({ top: last.y, behavior: reduceMotion ? 'auto' : 'smooth' }); }, 150);
+        }
+      }
+
+      // Read next: unread posts first
+      var list = doc.querySelector('.read-next__list');
+      if (list) {
+        var items = Array.prototype.slice.call(list.children);
+        items.sort(function (a, b) { return (read[a.dataset.url] ? 1 : 0) - (read[b.dataset.url] ? 1 : 0); });
+        items.forEach(function (li) { if (read[li.dataset.url]) li.classList.add('is-read'); list.appendChild(li); });
+      }
     }
-    // 3. Any button with data-arcade (used on the 404 page)
-    doc.querySelectorAll('[data-arcade]').forEach(function (b) {
-      b.addEventListener('click', function (e) { e.preventDefault(); openArcade(); });
+
+    // 2. "Read" marks in post lists
+    doc.querySelectorAll('.archive__item-title a[href]').forEach(function (a) {
+      if (read[a.pathname]) a.closest('.archive__item').classList.add('is-read');
     });
+
+    // 3. "Continue reading" on the home page (last 21 days)
+    var last = store('bw-last');
+    var home = doc.querySelector('.layout--home .archive, .layout--home #main .archive');
+    if (home && last && last.u && Date.now() - last.ts < 21 * 864e5) {
+      var box = doc.createElement('aside');
+      box.className = 'continue-reading';
+      box.innerHTML = '<span class="continue-reading__label"><i class="fas fa-book-open" aria-hidden="true"></i> Continue reading</span>' +
+        '<a class="continue-reading__link"></a><span class="continue-reading__pct"></span>' +
+        '<button type="button" class="continue-reading__x" aria-label="Dismiss">&times;</button>';
+      var link = box.querySelector('a');
+      link.href = last.u + '#continue';
+      link.textContent = last.t;
+      box.querySelector('.continue-reading__pct').textContent = last.p + '% read';
+      box.querySelector('button').addEventListener('click', function () {
+        try { localStorage.removeItem('bw-last'); } catch (e) {}
+        box.remove();
+      });
+      home.insertBefore(box, home.firstChild);
+    }
   }
 
   ready(function () {
     randomPost();
-    arcadeTriggers();
+    readingMemory();
     sidebarToggle();
     themeToggle();
     progressAndTop();

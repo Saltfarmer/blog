@@ -56,6 +56,7 @@ layout: default
       </section>
 
       {% include run-it.html %}
+      {% include read-next.html %}
       {% include subscribe.html %}
 
       <footer class="page__meta">
@@ -76,8 +77,5 @@ layout: default
     {% endif %}
   </article>
 
-  {% comment %}<!-- related posts: same tags, else same category, else recent -->{% endcomment %}
-  {% if page.id and page.related %}
-    {% include related-posts.html %}
-  {% endif %}
+  {% comment %}<!-- "You may also enjoy" merged into Read next (_includes/read-next.html) -->{% endcomment %}
 </div>

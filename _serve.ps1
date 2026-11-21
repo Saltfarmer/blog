@@ -47,6 +47,11 @@ try {
         if ((Test-Path 'Gemfile') -and -not (Select-String -Path 'Gemfile' -Pattern 'tzinfo-data' -Quiet)) {
             Write-Host "  Tip: add  gem `"tzinfo-data`", platforms: [:mingw, :x64_mingw, :mswin]  to Gemfile if you see a timezone error." -ForegroundColor Yellow
         }
+        # Bigger stack for Ruby threads: rebuilds after a save run in a background
+        # thread whose default stack on Windows is too small for this blog
+        # ("stack level too deep" in the listen thread).
+        $env:RUBY_THREAD_VM_STACK_SIZE      = '8388608'   # 8 MB
+        $env:RUBY_THREAD_MACHINE_STACK_SIZE = '16777216'  # 16 MB
         bundle check *> $null
         if ($LASTEXITCODE -ne 0) { Write-Host "  Installing gems (first run only)..." -ForegroundColor Yellow; bundle install }
         # Live reload: the page refreshes by itself when you save a file

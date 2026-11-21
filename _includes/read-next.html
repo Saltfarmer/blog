@@ -1,0 +1,93 @@
+{%- comment -%}
+  "Read next": the one block of reading suggestions after a post
+  (it replaces the old "You may also enjoy" section).
+  Picks, in order: next part of the same series, posts sharing a tag,
+  newest posts in the same category, then featured posts.
+  reader.js moves posts the visitor hasn't read yet to the top.
+  First item is shown large, the next four as small cards.
+{%- endcomment -%}
+{%- if page.collection == "posts" -%}
+  {%- assign picks = "" | split: "," -%}
+  {%- assign rn_next_url = "" -%}
+
+  {%- comment -%} 1. Next part of the series {%- endcomment -%}
+  {%- if page.series -%}
+    {%- assign rn_series = site.posts | where: "series", page.series | sort: "series_order" -%}
+    {%- for p in rn_series -%}
+      {%- if p.url == page.url -%}
+        {%- assign rn_i = forloop.index -%}
+        {%- if rn_series[rn_i] -%}
+          {%- assign picks = picks | push: rn_series[rn_i] -%}
+          {%- assign rn_next_url = rn_series[rn_i].url -%}
+        {%- endif -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- comment -%} 2. Posts that share a tag {%- endcomment -%}
+  {%- if page.tags and page.tags.size > 0 -%}
+    {%- for tag in page.tags -%}
+      {%- for p in site.tags[tag] limit: 4 -%}
+        {%- if p.url != page.url -%}{%- assign picks = picks | push: p -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- comment -%} 3. Newest posts in the same category {%- endcomment -%}
+  {%- assign rn_cat = page.categories | first -%}
+  {%- if rn_cat -%}
+    {%- assign rn_count = 0 -%}
+    {%- for p in site.categories[rn_cat] -%}
+      {%- if p.url != page.url and rn_count < 5 -%}
+        {%- assign picks = picks | push: p -%}
+        {%- assign rn_count = rn_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- comment -%} 4. Featured posts {%- endcomment -%}
+  {%- assign rn_featured = site.posts | where: "featured", true -%}
+  {%- for p in rn_featured -%}
+    {%- if p.url != page.url -%}{%- assign picks = picks | push: p -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- assign picks = picks | uniq -%}
+  {%- assign wpm = site.words_per_minute | default: 200 -%}
+
+  {%- if picks.size > 0 -%}
+  <section class="read-next" aria-labelledby="read-next-title">
+    <div class="read-next__head">
+      <h2 id="read-next-title">Read next</h2>
+      <button type="button" class="read-next__random" data-random-post><i class="fas fa-dice" aria-hidden="true"></i> Surprise me</button>
+    </div>
+    <ol class="read-next__list">
+      {%- for p in picks limit: 8 -%}
+        {%- assign rn_words = p.content | strip_html | number_of_words -%}
+        {%- assign rn_min = rn_words | divided_by: wpm -%}{%- if rn_min < 1 -%}{%- assign rn_min = 1 -%}{%- endif -%}
+        {%- assign rn_teaser = p.header.teaser | default: p.header.image -%}
+        {%- assign rn_shared_tag = false -%}
+        {%- if page.tags -%}{%- for t in p.tags -%}{%- if page.tags contains t -%}{%- assign rn_shared_tag = true -%}{%- endif -%}{%- endfor -%}{%- endif -%}
+        {%- if p.url == rn_next_url -%}{%- assign rn_label = "Next in series" -%}
+        {%- elsif page.series and p.series == page.series -%}{%- assign rn_label = "From " | append: page.series -%}
+        {%- elsif rn_shared_tag -%}{%- assign rn_label = "Related" -%}
+        {%- elsif rn_cat and p.categories contains rn_cat -%}{%- assign rn_label = "More " | append: rn_cat -%}
+        {%- else -%}{%- assign rn_label = "Reader favourite" -%}{%- endif -%}
+      <li class="read-next__item" data-url="{{ p.url | relative_url }}">
+        <a href="{{ p.url | relative_url }}">
+          {%- if rn_teaser -%}
+          <span class="read-next__img"><img src="{% if rn_teaser contains '://' %}{{ rn_teaser }}{% else %}{{ rn_teaser | relative_url }}{% endif %}" alt="" loading="lazy" decoding="async"></span>
+          {%- endif -%}
+          <span class="read-next__body">
+            <span class="read-next__label">{{ rn_label }}</span>
+            <span class="read-next__title">{{ p.title | strip_html }}</span>
+            {%- if p.excerpt -%}<span class="read-next__excerpt">{{ p.excerpt | strip_html | strip_newlines | truncate: 150 }}</span>{%- endif -%}
+            <span class="read-next__meta">{{ rn_min }} min read</span>
+          </span>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </section>
+  {%- endif -%}
+{%- endif -%}

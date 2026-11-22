@@ -30,10 +30,17 @@ post.id %} {% assign title = post.title | markdownify | remove: "
             {% endif %}
         </h2>
 
-        {% include page__meta.html type=include.type %} {% if post.excerpt %}
-        <p class="archive__item-excerpt" itemprop="description">
-            {{ post.excerpt | markdownify | strip_html | truncate: 160 }}
-        </p>
+        {% include page__meta.html type=include.type %}
+        {% comment %} Two previews: the usual excerpt (160 chars), and the first 280 characters of the post
+           followed by "…", which only shows when the sidebar is hidden (see reader.css) {% endcomment %}
+        {% assign short = post.excerpt | markdownify | strip_html | normalize_whitespace | strip %}
+        {% assign long = post.content | strip_html | normalize_whitespace | strip %}
+        {% if long == "" %}{% assign long = short %}{% endif %}
+        {% if short != "" %}
+        <p class="archive__item-excerpt excerpt--short" itemprop="description">{{ short | truncate: 160 }}</p>
+        {% endif %}
+        {% if long != "" %}
+        <p class="archive__item-excerpt excerpt--long">{{ long | truncate: 280, "…" }}</p>
         {% endif %}
 
         <!-- THIS IS THE MAGIC TRICK FROM THE ARTICLE -->

@@ -2,6 +2,6 @@
 {% if page.layout == "single" and page.date and page.glossary != false %}
 <script id="glossary-data" type="application/json">{{ site.data.glossary | jsonify }}</script>
 {% endif %}
-<script src="{{ '/assets/js/reader.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/reader.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/motion.js' | relative_url }}" defer></script>
 <!-- end custom footer snippets -->

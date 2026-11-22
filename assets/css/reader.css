@@ -288,6 +288,15 @@ html[data-theme="dark"] .lang-filter button[aria-pressed="true"] { background: #
   object-fit: contain;
 }
 
+/* Sidebar hidden (wide screens): the list is much wider, so the teaser drops to half its size */
+/* ...and the preview grows from the short excerpt to the first 280 characters of the post */
+.archive__item-excerpt.excerpt--long { display: none; }
+@media (min-width: 1024px) {
+  .sidebar-hidden .list__item .archive__item-teaser { width: 37.5%; }
+  .sidebar-hidden .list__item .excerpt--short { display: none; }
+  .sidebar-hidden .list__item .excerpt--long { display: block; }
+}
+
 /* Inside posts: every image is 50% of the post width, centred, never cropped.
    Large images shrink, small ones grow. Skipped: emoji, images inside tables,
    and gallery images that set their own size inline (style="..."). */
@@ -319,29 +328,7 @@ html[data-theme="dark"] .lang-filter button[aria-pressed="true"] { background: #
 
 /* ===== Reading comfort + "read next" (Nov 2026) ===== */
 
-/* One reading column: text, tables, code and image blocks share the same width
-   (about 70 characters of body text), leaving breathing room on the right.
-   Wide tables and code scroll sideways inside their own box. */
-.page__content > p,
-.page__content > ul,
-.page__content > ol,
-.page__content > dl,
-.page__content > blockquote,
-.page__content > h2,
-.page__content > h3,
-.page__content > h4,
-.page__content > h5,
-.page__content > h6,
-.page__content > hr,
-.page__content > table,
-.page__content > figure,
-.page__content > .notice,
-.page__content > div.highlighter-rouge,
-.page__content > figure.highlight,
-.page__content > pre,
-.page__content > .series-nav {
-  max-width: 41rem;
-}
+/* Text uses the full post width, same as tables, code and callouts (no line-length cap). */
 .page__content > table,
 .page__content > div.highlighter-rouge pre,
 .page__content > pre { overflow-x: auto; }
@@ -449,3 +436,31 @@ html[data-theme="dark"] .lang-filter button[aria-pressed="true"] { background: #
 html[data-theme="dark"] .greedy-nav .site-sig { background-color: #fff; } /* white on the dark theme */
 .greedy-nav .site-sig:hover { opacity: 1; transform: rotate(-6deg) scale(1.06); }
 @media (max-width: 600px) { .greedy-nav .site-sig { width: 2.5rem; height: 1.8rem; margin-left: .5rem; } }
+
+/* ---- gc3k signature in the right column (>= 1024px). The top-bar copy stays on smaller screens. ---- */
+.side-sig, .side-sig-col { display: none; }
+@media (min-width: 1024px) {
+  .has-side-sig .greedy-nav .site-sig { display: none; }
+  #main { position: relative; }
+  .side-sig-col {
+    display: block; position: absolute; top: 0; bottom: 0; right: 1em;
+    width: 180px; pointer-events: none;                 /* = $right-sidebar-width-narrow */
+  }
+  .side-sig {
+    display: block; width: 72%; aspect-ratio: 1.4; margin: 4.5rem auto 0;
+    position: sticky; top: 6rem; pointer-events: auto;
+    background-color: #000;                             /* original black on the light theme */
+    -webkit-mask: url("../gc3k.svg") center / contain no-repeat;
+    mask: url("../gc3k.svg") center / contain no-repeat;
+    opacity: .85; transition: opacity .2s ease, transform .25s ease;
+  }
+  html[data-theme="dark"] .side-sig { background-color: #fff; }
+  .side-sig:hover { opacity: 1; transform: rotate(-5deg) scale(1.05); }
+  .side-sig--toc { position: static; width: 55%; margin: 1.75rem auto .5rem; opacity: .7; }
+  /* sidebar hidden: the signature hides with it, and list pages use the freed right column
+     so the content stays balanced (same gap on both sides) */
+  .sidebar-hidden .side-sig, .sidebar-hidden .side-sig-col { display: none; }
+  .sidebar-hidden .archive { padding-inline-end: 0; }
+  .sidebar-hidden #main:has(.side-sig-col) .page { padding-inline-end: 0; }
+}
+@media (min-width: 1280px) { .side-sig-col { width: 240px; } }   /* = $right-sidebar-width */

@@ -98,6 +98,20 @@ dialog.wide{width:min(780px,94vw)}
 .chkrow>span{font-weight:700;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex:none;margin-top:1px}
 .chkrow.ok>span{background:#08A315}.chkrow.warn>span{background:#C37408}.chkrow.bad>span{background:#C32A08}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:999px;opacity:0;transition:.25s;pointer-events:none;z-index:50}.toast.show{opacity:1}
+/* grammar check */
+::highlight(bw-gram){text-decoration:underline wavy #C37408;text-decoration-thickness:1.5px;background-color:rgba(195,116,8,.1)}
+::highlight(bw-spell){text-decoration:underline wavy #C32A08;text-decoration-thickness:1.5px;background-color:rgba(195,42,8,.08)}
+.tb .gc{display:inline-block;min-width:18px;padding:0 5px;margin-left:4px;border-radius:999px;background:#C37408;color:#fff;font-size:11px;font-weight:700;line-height:18px;text-align:center}
+#gpop{position:fixed;z-index:60;width:min(340px,92vw);background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 36px rgba(4,42,97,.28);padding:12px}
+#gpop .gk,.gi .gk{display:inline-block;font:600 11px Inter,sans-serif;text-transform:uppercase;letter-spacing:.5px;color:#fff;background:#C37408;border-radius:999px;padding:1px 8px}
+#gpop .gk.sp,.gi.sp .gk{background:#C32A08}
+#gpop .gm{margin:8px 0;font-size:13.5px;line-height:1.5}
+#gpop .gs{display:flex;flex-wrap:wrap;gap:6px}#gpop .gs .btn{padding:4px 10px}
+#gpop .ga{display:flex;gap:6px;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)}#gpop .ga .btn{padding:3px 9px;font-size:12.5px}
+#gStat{font-size:12.5px;color:var(--muted)}#gStat[data-k=err]{color:#C32A08}#gStat[data-k=ok]{color:#08A315}
+#gList{margin:10px 0;display:flex;flex-direction:column;gap:6px}
+.gi{display:block;text-align:left;width:100%;border:1px solid var(--border);background:var(--bg);border-radius:10px;padding:8px 10px;cursor:pointer;line-height:1.4}
+.gi:hover{background:var(--hover)}.gi b{margin-left:6px}.gi small{display:block;color:var(--muted);margin-top:3px;font-size:12px}
 </style>
 </head>
 <body>
@@ -152,6 +166,9 @@ dialog.wide{width:min(780px,94vw)}
         <button class="tb" data-act="raw" title="Raw HTML / Liquid tag">Raw</button>
         <button class="tb" data-cmd="removeFormat" title="Clear formatting">Tx</button>
       </div>
+      <div class="grp">
+        <button class="tb" id="bGram" title="Grammar and spelling check (English, runs in your browser)">Grammar<span class="gc" id="gCount" hidden></span></button>
+      </div>
     </div>
     <div class="ctx" id="ctx" hidden>
       <span id="cTable" hidden>Table:
@@ -167,7 +184,7 @@ dialog.wide{width:min(780px,94vw)}
   </section>
 
   <aside class="panel">
-    <div class="tabs"><button class="on" data-tab="set">Post settings</button><button data-tab="mdt">Markdown</button></div>
+    <div class="tabs"><button class="on" data-tab="set">Post settings</button><button data-tab="mdt">Markdown</button><button data-tab="gram">Grammar</button></div>
     <div class="tab" id="tab-set">
       <div class="f"><label>Date</label>
         <div class="row"><input type="date" id="date"></div>
@@ -211,12 +228,22 @@ dialog.wide{width:min(780px,94vw)}
       <textarea id="md" spellcheck="false"></textarea>
       <div class="hint">Live output. You can also edit the Markdown here and it flows back into the editor.</div>
     </div>
-    <div class="stats"><span id="sWords">0 words</span><span id="sRead">0 min read</span><span id="sSave">Draft saved</span></div>
+    <div class="tab" id="tab-gram" hidden>
+      <label class="chk"><input type="checkbox" id="gOn"> Check grammar and spelling (English)</label>
+      <label class="chk"><input type="checkbox" id="gLive" checked> Check while I type</label>
+      <div class="row" style="margin-top:6px"><button class="btn" id="gNow" type="button">Check now</button><span id="gStat"></span></div>
+      <div id="gList"></div>
+      <div class="f"><label>My dictionary</label><textarea id="gDict" rows="3" spellcheck="false" placeholder="One word per line"></textarea>
+        <div class="hint">Words Harper should accept (names, tools). “Add to dictionary” in the popup fills this.</div>
+        <button class="btn" id="gUnign" type="button" style="margin-top:6px">Restore ignored items</button></div>
+    </div>
+    <div class="stats"><span id="sWords">0 words</span><span id="sRead">0 min read</span><span id="sSave">Draft saved</span><span id="sGram"></span></div>
   </aside>
 </main>
 
 <dialog id="dlg"><form method="dialog" id="dform"></form></dialog>
 <div class="toast" id="toast"></div>
+<div id="gpop" hidden><span class="gk"></span><div class="gm"></div><div class="gs"></div><div class="ga"><button type="button" class="btn" data-a="ign">Ignore</button><button type="button" class="btn" data-a="dict">Add to dictionary</button></div></div>
 
 <script>
 const SITE='https://saltfarmer.github.io/blog';
@@ -425,6 +452,7 @@ function tableMd(t){
 function blockOf(n){
   const t=n.tagName;
   if(/^H[1-6]$/.test(t))return '#'.repeat(+t[1])+' '+inlineOf(n.childNodes).trim();
+  if(t==='P'&&Array.from(n.children).some(c=>/^(UL|OL|PRE|TABLE|BLOCKQUOTE|FIGURE|H[1-6]|HR)$/.test(c.tagName)))return joinBlocks(blocks(n));
   if(t==='P'){let s=inlineOf(n.childNodes).trim();if(/^(#{1,6}\s|[-+*]\s|\d+[.)]\s|>)/.test(s))s='\\'+s;return s;}
   if(t==='UL'||t==='OL')return listMd(n);
   if(t==='BLOCKQUOTE'){const c=joinBlocks(blocks(n)).replace(/\n+$/,'');if(!c.trim())return '';return c.split('\n').map(s=>s?'> '+s:'>').join('\n');}
@@ -1018,6 +1046,14 @@ function showManual(){
 <tr><td>Language filter</td><td>Always set Language.</td></tr>
 <tr><td>Subscribe box (RSS)</td><td>Nothing. For an email form, paste the form URL into <code>subscribe.newsletter_action</code> in <code>_config.yml</code>.</td></tr>
 <tr><td>Comments</td><td>Disqus now. To switch to giscus, see the note in the blog’s <code>_config.yml</code>.</td></tr></table></details>
+<details><summary>8. Grammar check (Harper)</summary><ul>
+<li>Click <b>Grammar</b> in the toolbar to switch it on. Harper (about 2 MB) is a grammar engine that runs inside your browser: your text is never sent anywhere.</li>
+<li><b>Best way (local):</b> put <code>start-writer.py</code> next to this page and run <code>python start-writer.py</code>. The first run downloads Harper into a <code>harper</code> folder; after that it works with no internet. It opens this page at <code>http://localhost:8765</code>. Opening the .html file by double-click also works, but then Harper has to come from the internet (CDN) and may fail.</li>
+<li><span style="color:#C37408"><b>Orange</b></span> wavy line = grammar or style. <span style="color:#C32A08"><b>Red</b></span> = spelling. Click a marked word to get the explanation and one-click fixes, <b>Ignore</b>, or <b>Add to dictionary</b> (names and tool words).</li>
+<li>The <b>Grammar</b> tab on the right lists every issue (click one to jump to it), lets you choose “check while I type” or manual “Check now”, and edit your dictionary. Fixes go through normal editing, so Ctrl+Z undoes them.</li>
+<li>Skipped on purpose: code blocks, inline code, Raw blocks, the title, and posts whose Language is Bahasa Indonesia (Harper knows English only).</li>
+<li>While it is on, the browser’s own red spelling lines are turned off so you do not see two sets.</li>
+<li>Harper is not perfect: if a suggestion is wrong, press Ignore. Needs a recent Chrome, Edge or Brave for the underlines; other browsers still get the list. Offline on first use: it cannot download, and says so; writing still works.</li></ul></details>
 </div><div class="acts"><button type="button" class="btn primary" data-close>Close</button></div>`,true);
   $('#dform').onclick=e=>{const b=e.target.closest('[data-snip]');if(b)addSnippet(b.dataset.snip);};
 }
@@ -1039,7 +1075,7 @@ $('#bNew').onclick=()=>{if(!confirm('Start a new post? The current draft will be
   $('#lang').value='en';['series','seriesOrder','takeaways','colab','notebook','dataset','modified'].forEach(id=>$('#'+id).value='');$('#featured').checked=false;sync();};
 $('#bTheme').onclick=()=>{const d=document.documentElement;d.dataset.theme=d.dataset.theme==='dark'?'light':'dark';save();};
 $('#bHelp').onclick=showManual;
-$$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.toggle('on',x===b));$('#tab-set').hidden=b.dataset.tab!=='set';$('#tab-mdt').hidden=b.dataset.tab!=='mdt';});
+$$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.toggle('on',x===b));['set','mdt','gram'].forEach(t=>$('#tab-'+t).hidden=b.dataset.tab!==t);});
 
 /* settings inputs */
 ['date','useDate','filename','autoName','lower','teaser','excerpt','comments','share','toc','extra','lang','series','seriesOrder','takeaways','colab','notebook','dataset','modified','featured'].forEach(id=>$('#'+id).addEventListener('input',()=>{if(id==='filename')$('#autoName').checked=false;sync();}));
@@ -1057,6 +1093,257 @@ $('#md').addEventListener('blur',()=>{mdFocus=false;render();});
 let mdT=null;
 $('#md').addEventListener('input',()=>{clearTimeout(mdT);mdT=setTimeout(()=>{const keep=$('#filename').value,auto=$('#autoName').checked;importMd($('#md').value);$('#filename').value=keep;$('#autoName').checked=auto;},500);});
 
+/* ================= Grammar check (Harper, loaded from a CDN only when switched on) ================= */
+const HARPER_VER='2.4.0';
+/* Harper is loaded from the 'harper' folder next to this page (served by start-writer.py), else from a CDN. */
+const HARPER_SOURCES=()=>[...(location.protocol==='file:'?[]:[new URL('harper/',location.href).href]),...HARPER_CDNS];
+const HARPER_CDNS=['https://unpkg.com/harper.js@'+HARPER_VER+'/dist/','https://cdn.jsdelivr.net/npm/harper.js@'+HARPER_VER+'/dist/'];
+const DICT_SEED=['Jekyll','kramdown','Nusantara','Saltfarmer','Candra','Pandas','NumPy','scikit','Matplotlib','Seaborn','TensorFlow','PyTorch','Colab','Jupyter','GitHub','YAML','Liquid','webp','favicon','Dota','TOEFL','RMSE','AUC','LeTAD','dataframe','dataframes','overfitting','Algorit'];
+const gGet=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k)||'null');return v===null?d:v;}catch(e){return d;}};
+const gSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}};
+const G={on:false,timeout:20000,live:gGet('bw.glive',true),linter:null,mod:null,loading:null,fail:false,cache:new Map(),run:0,rev:0,items:[],t:null,
+  dict:gGet('bw.dict',[]),ign:gGet('bw.ign',[]),supports:!!(window.CSS&&CSS.highlights&&window.Highlight)};
+
+const gTimeout=(p,ms,what)=>Promise.race([p,new Promise((_,no)=>setTimeout(()=>no(new Error(what+' did not finish in '+Math.round(ms/1000)+'s')),ms))]);
+async function gLoad(){
+  if(G.linter)return G.linter;
+  if(G.loading)return G.loading;
+  G.loading=(async()=>{
+    const errs=[];
+    for(const base of HARPER_SOURCES()){
+      const host=base.startsWith(location.origin+'/')&&location.origin!=='null'?'your computer':base.split('/')[2];
+      try{
+        gStatus((host==='your computer'?'Loading Harper from your computer':'Downloading Harper from '+host)+'…','busy');
+        const idx=await gTimeout(import(base+'index.js'),G.timeout*2,'Download');
+        let bin=idx.binaryInlined;
+        if(!bin)bin=(await gTimeout(import(base+'binaryInlined.js'),G.timeout*2,'Download of the binary')).binaryInlined;
+        if(!bin)throw new Error('binary not found');
+        let lt=null;
+        /* Main-thread linter first: fewest moving parts (works from a local file too). Web Worker as second try. */
+        for(const [name,Cls] of [['LocalLinter',idx.LocalLinter],['WorkerLinter',idx.WorkerLinter]]){
+          if(!Cls)continue;
+          try{
+            gStatus('Starting Harper ('+name+')…','busy');
+            const cand=new Cls({binary:bin});
+            await gTimeout(cand.setup(),G.timeout,name+' start-up');
+            gStatus('Loading dictionary…','busy');
+            await gTimeout(cand.importWords([...new Set([...DICT_SEED,...G.dict])]),G.timeout,'Dictionary');
+            lt=cand;break;
+          }catch(e){console.warn('[Harper] '+name+' failed',e);errs.push(host+' '+name+': '+(e&&e.message||e));}
+        }
+        if(!lt)throw new Error('could not start');
+        G.mod=idx;G.linter=lt;return lt;
+      }catch(e){console.warn('[Harper] could not load from',base,e);if(!errs.length||!String(errs[errs.length-1]).startsWith(host))errs.push(host+': '+(e&&e.message||e));}
+    }
+    const e=new Error((errs.join(' | ')||'Could not load Harper')+(location.protocol==='file:'?' | Tip: run start-writer.py so Harper loads from your own computer':''));throw e;
+  })();
+  try{return await G.loading;}finally{G.loading=null;}
+}
+
+/* Collect the text blocks of the editor. Code, raw blocks and images are never checked. */
+const G_PH=new Set(['CODE','KBD','SAMP']);
+const G_BLOCK=new Set(['P','H1','H2','H3','H4','H5','H6','LI','UL','OL','BLOCKQUOTE','TABLE','THEAD','TBODY','TR','TD','TH','DIV','FIGURE','FIGCAPTION','HR','DL','DT','DD','DETAILS','SUMMARY']);
+function gBlocks(){
+  const out=[];let cur=null;
+  const flush=()=>{if(cur&&cur.text.trim().length>2)out.push(cur);cur=null;};
+  const add=(t,node)=>{if(!cur)cur={text:'',segs:[],mask:null};if(node)cur.segs.push({node,at:cur.text.length,len:t.length});cur.text+=t;};
+  (function walk(el){
+    for(const n of el.childNodes){
+      if(n.nodeType===3){if(n.data)add(n.data,n);continue;}
+      if(n.nodeType!==1)continue;
+      const tg=n.tagName;
+      if(tg==='PRE'||tg==='SCRIPT'||tg==='STYLE'||n.hasAttribute('data-raw')){flush();continue;}
+      if(tg==='IMG'){add(' ');continue;}
+      if(tg==='BR'){add('\n');continue;}
+      if(G_PH.has(tg)){add('code');continue;}
+      if(G_BLOCK.has(tg)){flush();walk(n);flush();continue;}
+      walk(n);
+    }
+  })(ed);
+  flush();return out;
+}
+const gMapped=(b,s,e)=>{
+  if(!b.mask){b.mask=new Uint8Array(b.text.length);for(const g of b.segs)b.mask.fill(1,g.at,g.at+g.len);}
+  for(let i=s;i<e;i++)if(!b.mask[i])return false;return true;
+};
+function gRange(b,s,e){
+  let sn,so,en,eo;
+  for(const g of b.segs){
+    if(sn===undefined&&s>=g.at&&s<g.at+g.len){sn=g.node;so=s-g.at;}
+    if(e>g.at&&e<=g.at+g.len){en=g.node;eo=e-g.at;}
+  }
+  if(!sn||!en)return null;
+  const r=document.createRange();r.setStart(sn,so);r.setEnd(en,eo);return r;
+}
+/* Harper counts characters (code points); the DOM counts UTF-16 units. They differ only around emoji. */
+function gCpMap(text){const a=[];let u=0;for(const ch of text){a.push(u);u+=ch.length;}a.push(u);return a;}
+async function gLintText(text){
+  if(G.cache.has(text))return G.cache.get(text);
+  const raw=await G.linter.lint(text);
+  const map=/[\uD800-\uDFFF]/.test(text)?gCpMap(text):null;
+  const res=[];
+  for(const l of raw){
+    try{
+      const sp=l.span();let s=sp.start,e=sp.end;
+      if(map){s=map[s];e=map[e];}
+      const k0=String(l.lint_kind?l.lint_kind():'');
+      const kind=String((l.lint_kind_pretty?l.lint_kind_pretty():k0)||'Issue');
+      res.push({s,e,msg:String(l.message()),kind,spell:/spell/i.test(k0+' '+kind),
+        sug:(l.suggestions()||[]).map(x=>({k:x.kind(),t:String(x.get_replacement_text())}))});
+    }catch(err){console.warn('[Harper] skipped a lint',err);}
+  }
+  G.cache.set(text,res);
+  if(G.cache.size>800)G.cache.delete(G.cache.keys().next().value);
+  return res;
+}
+
+function gStatus(msg,kind){
+  const el=$('#gStat');if(el){el.textContent=msg;el.dataset.k=kind||'';}
+  const s=$('#sGram');if(s)s.textContent=G.on?msg:'';
+}
+function gUi(){
+  const n=G.items.length,c=$('#gCount');
+  c.hidden=!G.on||!n;c.textContent=n>99?'99+':n;
+  const L=$('#gList');
+  if(!G.on){L.innerHTML='';return;}
+  L.innerHTML=G.items.slice(0,200).map((it,i)=>'<button type="button" class="gi'+(it.spell?' sp':'')+'" data-i="'+i+'"><span class="gk">'+esc(it.kind)+'</span><b>'+esc(it.prob)+'</b>'
+    +(it.sug[0]?' → <i>'+esc(it.sug[0].t||'(remove)')+'</i>':'')+'<small>'+esc(it.msg)+'</small></button>').join('')
+    +(n>200?'<div class="hint">Showing the first 200 of '+n+'.</div>':'');
+}
+function gPaint(){
+  if(!G.supports)return;
+  const sp=[],gr=[];G.items.forEach(i=>(i.spell?sp:gr).push(i.range));
+  CSS.highlights.set('bw-spell',new Highlight(...sp));CSS.highlights.set('bw-gram',new Highlight(...gr));
+}
+function gClear(){
+  G.items=[];if(G.supports){CSS.highlights.delete('bw-spell');CSS.highlights.delete('bw-gram');}
+  gHide();gUi();
+}
+function gSchedule(now){
+  if(!G.on)return;
+  clearTimeout(G.t);
+  if(G.fail&&!now)return;
+  if(!G.live&&!now){gStatus('Text changed. Press “Check now”.','stale');return;}
+  G.t=setTimeout(gRun,now?0:900);
+}
+async function gRun(){
+  if(!G.on)return;
+  const id=++G.run,rev=G.rev;
+  if($('#lang').value==='id'){gClear();gStatus('Skipped: post language is Bahasa Indonesia (Harper checks English only).','skip');return;}
+  let lt;
+  try{if(!G.linter)gStatus('Loading Harper…','busy');lt=await gLoad();G.fail=false;}
+  catch(e){G.fail=true;gClear();gStatus('Could not start Harper: '+(e&&e.message||e)+'. Writing still works. Press “Check now” to retry.','err');console.warn(e);return;}
+  if(id!==G.run||rev!==G.rev)return;
+  gStatus('Checking…','busy');
+  const items=[];
+  for(const b of gBlocks()){
+    let res;
+    try{res=await gLintText(b.text);}catch(e){console.warn('[Harper]',e);continue;}
+    if(id!==G.run||rev!==G.rev)return;
+    for(const r of res){
+      if(r.e<=r.s)continue;
+      const prob=b.text.slice(r.s,r.e);
+      if(/[\[\]{}<>|`\\]/.test(prob)||!gMapped(b,r.s,r.e))continue;
+      const key=r.kind+'|'+prob+'|'+r.msg;
+      if(G.ign.includes(key))continue;
+      const range=gRange(b,r.s,r.e);if(!range)continue;
+      items.push({range,prob,key,msg:r.msg,kind:r.kind,spell:r.spell,sug:r.sug.slice(0,4)});
+    }
+  }
+  G.items=items;gPaint();gUi();
+  gStatus(items.length?items.length+(items.length===1?' issue':' issues'):'No issues found','ok');
+}
+
+/* Suggestion popover */
+const gPop=$('#gpop');let gCur=null;
+function gHide(){gPop.hidden=true;gCur=null;}
+function gShow(it){
+  gCur=it;
+  const kind=gPop.querySelector('.gk'),msg=gPop.querySelector('.gm'),sg=gPop.querySelector('.gs');
+  kind.textContent=it.kind;kind.className='gk'+(it.spell?' sp':'');
+  msg.textContent=it.msg;
+  sg.innerHTML=it.sug.map((s,i)=>'<button type="button" class="btn primary" data-s="'+i+'">'+esc(gSugLabel(s))+'</button>').join('')||'<span class="hint">No automatic fix. Edit the text by hand.</span>';
+  gPop.hidden=false;
+  const r=it.range.getBoundingClientRect(),w=gPop.offsetWidth,h=gPop.offsetHeight;
+  let x=Math.min(Math.max(8,r.left),innerWidth-w-8),y=r.bottom+8;
+  if(y+h>innerHeight-8)y=Math.max(8,r.top-h-8);
+  gPop.style.left=x+'px';gPop.style.top=y+'px';
+}
+function gSugKind(s){
+  const K=G.mod&&G.mod.SuggestionKind,n=typeof s.k==='number'&&K?K[s.k]:s.k;
+  if(/remove/i.test(String(n))||(s.t===''&&!/insert/i.test(String(n))))return 'remove';
+  return /insert/i.test(String(n))?'insert':'replace';
+}
+function gSugLabel(s){const k=gSugKind(s);return k==='remove'?'Remove':k==='insert'?'Add “'+s.t+'”':'→ '+s.t;}
+function gApply(it,s){
+  const k=gSugKind(s);ed.focus();
+  const sel=getSelection(),r=it.range.cloneRange();
+  if(r.collapsed&&k!=='insert')return gHide();
+  if(k==='insert')r.collapse(false);
+  if(k==='remove'&&r.startContainer.nodeType===3&&r.startOffset>0&&r.startContainer.data[r.startOffset-1]===' '){
+    const nx=r.endContainer.nodeType===3?r.endContainer.data[r.endOffset]:undefined;
+    if(nx===undefined||/[\s.,;:!?)]/.test(nx))r.setStart(r.startContainer,r.startOffset-1);
+  }
+  sel.removeAllRanges();sel.addRange(r);
+  if(k==='remove')document.execCommand('delete');else document.execCommand('insertText',false,s.t);
+  gHide();sync();
+}
+gPop.addEventListener('mousedown',e=>e.preventDefault());
+gPop.addEventListener('click',async e=>{
+  const b=e.target.closest('button');if(!b||!gCur)return;
+  const it=gCur;
+  if(b.dataset.s!==undefined)return gApply(it,it.sug[+b.dataset.s]);
+  if(b.dataset.a==='ign'){G.ign.push(it.key);gSet('bw.ign',G.ign);G.items=G.items.filter(x=>x!==it);gHide();gPaint();gUi();gStatus(G.items.length?G.items.length+' issues':'No issues found','ok');toast('Ignored. Restore all in the Grammar tab.');}
+  if(b.dataset.a==='dict'){const w=it.prob.trim();if(w){gAddWords([w]);toast('Added “'+w+'” to your dictionary');}gHide();}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!gPop.hidden)gHide();});
+addEventListener('scroll',()=>{if(!gPop.hidden)gHide();},true);
+ed.addEventListener('click',()=>{
+  if(!G.on)return;
+  setTimeout(()=>{
+    const s=getSelection();if(!s.rangeCount||!s.isCollapsed||!ed.contains(s.anchorNode))return gHide();
+    const it=G.items.find(i=>{try{return i.range.isPointInRange(s.anchorNode,s.anchorOffset);}catch(e){return false;}});
+    it?gShow(it):gHide();
+  },0);
+});
+$('#gList').addEventListener('click',e=>{
+  const b=e.target.closest('.gi');if(!b)return;
+  const it=G.items[+b.dataset.i];if(!it)return;
+  const el=it.range.startContainer.parentElement;if(el)el.scrollIntoView({block:'center'});
+  const s=getSelection();s.removeAllRanges();s.addRange(it.range.cloneRange());
+  setTimeout(()=>gShow(it),150);
+});
+
+/* Dictionary and ignored items */
+async function gAddWords(ws){
+  G.dict=[...new Set([...G.dict,...ws])];gSet('bw.dict',G.dict);$('#gDict').value=G.dict.join('\n');
+  if(G.linter){try{await G.linter.importWords(ws);}catch(e){console.warn(e);}}
+  G.cache.clear();gSchedule(true);
+}
+$('#gDict').value=G.dict.join('\n');
+$('#gDict').addEventListener('change',async()=>{
+  G.dict=[...new Set($('#gDict').value.split(/\s+/).map(s=>s.trim()).filter(Boolean))];gSet('bw.dict',G.dict);
+  if(G.linter){try{if(G.linter.clearWords)await G.linter.clearWords();await G.linter.importWords([...new Set([...DICT_SEED,...G.dict])]);}catch(e){console.warn(e);}}
+  G.cache.clear();gSchedule(true);toast('Dictionary saved');
+});
+$('#gUnign').onclick=()=>{G.ign=[];gSet('bw.ign',[]);toast('Ignored items restored');gSchedule(true);};
+
+/* Switches */
+function gToggle(on){
+  G.on=on;gSet('bw.gram',on);G.fail=false;
+  $('#bGram').classList.toggle('on',on);$('#gOn').checked=on;
+  ed.setAttribute('spellcheck',on?'false':'true');
+  if(on){if(!G.supports)toast('This browser cannot underline text. Issues are listed in the Grammar tab.');gStatus('Starting…','busy');gSchedule(true);}
+  else{G.run++;clearTimeout(G.t);gClear();gStatus('','');}
+}
+$('#bGram').onclick=()=>gToggle(!G.on);
+$('#gOn').onchange=e=>gToggle(e.target.checked);
+$('#gLive').checked=G.live;
+$('#gLive').onchange=e=>{G.live=e.target.checked;gSet('bw.glive',G.live);if(G.live)gSchedule(true);};
+$('#gNow').onclick=()=>{if(!G.on)return gToggle(true);G.fail=false;gSchedule(true);};
+$('#lang').addEventListener('input',()=>gSchedule(true));
+new MutationObserver(()=>{G.rev++;gSchedule();}).observe(ed,{childList:true,characterData:true,subtree:true});
+
 /* ================= Init ================= */
 cats=Chips($('#catChips'),CATS,sync,$('#catSugg'));
 tags=Chips($('#tagChips'),[],sync);
@@ -1072,6 +1359,7 @@ try{
   }
 }catch(e){}
 sync();render();
+if(gGet('bw.gram',false))gToggle(true);
 </script>
 </body>
 </html>

@@ -319,7 +319,32 @@ html[data-theme="dark"] .lang-filter button[aria-pressed="true"] { background: #
 
 /* ===== Reading comfort + "read next" (Nov 2026) ===== */
 
-/* Text uses the full post width, same as tables and code (line-length limit removed by choice). */
+/* One reading column: text, tables, code and image blocks share the same width
+   (about 70 characters of body text), leaving breathing room on the right.
+   Wide tables and code scroll sideways inside their own box. */
+.page__content > p,
+.page__content > ul,
+.page__content > ol,
+.page__content > dl,
+.page__content > blockquote,
+.page__content > h2,
+.page__content > h3,
+.page__content > h4,
+.page__content > h5,
+.page__content > h6,
+.page__content > hr,
+.page__content > table,
+.page__content > figure,
+.page__content > .notice,
+.page__content > div.highlighter-rouge,
+.page__content > figure.highlight,
+.page__content > pre,
+.page__content > .series-nav {
+  max-width: 41rem;
+}
+.page__content > table,
+.page__content > div.highlighter-rouge pre,
+.page__content > pre { overflow-x: auto; }
 
 /* Read next: one big pick, two small ones */
 .read-next {
@@ -410,3 +435,17 @@ html[data-theme="dark"] .lang-filter button[aria-pressed="true"] { background: #
 /* Read next: if a teaser image fails to load, drop its empty frame too */
 .read-next__img.img-missing,
 .read-next__img:has(> img.img-missing) { display: none; }
+
+/* ---- Masthead: round logo + gc3k signature beside the title ---- */
+.site-logo img { border-radius: 50%; aspect-ratio: 1; object-fit: cover; }
+.greedy-nav .site-sig {
+  flex: none; align-self: center; display: block;
+  width: 3.1rem; height: 2.2rem; margin: 0 .25rem 0 .9rem;
+  background-color: #000;                       /* original black on the light theme */
+  -webkit-mask: url("../gc3k.svg") center / contain no-repeat;
+  mask: url("../gc3k.svg") center / contain no-repeat;
+  transition: transform .2s ease, opacity .2s ease; opacity: .9;
+}
+html[data-theme="dark"] .greedy-nav .site-sig { background-color: #fff; } /* white on the dark theme */
+.greedy-nav .site-sig:hover { opacity: 1; transform: rotate(-6deg) scale(1.06); }
+@media (max-width: 600px) { .greedy-nav .site-sig { width: 2.5rem; height: 1.8rem; margin-left: .5rem; } }

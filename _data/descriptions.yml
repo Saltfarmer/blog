@@ -1,0 +1,95 @@
+# Search-result descriptions (the grey text under the title on Google), keyed by post slug
+# = the file name without the date and ".md". A "description:" in a post's front matter wins over this file.
+# Posts that already have a written excerpt: in front matter keep it (not listed here).
+# Keep each one about 120-160 characters and write it for someone who has never heard of the blog.
+
+# --- data science basics ---
+What-is-Data-Science-: "What data science actually is, what a data scientist does day to day, and how statistics, programming and domain knowledge fit together."
+Data-Science-Tools: "The core tools for data science (Python, Jupyter, SQL, notebooks and libraries) and what each one is used for, explained for beginners."
+Structured-and-unstructured-data: "Structured vs unstructured data explained with examples: tables, text, images and logs, and why the difference matters for analysis."
+Data-Types: "A beginner's guide to data types in data science: numerical, categorical, ordinal and more, with examples of how to handle each."
+Interesting-and-Open-Public-Data-Agregator: "Where to find free, open public datasets for practice and projects: a list of data aggregators and portals worth bookmarking."
+Libraries-In-Python-for-Data-Science: "The essential Python libraries for data science (NumPy, pandas, Matplotlib, Seaborn, scikit-learn) and what each one does."
+Types-of-Machine-Learning: "Supervised, unsupervised and reinforcement learning explained simply, with examples of the problems each type of machine learning solves."
+Types-of-Machine-Learning-2: "More machine learning types: batch vs online learning and instance-based vs model-based learning, explained with simple examples."
+Challenges-in-Machine-Learning: "The main challenges in machine learning: too little data, bad data, overfitting, underfitting and irrelevant features, and how to deal with them."
+Testing-and-Validation: "How to test and validate a machine learning model: train/test split, validation sets, cross-validation and avoiding data leakage."
+
+# --- evaluation metrics ---
+Evaluation-Metrics-Binary-Classification: "Accuracy, precision, recall, F1 and the confusion matrix explained: how to evaluate a binary classification model and pick the right metric."
+Evaluation-Metrics-Regression: "MAE, MSE, RMSE and R-squared explained: how to evaluate a regression model and what each error metric really tells you."
+Evaluation-Metrics-Clustering: "How to evaluate clustering without labels: silhouette score, inertia, Davies-Bouldin and other clustering metrics explained."
+Evaluation-Metrics-Special-ROCAUC: "ROC curves and AUC explained step by step: what the curve shows, how to read AUC, and when to use it for classification models."
+
+# --- Python and visualization ---
+Python-Basic: "Python basics for data science: variables, lists, dictionaries, loops and functions, with short examples you can run right away."
+Python-Numpy: "A practical NumPy introduction: arrays, indexing, broadcasting and the vectorised operations every data scientist uses."
+Python-Pandas: "Getting started with pandas: Series, DataFrames, reading CSV files, selecting columns and filtering rows, with examples."
+Python-Pandas-2: "More pandas for data analysis: groupby, merge and join, pivot tables and handling missing values, with practical examples."
+Python-Matplotlib: "Matplotlib basics: line, bar, scatter and histogram plots, subplots, labels and styling for clear data visualizations in Python."
+Choosing-Visualization-with-Matplotlib-as-example: "How to choose the right chart for your data (comparison, distribution, relationship, composition), with Matplotlib examples."
+Better-Visualization-Seaborn: "Better-looking statistical charts with Seaborn: distribution plots, categorical plots and themes, with code examples."
+Better-Visualization-Seaborn-2: "More Seaborn: pair plots, heatmaps, regression plots and facet grids to explore relationships in your data."
+Interactive-Visualization-Plotly: "Interactive charts in Python with Plotly: hover tooltips, zoom and quick dashboards-style plots, with code examples."
+Python-Data-Visualization-Guide: "A guide to Python data visualization: when to use Matplotlib, Seaborn or Plotly, and how to pick the right chart type."
+
+# --- feature engineering ---
+Handling-Missing-Value: "How to handle missing values in a dataset: why data goes missing, deletion vs imputation, and the common imputation methods with examples."
+Feature-Scaling: "Feature scaling explained: normalisation vs standardisation, min-max and z-score scaling, and which machine learning models need it."
+Numerical-Transformer: "Transforming numerical features: log, power and quantile transforms to fix skewed data before training a machine learning model."
+Word-Vector: "Word vectors explained: how words become numbers with bag of words, TF-IDF and embeddings like Word2Vec, for NLP beginners."
+Categorical-Encoding: "How to encode categorical variables: one-hot, label and ordinal encoding explained, with pros, cons and pandas examples."
+Categorical-Encoding-2: "More categorical encoding methods: target, frequency, binary and hashing encoders, and when to use each one."
+Feature-Selection: "Feature selection methods explained: filter, wrapper and embedded methods to keep the features that actually improve your model."
+Handling-Imbalance-Data: "How to handle imbalanced data in classification: oversampling, undersampling, SMOTE and class weights, with Python examples."
+Principal-Component-Analysis: "Principal Component Analysis (PCA) explained simply: how it reduces dimensions, how to read explained variance, with Python code."
+Dimensionality-Reduction: "Dimensionality reduction explained: why too many features hurt, and how PCA and similar techniques simplify your data."
+Automated-EDA-Library-For-Python: "Automated exploratory data analysis in Python: libraries that generate full EDA reports from a DataFrame in one line."
+
+# --- machine learning models ---
+Linear-Regression: "Linear regression explained: the idea, the assumptions, how to train it in Python and how to read the coefficients and errors."
+Logistic-Regression: "Logistic regression explained for classification: the sigmoid function, probabilities, decision threshold and a Python example."
+K-Nearest-Neighbour: "K-Nearest Neighbours (KNN) explained: how it classifies by distance, how to choose K and why feature scaling matters."
+Decision-Tree: "Decision trees explained: how splits are chosen with Gini and entropy, overfitting, pruning and a scikit-learn example."
+Random-Forest: "Random forest explained: bagging many decision trees, why it beats a single tree, feature importance and a Python example."
+Support-Vector-Machine: "Support Vector Machines (SVM) explained: margins, support vectors, kernels and when SVM is a good choice for classification."
+K-Means: "K-Means clustering explained: how the algorithm works, choosing K with the elbow method and a step-by-step Python example."
+Introduction-Neural-Network: "An introduction to neural networks: neurons, layers, activation functions and backpropagation, explained for beginners."
+MNIST-with-Multi-Layer-Perceptron: "Classifying handwritten digits from MNIST with a multilayer perceptron in Python: a beginner-friendly neural network walkthrough."
+Introduction-Spark: "An introduction to Apache Spark for data science: what it is, why it is fast on big data, and a first PySpark example."
+Natural-Language-Processing-with-NLTK: "Natural Language Processing with NLTK: tokenizing, stop words, stemming and basic text classification in Python."
+Movie-Recommender-System-Analysis: "Building a simple movie recommender system in Python: collaborative filtering on ratings data, step by step."
+BBC-Recommendation-System: "A content-based recommendation system for BBC news articles using TF-IDF and cosine similarity, built in Python."
+Web-Scraping-With-BeautifulSoup4: "Web scraping with BeautifulSoup4 in Python: fetch a page, find elements, extract data and save it to a table."
+Pandas-Alternatives-Modin: "Modin as a faster pandas alternative: how it speeds up DataFrames by using all CPU cores, with a quick comparison."
+Python-311: "What is new in Python 3.11: faster performance, better error messages and other changes worth knowing."
+Chat-GPT: "What ChatGPT is, how it works in simple terms, and what it can and cannot do, written right after its launch."
+
+# --- Dota 2 ---
+How-To-Get-Your-Personal-Dota2-Data: "How to get your own Dota 2 match data with the free OpenDota API and analyse it in Python, step by step."
+Mind-Control-Rekonix-Coach-Interview: "Mind_Control, TI7 champion offlaner, moves from Team Liquid to coaching a SEA team: what changed and what it means."
+LeTAD2: "My Dota 2 settings and configuration: hotkeys, camera and quality-of-life options that make the game easier to play."
+
+# --- 2024-2026 ---
+Preclass-Algoritma: "Setting up for a data science bootcamp: installing Miniconda, Jupyter and Python environments, step by step on Windows."
+Creating-a-Shortcut-for-Jupyter-Notebook: "How to create a desktop shortcut that opens Jupyter Notebook in your Conda environment on Windows, in a few quick steps."
+Day1-Python-for-Data-Analysis: "Bootcamp notes, day 1: Python for data analysis with pandas: DataFrames, data types and first exploratory steps."
+Day2-Data-Wrangling-and-Visualization: "Bootcamp notes, day 2: data wrangling with multi-index DataFrames, reshaping data and visualising it in Python."
+Day3-Practical-Statistic: "Bootcamp notes, day 3: practical statistics: five-number summary, central tendency, spread and distributions."
+Day4-Regression-Model: "Bootcamp notes, day 4: building and interpreting a regression model in Python with statsmodels."
+Day5-Classification-Model: "Bootcamp notes, day 5: classification models in Python: logistic regression, KNN and how to evaluate them."
+Day6-Unsupervised-Learning: "Bootcamp notes, day 6: unsupervised learning with PCA and clustering in Python."
+Day7-Capstone-Project: "Bootcamp capstone: predicting bank transaction fraud with machine learning, from problem statement to model."
+Correlation-vs-Causation: "Correlation is not causation: why trends that move together mislead us, confounders, spurious correlations and how to spot them."
+The-Power-of-Feeling-Stupid: "Why feeling stupid is a sign you are learning: lessons from Martin Schwartz's essay on stupidity in scientific research."
+Using-Prophet-to-Predict-BBRI: "Forecasting BBRI stock prices with Meta's Prophet: a beginner-friendly time series forecasting walkthrough in Python."
+Rust1-Why-Rust-Data-Analysis: "Why try Rust for data analysis? A Python user's first look at Rust: speed, safety and how it compares to Python."
+Rust2-Installing-Rust: "Installing Rust for data analysis: rustup, Cargo, Jupyter with evcxr and the crates that replace pandas and NumPy."
+25-Small-Habits: "25 small, easy habits that make a big difference to focus, energy and productivity, based on Aaron Ramirez's ideas."
+Ball-X-Pit-Guides: "Ball x Pit guide: a tier list of every ball, best fusions and tips for this roguelike bullet-hell game."
+gemini-4-hydrogen-speed-efficiency-and-agentic-execution: "Gemini 4 Hydrogen explained: Google's fast, cost-efficient model for coding, multimodal work and AI agents, and how it compares."
+the-complete-beginners-guide-to-vercel-put-your-website-online-in-minutes: "A beginner's guide to Vercel: put a website online in minutes, connect GitHub, get a free link and update it automatically."
+part-ii-how-to-immerse-yourself-in-books-again: "How to rebuild deep reading: what Sven Birkerts called deep reading, why we lost it, and practical ways to get it back."
+TOEFL-Speaking: "TOEFL speaking templates for every task type: ready-to-use structures to answer clearly within the time limit."
+TOEFL-Writing: "TOEFL writing templates for the integrated and independent essays: structures and phrases that keep your answer organised."
+How-to-Procrastinate-and-still-get-things-done-by-John-Perry: "Structured procrastination by John Perry: how to get important things done by putting off other things."

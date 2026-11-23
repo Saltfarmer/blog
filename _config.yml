@@ -91,7 +91,7 @@ facebook:
   username:
   app_id:
   publisher:
-og_image: # Open Graph/Twitter default site image
+og_image: "/assets/og-default.png" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -103,7 +103,7 @@ social:
 analytics:
   provider: false # was "google-universal" (UA-108464378-1, shut down July 2023). Set to "google-gtag" + a G- id, or "custom", to re-enable. # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id: "UA-108464378-1"
+    tracking_id: "G-TFR9FDBHW3"
     anonymize_ip: true # true, false (default)
 
 # Site Author

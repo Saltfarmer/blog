@@ -1,3 +1,10 @@
-<!-- start custom comments snippet -->
-
-<!-- end custom comments snippet -->
+<!-- start custom comments: giscus (GitHub Discussions) + "reply by email" for readers without GitHub -->
+<h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Comments" }}</h4>
+<p class="reply-alt">
+  No GitHub account? <a href="#" id="reply-email" data-subject="Re: {{ page.title | escape }}" rel="nofollow">&#9993;&#65039; Reply by email</a>
+  &middot; I read every message.
+</p>
+{% if site.comments.giscus.repo_id and site.comments.giscus.category_id %}
+<section id="giscus-comments"></section>
+{% endif %}
+<!-- end custom comments -->

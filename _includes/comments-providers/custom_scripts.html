@@ -1,3 +1,47 @@
 <!-- start custom comments scripts -->
+<style>
+  .reply-alt { font-size: .8em; margin: .25em 0 1.25em; opacity: .85; }
+  .reply-alt a { font-weight: 600; }
+</style>
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
 
+  // Reply by email: the address is assembled here so it never sits in the page as plain text
+  var a = document.getElementById('reply-email');
+  if (a) {
+    var r = function (s) { return s.split('').reverse().join(''); };
+    var addr = r('71ktcgardnac') + '@' + r('moc.liamg');
+    a.href = 'mailto:' + addr + '?subject=' + encodeURIComponent(a.getAttribute('data-subject')) +
+             '&body=' + encodeURIComponent('\n\n---\n' + location.href);
+  }
+
+  // giscus, following the blog's light/dark toggle (not only the OS setting)
+  var box = document.getElementById('giscus-comments');
+  if (!box) return;
+  function theme() { return root.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light'; }
+  var s = document.createElement('script');
+  s.src = 'https://giscus.app/client.js';
+  s.setAttribute('data-repo', '{{ site.repository }}');
+  s.setAttribute('data-repo-id', '{{ site.comments.giscus.repo_id }}');
+  s.setAttribute('data-category', '{{ site.comments.giscus.category_name }}');
+  s.setAttribute('data-category-id', '{{ site.comments.giscus.category_id }}');
+  s.setAttribute('data-mapping', '{{ site.comments.giscus.discussion_term | default: "pathname" }}');
+  s.setAttribute('data-strict', '0');
+  s.setAttribute('data-reactions-enabled', '{{ site.comments.giscus.reactions_enabled | default: 1 }}');
+  s.setAttribute('data-emit-metadata', '0');
+  s.setAttribute('data-input-position', 'top');
+  s.setAttribute('data-theme', theme());
+  s.setAttribute('data-lang', 'en');
+  s.setAttribute('data-loading', 'lazy');
+  s.setAttribute('crossorigin', 'anonymous');
+  s.async = true;
+  box.appendChild(s);
+  new MutationObserver(function () {
+    var f = document.querySelector('iframe.giscus-frame');
+    if (f) f.contentWindow.postMessage({ giscus: { setConfig: { theme: theme() } } }, 'https://giscus.app');
+  }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
 <!-- end custom comments scripts -->

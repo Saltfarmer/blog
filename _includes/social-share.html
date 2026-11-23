@@ -1,9 +1,66 @@
-<section class="page__share">
+{% comment %}
+  Share buttons. Clicking one also copies a ready-to-paste intro to the clipboard:
+  the first 200 words of the post (20 for Twitter) + "…" + a link back to the post.
+  Twitter and LinkedIn get the text pre-filled. Facebook only accepts a link, so paste the copied text there.
+{% endcomment %}
+{% assign share_url = page.url | absolute_url %}
+{% assign share_plain = content | strip_html | normalize_whitespace | strip %}
+{% assign share_long = share_plain | truncatewords: 200, "…" %}
+{% assign share_short = share_plain | truncatewords: 20, "…" %}
+<section class="page__share" id="page-share"
+  data-url="{{ share_url }}" data-title="{{ page.title | escape }}"
+  data-long="{{ share_long | escape }}" data-short="{{ share_short | escape }}">
   <h4 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label | default: "Share on" }}</h4>
 
-  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ share_short | append: ' ' | append: share_url | url_encode }}" class="btn btn--twitter" data-share="twitter" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | url_encode }}" class="btn btn--facebook" data-share="facebook" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  {% capture share_li %}{{ share_long }}
+
+Read the full post: {{ page.title }}
+{{ share_url }}{% endcapture %}
+  <a href="https://www.linkedin.com/feed/?shareActive=true&text={{ share_li | url_encode }}" class="btn btn--linkedin" data-share="linkedin" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <p class="page__share-note" id="share-note" role="status" aria-live="polite" style="font-size:.75em;margin:.6em 0 0;opacity:0;transition:opacity .25s"></p>
 </section>
+<script>
+(function () {
+  var box = document.getElementById('page-share');
+  if (!box) return;
+  var note = document.getElementById('share-note'), timer;
+  function text(kind) {
+    var d = box.dataset, intro = kind === 'twitter' ? d.short : d.long;
+    return kind === 'twitter' ? intro + ' ' + d.url
+                              : intro + '\n\nRead the full post: ' + d.title + '\n' + d.url;
+  }
+  // Copy synchronously first: the share pop-up takes focus right after the click,
+  // and the async clipboard API is refused once the page is no longer focused.
+  function copy(s) {
+    var t = document.createElement('textarea'), done = false;
+    t.value = s; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.top = '0'; t.style.opacity = '0';
+    document.body.appendChild(t); t.focus(); t.select(); t.setSelectionRange(0, s.length);
+    try { done = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(t);
+    if (done) return Promise.resolve();
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(s);
+    return Promise.reject();
+  }
+  function say(msg) {
+    note.textContent = msg; note.style.opacity = '1';
+    clearTimeout(timer); timer = setTimeout(function () { note.style.opacity = '0'; }, 5000);
+  }
+  box.querySelectorAll('[data-share]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kind = a.getAttribute('data-share');
+      copy(text(kind)).then(function () {
+        say(kind === 'twitter' ? '✓ Intro (20 words) + link pre-filled in the tweet (also copied).'
+          : kind === 'linkedin' ? '✓ Intro (200 words) + link pre-filled in the LinkedIn post (also copied).'
+          : '✓ Intro (200 words) + link copied. Facebook does not allow pre-filled text: press Ctrl+V in the post box.');
+      }, function () { say('Could not copy automatically, but the share window is open.'); });
+      window.open(a.href, 'share', 'left=20,top=20,width=560,height=600,toolbar=1,resizable=1');
+    });
+  });
+})();
+</script>

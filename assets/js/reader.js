@@ -421,7 +421,7 @@
   }
 
   /* gc3k signature in the empty right column (wide screens).
-     Pages with a table of contents: under the TOC. Pages with a free right column: centred in it. */
+     Only on list pages with a free right column (home, archives); posts keep the small one in the top bar. */
   function sideSig() {
     var main = doc.getElementById('main');
     if (!main || !window.matchMedia) return;
@@ -430,14 +430,12 @@
     a.href = 'https://saltfarmer.github.io/';
     a.title = 'gc3k';
     a.setAttribute('aria-label', 'gc3k signature, go to the gate');
-    var toc = main.querySelector('.sidebar__right');
-    if (toc) { a.classList.add('side-sig--toc'); toc.appendChild(a); }
-    else if (!doc.body.classList.contains('wide')) {
-      var col = doc.createElement('div');
-      col.className = 'side-sig-col';
-      col.appendChild(a);
-      main.appendChild(col);
-    } else return; // wide page with no TOC: keep the small one in the top bar
+    // posts (anything with a table of contents or the wide post layout) never get the big signature
+    if (main.querySelector('.sidebar__right, .page__content') || doc.body.classList.contains('wide')) return;
+    var col = doc.createElement('div');
+    col.className = 'side-sig-col';
+    col.appendChild(a);
+    main.appendChild(col);
     doc.documentElement.classList.add('has-side-sig');
   }
 

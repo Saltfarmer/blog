@@ -1,8 +1,15 @@
 {%- if page.date -%}
-<aside class="subscribe" aria-label="Subscribe">
+{%- assign feed_url = '/feed.xml' | absolute_url -%}
+<aside class="subscribe" aria-label="Follow the blog">
   <p class="subscribe__title">Enjoyed this post?</p>
+  <p class="subscribe__text">Get new posts in your feed reader. No account on this blog, no spam, unfollow any time.</p>
   <div class="subscribe__row">
-    <a class="btn" href="{{ '/feed.xml' | relative_url }}"><i class="fas fa-rss" aria-hidden="true"></i> Follow via RSS</a>
+    <a class="btn btn--primary" href="https://feedly.com/i/subscription/feed/{{ feed_url | url_encode }}" target="_blank" rel="noopener">
+      <i class="fas fa-plus" aria-hidden="true"></i> Follow on Feedly</a>
+    <a class="btn" href="https://www.inoreader.com/?add_feed={{ feed_url | url_encode }}" target="_blank" rel="noopener">
+      <i class="fas fa-plus" aria-hidden="true"></i> Inoreader</a>
+    <a class="btn" href="{{ '/feed.xml' | relative_url }}" title="RSS / Atom feed for any reader app">
+      <i class="fas fa-rss" aria-hidden="true"></i> RSS feed</a>
     {%- if site.subscribe.newsletter_action and site.subscribe.newsletter_action != "" -%}
     <form class="subscribe__form" action="{{ site.subscribe.newsletter_action }}" method="post" target="_blank">
       <label class="sr-only" for="subscribe-email">Email</label>

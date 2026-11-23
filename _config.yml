@@ -49,6 +49,9 @@ comments:
 reCaptcha:
   siteKey:
   secret:
+# jekyll-feed: show feed.xml as a readable page (styled by /feed.xslt.xml) instead of raw XML
+feed:
+  xsl: true
 atom_feed:
   path: # blank (default) uses feed.xml
   hide: # true, false (default)
@@ -89,7 +92,7 @@ social:
 
 # Analytics
 analytics:
-  provider: false # was "google-universal" (UA-108464378-1, shut down July 2023). Set to "google-gtag" + a G- id, or "custom", to re-enable. # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id: "G-TFR9FDBHW3"
     anonymize_ip: true # true, false (default)

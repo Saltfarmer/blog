@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Makes /feed.xml readable in a browser. Feed reader apps ignore this file and read the XML as usual. -->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom">
+  <xsl:output method="html" encoding="utf-8" indent="yes"/>
+  <xsl:template match="/atom:feed">
+    <html lang="en">
+      <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="robots" content="noindex"/>
+        <title>Follow <xsl:value-of select="atom:title"/></title>
+        <style>
+          :root { color-scheme: light dark; }
+          body { margin: 0; font-family: Inter, Aptos, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #0a1324; color: #e6edf7; line-height: 1.6; }
+          main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+          .box { background: linear-gradient(160deg, #0857C3, #042A61); border-radius: 16px; padding: 22px 24px; margin-bottom: 28px; }
+          .box h1 { margin: 0 0 6px; font-size: 24px; }
+          .box p { margin: 0 0 14px; color: #D6EFFB; font-size: 15px; }
+          .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+          .btn { display: inline-block; padding: 9px 14px; border-radius: 10px; background: #fff; color: #0857C3; font-weight: 700; font-size: 14px; text-decoration: none; }
+          .btn.ghost { background: rgba(255,255,255,.14); color: #fff; }
+          code { background: rgba(255,255,255,.15); padding: 2px 6px; border-radius: 6px; font-size: 13px; word-break: break-all; }
+          h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: #71C5E8; margin: 0 0 10px; }
+          .post { display: block; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); text-decoration: none; color: inherit; }
+          .post b { color: #9fd3f5; font-size: 17px; }
+          .post span { display: block; font-size: 13px; color: #93a4c3; }
+          .post:hover b { text-decoration: underline; }
+        </style>
+      </head>
+      <body>
+        <main>
+          <div class="box">
+            <h1>&#128240; Follow <xsl:value-of select="atom:title"/></h1>
+            <p>This is the blog's feed. Add it to a feed reader and new posts show up there automatically. Free, no sign-up on this blog.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener">
+                <xsl:attribute name="href">https://feedly.com/i/subscription/feed/<xsl:value-of select="atom:link[@rel='self']/@href"/></xsl:attribute>
+                + Follow on Feedly</a>
+              <a class="btn ghost" target="_blank" rel="noopener">
+                <xsl:attribute name="href">https://www.inoreader.com/?add_feed=<xsl:value-of select="atom:link[@rel='self']/@href"/></xsl:attribute>
+                + Inoreader</a>
+              <a class="btn ghost">
+                <xsl:attribute name="href"><xsl:value-of select="atom:link[@rel='alternate']/@href"/></xsl:attribute>
+                &#8592; Back to the blog</a>
+            </div>
+            <p style="margin:14px 0 0;font-size:13px">Other reader app? Paste this address: <code><xsl:value-of select="atom:link[@rel='self']/@href"/></code></p>
+          </div>
+          <h2>Latest posts</h2>
+          <xsl:for-each select="atom:entry">
+            <a class="post">
+              <xsl:attribute name="href"><xsl:value-of select="atom:link[@rel='alternate']/@href"/></xsl:attribute>
+              <b><xsl:value-of select="atom:title"/></b>
+              <span><xsl:value-of select="substring(atom:published, 1, 10)"/></span>
+            </a>
+          </xsl:for-each>
+        </main>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
